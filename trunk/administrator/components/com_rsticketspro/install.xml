@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5" method="upgrade">
+	<name>RSTickets! Pro</name>
+	<creationDate>April 2010</creationDate>
+	<author>www.rsjoomla.com</author>
+	<copyright>(C) 2010-2011 www.rsjoomla.com</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>2.0.0 R8</version>
+	<description>RSTickets! Pro allows you to handle your customer support through a powerful ticket management system.</description>
+	<installfile>install.rsticketspro.php</installfile>
+	<uninstallfile>uninstall.rsticketspro.php</uninstallfile>
+	<scriptfile>script.rsticketspro.php</scriptfile>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install.mysql.utf8.sql</file>
+			<file driver="mysql" charset="utf8">sample.mysql.sql</file>
+			
+			<file driver="mysql">install.mysql.nonutf8.sql</file>
+			<file driver="mysql">sample.mysql.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">uninstall.mysql.sql</file>
+			<file driver="mysql">uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+		<filename>rsticketspro.php</filename>
+		<folder>assets</folder>
+		<folder>controllers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">languages/site/en-GB.com_rsticketspro.ini</language>
+	</languages>
+
+	<administration>
+
+		<menu img="components/com_rsticketspro/assets/images/rsticketspro.gif">RSTicketsPro</menu>
+		<submenu>
+			<menu link="option=com_rsticketspro">COM_RSTICKETSPRO_OVERVIEW</menu>
+			<menu view="tickets">COM_RSTICKETSPRO_MANAGE_TICKETS</menu>
+			<menu view="departments">COM_RSTICKETSPRO_DEPARTMENTS</menu>
+			<menu view="groups">COM_RSTICKETSPRO_GROUPS</menu>
+			<menu view="staff">COM_RSTICKETSPRO_STAFF_MEMBERS</menu>
+			<menu view="priorities">COM_RSTICKETSPRO_PRIORITIES</menu>
+			<menu view="statuses">COM_RSTICKETSPRO_STATUSES</menu>
+			<menu view="knowledgebase">COM_RSTICKETSPRO_KNOWLEDGEBASE</menu>
+			<menu view="emails">COM_RSTICKETSPRO_EMAIL_MESSAGES</menu>
+			<menu view="configuration">COM_RSTICKETSPRO_CONFIGURATION</menu>
+			<menu view="updates">COM_RSTICKETSPRO_UPDATES</menu> 
+		</submenu>
+		
+		<files folder="admin">
+			<filename>install.mysql.utf8.sql</filename>
+			<filename>install.mysql.nonutf8.sql</filename>
+			<filename>sample.mysql.sql</filename>
+			<filename>uninstall.mysql.sql</filename>
+			
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>rsticketspro.php</filename>
+			<folder>assets</folder>
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>fields</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+
+		<languages>
+			<language tag="en-GB">languages/admin/en-GB.com_rsticketspro.ini</language>
+			<language tag="en-GB">languages/admin/en-GB.com_rsticketspro.menu.ini</language>
+			<language tag="en-GB">languages/admin/en-GB.com_rsticketspro.sys.ini</language>
+			<language tag="en-GB">languages/admin/en-GB.rsticketspro.sys.ini</language>
+		</languages>
+
+	</administration>
+
+	<params />
+</install>
