@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5" method="upgrade">
+	<name>RSMembership!</name>
+	<creationDate>July 2009</creationDate>
+	<author>www.rsjoomla.com</author>
+	<copyright>(C) 2009-2011 www.rsjoomla.com</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.0 R17</version>
+	<description>RSMembership! allows you to sell and manage memberships, handle digital downloads, share content from your website and more.</description>
+	<installfile>install.rsmembership.php</installfile>
+	<uninstallfile>uninstall.rsmembership.php</uninstallfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install.mysql.utf8.sql</file>
+			<file driver="mysql">install.mysql.nonutf8.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">uninstall.mysql.sql</file>
+			<file driver="mysql">uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+		<filename>rsmembership.php</filename>
+		<folder>assets</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">languages/site/en-GB.com_rsmembership.ini</language>
+	</languages>
+
+	<administration>
+	
+		<menu img="components/com_rsmembership/assets/images/rsmembership.gif">RSMembership</menu>
+		<submenu>
+			<menu link="option=com_rsmembership">COM_RSMEMBERSHIP_OVERVIEW</menu>
+			<menu view="transactions">COM_RSMEMBERSHIP_TRANSACTIONS</menu>
+			<menu view="memberships">COM_RSMEMBERSHIP_MEMBERSHIPS</menu>
+			<menu view="categories">COM_RSMEMBERSHIP_CATEGORIES</menu>
+			<menu view="extras">COM_RSMEMBERSHIP_EXTRAS</menu>
+			<menu view="upgrades">COM_RSMEMBERSHIP_UPGRADES</menu>
+			<menu view="coupons">COM_RSMEMBERSHIP_COUPONS</menu>
+			<menu view="payments">COM_RSMEMBERSHIP_PAYMENT_INTEGRATIONS</menu>
+			<menu view="files">COM_RSMEMBERSHIP_FILES</menu>
+			<menu view="terms">COM_RSMEMBERSHIP_FILE_TERMS_CONDITIONS</menu>
+			<menu view="users">COM_RSMEMBERSHIP_SUBSCRIBERS</menu>
+			<menu view="fields">COM_RSMEMBERSHIP_CUSTOM_FIELDS</menu>
+			<menu view="reports">COM_RSMEMBERSHIP_REPORTS</menu>
+			<menu view="configuration">COM_RSMEMBERSHIP_CONFIGURATION</menu>
+			<menu view="updates">COM_RSMEMBERSHIP_UPDATES</menu> 
+		</submenu>
+	
+		<files folder="admin">
+			<filename>install.mysql.utf8.sql</filename>
+			<filename>install.mysql.nonutf8.sql</filename>
+			<filename>uninstall.mysql.sql</filename>
+			
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>rsmembership.php</filename>
+			<folder>assets</folder>
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>fields</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+
+		<languages>
+			<language tag="en-GB">languages/admin/en-GB.com_rsmembership.ini</language>
+			<language tag="en-GB">languages/admin/en-GB.com_rsmembership.menu.ini</language>
+			<language tag="en-GB">languages/admin/en-GB.com_rsmembership.sys.ini</language>
+		</languages>
+
+</administration>
+
+<params />
+
+</install>

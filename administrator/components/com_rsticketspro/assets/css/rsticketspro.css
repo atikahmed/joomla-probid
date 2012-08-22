@@ -1,0 +1,162 @@
+/**
+* @version 2.0.0
+* @package RSTickets! Pro 2.0.0
+* @copyright (C) 2010 www.rsjoomla.com
+* @license GPL, http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+.icon-48-rsticketspro
+{
+	background-image: url(../images/icon-48-rsticketspro.png);
+	@background-image: url(../images/icon-48-rsticketspro.gif);
+}
+
+.rsticketspro_clear
+{
+	display: block;
+	clear: both;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/* standard form style table */
+
+td.componentPreview{
+	width: 500px;
+}
+
+td.components{
+	width: 220px;
+}
+
+table #componentPreview{
+	width: 600px;
+}
+table.componentEdit{
+	background: #FFF;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #d8d8d8;
+	width:200px;
+}
+
+td.components a.component{
+	display: block;
+	width:200px;
+	height:20px;
+	border-top: 1px solid #d8d8d8;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #d8d8d8;
+	/*background: #FFF;*/
+	padding-left: 25px;
+	padding-top: 2px;
+	background-position: 2px 2px;
+}
+
+td.components a.component:hover{
+	background-position: 3px 3px;
+}
+
+table.componentForm{
+	width:226px;
+	background: #FFF;
+	border-right: 1px solid #d8d8d8;
+}
+
+.wide{
+	width:200px;
+}
+
+table.thisform {
+	background-color: #F7F8F9;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	padding: 10px;
+	border-collapse: collapse;
+}
+table.thisform tr.row0 {
+	background-color: #F7F8F9;
+}
+table.thisform tr.row1 {
+	background-color: #eeeeee;
+}
+table.thisform th {
+	font-size: 15px;
+	font-weight:normal;
+	font-variant:small-caps;
+	padding-top: 6px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: left;
+	height: 25px;
+	color: #666666;
+	background-repeat: repeat;
+}
+table.thisform td {
+	padding: 3px;
+	text-align: left;
+	border: 1px;
+	border-style:solid;
+	border-bottom-color:#EFEFEF;
+	border-right-color:#EFEFEF;
+	border-left-color:#EFEFEF;
+	border-top-color:#EFEFEF;
+}
+
+table.thisform2 {
+	background-color: #F7F8F9;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	padding: 5px;
+}
+table.thisform2 td {
+	padding: 5px;
+	text-align: center;
+	border: 1x;
+	border-style: solid;
+	border-bottom-color:#EFEFEF;
+	border-right-color:#EFEFEF;
+	border-left-color:#EFEFEF;
+	border-top-color:#EFEFEF;
+}
+.thisform2 td:hover {
+	background-color: #B5CDE8;
+	border:	1px solid #30559C;
+}
+
+.thisformError{
+	background-color: #FFDFDF;
+}
+
+.thisformOk{
+	background-color: #CFFFDA;
+}
+textarea.hidden {
+	display: none;
+}
+
+span.selected{
+	text-decoration: underline;
+}
+
+div.pagenav{
+	text-align:center;
+	padding: 2px;
+}
+
+div.pagenav span, div.pagenav div.statistics{
+	padding: 2px;
+	font-size:12px;
+	float:left;
+}
+
+table.plugins td{
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.icon-32-approve
+{
+	background-image: url(../images/icon-32-approve.png);
+}
+
+#rst_loading { display: none; }
