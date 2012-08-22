@@ -1,0 +1,51 @@
+<div id="gm_infowindowContainer" style="display:none;">
+
+    <div class="gm_infowindow gm_google">
+
+        <div class="gm_inner">
+    
+            <?php /* LISTING THUMBNAIL */ ?>
+            <div class="gm_image">
+            </div>
+
+            <div class="gm_content">
+                
+                <span class="gm_title">
+                    <a class="gm-title" href=""></a>
+                </span>                
+                
+            <?php if($this->Config->author_review > 0 || $this->Config->user_reviews):?>
+            <?php /* BEGIN RATINGS */ ?>
+				<div class="overall_ratings">
+					<?php if($this->Config->author_review > 0):?>					
+						<div class="overall_editor" title="<?php  __t("Editor rating"); ?>">
+							<span class="rating_label jrIcon jrIconEditorReview"><?php echo __t("Editor rating") ?></span>
+							<div class="rating_stars rating_star_editor"><div class="gm-editor-rating-star" style="width: 0%;"> </div></div>
+							<span class="rating_value"><span class="gm-editor-rating-value"></span></span>
+						</div>
+					<?php endif;?>	
+						
+					<?php if($this->Config->user_reviews):?>
+						<div class="overall_user" title="<?php  __t("User rating"); ?>">
+							<span class="rating_label jrIcon jrIconUserReviews"><?php echo __t("User rating") ?></span>
+							<div class="rating_stars rating_star_user"><div class="gm-user-rating-star" style="width: 0%;"> </div></div>
+							<span class="rating_value"><span class="gm-user-rating-value"></span>&nbsp;(<span class="gm-user-rating-count"></span>)</span>
+						</div>
+					<?php endif;?>
+				</div>
+            <?php /* END RATINGS */ ?>
+            <?php endif;?>
+                 
+            <?php /*
+            EXAMPLE: Adding custom fields
+            <span class="gm-jr_address"></span>
+            <span class="gm-jr_phone"></span>
+            */?>
+         </div>
+         <div class="clr"></div>
+
+        </div><?php /* end gm_inner */ ?>
+    
+    </div><?php /* end gm_infowindow */ ?>
+
+</div>

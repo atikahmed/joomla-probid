@@ -1,0 +1,49 @@
+/* Light Gray CSS */
+
+/* Table */
+table
+{
+	border: solid 1px #eee;
+}
+
+/* Headers */
+td.sectiontableheader
+{
+  padding: 5px;
+  background: #eee !important;
+  border: solid 1px #fff;
+}
+
+/* Header links */
+td.sectiontableheader a
+{
+	color: #000 !important;
+}
+
+/* Ticket listings */
+tr.sectiontableentry0 td,
+tr.sectiontableentry1 td,
+tr.sectiontableentry2 td
+{
+	padding: 5px;
+	border-bottom: solid 1px #eee;
+}
+
+/* Submit ticket */
+table.contentpaneopen
+{
+	width: 100%;
+	border: solid 1px #eee;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table.contentpaneopen tr
+{
+	border-bottom: solid 1px #eee;
+}
+
+table.contentpaneopen td
+{
+	padding: 4px;
+}

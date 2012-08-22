@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="RSM_SHOW_SUBSCRIBER_MEMBERSHIPS_LAYOUT">
+		<message>
+			<![CDATA[RSM_SHOW_SUBSCRIBER_MEMBERSHIPS_LAYOUT]]>
+		</message>
+	</layout>
+	<state>
+		<name>RSM_SHOW_SUBSCRIBER_MEMBERSHIPS_LAYOUT</name>
+		<params>
+			<param name="show_headings" type="radio" default="1" label="RSM_SHOW_HEADINGS" description="RSM_SHOW_HEADINGS_DESC">
+				<option value="0">RSM_HIDE</option>
+				<option value="1">RSM_SHOW</option>
+			</param>
+			<param name="show_pagination" type="radio" default="1" label="RSM_PAGINATION" description="RSM_PAGINATION_DESC">
+				<option value="0">RSM_HIDE</option>
+				<option value="1">RSM_SHOW</option>
+			</param>
+			<param name="show_price" type="radio" default="1" label="RSM_PRICE" description="RSM_SHOW_PRICE">
+				<option value="0">RSM_HIDE</option>
+				<option value="1">RSM_SHOW</option>
+			</param>
+			<param name="show_status" type="radio" default="1" label="RSM_STATUS" description="RSM_SHOW_STATUS">
+				<option value="0">RSM_HIDE</option>
+				<option value="1">RSM_SHOW</option>
+			</param>
+			<param name="show_expire" type="radio" default="1" label="RSM_START_EXPIRE_DATE" description="RSM_START_EXPIRE_DATE_DESC">
+				<option value="0">RSM_HIDE</option>
+				<option value="1">RSM_SHOW</option>
+			</param>
+		</params>
+	</state>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="show_headings" type="radio" default="1" label="RSM_SHOW_HEADINGS" description="RSM_SHOW_HEADINGS_DESC">
+					<option value="0">RSM_HIDE</option>
+					<option value="1">RSM_SHOW</option>
+				</field>
+				<field name="show_pagination" type="radio" default="1" label="RSM_PAGINATION" description="RSM_PAGINATION_DESC">
+					<option value="0">RSM_HIDE</option>
+					<option value="1">RSM_SHOW</option>
+				</field>
+				<field name="show_price" type="radio" default="1" label="RSM_PRICE" description="RSM_SHOW_PRICE">
+					<option value="0">RSM_HIDE</option>
+					<option value="1">RSM_SHOW</option>
+				</field>
+				<field name="show_status" type="radio" default="1" label="RSM_STATUS" description="RSM_SHOW_STATUS">
+					<option value="0">RSM_HIDE</option>
+					<option value="1">RSM_SHOW</option>
+				</field>
+				<field name="show_expire" type="radio" default="1" label="RSM_START_EXPIRE_DATE" description="RSM_START_EXPIRE_DATE_DESC">
+					<option value="0">RSM_HIDE</option>
+					<option value="1">RSM_SHOW</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</metadata>
