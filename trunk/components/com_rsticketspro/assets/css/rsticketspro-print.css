@@ -1,0 +1,17 @@
+.rst_buttons
+{
+	display: none;
+}
+
+.rst_view_notes,
+.rst_print_ticket,
+.rst_close_ticket,
+.rst_open_ticket,
+.rst_view_history
+{
+	display: none;
+}
+
+#rsticketspro_ticket_actions {
+	display: none;
+}

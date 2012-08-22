@@ -1,0 +1,63 @@
+/*************************************
+JReviews My Listings, My Reviews & My Favorites Plugins
+*************************************/
+div.jrPlugin { 
+    border-top: 0;
+    padding-top: 5px;
+	overflow: hidden;
+}
+    
+div.jrPlugin .listItem  {
+    float: left; 
+    padding-right: 10px; 
+    margin: 0;
+	font-size: 11px !important;
+}
+
+div.jrPlugin div.contentNumber {
+	font-weight: bold;
+	margin: 0 5px 5px 0;
+	float: left;
+}
+
+div.jrPlugin .contentThumbnail{
+    float: left; 
+    margin: 0 10px 10px 0;
+}
+
+div.jrPlugin .contentThumbnail img {
+    border: 1px solid #CCC;    
+}
+
+div.jrPlugin .contentColumn {
+	float: left;
+}
+    
+div.jrPlugin .contentTitle {
+    margin-bottom: 5px;
+}
+    
+div.jrPlugin .contentTitle a {
+    font-size: 12px !important;
+}
+    
+div.jrPlugin .contentInfo  {
+    margin-bottom: 5px;
+}
+
+div.jrPlugin div.overall_ratings {
+	float: none;
+	margin-bottom: 5px;
+}
+
+div.jrPlugin div.overall_ratings span.rating_label {
+	display: none;
+}
+   
+div.jrPlugin div.jr_divider {
+    border: 0;
+    clear: both;
+    line-height: 1px;
+    margin: 0;
+    padding: 2.5px;
+}

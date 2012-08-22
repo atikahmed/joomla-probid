@@ -1,0 +1,63 @@
+<?php
+/**
+ * @version   $Id: Platform.php 53534 2012-06-06 18:21:34Z btowles $
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright Copyright (C) 2007 - ${copyright_year} RocketTheme, LLC
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */
+defined('ROKCOMMON') or die;
+
+/**
+ *
+ */
+interface RokCommon_Doctrine_Platform
+{
+
+	/**
+	 * @abstract
+	 *
+	 * @param string $tablename
+	 *
+	 * @return string
+	 */
+	public function setTableName($tablename);
+
+	/**
+	 * @abstract
+	 * @return string a doctrine safe connection URL
+	 */
+	public function getConnectionUrl();
+
+	/**
+	 * @abstract
+	 * @return string a doctrine safe tablename format
+	 */
+	public function getTableNameFormat();
+
+
+	/**
+	 * @abstract
+	 * @return string the schema name for the platform
+	 */
+	public function getSchema();
+
+	/**
+	 * @abstract
+	 * @return string the database username for the platform
+	 */
+	public function getUsername();
+
+	/**
+	 * @abstract
+	 * @return string the database password for the platform
+	 */
+	public function getPassword();
+
+	/**
+	 * @abstract
+	 * @return string the database hostname for the platform
+	 */
+	public function getHost();
+
+
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="RSM_DEFAULT_LAYOUT">
+		<message>
+			<![CDATA[RSM_DEFAULT_LAYOUT]]>
+		</message>
+	</layout>
+	<state>
+		<name>RSM_DEFAULT_LAYOUT</name>
+		<params addPath="/administrator/components/com_rsmembership/elements">
+			<param name="columns_no" type="list" default="1" label="RSM_SHOW_MEMBERSHIPS_IN" description="RSM_SHOW_MEMBERSHIPS_IN_DESC">
+				<option value="1">RSM_1_COLUMN</option>
+				<option value="2">RSM_2_COLUMNS</option>
+				<option value="3">RSM_3_COLUMNS</option>
+			</param>
+			<param name="show_buttons" type="list" default="2" label="RSM_SHOW_BUTTONS" description="RSM_SHOW_BUTTONS_DESC">
+				<option value="1">RSM_DETAILS</option>
+				<option value="2">RSM_DETAILS_RSM_SUBSCRIBE</option>
+				<option value="3">RSM_SUBSCRIBE</option>
+			</param>
+			<param name="categories" type="membershipcategory" default="" multiple="multiple" label="RSM_SHOW_FROM_CATEGORIES" description="RSM_SHOW_FROM_CATEGORIES_DESC" />
+			<param name="show_category" type="radio" default="1" label="RSM_SHOW_CATEGORY" description="RSM_SHOW_CATEGORY_DESC">
+				<option value="0">RSM_HIDE</option>
+				<option value="1">RSM_SHOW</option>
+			</param>
+			<param name="show_pagination" type="radio" default="1" label="RSM_PAGINATION" description="RSM_PAGINATION_DESC">
+				<option value="0">RSM_HIDE</option>
+				<option value="1">RSM_SHOW</option>
+			</param>
+			<param name="orderby" type="list" default="" label="RSM_ORDER" description="RSM_ORDER_DESC">
+				<option value="">RSM_DEFAULT</option>
+				<option value="title">RSM_ORDER_TITLE_ASC</option>
+				<option value="rtitle">RSM_ORDER_TITLE_DESC</option>
+				<option value="price">RSM_ORDER_PRICE_ASC</option>
+				<option value="rprice">RSM_ORDER_PRICE_DESC</option>
+				<option value="order">RSM_ORDERING</option>
+			</param>
+		</params>
+	</state>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_rsmembership/fields">
+				<field name="columns_no" type="list" default="1" label="RSM_SHOW_MEMBERSHIPS_IN" description="RSM_SHOW_MEMBERSHIPS_IN_DESC">
+					<option value="1">RSM_1_COLUMN</option>
+					<option value="2">RSM_2_COLUMNS</option>
+					<option value="3">RSM_3_COLUMNS</option>
+				</field>
+				<field name="show_buttons" type="list" default="2" label="RSM_SHOW_BUTTONS" description="RSM_SHOW_BUTTONS_DESC">
+					<option value="1">RSM_DETAILS</option>
+					<option value="2">RSM_DETAILS_RSM_SUBSCRIBE</option>
+					<option value="3">RSM_SUBSCRIBE</option>
+				</field>
+				<field name="categories" type="membershipcategory" default="" multiple="multiple" label="RSM_SHOW_FROM_CATEGORIES" description="RSM_SHOW_FROM_CATEGORIES_DESC" />
+				<field name="show_category" type="radio" default="1" label="RSM_SHOW_CATEGORY" description="RSM_SHOW_CATEGORY_DESC">
+					<option value="0">RSM_HIDE</option>
+					<option value="1">RSM_SHOW</option>
+				</field>
+				<field name="show_pagination" type="radio" default="1" label="RSM_PAGINATION" description="RSM_PAGINATION_DESC">
+					<option value="0">RSM_HIDE</option>
+					<option value="1">RSM_SHOW</option>
+				</field>
+				<field name="orderby" type="list" default="" label="RSM_ORDER" description="RSM_ORDER_DESC">
+					<option value="">RSM_DEFAULT</option>
+					<option value="title">RSM_ORDER_TITLE_ASC</option>
+					<option value="rtitle">RSM_ORDER_TITLE_DESC</option>
+					<option value="price">RSM_ORDER_PRICE_ASC</option>
+					<option value="rprice">RSM_ORDER_PRICE_DESC</option>
+					<option value="order">RSM_ORDERING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</metadata>

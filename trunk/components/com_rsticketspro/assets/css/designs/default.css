@@ -1,0 +1,56 @@
+/* Default CSS */
+
+/* Headers */
+td.sectiontableheader
+{
+  padding: 4px;
+  background: #444 !important;
+  color: #fff !important;
+  border-right: 1px solid #fff;
+}
+
+/* Header links */
+td.sectiontableheader a
+{
+	color: #fff !important;
+}
+
+/* Ticket listings */
+tr.sectiontableentry0 td,
+tr.sectiontableentry1 td,
+tr.sectiontableentry2 td
+{
+	padding: 8px 5px;
+}
+
+/* Use a different background so rows alternate colors */
+tr.sectiontableentry2 td
+{
+	background: #ECECEC;
+}
+
+/* Hover effect */
+tr.sectiontableentry1:hover td,
+tr.sectiontableentry2:hover td
+{
+	background: #FFFFCC;
+}
+
+/* Submit ticket */
+table.contentpaneopen
+{
+	width: 100%;
+	border: solid 1px #eee;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table.contentpaneopen tr
+{
+	border-bottom: solid 1px #eee;
+}
+
+table.contentpaneopen td
+{
+	padding: 4px;
+}

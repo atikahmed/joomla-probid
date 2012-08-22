@@ -1,0 +1,68 @@
+<?php 
+ /**********************************************************************************
+ *                                 CONFIGURATION AND SETUP
+ **********************************************************************************/
+// if(!$json_data) return;
+$width = Sanitize::getString($this->params['module'],'map_width','100%');
+$height = Sanitize::getString($this->params['module'],'map_height','400px');
+$width = is_numeric($width) ? $width.'px' : $width;
+$height = is_numeric($height) ? $height.'px' : $height;
+$clustering = Sanitize::getVar($this->params['module'],'clustering',true);
+$clustering_min_markers = Sanitize::getInt($this->params['module'],'clustering_min_markers',250);
+$zoom = Sanitize::getInt($this->params['module'],'zoom');
+$zoom == 0 and $zoom = 10;
+$search_bar = Sanitize::getBool($this->params['module'],'search_bar',false);
+$infowindow_suffix = '_'.Sanitize::getString($this->Config,'geomaps.infowindow','google');
+/**
+* You can use the $geoLocation array to display info about the user's location gathered via the GeoTargeting service
+* Use prx($geoLocation); to see the available info
+*/
+?>
+    
+<?php 
+/**********************************************************************************
+ *                                 JAVASCRIPT & CSS
+ **********************************************************************************/
+?>
+
+<script type="text/javascript"> 
+/* <![CDATA[ */
+GeomapsOnload.push(function () {
+    
+	GeomapsModule = new GeomapsDisplayMap('gm_module_results',
+	{
+		'clustering':<?php if($clustering):?>true<?php else:?>false<?php endif;?>,
+		'clusteringMinMarkers':<?php echo $clustering_min_markers;?>,
+		'search_bar':<?php echo (int) $search_bar;?>
+	});           
+    
+	GeomapsModule.setData(<?php echo $json_data;?>);
+	
+	<?php if(!empty($GeomapsCenter)):?>  
+    GeomapsModule.setCenterAndZoom(<?php echo $GeomapsCenter['lat'];?>,<?php echo $GeomapsCenter['lon'];?>,<?php echo $zoom;?>);
+    <?php elseif(!empty($CustomCenter)):?>
+    if(GeomapsModule.getCount() == 0) {
+        GeomapsModule.setCenterAndZoom(<?php echo $CustomCenter['lat'];?>,<?php echo $CustomCenter['lon'];?>,<?php echo $zoom;?>);
+    }
+    <?php endif;?>	
+    
+	GeomapsModule.init();    
+    
+	// Add marker infowindow theme
+    if(jQuery('#gm_infowindowContainer').length == 0)
+    {
+        jQuery('body').append('<?php echo Sanitize::stripWhitespace($this->renderControllerView('Geomaps','map_infowindow'.$infowindow_suffix));?>');  
+    }    	
+});	
+
+/* ]]> */
+</script>
+
+
+<?php 
+/**********************************************************************************
+ *                                 EDIT HTML BELOW THIS LINE
+ **********************************************************************************/
+?>     
+<!-- Map canvas -->    
+<div id="gm_module_results" class="jrMapLoading" style="width:<?php echo $width;?>;height:<?php echo $height;?>;border: 1px solid #CCCCCC;"></div>

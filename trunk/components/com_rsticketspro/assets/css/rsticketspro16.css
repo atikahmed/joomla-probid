@@ -1,0 +1,6 @@
+table.rst_submit_form tr,
+table.rst_submit_form td
+{
+	border: 0px;
+	padding: 2px;
+}

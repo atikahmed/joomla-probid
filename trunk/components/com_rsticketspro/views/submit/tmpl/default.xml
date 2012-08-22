@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="RST_SUBMIT_TICKETS_LAYOUT">
+		<message>
+			<![CDATA[RST_SUBMIT_TICKETS_LAYOUT]]>
+		</message>
+	</layout>
+	<state>
+		<name>RST_SUBMIT_TICKETS_LAYOUT</name>
+		<params addPath="/administrator/components/com_rsticketspro/elements">
+			<param name="department_id" type="departments" default="0" label="RST_DEPARTMENT_ID" description="RST_DEPARTMENT_ID_DESC" />
+		</params>
+	</state>
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_rsticketspro/fields">
+			<fieldset name="basic">
+				<field name="department_id" type="departments" default="0" label="RST_DEPARTMENT_ID" description="RST_DEPARTMENT_ID_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</metadata>
