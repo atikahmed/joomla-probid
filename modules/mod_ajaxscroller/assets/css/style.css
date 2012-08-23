@@ -1,0 +1,117 @@
+/*
+ IMPORTANT: Do not use percentage for module width and height, enter actual fixed width in pixels
+*/
+.ajaxscrl {
+	position: relative;
+	overflow: visible;
+	/*background: url(../images/bg.gif) no-repeat 0 0;*/ /* uncomment for module background */
+}
+.ajaxscrl .mContainer {
+	width: 200px;  /* edit this value for your own module width */
+	height: 124px; /* edit this value for your own module height */
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+.ajaxscrl .mScroller {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+.ajaxscrl .mScroller div {
+	display: block;
+	text-align: left;
+	margin: 0;
+	float: left;
+	width: 200px; /* edit this value for your own module width */
+	min-height: 124px; /* edit this value for your own module height */
+}
+.ajaxscrl .mScroller div div {  /* if more than 1 item displayed use this for individual item size */
+	display: block;
+	margin-right: 5px;
+	float: left;
+	width: 140px;
+}
+.ajaxscrl .mScroller div .title {
+	display: block;
+}
+.ajaxscrl .mScroller div p.link {
+	margin: 0;
+	text-align: right;
+}
+.ajaxscrl .title {
+	font-weight: bold;
+	display: block;
+}
+.ajaxscrl .date {
+	display: block;
+}
+
+.ajaxscrl .mNavLeft,
+.ajaxscrl .mNavRight,
+.ajaxscrl .mNavUp,
+.ajaxscrl .mNavDown,
+.ajaxscrl .mNavPause,
+.ajaxscrl .mNavPlay {
+	width: 16px;
+	height: 16px;
+	cursor: hand;
+	cursor: pointer;
+	background: url(../images/navigation.png) no-repeat;
+	position: absolute;
+	top: -30px;
+}
+.ajaxscrl .mNavPlay,
+.ajaxscrl .mNavPause {
+	right: 48px;
+}
+.ajaxscrl .mNavPlay {
+	background-position: 0 -32px;
+}
+.ajaxscrl .mNavPlay.hover {
+	background-position: -32px -32px;
+}
+.ajaxscrl .mNavPause {
+	background-position: -16px -32px;
+}
+.ajaxscrl .mNavPause.hover {
+	background-position: -48px -32px;
+}
+.ajaxscrl .mNavLeft {
+	background-position: 0 0;
+	right: 30px;
+}
+.ajaxscrl .mNavLeft.hover {
+	background-position: -32px 0;
+}
+.ajaxscrl .mNavRight {
+	background-position: -16px 0;
+	right: 12px;
+}
+.ajaxscrl .mNavRight.hover {
+	background-position: -48px 0;
+}
+.ajaxscrl .mNavUp {
+	background-position: 0 -16px;
+	right: 30px;
+}
+.ajaxscrl .mNavUp.hover {
+	background-position: -32px -16px;
+}
+.ajaxscrl .mNavDown {
+	background-position: -16px -16px;
+	right: 12px;
+}
+.ajaxscrl .mNavDown.hover {
+	background-position: -48px -16px;
+}
+.ajaxscrl .mNavLoading {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: -27px;
+	right: 0;
+}
+.ajaxscrl .loading {
+	background: url(../images/loading.gif) no-repeat;
+}

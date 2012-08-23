@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install method="upgrade" version="1.5" type="plugin" group="search">
+	<name>Search - RSTickets! Pro Knowledgebase</name>
+	<author>RSJoomla!</author>
+	<creationDate>31.03.2010</creationDate>
+	<copyright>Copyright (C) 2010 www.rsjoomla.com. All rights reserved.</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0</version>
+	<description>RST_SEARCH_KB_DESC</description>
+	<files>
+		<filename plugin="rsticketsprocontent">rsticketsprocontent.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_search_rsticketsprocontent.ini</language>
+	</languages>
+	<params>
+		<param name="search_limit" type="text" size="5" default="50" label="RST_SEARCH_LIMIT" description="RST_SEARCH_LIMIT_DESC"/>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="search_uncategorised" type="radio" default="1" label="RST_SEARCH_UNCATEGORISED" description="RST_SEARCH_UNCATEGORISED_DESC">
+			<option value="0">RST_SEARCH_NO</option>
+			<option value="1">RST_SEARCH_YES</option>
+		</param>
+	</params>
+</install>

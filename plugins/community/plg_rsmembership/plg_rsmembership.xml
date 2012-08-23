@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="community" method="upgrade">
+	<name>RSMembership!</name>
+	<creationDate>13/11/2009</creationDate>
+	<author>www.rsjoomla.com</author>
+	<copyright>This component is released under the GNU/GPL License</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0</version>
+	<isapplication>true</isapplication>
+	<description>RSM_JS_PLUGIN_DESC</description>
+	<languages>
+	    <language tag="en-GB">en-GB.plg_community_plg_rsmembership.ini</language>
+	</languages>
+	<files>
+		<file plugin="plg_rsmembership">plg_rsmembership.php</file>
+		<file>plg_rsmembership/favicon.png</file>
+		<file>plg_rsmembership/style.css</file>
+	</files>
+	
+	<params>
+		<param name="coreapp" type="list" default="0" label="RSM_PLUGIN_COREAPP_LABEL" description="RSM_PLUGIN_COREAPP_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="cache" type="list" default="1" label="RSM_PLUGIN_CACHING_LABEL" description="RSM_PLUGIN_CACHING_DESC">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="itemid" type="text" default="0" label="RSM_JS_CUSTOM_ITEMID" description="RSM_JS_CUSTOM_ITEMID_DESC" />
+	</params>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="coreapp" type="list" default="0" label="RSM_PLUGIN_COREAPP_LABEL" description="RSM_PLUGIN_COREAPP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="cache" type="list" default="1" label="RSM_PLUGIN_CACHING_LABEL" description="RSM_PLUGIN_CACHING_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="itemid" type="text" default="0" label="RSM_JS_CUSTOM_ITEMID" description="RSM_JS_CUSTOM_ITEMID_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</install>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>Vertical scroll recent article</name>
+	<author>Gopi.R</author>
+	<creationDate>August 2011</creationDate>
+	<copyright>(C) 2010 - 2011 www.gopiplus.com, LLC. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>gopiplus@gmail.com</authorEmail>
+	<authorUrl>http://www.gopiplus.com/extensions/2011/06/vertical-scroll-recent-article-joomla-module/</authorUrl>
+	<version>2.0</version>
+	<description>Vertical scroll recent article</description>
+	<files>
+		<filename module="mod_vertical_scroll_recent_article">mod_vertical_scroll_recent_article.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>		
+		<filename>mod_vertical_scroll_recent_article.xml</filename>
+		<filename>mod_vertical_scroll_recent_article.js</filename>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="vspost_height" type="text" default="20" label="Height" description="Each article title height in the scroller. (e.g. 40)" />
+				<field name="vspost_display" type="text" default="5" label="Display no" description="Display no of article at the same time in the scroller. (e.g. 3)" />
+		
+				<field name="@spacer" type="spacer" default="" label="" description="" />
+				<field name="vspost_category_id" type="text" default="" label="Category id" description="Give the category id you wish to select the articles. Multiple categories can be seperated by coma."/>
+				<field name="vspost_no_of_items" type="text" default="10" label="No of items" description="No of items to display"/>
+				<field name="vspost_no_of_chars" type="text" default="200" label="No of chars" description="No of chars to display"/>
+				
+				<field name="@spacer" type="spacer" default="" label="" description="" />
+				<field name="vspost_order_field" type="list" default="id" label="Order field by" description="Field to sort">
+					<option value="cn.id">Id</option>
+					<option value="cn.title">Title</option>
+					<option value="cn.created">Created</option>
+					<option value="cn.modified">Modified</option>
+					<option value="cn.ordering">Ordering</option>
+					<option value="random">Random</option>
+				</field>
+				<field name="vspost_order_by" type="list" default="desc" label="Order by" description="Sorting order">
+					<option value="asc">Asc</option>
+					<option value="desc">Desc</option>
+				</field>
+				
+				<field name="@spacer" type="spacer" default="" label="" description="" />
+				<field name="vspost_use_cache" type="list" default="N" label="Use Joomla Cache" description="Set to Yes if you need to enable joomla cache for this module">
+					<option value="N">JNO</option>
+					<option value="Y">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

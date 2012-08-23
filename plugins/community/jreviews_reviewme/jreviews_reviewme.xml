@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="community" method="upgrade">
+    <name>Reviews of Me</name>
+    <author>ClickFWD LLC</author>
+    <creationDate>March 2010</creationDate>
+    <copyright>Copyright (C) 2010-2011. All rights reserved.</copyright>
+    <license>http://www.reviewsforjoomla.com</license>
+    <authorEmail>sales@reviewsforjoomla.com</authorEmail>
+    <authorUrl>www.reviewsforjoomla.com</authorUrl>
+    <version>2.3</version>
+    <isapplication>true</isapplication>
+    <description>JReviews application for JomSocial. The app will allow other users to submit reviews about you in your profile.</description>
+        <files>
+        <file plugin="jreviews_reviewme">jreviews_reviewme.php</file>
+        <file>jreviews_reviewme/favicon.png</file>        
+        <file>index.html</file>
+    </files>
+
+    <languages>
+        <language tag="en-GB">en-GB.plg_community_jreviews_reviewme.ini</language>
+    </languages>
+    
+    
+    <!-- J16 module settings -->
+    <config>      
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="spacer" label="PLUGIN_HEADER" />
+            
+                <!-- main setup -->
+                <field type="spacer" class="jr-moduleHeader" label="MAIN SETUP" />
+                <field name="coreapp" type="list" default="1" label="Core Application" description="Causes this application to not appearin the users applications list but it will allow this application to appear in the user profile automatically if selected.">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="integration" type="list" default="com_community_access" label="Everywhere Categories" description="Select the method of integration you will be using. More info is available in the Everywhere Category Manager.">
+                    <option value="com_community_access">System User Access Groups</option>
+                </field>
+                <field name="list_limit" type="text" default="5" label="Total Number of reviews shown" description="A link to view all reviews will appear at the top of the list." />
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this plugin">
+                    <option value="1">Use global</option>
+                    <option value="0">No caching</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>    
+
+    <!-- J15 module settings -->
+    <params>
+        <!-- main setup -->
+        <param name="spacer" type="spacer" default="&lt;span class=&quot;jr-moduleHeader&quot;&gt;MAIN SETUP&lt;/span&gt;" />
+        <param name="coreapp" type="list" default="0" label="Core Application" description="Causes this application to not appearin the users applications list but it will allow this application to appear in the user profile automatically if selected.">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="integration" type="list" default="com_community_access" label="Everywhere Categories" description="Select the method of integration you will be using. More info is available in the Everywhere Category Manager.">
+            <option value="com_community_access">System User Access Groups</option>
+        </param>
+        <param name="list_limit" type="text" default="5" label="Total Number of reviews shown" description="A link to view all reviews will appear at the top of the list." />
+        <param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this plugin">
+            <option value="1">Use global</option>
+            <option value="0">No caching</option>
+        </param>
+    </params>
+</install>

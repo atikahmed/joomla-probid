@@ -1,0 +1,119 @@
+/*
+ IMPORTANT: 
+ - Replace ID with your module's unique id
+ - Do not use percentage for module width and height, enter actual fixed width in pixels
+*/
+#ajaxscrlID {
+	position: relative;
+	overflow: visible;
+	background: url(../images/bg.gif) no-repeat 0 0;/* uncomment for module background */
+}
+#ajaxscrlID .mContainer {
+	width: 200px;  /* edit this value for your own module width */
+	height: 124px; /* edit this value for your own module height */
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+#ajaxscrlID .mScroller {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+#ajaxscrlID .mScroller div {
+	display: block;
+	text-align: left;
+	margin: 0;
+	float: left;
+	width: 200px; /* edit this value for your own module width */
+	min-height: 124px; /* edit this value for your own module height */
+}
+#ajaxscrlID .mScroller div div {  /* if more than 1 item displayed use this for individual item size */
+	display: block;
+	margin-right: 5px;
+	float: left;
+	width: 140px;
+}
+#ajaxscrlID .mScroller div .title {
+	display: block;
+}
+#ajaxscrlID .mScroller div p.link {
+	margin: 0;
+	text-align: right;
+}
+#ajaxscrlID .title {
+	font-weight: bold;
+	display: block;
+}
+#ajaxscrlID .date {
+	display: block;
+}
+
+#ajaxscrlID .mNavLeft,
+#ajaxscrlID .mNavRight,
+#ajaxscrlID .mNavUp,
+#ajaxscrlID .mNavDown,
+#ajaxscrlID .mNavPause,
+#ajaxscrlID .mNavPlay {
+	width: 16px;
+	height: 16px;
+	cursor: hand;
+	cursor: pointer;
+	background: url(../images/navigation.png) no-repeat;
+	position: absolute;
+	top: -30px;
+}
+#ajaxscrlID .mNavPlay,
+#ajaxscrlID .mNavPause {
+	right: 48px;
+}
+#ajaxscrlID .mNavPlay {
+	background-position: 0 -32px;
+}
+#ajaxscrlID .mNavPlay.hover {
+	background-position: -32px -32px;
+}
+#ajaxscrlID .mNavPause {
+	background-position: -16px -32px;
+}
+#ajaxscrlID .mNavPause.hover {
+	background-position: -48px -32px;
+}
+#ajaxscrlID .mNavLeft {
+	background-position: 0 0;
+	right: 30px;
+}
+#ajaxscrlID .mNavLeft.hover {
+	background-position: -32px 0;
+}
+#ajaxscrlID .mNavRight {
+	background-position: -16px 0;
+	right: 12px;
+}
+#ajaxscrlID .mNavRight.hover {
+	background-position: -48px 0;
+}
+#ajaxscrlID .mNavUp {
+	background-position: 0 -16px;
+	right: 30px;
+}
+#ajaxscrlID .mNavUp.hover {
+	background-position: -32px -16px;
+}
+#ajaxscrlID .mNavDown {
+	background-position: -16px -16px;
+	right: 12px;
+}
+#ajaxscrlID .mNavDown.hover {
+	background-position: -48px -16px;
+}
+#ajaxscrlID .mNavLoading {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: -27px;
+	right: 0;
+}
+#ajaxscrlID .loading {
+	background: url(../images/loading.gif) no-repeat;
+}
