@@ -14,10 +14,12 @@
 		<block name="topsl" type="spotlight" main-inner="1">user1,user2,user3,user4,user5</block>
                 <block name="utility" type="spotlight" main-inner="1">utility</block>	
 	</blocks>
-	<blocks name="middle" colwidth="20">
-		<block name="right1">position-7</block>
-		<block name="right2" style="square">position-5</block>
-	</blocks>
+        <blocks name="middle" colwidth="20" fixheight="1">
+          <block name="right-mass-top" >right-mass-top</block>
+          <block name="content-mass-top">content-mass-top</block>
+          <block name="right1">left</block>
+          <block name="right2">right</block>
+      </blocks>
 	<blocks name="bottom" style="xhtml">
 		<block name="mainbottom" type="spotlight" main-inner="1">mainbottom1, mainbottom2, mainbottom3</block>
 		<block name="bottom" type="spotlight" main-inner="1">bottom</block>
