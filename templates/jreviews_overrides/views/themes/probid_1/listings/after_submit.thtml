@@ -1,0 +1,124 @@
+<?php
+//get a list of all tags 
+$local_listing_id = $this->data['Listing']['id'];
+$db = JFactory::getDbo();
+$query = "SELECT `listing_type` FROM `jos_vpbd_content_criteria` WHERE `jos_vpbd_content_criteria`.`listing_id` = " . $this->data['Listing']['id'];
+$db->setQuery($query);
+$jg_listing_type = $db->loadResult();
+$listing_handle = null;
+if ($jg_listing_type == 2) {
+	$listing_handle = "Project";
+} else {
+	$listing_handle = "Profile";
+}
+$query = 'SELECT optionid, fieldid, text FROM `#__jreviews_fieldoptions` WHERE `fieldid` = 34 ORDER BY `text`';
+$db->setQuery($query);
+$rows = $db->loadAssocList();
+//build multi-line select box of tags
+$htmlOutput = "<select size='15' class='tags-select' id='tag-select'>";
+foreach ($rows as $row) {
+$htmlOutput .= "<option value='" . $row['optionid'] . "'>";
+$htmlOutput .= $row['text'] . "</option>";
+}
+$htmlOutput .= "</select>";
+//get list of tags on this project
+$query = "SELECT optionid, text FROM `#__jreviews_fieldoptions` WHERE optionid IN ";
+$query .= "(SELECT tag_id FROM jos_probid_tags_articles WHERE article_id =" . $local_listing_id . ")";
+$db->setQuery($query);
+$rows = $db->loadAssocList();
+//get zipcode for global js variable 
+$query2 = "SELECT `jr_zipcode` FROM `jos_jreviews_content` WHERE `contentid` = " . $local_listing_id;
+$db->setQuery($query2);
+$project_zipcode = $db->loadResult();
+?>
+<style>
+.cool-tag {
+border: dotted;
+border-color: red;
+border-width: 1px;
+}
+</style>
+<script type='text/javascript'>
+//global project_zipcode for ajax calls
+var project_zipcode = <?php echo $project_zipcode; ?>;
+var articleId = <?php echo $local_listing_id; ?>
+//global array for all tags on project
+var tags = new Array();
+function addTagToProject() {
+ var tagid = parseInt(jQuery('#tag-select option:selected').val());
+ if(jQuery.inArray(tagid, tags) == -1) {
+   tagHTML = jQuery('#tag-select option:selected').html();
+   addTagToPalette(tagid, tagHTML);
+   jQuery.get("/custom/tags/addTagToProject.php",
+    { tid : tagid, aid : articleId },
+      function(data){
+      }, "html");
+ }//ends if
+}//ends addTagToProject()
+
+function removeTagFromProject(tagLi) {
+  //remove tag from global tags array
+  var tagid = jQuery(tagLi).attr('id');
+  var index = jQuery.inArray(tagid, tags);
+  tags.splice(index, 1);
+  jQuery(tagLi).remove();
+  jQuery.get("/custom/tags/removeTagFromProject.php",
+    { tid : tagid, aid : articleId },
+      function(data){
+      }, "html");
+  reorderList();
+}//ends removeTagFromProject(tagid)
+
+function addTagToPalette(tagid, tagHTML) {
+   var newDiv = document.createElement('li');
+   newDiv.id = tagid;
+   newDiv.innerHTML = tagHTML;
+   newDiv.className = 'cool-tag';
+   newDiv.onclick = function(){removeTagFromProject(this)};
+   tags.push(tagid);
+   jQuery('#tags-ul').append(newDiv);
+   reorderList();
+}//ends addTagToPalette()
+
+function initTags() {
+<?php
+//go through list of tags for this project and add to palette
+  foreach ($rows as $row) {
+    echo "addTagToPalette(" . $row['optionid'] . ", '" . $row['text'] . "');";
+  }
+?>
+}//ends initTags()
+
+function reorderList() {
+	var mylist = jQuery('#tags-ul');
+	var listitems = mylist.children('li').get();
+	listitems.sort(function(a, b) {
+	   var compA = jQuery(a).text().toUpperCase();
+	   var compB = jQuery(b).text().toUpperCase();
+	   return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+	})
+	jQuery.each(listitems, function(idx, itm) { mylist.append(itm); });
+}//ends reorderList()
+
+jQuery(document).ready(function() {
+  jQuery('#add-tags-button').click(function() {
+    addTagToProject();
+  });
+  jQuery('#tag-select').change(function() {
+    addTagToProject();
+  });
+  initTags();
+});//ends document ready
+</script>
+<h3>Choose Category Tags for your <?php echo $listing_handle; ?></h3>
+<div id='tags-div' style='width:100%;clear:both;float:left;'>
+	<div id='tags-select-div' style='float:left;width=30%;'>
+	<strong>Click on Tag to Add</strong><br/>
+	<?php echo $htmlOutput ?>
+	</div>
+	<div id='tags-palette' style='float:right;width:60%;'><strong>Click tag to remove from <?php echo $listing_handle; ?></strong><br/>
+		<ul id='tags-ul'></ul>
+	</div>
+</div>
+<?php $url = cmsFramework::route($listing['Listing']['url']); ?>
+<H4><?php echo "<a href=\"{$url}\">Click here when finished adding Tags to view your {$listing_handle}</a>"; ?></H4>

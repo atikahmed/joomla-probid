@@ -1,0 +1,102 @@
+<script type="text/javascript">
+jQuery(document).ready(function() { jreviews.common.initForm('jr_inquiryForm'); });
+</script>
+
+<?php
+//Get logged-in user Group, FREE or PREM
+$myUserID =  $User->id;
+
+global $mainframe;
+$db =& JFactory::getDBO();
+
+//Get the user group to see if they belong to the FREE or PREM
+$query = "SELECT group_id FROM #__user_usergroup_map WHERE user_id = " .$myUserID;
+$db->setQuery( $query );
+$groupDetailsInArray = $db->loadObjectList();
+$groupID = $groupDetailsInArray[0]->group_id;
+
+echo $groupID;
+echo $myUserID;
+
+?>
+
+<div id="jr_inquiryFormOuter" class="jr_form jr_formContainer" style="width:300px; margin:10px;">
+
+<!--Check first for PREM SP (20) / Vendor (21)-->
+<? if ((!$User->guest) && ($groupID==20 || $groupID==21)): ?>
+
+<?php
+//Get SP/Vendor business listing id and title
+$query="SELECT 	jos_content.id, jos_content.title 
+				FROM  		jos_content
+				WHERE 		jos_content.catid IN(79,80) AND jos_content.created_by =  '$User->id' AND jos_content.state = 1 ";
+$resultListing=mysql_query($query);
+$numListing=mysql_numrows($resultListing);
+$businessListingID=mysql_result($resultListing,$i,"id");
+$businessListingTitle=mysql_result($resultListing,$i,"title");
+?>
+
+<!--IF no business lisiting, show message and link to setup business listing-->
+
+<form id="jr_inquiryForm" name="jr_inquiryForm" action="" method="">
+
+		<input type="hidden" name="data[Inquiry][name]" id="jr_inquiryText" value="<?php echo $User->name;?>" />
+        <input type="hidden" name="data[Inquiry][text]" id="jr_inquiryText" value="project inquiry" />
+        <input type="hidden" name="data[Inquiry][email]" id="jr_inquiryEmail" value="inquiries@probiddirect.com" />
+        <input type="hidden" name="data[Inquiry][businessListingID]" id="jr_businessListingID" value="<?php echo $businessListingID;?>" />
+        <input type="hidden" name="data[Inquiry][businessListingTitle]" id="jr_businessListingTitle" value="<?php echo $businessListingTitle;?>" />
+        
+        <div class="jr_fieldDiv">
+           
+            <?php /*?><label><?php __t("User Group: "); echo $groupID;?></label><?php */?>
+            <label><?php __t("Project Name: "); echo $listing['Listing']['title'];?></label>
+            <?php /*?><label><?php __t("Your name: "); echo $User->name;?></label><?php */?>
+            <label><?php __t("Your Business: "); echo $businessListingTitle;?></label>
+            
+            <p>By submitting this inquiry, you are letting the Project Owner know that you are interested in bidding on their project.  The Project Owner will receive a link to your Business Listing with the opportunity to review your information and contact you should they so decide.</p>
+            
+        </div>
+        
+        <?php if($Access->showCaptcha()):?>
+        <div class="jr_fieldDiv">
+            <label for="jr_inquiryCode"><?php __t("Please enter the security code.");?><span class="required">*</span> 
+            <div class="jr_captcha" style="float: left;"></div>
+            <div>&nbsp;&nbsp;<input name="data[Captcha][code]" type="text" class="jr_captcha_code" size="5" maxlength="5" /></div>
+            <div class="clr">&nbsp;</div>
+            </label>
+        </div>    
+        <?php endif;?>
+
+        <div id="jr_inquiryCodeValidation" class="jr_validation"></div> 
+
+        <button id="jr_inquirySubmit" class="jrButton" type="button" onclick="jreviews.inquiry.submit(this,{submit_text:'<?php __t("Your inquiry has been submitted.",false,true);?>'});"><?php __t("Submit Inquiry");?></button>
+           
+        <span class="jr_loadingSmall jr_hidden"></span>         
+
+        &nbsp;<span id="jr_inquiryTokenValidation" class="jr_validation jr_hidden">The form could not be submitted</span> 
+		
+        
+        <input type="hidden" name="data[Inquiry][listing_id]" value="<?php echo $listing['Listing']['listing_id'];?>" />
+        <input type="hidden" name="data[Inquiry][recipient]" value="<?php echo $recipient;?>" />
+        <input type="hidden" name="data[Inquiry][bcc]" value="<?php echo (int)$bccAdmin;?>" />
+        <input type="hidden" name="data[controller]" value="inquiry" />
+        <input type="hidden" name="data[action]" value="_send" />
+        <input type="hidden" name="format" value="raw" />     
+        <input type="hidden" name="Itemid" value="<?php echo $public_menu_id;?>" />         
+        <?php echo cmsFramework::getTokenInput();?>
+   </form>
+   
+<? elseif (!$User->guest): ?>
+
+<p>This tool is available to Premium members only.</p>
+<p><a href="/my-membership">UPGRADE to a Premium membership!</a></p>
+
+<?php else:?>
+<p>Please login or <a href="/all-memberships">register</a> to inquire about this and other project listings.</p>
+<?php endif;?>
+
+</div>
+
+
+
+<div id="jr_inquiryResponse" class="hidden"></div>

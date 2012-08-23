@@ -1,0 +1,21 @@
+ <!-- This is the inquiry widget button and logic for Projects, AKA Probid This Now.-->
+									
+									<?php include("checkGroupID.php"); ?>
+                                    
+									<?php /*?><p align="left"><?php echo "Group ID: " .$groupID;?></p>
+									<p align="left"><?php echo "Project Status: " .$CustomFields->field('jr_projectstatus',$listing);?></p><?php */?>
+                                    
+                                	<div class="jrListingWidgets">
+                                    <!--Show PROBID This NOW! button for Open projects and non-PO members only -->
+                                    <?php if(($show_inquiry_button) && ($CustomFields->field('jr_projectstatus',$listing)=='Open') && ($groupID!=13) && ($groupID!=19)):?>
+                                        <!-- INQUIRY WIDGET - PROBID this NOW!-->                                         
+		                                 <a href="#jr_inquiryFormOuter" id="jrInquiryForm" class="jrButton"><?php __t("PROBID this NOW!");?></a><br />
+                                        <div style="display: none;"><?php echo $this->element('inquiry_widget');?></div>
+									<?php endif;?>
+
+                                    <?php if($show_claim_button):?>
+                                        <!-- CLAIM WIDGET -->
+                                        <?php echo $Widgets->claim($listing); ?>
+                                    <?php endif;?>
+                                	</div>
+
