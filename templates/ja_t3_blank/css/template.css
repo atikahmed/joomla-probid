@@ -25,9 +25,7 @@ a:hover, a:active, a:focus { text-decoration: underline; color: #1d1d1d; }
 /* Readon links ---*/
 p.readmore a { text-transform: uppercase; }
 
-.contentheading, .componentheading, h1, h2, h3, h4, h5 {
-	font-family: Georgia, "Times New Roman", Times, serif;
-}
+
 
 h1.componentheading, .componentheading {
 	border-bottom: 1px solid #ccc;
@@ -204,10 +202,6 @@ table.pollstableborder tr.sectiontableentry1 td { background: #fff; font-weight:
 /* MODULE STYLES
 --------------------------------------------------------- */
 div.ja-moduletable h3, div.moduletable h3 {
-	font-size: 100%;
-	text-transform: uppercase;
-	font-family: Helvetica, Arial, sans-serif;
-	border-bottom: 1px solid #ccc;
 }
 
 /* Login Module ---*/
@@ -238,18 +232,22 @@ div.bannergroup_text div.banneritem { border-bottom: 1px dotted #ccc; padding:5p
 
 /* HEADER
 --------------------------------------------------------- */
-#ja-header .main { border-bottom: 1px solid #ccc; }
 
 h1.logo, div.logo-text h1 { font-size: 250%; line-height: 1; margin-left: 10px;}
 
 /* Logo Image ---*/
-h1.logo { width: 210px; height: 30px; }
+h1.logo {width: 324px;	
+	height: 81px;
+	float:left;
+	margin-bottom:0px!important
+	}
 
 h1.logo a {
 	background: url(../images/t3_logo_light_17.png) no-repeat left;
 	display: block;
 	width: 324px;	
 	height: 81px;
+	text-indent:-999em;font-size:0px
 }
 
 /* Logo Text ---*/
@@ -408,18 +406,43 @@ a.ja-icon-video:hover span { color: #0F85D8; }
 	text-decoration: none;
 }
 /*huuthe*/
+body.bd .main{}
+#ja-search{float:right}
 .prologin{overflow:hidden}
 .prologin > div{float:left}
 .prologin span{float:left;color:#787878;font-size:20px;font-family:arial;padding:12px 13px 0px 13px}
+.proupaccount{}
 .proaccount a{display:block;width:240px;height:43px;background: url(../images/create_account_bg.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
 .prologinout a{display:block;width:91px;height:44px;background: url(../images/bg_logout.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
 .prologin{padding-top:30px;background: url(../images/bg_joinourner.png) no-repeat left top;padding-left:3px}
-#ja-mainnav{margin-top:20px}
+#ja-mainnav{}
 #ja-mainnav .main-inner1{background:#000!important;height:44px;}
 #ja-mainnav .main-inner1 .mainlevel {height:100%}
 #ja-mainnav .main-inner1 .mainlevel >ul >li{height:44px;float:left;padding:0px 15px}
 #ja-wrapper{width:960px!important;margin:0 auto}
-
-
-
-
+div.ja-moduletable h3, div.moduletable h3{}
+/*menu*/
+#ja-mainnav .main-inner1 li{height:44px!important}
+#ja-mainnav .main-inner1 li a{text-transform:uppercase;padding-top:14px;color:#fff}
+/*recent project*/
+.roknewspager-overlay{display:none!important}
+ul.roknewspager{overflow:hidden;}
+ul.roknewspager li{float:left!important;list-style:none!important;padding-left:0px!important;width:187px!important;background:none!important;height:237px!important;margin-bottom:0px!important}
+ul.roknewspager li > div{padding:10px}
+ul.roknewspager li.first{float:left!important;padding-left:0px!important}
+.roknewspager-pages{background:none!important}
+ul.roknewspager-numbers{background:none!important}
+.roknewspager-cat {font-size:11px;color:#ccc;font-weight:bold}
+.roknewspager-title {color:#000;font-weight:bold;font-size:20px!important;line-height:20px}
+.roknewspager-div .author{color:red}
+/*k2*/
+.k2ItemsBlock .paging{display:none}
+/**/
+#home_intro{overflow:hidden}
+#home_intro li{float:left;width:325px;margin-right:10px}
+#home_intro li.vendor{margin-right:0px}
+#home_intro li .top{background: url(../images/home_owner_icon.jpg) no-repeat left center;padding-left:45px;margin-bottom:15px}
+#home_intro li .bot{position:relative}
+#home_intro li .bot img{border:1px solid #ddd}
+#home_intro li .bot p{position:absolute;bottom:0px;left:0px;background: url(../images/bg_home_intro_bot.png) repeat left center;height:40px;width:325px;margin-bottom:0px}
+#home_intro li .bot p strong{display:block;}
