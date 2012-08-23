@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5.9" type="plugin" group="system" method="upgrade">
+	<name>System - RSMembership! - Authorize.Net</name>
+	<author>RSJoomla</author>
+	<creationDate>January 2011</creationDate>
+	<copyright>Copyright (C) 2011 RSJoomla.com. All rights reserved.</copyright>
+	<license>GPLv2.0</license>
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.0</version>
+	<description>RSM_AUTHORIZE_NET_PLUGIN_DESC</description>
+	<files>
+		<filename plugin="rsmembershipauthorize">rsmembershipauthorize.php</filename>
+		<folder>rsmembershipauthorize</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_rsmembershipauthorize.ini</language>
+	</languages>
+	<params>
+		<param type="text" name="x_login" default="" value="" size="20" label="RSM_AUTHORIZE_API_LOGIN" description="RSM_AUTHORIZE_API_LOGIN_DESC"/>
+		<param type="text" name="x_tran_key" default="" value="" size="16" label="RSM_AUTHORIZE_TRAN_KEY" description="RSM_AUTHORIZE_TRAN_KEY_DESC"/>
+		<param name="mode" type="radio" default="0" label="RSM_AUTHORIZE_MODE" description="RSM_AUTHORIZE_MODE_DESC">
+			<option value="0">RSM_AUTHORIZE_MODE_TEST</option>
+			<option value="1">RSM_AUTHORIZE_MODE_LIVE</option>
+		</param>
+		<param name="tax_type" type="radio" default="0" label="RSM_TAX_TYPE" description="RSM_TAX_TYPE_DESC">
+			<option value="0">RSM_TAX_PERCENT</option>
+			<option value="1">RSM_TAX_FIXED</option>
+		</param>
+		<param type="text" name="tax_value" default="0" value="" cols="55" rows="10" label="RSM_TAX_VALUE" description="RSM_TAX_VALUE_DESC"/>
+		<param name="message_type" type="radio" default="0" label="RSM_MESSAGE_TYPE" description="RSM_MESSAGE_TYPE_DESC">
+			<option value="0">RSM_MESSAGE_TYPE_PURCHASE</option>
+			<option value="1">RSM_MESSAGE_TYPE_MEMBERSHIP</option>
+		</param>
+	</params>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field type="text" name="x_login" default="" value="" size="20" label="RSM_AUTHORIZE_API_LOGIN" description="RSM_AUTHORIZE_API_LOGIN_DESC"/>
+				<field type="text" name="x_tran_key" default="" value="" size="16" label="RSM_AUTHORIZE_TRAN_KEY" description="RSM_AUTHORIZE_TRAN_KEY_DESC"/>
+				<field name="mode" type="radio" default="0" label="RSM_AUTHORIZE_MODE" description="RSM_AUTHORIZE_MODE_DESC">
+					<option value="0">RSM_AUTHORIZE_MODE_TEST</option>
+					<option value="1">RSM_AUTHORIZE_MODE_LIVE</option>
+				</field>
+				<field name="tax_type" type="radio" default="0" label="RSM_TAX_TYPE" description="RSM_TAX_TYPE_DESC">
+					<option value="0">RSM_TAX_PERCENT</option>
+					<option value="1">RSM_TAX_FIXED</option>
+				</field>
+				<field type="text" name="tax_value" default="0" value="" cols="55" rows="10" label="RSM_TAX_VALUE" description="RSM_TAX_VALUE_DESC"/>
+				<field name="message_type" type="radio" default="0" label="RSM_MESSAGE_TYPE" description="RSM_MESSAGE_TYPE_DESC">
+					<option value="0">RSM_MESSAGE_TYPE_PURCHASE</option>
+					<option value="1">RSM_MESSAGE_TYPE_MEMBERSHIP</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</install>

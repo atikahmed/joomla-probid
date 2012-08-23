@@ -1,0 +1,77 @@
+//custom css created by joeyg for job-card/service-providers pages
+h3.section {
+  margin-top: 1em;
+}
+
+#vertical_slide, #horizontal_slide {
+  background: #D0C8C8;
+  color: #8A7575;
+  padding: 10px;
+  border: 5px solid #F3F1F1;
+  font-weight: bold;
+}
+
+div.marginbottom {
+  /* Since the Fx.Slide element resets margins, we set a margin on the above element */
+  margin-bottom: 10px;
+}
+div.five-row {
+   width: 33%;
+   float: left;
+   margin-bottom: 5px;
+}
+div.service-provider {
+  width:33%;
+  float: left;
+  margin-bottom: 3px;
+}
+div.checkedBox {
+  background-color:  green;
+  color:  #fff;
+}
+div#sp-checkbox-list {
+  width:100%;
+  height:300px;
+  overflow:auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.hidden {
+display:none;
+}
+button#search-button { 
+  float:right;
+}
+div#search-button-div {
+  float:left;clear:both;width:100%;
+}
+
+div#sp-search-results {
+  float:left;
+  clear: both;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+div#spinning-wheel {
+  background-color:#000;
+  width:100%;
+  height:100%;
+  opacity:0.5;
+  text-align:center;
+position: fixed;
+top: 0px;
+left: 0px;
+background-image:url('/images/loading.gif');
+background-repeat:no-repeat;
+background-position:center;
+}
+.cool-tag {
+ border: dotted;
+border-color: red;
+border-width: 1px;
+}
+.pm {
+	color: #7D26CD;
+	font-weight: bold;
+}

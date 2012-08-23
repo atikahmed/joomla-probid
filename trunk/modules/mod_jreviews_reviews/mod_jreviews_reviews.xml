@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>JReviews Reviews Module</name>
+	<author>ClickFWD LLC</author>
+    <creationDate>February 2011</creationDate>
+	<copyright>Copyright (C) 2010-2011 ClickFWD LLC. All rights reserved.</copyright>
+	<license>Commercial</license>
+	<authorEmail>sales@reviewsforjoomla.com</authorEmail>
+	<authorUrl>www.reviewsforjoomla.org</authorUrl>
+	<version>2.3</version>
+    <description>MODULE_HEADER</description>
+	<files>
+		<filename module="mod_jreviews_reviews">mod_jreviews_reviews.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_jreviews_reviews.ini</language>
+	</languages>	
+    <!-- J16 module settings -->
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <!-- Main setup -->
+                <field type="spacer" class="jr-moduleHeader" label="MAIN SETUP" />
+                <field name="reviews_order" type="list" default="latest" label="Reviews Ordering" description="">
+                    <option value="latest">Latest Reviews</option>
+                    <option value="helpful">Most Helpful</option>
+                    <option value="random">Random</option>
+                </field>
+                <field name="reviews_type" type="list" default="all" label="Review Type" description="">
+                    <option value="all">All</option>
+                    <option value="user">User reviews</option>            
+                    <option value="editor">Editor reviews</option>            
+                </field>            
+                <field name="link_title" type="text" default="{listing_title}" size="60" label="Title format" description="You can use the {listing_title} and {review_title} tags to build your link title output. You can also specify the total number of characters to show (including the ... at the end), by adding the number inside the tag like this {listing_title 10} - {review_title 15}" />
+                <field name="show_comments" type="radio" default="1" label="Show review comments" description="">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>            
+                </field>    
+                <field name="tmpl_suffix" type="text" default="" label="JReviews Theme Suffix" description="This suffix will be applied to the module view file and is useful to create multiple instances of the module that have different outputs." />
+                <!-- thumbnails -->
+                <field type="spacer" class="jr-moduleHeader" label="THUMBNAIL SETTINGS" />
+                <field name="tn_show" type="radio" default="1" label="Show Thumbnail" description="">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>        
+                <field name="tn_mode" type="radio" default="crop" label="Thumbnail Type" description="Scale creates thumbnail with specified width and height is scaled proportionately. Crop takes a square from the center of the image and scales to the specified width.">
+                    <option value="crop">Crop</option>
+                    <option value="scale">Scale</option>
+                </field>        
+                <field name="tn_width" type="text" default="100" label="Thumbnail Width (px)" description="Thumbnail width in pixels" />
+                <!-- basic filters -->
+                <field type="spacer" class="jr-moduleHeader" label="BASIC FILTERS" />
+                <field name="extension" type="text" default="" label="Everywhere Extension" description="If you want to limit results to a specific extension, then enter it here (i.e. com_content, com_virtuemart, com_sobi2, etc.)" />                        
+                <field name="cat_auto" type="radio" default="0" label="Category Autodetect" description="Filters results for current category.">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>            
+                </field>    
+                <field name="dir" type="text" default="" label="Directory IDs (com_content)" description="Comma separated list, no spaces." />
+                <field name="section" type="text" default="" label="Section IDs (com_content)" description="Comma separated list, no spaces." />
+                <field name="category" type="text" default="" label="Category IDs (everywhere)" description="Comma separated list, no spaces." />
+                <field name="listing" type="text" default="" label="Listing IDs (everywhere)" description="Comma separated list, no spaces." />
+                <!-- pagination and slideshow -->
+                <field type="spacer" class="jr-moduleHeader" label="PAGINATION &amp; SLIDESHOW" />
+                <field name="nav_position" type="radio" default="bottom" label="Positioning of Pagination" description="">
+                    <option value="bottom">Bottom</option>
+                    <option value="side">Sides</option>
+                </field> 
+                <field name="orientation" type="list" default="horizontal" label="Module orientation" description="">
+                    <option value="horizontal">Horizonal</option>
+                    <option value="vertical">Vertical</option>
+                </field>
+                <field name="slideshow" type="radio" default="0" label="Enable Slideshow" description="The module will automatically advance pages">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="slideshow_interval" type="text" default="6" label="Slideshow Interval (sec.)" description="Time between pages in seconds" />
+                <field name="module_total" type="text" default="10" label="Max. number of results" description="" />
+                <field name="module_limit" type="text" default="5" label="Results per page" description="Sets the number of results shown in the module" />
+                <field name="columns" type="text" default="1" label="Columns" description="Number of columns or items per row to show." />
+                <field name="show_numbers" type="radio" default="0" label="Show numbers" description="Adds numbers before each review.">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>            
+                </field>    
+            </fieldset> 
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"></option>
+                </field>
+            </fieldset>                          
+         </fields>    
+    </config>
+    <!-- J15 module settings -->
+	<params>
+        <!-- main setup -->
+        <param name="spacer" type="spacer" default="&lt;span class=&quot;jr-moduleHeader&quot;&gt;MAIN SETUP&lt;/span&gt;" />
+		<param name="reviews_order" type="list" default="latest" label="Reviews Ordering" description="">
+			<option value="latest">Latest Reviews</option>
+			<option value="helpful">Most Helpful</option>
+			<option value="random">Random</option>
+		</param>
+        <param name="reviews_type" type="list" default="all" label="Review Type" description="">
+            <option value="all">All</option>
+            <option value="user">User reviews</option>            
+            <option value="editor">Editor reviews</option>            
+        </param>            
+        <param name="link_title" type="text" default="{listing_title}" size="75" label="Link title output format" description="You can use the {listing_title} and {review_title} tags to build your link title output. You can also specify the total number of characters to show (including the ... at the end), by adding the number inside the tag like this {listing_title 10} - {review_title 15}" />
+        <param name="show_comments" type="radio" default="1" label="Show review comments" description="">
+            <option value="0">No</option>
+            <option value="1">Yes</option>            
+        </param>    
+        <param name="tmpl_suffix" type="text" default="" label="JReviews Theme Suffix" description="This suffix will be applied to the module view file and is useful to create multiple instances of the module that have different outputs." />
+        <!-- thumbnails-->
+        <param name="spacer" type="spacer" default="&lt;span class=&quot;jr-moduleHeader&quot;&gt;THUMBNAIL SETTINGS&lt;/span&gt;" />
+        <param name="tn_show" type="radio" default="1" label="Show Thumbnail" description="">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>        
+        <param name="tn_mode" type="radio" default="crop" label="Thumbnail Type" description="Scale creates thumbnail with specified width and height is scaled proportionately. Crop takes a square from the center of the image and scales to the specified width.">
+            <option value="crop">Crop</option>
+            <option value="scale">Scale</option>
+        </param>        
+        <param name="tn_width" type="text" default="100" label="Thumbnail Width (px)" description="Thumbnail width in pixels" />
+         <!-- basic filters -->
+        <param name="spacer" type="spacer" default="&lt;span class=&quot;jr-moduleHeader&quot;&gt;BASIC FILTERS&lt;/span&gt;" />
+        <param name="extension" type="text" default="" label="Everywhere Extension" description="If you want to limit results to a specific extension, then enter it here (i.e. com_content, com_virtuemart, com_sobi2, etc.)" />                        
+        <param name="cat_auto" type="radio" default="0" label="Category Autodetect" description="Filters results for current category.">
+            <option value="0">No</option>
+            <option value="1">Yes</option>            
+        </param>    
+        <param name="dir" type="text" default="" label="Directory IDs (com_content)" description="Comma separated list, no spaces." />
+        <param name="section" type="text" default="" label="Section IDs (com_content)" description="Comma separated list, no spaces." />
+        <param name="category" type="text" default="" label="Category IDs (everywhere)" description="Comma separated list, no spaces." />
+        <param name="listing" type="text" default="" label="Listing IDs (everywhere)" description="Comma separated list, no spaces." />
+         <!-- pagination and slideshow -->
+        <param name="spacer" type="spacer" default="&lt;span class=&quot;jr-moduleHeader&quot;&gt;PAGINATION &amp; SLIDESHOW&lt;/span&gt;" />
+        <param name="nav_position" type="radio" default="bottom" label="Positioning of Pagination" description="">
+            <option value="bottom">Bottom</option>
+            <option value="side">Sides</option>
+        </param>      
+        <param name="orientation" type="list" default="horizontal" label="Module orientation" description="">
+            <option value="horizontal">Horizonal</option>
+            <option value="vertical">Vertical</option>
+        </param>
+        <param name="slideshow" type="radio" default="0" label="Enable Slideshow" description="The module will automatically advance pages">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param name="slideshow_interval" type="text" default="6" label="Slideshow Interval (sec.)" description="Time between pages in seconds" />
+        <param name="module_total" type="text" default="10" label="Max. number of results" description="" />
+        <param name="module_limit" type="text" default="5" label="Results per page" description="" />
+        <param name="columns" type="text" default="1" label="Columns" description="Number of columns or items per row to show." />
+        <param name="show_numbers" type="radio" default="0" label="Show numbers" description="Adds numbers before each review.">
+            <option value="0">No</option>
+            <option value="1">Yes</option>            
+        </param>    
+    </params>
+	<params group="advanced">
+        <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+	</params>
+</install>
