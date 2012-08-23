@@ -17,8 +17,9 @@ defined('_JEXEC') or die('Restricted access'); ?>
 <div class="roknewspager-wrapper">
 	<?php if($show_comment_count):?><div class="roknewspager-comments"><?php endif; ?>
 	<ul class="roknewspager">
-	<?php foreach ($list as $item) :  ?>
-	    <li>
+	<?php $count=0;?>
+	<?php foreach ($list as $item) : $count ++; ?>
+	    <li class="<?php if( $count==1 ) echo "first";?>">
 			<?php 
 				$db = JFactory::getDBO();
 				$query = 'SELECT cat.* FROM #__content as c, #__categories as cat WHERE c.id = ' . $item->id . ' and c.catid = cat.id';
