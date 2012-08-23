@@ -1,0 +1,147 @@
+<div class="contentInfoContainer">
+
+                    <!-- OVERALL RATINGS -->
+                    <?php echo $Rating->overallRatings($listing, 'content'); ?>
+
+                    <div class="contentInfo">
+
+                        <?php if($this->Config->list_show_author):?>
+                            <?php echo $Community->avatar($listing); // Listing owner avatar?>
+                            <?php __t("Written by");?> <?php echo $Community->screenName($listing);?>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <?php endif;?>
+
+                        <?php if($this->Config->list_show_date):?><?php echo $Time->nice($listing['Listing']['created']);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?>
+
+                        <?php if($this->Config->list_show_hits):?>
+                        <span class="jrHitsWidget" title="<?php __t("Views");?>">
+                            <span class="jrIcon jrIconGraph"></span>
+                            <span class="jrButtonText"><?php echo $listing['Listing']['hits']?></span>
+                        </span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <?php endif;?>
+
+                        <!-- FAVORITES -->
+                        <?php if($this->Config->favorites_enable):?><?php echo $Widgets->favorite($listing);?><?php endif;?>
+
+                        <span class="jr_loadingSmall jr_hidden"></span>
+
+                    </div>
+
+                    <div class="contentInfoButtons">
+
+                        <?php if($social_bookmarks == true): ?>
+                        <span class="socialBookmarks">
+                            <?php echo $Community->socialBookmarks($listing); ?>
+                        </span>
+                        <?php endif;?>
+
+                        <!-- COMPARE -->
+                        <?php if ($this->Config->getOverride('list_compare',$listing['ListingType']['config'])):?>
+                            <?php echo $Jreviews->compareCheckbox($listing); ?>
+                        <?php endif;?>
+
+                        <!-- LISTING MANAGER -->
+                        <?php $Jreviews->listingManager($listing);?>
+
+                        <div class="clr"></div>
+
+                    </div>
+
+                </div>
+                    <?php if($this->name != 'listings'): // Only show when in com_content page?>
+                            <!-- BEGIN LISTING DETAILS -->
+
+                                <?php if((!empty($listing['Listing']['images']) || $this->Config->content_default_image) && $enableIntroImage && $introImage):?>
+                                    <!-- MAIN IMAGE -->
+                                    <div class="itemMainImage" style="width:<?php echo $introThumbnailSize;?>px;"><?php echo $introImage;?></div>
+                                <?php endif;?>
+							
+                                <!-- SUMMARY/DESCRIPTION -->
+                                <div class="contentFulltext">
+                                    <h4>Project Description: <?php echo $listing['Listing']['text'] !== strip_tags($listing['Listing']['text']) ? $listing['Listing']['text'] : nl2br($listing['Listing']['text']);?></h4>
+                                </div>
+								<?php  
+								//BEGIN JOEYG CODE FOR SHOWING PROJECT MANAGER FOR PROJECT
+								$pmsquery = "SELECT a.article_id, a.user_id, a.position, a.accepted, b.title AS title FROM jos_probid_friends a INNER JOIN `jos_vpbd_content` b ";
+								$pmsquery .= "ON a.user_id = b.created_by WHERE a.article_id = " . $listing['Listing']['listing_id'] . " AND a.position = 1";
+								$db =& JFactory::getDBO();
+								$db->setQuery($pmsquery);
+								$pmsrows = $db->loadAssocList();
+								if(count($pmsrows) > 0) {
+									echo "<div class='jr_customFields'><div class='fieldGroup project-listing-information'><div class='fieldRow jr_projectstatus'>";
+									echo "<div class='fieldLabel'>Project Manager(s)</div>";
+									echo "<div class='fieldValue'>";
+									foreach($pmsrows as $row) {
+										$htmlOutput = $row['title'] . ", ";
+									}
+									$htmlOutput = substr(trim($htmlOutput), 0, -1);
+									echo $htmlOutput;
+									echo "</div></div></div></div>";
+								}
+								//END JOEYG CODE FOR SHOWING PROJECT MANAGER FOR PROJECT
+								?>
+                                <!-- CUSTOM FIELDS -->
+                                <?php echo $CustomFields->displayAll($listing,'content');?>
+                                
+                                <!-- TEST ONLY -->
+                                <?php /*?><?php echo 'Project Status', $CustomFields->field('jr_projectstatus',$listing);?><?php */?>
+                                <!-- TEST ONLY -->
+								
+								<?php
+						        //BEGIN JOEYG CODE HERE
+						        $tagsquery = "SELECT `text` FROM `jos_jreviews_fieldoptions` WHERE `optionid` IN (SELECT `tag_id` FROM `jos_probid_tags_articles` WHERE `article_id` = ";
+								$tagsquery .= $listing['Listing']['listing_id'] . ") ORDER BY `text`";
+								$db =& JFactory::getDBO();
+								$currentUser =& JFactory::getUser();
+								$db->setQuery($tagsquery);
+								$tagsrows = $db->loadAssocList();
+								echo '<div class="fieldGroup">';
+								echo '<h3 class="fieldGroupTitle" style="visibility: visible;display:inline;margin-right:10px;">Category Tags</h3>';
+								//ONLY SHOW ADD/EDIT IF THE CURRENT USER IS THE PROJECT OWNER
+								if($currentUser->id == $listing['Listing']['user_id']) {
+									echo '<a href="#" style="font-size:smaller"';
+									echo ' onclick=jQuery("#tabs").tabs("select",2)';
+									echo '>Add/Remove Tags</a><br/>';						
+									if(empty($tagsrows)) {	
+										echo '<p class="attention">You must add Category Tags to your Project for Service Professionals to be able to find your Project.</p>';
+									}
+								}//ends if user is owner 
+								$tagsOutput = "";
+								foreach ($tagsrows as $row) {
+									$tagsOutput .= $row['text'] . ", ";
+								}
+								$tagsOutput = substr(trim($tagsOutput), 0, -1);
+								echo $tagsOutput;
+								echo '</div>';
+						        //END JOEYG CODE HERE
+								?>
+                                
+
+                                <!-- IMAGE GALLERY -->
+                                <?php if(($enableGallery && (($enableIntroImage && $imageCount > 1) || (!$enableIntroImage && $imageCount >= 1)))):?>
+                                    <div class="clear"></div>
+                                    <h3 class="jrHeading">
+                                        <span class="jrIcon jrIconGallery"></span>
+                                        <span class="jrHeadingText"><?php __t("Image Gallery");?></span>
+                                    </h3>
+                                    <div class="itemThumbnails clearfix">
+                                    <?php for($i=(int)$enableIntroImage;$i<$imageCount;$i++):?>
+                                        <div><?php echo $Thumbnail->lightbox($listing,$i,array('tn_mode'=>$galleryThumbnailMode,'dimensions'=>array($galleryThumbnailSize)));?></div>
+                                    <?php endfor;?>
+                                    </div>
+                                <?php endif;?>
+
+                                <!--  BEGIN MAP -->
+                                <?php if($show_map && isset($listing['Geomaps']) && abs($listing['Geomaps']['lat']) > 0 && abs($listing['Geomaps']['lon']) > 0):?>
+                                <div class="clear"></div>
+                                <h3 class="jrHeading">
+                                    <span class="jrIcon jrIconMap"></span>
+                                    <span class="jrHeadingText"><?php __t("Map");?></span>
+                                </h3>
+                                <?php echo $this->renderControllerView('geomaps','map_detail',array('width'=>'100%','height'=>'300'));?>
+                                <?php endif;?>
+                                <!--  END MAP -->
+
+                                <div class="clr"></div>
+                            <!-- END LISTING DETAILS -->
+                            <?php endif;?>

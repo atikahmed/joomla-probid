@@ -1,0 +1,119 @@
+<?php /* BEGIN Code added by Focus Data Systems */ ?>
+<?php $myURI = $_SERVER['REQUEST_URI'];?>
+<?php /* END Code added by Focus Data Systems */ ?>
+
+<?php if($this->action == 'search'):?>
+
+        <?php __t("Your search did not return any results. Try adjusting your search values.<br /><br /><a href=\"javascript:window.history.go(-1)\">Click here to go back.</a>");?>
+
+<?php elseif($this->action == 'favorites'):?>
+
+        <?php __t("Your Preferred/Favorites list is empty.");?>
+        
+        <?php __t("You can perform a Search or use the Directories to add items your Preferred/Favorites list.");?>
+
+<?php elseif($this->action == 'section'):?>
+
+        <?php if($this->Config->list_show_sectionlist):?>
+            <?php __t("No entries were found");?>
+        <?php endif;?>
+        
+<?php elseif($this->action == 'category'):?>
+
+        <?php if($this->Config->list_show_child_listings):?>
+            <?php __t("No entries were found");?>
+        <?php endif;?> 
+		
+<?php elseif($this->action == 'mylistings'):?>
+		
+		<?php /* BEGIN Code added by Focus Data Systems */ ?>
+			
+		<?php if($myURI == '/my-projects'):?>
+				
+				<!-- BEGIN ADD FIRST PROJECT LISTING -->
+		
+				<div class="jr_itemList_new jrButton" style="float:left;">
+				<span class="jrIcon jrIconAddListing"></span>
+				<span class="jrButtonText"><a href="new-project">Post My First Project</a></span>
+				</div>
+				
+		<?php elseif($myURI == '/my-business'):?>
+				
+				<!-- BEGIN ADD NEW BUSINESS LISTING - SERVICE PROVIDER -->
+		
+				<div class="jr_itemList_new jrButton" style="float:left;">
+				<span class="jrIcon jrIconAddListing"></span>
+				<span class="jrButtonText"><a href="new-service-professional">Setup My Business Listing</a></span>
+				</div>
+                
+                <div style="float:left;"><p>Your Business Listing is your main point of contact for all your activities. </p>
+                <p>For Premium Service Providers, please set up your Business Listing in order to activate your <strong>My Office</strong> page.</p></div>
+				
+		<?php elseif($myURI == '/my-business-vendor'):?>
+				
+				<!-- BEGIN ADD NEW BUSINESS LISTING - VENDOR -->
+		
+				<div class="jr_itemList_new jrButton" style="float:left;">
+				<span class="jrIcon jrIconAddListing"></span>
+				<span class="jrButtonText"><a href="new-vendor">Setup My Business Listing</a></span>
+				</div>
+                
+                <div style="float:left;"><p>Your Business Listing is your main point of contact for all your activities. </p>
+                <p>For Premium Vendors, please set up your Business Listing in order to activate your <strong>My Office</strong> page.</p></div>
+				
+		<?php elseif($myURI == '/my-products'):?>
+				
+				<!-- BEGIN ADD NEW PRODUCT LISTING -->
+                
+                <?php include "checkListingID.php"; ?>
+                
+                <?php if($numListing):?>
+                <div class="jr_itemList_new jrButton" style="float:left;">
+					<span class="jrIcon jrIconAddListing"></span>
+					<span class="jrButtonText"><a href="new-product-listing">Post My First Product</a></span>
+			    </div>
+               <p>&nbsp;</p>
+               <?php else: ?>
+               <div style="float:left;"><p>Before posting Products, you must first <a href="my-business-vendor">Setup Your Business Listing</a>.</p></div>
+			   <?php endif; ?>
+               
+               <?php include "checkGroupID.php"; ?>
+                
+                <!--IF this is a free vendor, show this message.-->
+                <?php if($groupID==15):?>
+                <div style="float:left;"><p>Please note that the FREE Vendor membership is <strong>limited to one Product Listing.</strong> </p>
+                <p>To post additional Products, please <a href="my-membership">UPGRADE to a Premium Vendor membership.</a></p></div>
+                <?php endif;?>
+                
+                
+		<?php elseif($myURI == '/my-team/client-references'):?>
+				
+				<!-- BEGIN ADD NEW CLIENT REFERENCE LISTING -->
+				<div style="float:left;"><p>The <strong>Client References</strong> section gives you an opportunity to post and display a list of clients you have done work for, whether befor or after becoming a PROBIDdirect.com member.</p>
+                <p><strong>For Premium Service Professionals only.</strong> These reference listings will be displayed on your <strong>My Office</strong> page.</p></div>
+
+				<div class="jr_itemList_new jrButton" style="float:left;">
+				<span class="jrIcon jrIconAddListing"></span>
+				<span class="jrButtonText"><a href="my-team/client-references/new-reference">Post My First Client Reference</a></span>
+				</div>
+		
+		<?php else:?>
+		
+		<?php __t("Your list is empty.");?>
+		
+		<?php endif;?>
+	
+<?php elseif($myURI == '/my-team'):?>
+
+			<!-- BEGIN EMPTY MY TEAM LIST  -->
+		
+				<div style="float:left;"><p>This section of your MY TEAM consists of other Service Professionals and Vendors that you are working with on <strong>one or more Projects.</strong></p>
+                <p>For Premium Service Professionals and Vendors, these other business listings will also be displayed on your <strong>My Office</strong> page.</p></div>
+
+<?php /* END Code added by Focus Data Systems */ ?>
+
+<?php else:?>
+
+        <?php __t("No entries were found in this category.");?>
+
+<?php endif;?>
