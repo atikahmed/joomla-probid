@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.0.0" method="upgrade">
+	<name>Ptslideshow</name>
+	<author>Ptslideshow</author>
+	<version>1.0</version>
+	<description></description>
+	<files>
+        <filename module="mod_ptslideshow">mod_ptslideshow.xml</filename>
+        <filename module="mod_ptslideshow">mod_ptslideshow.php</filename>
+        <filename module="mod_ptslideshow">index.html</filename>
+        <filename module="mod_ptslideshow">helper.php</filename>
+		<folder module="mod_ptslideshow">tmpl</folder>
+		<folder module="mod_ptslideshow">css</folder>
+		<folder module="mod_ptslideshow">js</folder>
+		<folder module="mod_ptslideshow">images</folder>
+		<folder module="mod_ptslideshow">language</folder>
+    </files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_ptslideshow.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_ptslideshow/models/fields/">
+				<field
+					name="header"
+					type="header">					
+				</field>
+				<field
+					name="category_"
+					type="category"
+					extension="com_ptslideshow"
+					default="1"
+					size="1"
+					label="Category"
+					description="Select a category which you want to run">					
+				</field>				
+				<field
+					name="load_jquery"
+					type="radio"
+					default="1"
+					label="Load jquery 1.7"
+					description="">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+				<field
+					name="load_rotator"
+					type="radio"
+					default="1"
+					label="Load jquery for rotator"
+					description="">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+				</fieldset>
+				<fieldset name="CONFIGURE">
+				<field
+					name="width"
+					type="text"
+					default="720"
+					label="Width"
+					description="The width of the rotator in pixel">
+				</field>
+				<field
+					name="height"
+					type="text"
+					default="400"
+					label="Height"
+					description="The height of the rotator in pixel">
+				</field>
+				<field
+					name="button_width"
+					type="text"
+					default="24"
+					label="Button Width"
+					description="The width of the thumbnails and buttons in pixel">
+				</field>
+				<field
+					name="button_height"
+					type="text"
+					default="24"
+					label="Button Height"
+					description="The height of the thumbnails and buttons in pixel">
+				</field>
+				<field
+					name="button_margin"
+					type="text"
+					default="5"
+					label="Button Margin"
+					description="The margin size between thumbnails/buttons in pixel">
+				</field>
+				<field
+					name="auto_start"
+					type="radio"
+					default="false"
+					label="Auto Start"
+					description="Specify if image rotation initially starts">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="delay"
+					type="text"
+					default="2000"
+					label="Delay"
+					description="The global time delay for image rotation in milliseconds. If delay is set per slide, it will take precedence over the global delay">
+				</field>
+				<field
+					name="transition"
+					type="list"
+					default="random"
+					label="Transition"
+					description="The global transition use for images. If transition is set per slide, it will take precedence over the global transition">
+					<option value="fade">fade</option>
+					<option value="block.top">block.top</option>
+					<option value="block.right">block.right</option>
+					<option value="block.bottom">block.bottom</option>
+					<option value="block.left">block.left</option>
+					<option value="block.drop">block.drop</option>
+					<option value="diag.fade">diag.fade</option>
+					<option value="diag.exp">diag.exp</option>
+					<option value="rev.diag.fade">rev.diag.fade</option>
+					<option value="rev.diag.exp">rev.diag.exp</option>
+					<option value="block.fade">block.fade</option>
+					<option value="block.exp">block.exp</option>
+					<option value="block.top.zz">block.top.zz</option>
+					<option value="block.bottom.zz">block.bottom.zz</option>
+					<option value="block.left.zz">block.left.zz</option>
+					<option value="block.right.zz">block.right.zz</option>
+					<option value="spiral.in">spiral.in</option>
+					<option value="spiral.out">spiral.out</option>
+					<option value="vert.tl">vert.tl</option>
+					<option value="vert.tr">vert.tr</option>
+					<option value="vert.bl">vert.bl</option>
+					<option value="vert.br">vert.br</option>
+					<option value="fade.left">fade.left</option>.
+					<option value="fade.right">fade.right</option>
+					<option value="alt.left">alt.left</option>
+					<option value="alt.right">alt.right</option>
+					<option value="blinds.left">blinds.left</option>
+					<option value="blinds.right">blinds.right</option>
+					<option value="vert.random.fade">vert.random.fade</option>
+					<option value="horz.tl">horz.tl</option>
+					<option value="horz.tr">horz.tr</option>
+					<option value="horz.bl">horz.bl</option>
+					<option value="horz.br">horz.br</option>
+					<option value="fade.top">fade.top</option>
+					<option value="fade.bottom">fade.bottom</option>
+					<option value="alt.top">alt.top</option>
+					<option value="alt.bottom">alt.bottom</option>
+					<option value="blinds.top">blinds.top</option>
+					<option value="blinds.bottom">blinds.bottom</option>
+					<option value="horz.random.fade">horz.random.fade</option>
+					<option value="none">none</option>					
+					<option value="random">random</option>
+				</field>
+				<field
+					name="transition_speed"
+					type="text"
+					default="400"
+					label="Transition Speed"
+					description="The transition speed/duration use for image transition">
+				</field>
+				<field
+					name="auto_center"
+					type="radio"
+					default="false"
+					label="Auto Center"
+					description="If images are automatically centered">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="cpanel_position"
+					type="list"
+					default="inside"
+					label="Cpanel Position"
+					description="The position of the control panel">
+					<option
+						value="inside">inside</option>
+					<option
+						value="outside">outside</option>
+				</field>
+				<field
+					name="cpanel_align"
+					type="list"
+					default="BR"
+					label="Cpanel Align"
+					description="The alignment of the control panel">
+					<option
+						value="TL">top-left</option>
+					<option
+						value="TR">top-right</option>
+					<option
+						value="TC">top-center</option>
+					<option
+						value="BL">bottom-left</option>
+					<option
+						value="BR">bottom-right</option>
+					<option
+						value="BC">bottom-center</option>
+				</field>
+				<field
+					name="timer_align"
+					type="list"
+					default="top"
+					label="Timer Align"
+					description="The alignment of the timer bar">
+					<option
+						value="top">top</option>
+					<option
+						value="bottom">bottom</option>
+				</field>
+				<field
+					name="display_thumbs"
+					type="radio"
+					default="true"
+					label="Display Thumbs"
+					description="To specify if the thumbnails are visible">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="display_dbuttons"
+					type="radio"
+					default="true"
+					label="Display Dbuttons"
+					description="To specify if the directional buttons are visible">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="display_playbutton"
+					type="radio"
+					default="true"
+					label="Display Playbutton"
+					description="To specify if the play/pause button is visible">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="display_numbers"
+					type="radio"
+					default="true"
+					label="Display Numbers"
+					description="To specify if thumbnails are auto numbered">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="display_timer"
+					type="radio"
+					default="true"
+					label="Display Timer"
+					description="To specify if the timer indicator bar is visible">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="mouseover_pause"
+					type="radio"
+					default="false"
+					label="Mouseover Pause"
+					description="To specify if rotation pauses on mouseover and resumes on mouseout">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="cpanel_mouseover"
+					type="radio"
+					default="false"
+					label="Cpanel Mouseover"
+					description="To specify if the control panel appears only on mouseover and hides on mouseout">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="text_mouseover"
+					type="radio"
+					default="false"
+					label="Text Mouseover"
+					description="To specify if the text box appears only on mouseover and hides on mouseout">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="text_effect"
+					type="list"
+					default="fade"
+					label="Text Effect"
+					description="The effect to display the text box">
+					<option
+						value="fade">fade</option>
+					<option
+						value="left">left</option>
+					<option
+						value="right">right</option>
+					<option
+						value="none">none</option>
+				</field>
+				<field
+					name="text_sync"
+					type="radio"
+					default="true"
+					label="Text Sync"
+					description="Specify true for text box to appear only after transition is completed or false for text box to appear immediately">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="tooltip_type"
+					type="list"
+					default="image"
+					label="Tooltip Type"
+					description="To specify the tooltip type">
+					<option
+						value="image">image</option>
+					<option
+						value="text">text</option>
+					<option
+						value="none">none</option>
+				</field>
+				<field
+					name="shuffle"
+					type="radio"
+					default="false"
+					label="Shuffle"
+					description="To specify if slides are displayed in random order">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				<field
+					name="block_size"
+					type="text"
+					default="75"
+					label="Block Size"
+					description="The size of the blocks use for block transitions">
+				</field>
+				<field
+					name="vert_size"
+					type="text"
+					default="55"
+					label="Vert Size"
+					description="The size of the vertical stripes use for vertical stripe transitions">
+				</field>
+				<field
+					name="horz_size"
+					type="text"
+					default="50"
+					label="Horz Size"
+					description="The size of the horizontal stripes use for horizontal stripe transitions">
+				</field>
+				<field
+					name="block_delay"
+					type="text"
+					default="25"
+					label="Block Delay"
+					description="The delay when the next block transition occurs in sequence. (in milliseconds)">
+				</field>
+				<field
+					name="vstripe_delay"
+					type="text"
+					default="75"
+					label="Vstripe Delay"
+					description="The delay when the next vertical stripe transition occurs in sequence. (in milliseconds)">
+				</field>
+				<field
+					name="hstripe_delay"
+					type="text"
+					default="180"
+					label="Hstripe Delay"
+					description="The delay when the next horizontal stripe transition occurs in sequence. (in milliseconds)">
+				</field>
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="Caching"
+					description="Select whether to cache the content this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field 
+					name="cache_time" 
+					type="text" 
+					default="900" 
+					label="Cache time" 
+					description="The time before the module is recached"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</install>

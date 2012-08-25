@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="RST_KB_ARTICLE_DEFAULT_LAYOUT">
+		<message>
+			<![CDATA[RST_KB_ARTICLE_DEFAULT_LAYOUT]]>
+		</message>
+	</layout>
+	<state>
+		<name>RST_KB_ARTICLE_DEFAULT_LAYOUT</name>
+		<url addpath="/administrator/components/com_rsticketspro/elements">
+			<param name="cid" type="article" default="0" label="RST_KB_SELECT_ARTICLE" description="RST_KB_SELECT_ARTICLE" />
+		</url>
+	</state>
+	<config>
+		<fields name="request">
+			<fieldset name="request" addfieldpath="/administrator/components/com_rsticketspro/fields">
+				<field name="cid" type="article" default="0" label="RST_KB_SELECT_ARTICLE" description="RST_KB_SELECT_ARTICLE" />
+			</fieldset>
+		</fields>
+	</config>
+</metadata>

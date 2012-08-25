@@ -11,6 +11,7 @@
 		<block name="header" type="header" main-inner="1"></block>
 		<block name="mainnav" type="mainnav" main-inner="1"></block>
 		<block name="cpanel" type="usertools/cpanel"></block>
+                 <block name="feature" type="spotlight" main-inner="1">feature</block>	
 		<block name="topsl" type="spotlight" main-inner="1">user1,user2,user3,user4,user5</block>
                 <block name="utility" type="spotlight" main-inner="1">utility</block>	
 	</blocks>
