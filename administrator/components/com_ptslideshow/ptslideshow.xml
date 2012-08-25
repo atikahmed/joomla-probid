@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade">
+	<name>ptslideshow</name>
+	<creationDate>August 24 2012</creationDate>
+	<copyright>Copyright (C) 2012. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>ptslideshow</author>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.0</version>
+	<description></description>
+
+	<install> <!-- Runs on install -->
+    	<sql>
+        	<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+  		</sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+    	<sql>
+        	<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+  		</sql>
+   </uninstall>
+
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>ptslideshow.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<folder>views</folder>
+		<folder>models</folder>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_ptslideshow.ini
+		</language>
+	</languages>
+	<administration>
+		<menu img="components/com_ptslideshow/images/icon_slideshow.png">COM_PTSLIDESHOW</menu>
+		<submenu>
+			<menu img="components/com_ptslideshow/images/icon_slideshow.png" link="option=com_ptslideshow&amp;view=slideshows" view="slideshows" alt="Ptslideshow/Slideshows">COM_PTSLIDESHOW_SLIDESHOWS</menu>
+			<menu img="class:category" link="option=com_categories&amp;view=categories&amp;extension=com_ptslideshow" view="categories" alt="Ptslideshow/Categories">COM_PTSLIDESHOW_CATEGORIES</menu>
+        </submenu>
+		<files folder="administrator">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>ptslideshow.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<folder>images</folder>
+		</files>
+		<languages folder="administrator">
+			<language tag="en-GB">language/en-GB.com_ptslideshow.ini
+			</language>
+			<language tag="en-GB">language/en-GB.com_ptslideshow.sys.ini
+			</language>
+		</languages>
+	</administration>
+</extension>
+
