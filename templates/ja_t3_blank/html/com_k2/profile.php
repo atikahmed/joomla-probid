@@ -23,7 +23,7 @@ defined('_JEXEC') or die('Restricted access');
 		<table class="admintable" cellpadding="0" cellspacing="0">
 			<tr>
 				<th colspan="2" class="k2ProfileHeading">
-					<?php echo JText::_('K2_ACCOUNT_DETAILS'); ?>
+					<?php echo JText::_('COM_USERS_PERSONAL_DETAILS'); ?>
 				</th>
 			</tr>
 			<tr>
@@ -77,49 +77,7 @@ defined('_JEXEC') or die('Restricted access');
 					<input class="inputbox validate-passverify" type="password" id="password2" name="<?php echo (K2_JVERSION=='16')?'jform[password2]':'password2'?>" size="40" value="" />
 				</td>
 			</tr>
-			<tr>
-				<th colspan="2" class="k2ProfileHeading">
-					<?php echo JText::_('K2_PERSONAL_DETAILS'); ?>
-				</th>
-			</tr>
-			<!-- K2 attached fields -->
-			<tr>
-				<td class="key">
-					<label id="gendermsg" for="gender"><?php echo JText::_('K2_GENDER'); ?></label>
-				</td>
-				<td>
-					<?php echo $this->lists['gender']; ?>
-				</td>
-			</tr>
-			<tr>
-				<td class="key">
-					<label id="descriptionmsg" for="description"><?php echo JText::_('K2_DESCRIPTION'); ?></label>
-				</td>
-				<td>
-					<?php echo $this->editor; ?>
-				</td>
-			</tr>
-			<tr>
-				<td class="key">
-					<label id="imagemsg" for="image"><?php echo JText::_( 'K2_USER_IMAGE_AVATAR' ); ?></label>
-				</td>
-				<td>
-					<input type="file" id="image" name="image"/>
-					<?php if ($this->K2User->image): ?>
-					<img class="k2AccountPageImage" src="<?php echo JURI::root(true).'/media/k2/users/'.$this->K2User->image; ?>" alt="<?php echo $this->user->name; ?>" />
-					<input type="checkbox" name="del_image" id="del_image" />
-					<label for="del_image"><?php echo JText::_('K2_CHECK_THIS_BOX_TO_DELETE_CURRENT_IMAGE_OR_JUST_UPLOAD_A_NEW_IMAGE_TO_REPLACE_THE_EXISTING_ONE'); ?></label>
-					<?php endif; ?>
-				</td>
-			</tr>
-			<tr>
-				<td class="key">
-					<label id="urlmsg" for="url"><?php echo JText::_('K2_URL'); ?></label>
-				</td>
-				<td>
-					<input type="text" size="50" value="<?php echo $this->K2User->url; ?>" name="url" id="url"/>
-				</td>
-			</tr>
+			
 			<?php if(count(array_filter($this->K2Plugins))): ?>
 			<!-- K2 Plugin attached fields -->
 			<tr>
@@ -158,7 +116,7 @@ defined('_JEXEC') or die('Restricted access');
 					<?php if (isset($fieldset->label)):// If the fieldset has a label set, display it as the legend.?>
 					<tr>
 						<th colspan="2" class="k2ProfileHeading">
-							<?php echo JText::_($fieldset->label);?>
+							<?php echo JText::_('COM_USERS_CONTACT_DETAILS'); ?>
 						</th>
 					</tr>
 					<?php endif;?>
@@ -184,8 +142,15 @@ defined('_JEXEC') or die('Restricted access');
 		</table>
 		<div class="k2AccountPageUpdate">
 			<button class="button validate" type="submit" onclick="submitbutton( this.form );return false;">
-				<?php echo JText::_('K2_SAVE'); ?>
+				<?php echo JText::_('K2_SUBMIT'); ?>
 			</button>
+			<script type="text/javascript">
+				function hrefCancel()
+				{
+					window.location = window.location.href.split('?')[0];
+				}
+			</script>
+			<a href="javascript:void(0);" onclick="hrefCancel();"><?php echo JText::_('K2_CANCEL'); ?></a>
 		</div>
 	</div>
 	<input type="hidden" name="<?php echo (K2_JVERSION=='16')?'jform[username]':'username'?>" value="<?php echo $this->user->get('username'); ?>" />
