@@ -178,13 +178,13 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 				
 				<?php 
 					$db = JFactory::getDBO();
-					$query = 'SELECT cc.fulltext FROM #__content_copy as cc WHERE cc.id = ' . $listing['Listing']['listing_id'];
+					$query = 'SELECT cc.fulltext FROM #__content as cc WHERE cc.id = ' . $listing['Listing']['listing_id'];
 					$db->setQuery($query);
 						
 					$content_copy = $db->loadObject();
 				?>
-	
-				<div class="fieldGroup"><div class="fieldRow jr_fulltext"><div class="fieldLabel">Project Description</div><div class="fieldValue "><?php echo $content_copy->fulltext !== strip_tags($content_copy->fulltext) ? $content_copy->fulltext : nl2br($content_copy->fulltext);?> <a href="<?php echo $listing['Listing']['url']; ?>"><?php __t("read more") ?></a></div></div></div>
+
+				<div class="fieldGroup"><div class="fieldRow jr_fulltext"><div class="fieldLabel">Project Description:</div><div class="fieldValue "><?php echo $content_copy->fulltext !== strip_tags($content_copy->fulltext) ? $content_copy->fulltext : nl2br($content_copy->fulltext);?> <a href="<?php echo $listing['Listing']['url']; ?>"><?php __t("read more") ?></a></div></div></div>
 	
 				<!-- CUSTOM FIELDS -->
 				<?php echo $CustomFields->displayAll($listing,'list');?>

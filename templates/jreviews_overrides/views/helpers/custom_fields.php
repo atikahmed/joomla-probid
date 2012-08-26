@@ -287,7 +287,7 @@ class CustomFieldsHelper extends MyHelper
                     {
                         $output .= '<div class="fieldRow ' . $field['name'] . '">'; 							 
 
-                        $output .= '<div class="fieldLabel' . ($field['properties']['show_title'] ? '' : 'Disabled') . '">' . ($field['properties']['show_title'] ? $field['title'] : '') . '</div>';
+                        $output .= '<div class="fieldLabel' . ($field['properties']['show_title'] ? '' : 'Disabled') . '">' . ($field['properties']['show_title'] ? $field['title'] : '') . ':</div>';
 
                         $values = $this->display($field['name'], $entry);
 

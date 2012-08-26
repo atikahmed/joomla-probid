@@ -66,7 +66,7 @@
 							
                                 <!-- SUMMARY/DESCRIPTION -->
                                 <div class="contentFulltext">
-                                    <h4>Project Description: <?php echo $listing['Listing']['text'] !== strip_tags($listing['Listing']['text']) ? $listing['Listing']['text'] : nl2br($listing['Listing']['text']);?></h4>
+									<div class="fieldGroup"><div class="fieldRow jr_fulltext"><div class="fieldLabel">Project Description:</div><div class="fieldValue "></div><?php echo $listing['Listing']['text'] !== strip_tags($listing['Listing']['text']) ? $listing['Listing']['text'] : nl2br($listing['Listing']['text']);?></div></div>
                                 </div>
 								<?php  
 								//BEGIN JOEYG CODE FOR SHOWING PROJECT MANAGER FOR PROJECT

@@ -43,7 +43,7 @@ $used_trials = Sanitize::getBool($paid_plans,'used_trials') && count($paid_plans
 
 <?php if(!$used_trials):?>
 <fieldset>
-
+<legend><?php echo __t("Service Professional Details");?></legend>
     <?php if( $User->id == 0 ):?>
 
         <?php if($this->Config->content_name == 'required' || $this->Config->content_name == 'optional'):?>
@@ -66,6 +66,24 @@ $used_trials = Sanitize::getBool($paid_plans,'used_trials') && count($paid_plans
         <label class="jrLabel"><?php __t("Title");?><span class="required"><?php __t("*");?></span></label>
         <input type="text" id="title" class="jrTitle" name="data[Listing][title]" value="<?php echo htmlspecialchars($listing['Listing']['title'],ENT_QUOTES,cmsFramework::getCharset());?>" maxlength="255" />
     </div>
+	
+	<?php if($this->Config->content_summary == 'required' || $this->Config->content_summary == 'optional' || $this->Config->content_description == 'required' || $this->Config->content_description == 'optional'):?>
+
+		<?php if($this->Config->content_summary == 'required' || $this->Config->content_summary == 'optional'):?>
+		<div class="jr_fieldDiv">
+		   <label class="jrLabel"><?php __t("Summary");?><?php if($this->Config->content_summary == 'required'):?><span class="required"><?php __t("*");?></span><?php endif;?></label>
+			<textarea id="introtext" name="data[Listing][introtext]" cols="45" rows="5" class="jrTextArea wysiwyg_editor"><?php echo $listing['Listing']['summary'];?></textarea>
+		</div>
+		<?php endif;?>
+		
+		<?php if($this->Config->content_description == 'required' || $this->Config->content_description == 'optional'):?>
+		<div class="jr_fieldDiv">
+		   <label class="jrLabel"><?php __t("Description");?><?php if($this->Config->content_description == 'required'):?><span class="required"><?php __t("*");?></span><?php endif;?></label>
+			<textarea id="fulltext" name="data[Listing][fulltext]" cols="45" rows="10" class="jrTextArea wysiwyg_editor"><?php echo $listing['Listing']['description'];?></textarea>
+		</div>
+		<?php endif;?>
+
+	<?php endif;?>
 
     <?php if(($alias_field == 'admin' && $this->Access->isAdmin()) || ($alias_field == 'config' && $this->Access->canAddListing($this->User->id))): // Only admins and super admins see the alias field.?>
         <div class="jr_fieldDiv" id="jr_listingTitleAlias">
@@ -76,33 +94,8 @@ $used_trials = Sanitize::getBool($paid_plans,'used_trials') && count($paid_plans
      
 </fieldset>
 
-<?php if($this->Config->content_summary == 'required' || $this->Config->content_summary == 'optional' || $this->Config->content_description == 'required' || $this->Config->content_description == 'optional'):?>
-
-<fieldset>
-
-    <?php if($this->Config->content_summary == 'required' || $this->Config->content_summary == 'optional'):?>
-    <div class="jr_fieldDiv">
-       <label class="jrLabel"><?php __t("Summary");?><?php if($this->Config->content_summary == 'required'):?><span class="required"><?php __t("*");?></span><?php endif;?></label>
-        <textarea id="introtext" name="data[Listing][introtext]" cols="45" rows="5" class="jrTextArea wysiwyg_editor"><?php echo $listing['Listing']['summary'];?></textarea>
-    </div>
-    <?php endif;?>
-    
-    <?php if($this->Config->content_description == 'required' || $this->Config->content_description == 'optional'):?>
-    <div class="jr_fieldDiv">
-       <label class="jrLabel"><?php __t("Description");?><?php if($this->Config->content_description == 'required'):?><span class="required"><?php __t("*");?></span><?php endif;?></label>
-        <textarea id="fulltext" name="data[Listing][fulltext]" cols="45" rows="10" class="jrTextArea wysiwyg_editor"><?php echo $listing['Listing']['description'];?></textarea>
-    </div>
-    <?php endif;?>
-
-</fieldset>
-
-<?php endif;?>
-
 <?php echo $CustomFields->makeFormFields($listing_fields,'listing',null,__t("Select",true));?>
 
-<!--BEGIN Added by FDS GT-->
-<a name="images" />
-<!--END Added by FDS GT-->
 
 <?php if($this->Config->content_images>0 && ($isNew || (!$isNew && $this->Config->content_images_edit)) 
         || !empty($listing['Listing']['images'])
@@ -110,14 +103,14 @@ $used_trials = Sanitize::getBool($paid_plans,'used_trials') && count($paid_plans
 
 <fieldset id="images">
 
-<legend><?php echo __t("Images for this Listing");?></legend>
+<legend><?php echo __t("Images For This Listing");?></legend>
     
     <?php if(!$isNew):?>
             
     <div id="content_images" class="jr_fieldDiv">    
-
+<label class="jrLabel"><?php __t("Use the radio buttons to set the primary image shown below")?></label>
         <?php if(count($listing['Listing']['images'])>0):?>
-            <label class="jrLabel"><?php __t("Image Manager - Use the radio buttons to set the main image shown in lists.")?></label>
+            <label class="jrLabel"><?php __t("Use the radio buttons to set the primary image shown below")?></label>
 
             <?php for($i=0;$i<count($listing['Listing']['images']);$i++):?>
                 <div id="image<?php echo $i?>" class="jr_imageEdit">
@@ -150,11 +143,30 @@ $used_trials = Sanitize::getBool($paid_plans,'used_trials') && count($paid_plans
     <?php if($this->Config->content_images>0 && ($isNew || (!$isNew && $this->Config->content_images_edit))):?>
     <div id="image_upload_container" class="jr_fieldDiv">
     <a class="jrButton" style="margin: 0 5px 5px 0; float: right;" onclick="document.getElementById('image_upload_container').innerHTML = document.getElementById('image_upload_container').innerHTML; return false;" href="#"><?php __t("Clear");?></a>
-        <label class="jrLabel"><?php __t("Images");?> ( <?php echo sprintf(__t("Max. size %s Kb",true),$this->Config->content_max_imgsize);?> ):</label>
-        <div class="clr">&nbsp;</div>    
-        <?php for($i=0; $i<$this->Config->content_images;$i++):?>
-            <input size="20" type="file" id="image<?php echo $i+1;?>" class="jr_imageUpload" name="image[]" />
-        <?php endfor;?>
+        <!--<label class="jrLabel"><?php __t("Images");?> ( <?php echo sprintf(__t("Max. size %s Kb",true),$this->Config->content_max_imgsize);?> ):</label>-->
+        <div class="clr">&nbsp;</div>
+		
+		<div class="image_upload_container_primary">
+			<div><?php __t("Primary Image Listing");?></div>
+			
+			<input size="20" type="file" id="image1" class="jr_imageUpload" name="image[]" />
+			<label class="jrLabel"><?php __t("Images");?> ( <?php echo sprintf(__t("Max. size %s Kb",true),$this->Config->content_max_imgsize);?> )</label>
+		</div>
+		
+		
+		<?php if($this->Config->content_images>1): ?>
+		<div class="image_upload_container_others">
+			<div><?php __t("Other Image Listing");?></div>
+			
+			<?php for($i=1; $i<$this->Config->content_images;$i++):?>
+			<div class="<?php if($i %2 == 1) echo "jr_imageUpload_left"; else echo "jr_imageUpload_right"; ?>">
+				<input size="20" type="file" id="image<?php echo $i+1;?>" class="jr_imageUpload" name="image[]" />
+				<label class="jrLabel"><?php __t("Images");?> ( <?php echo sprintf(__t("Max. size %s Kb",true),$this->Config->content_max_imgsize);?> )</label>
+			</div>
+			<?php endfor;?>
+		</div>
+		<?php endif; ?>
+        
     
     </div>
     <?php endif;?>
