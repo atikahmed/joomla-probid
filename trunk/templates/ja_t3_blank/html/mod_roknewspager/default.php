@@ -22,12 +22,16 @@ defined('_JEXEC') or die('Restricted access'); ?>
 	    <li class="<?php if( $count==1 ) echo "first";?>">
 			<?php 
 				$db = JFactory::getDBO();
-				$query = 'SELECT cat.* FROM #__content as c, #__categories as cat WHERE c.id = ' . $item->id . ' and c.catid = cat.id';
-				$db->setQuery($query);
+				
+				$query_cat = 'SELECT cat.title, c.fulltext FROM #__content as c, #__categories as cat WHERE c.id = ' . $item->id . ' and c.catid = cat.id';
+				$db->setQuery($query_cat);
 					
 				$cat = $db->loadObject();
 				
-				//print_r($cat->params->get('image'));die;
+				$query_con = 'SELECT jc.jr_city, jc.jr_state, jc.jr_zipcode FROM #__jreviews_content as jc WHERE jc.contentid = ' . $item->id;
+				$db->setQuery($query_con);
+					
+				$con = $db->loadObject();
 			?>
 			<div class="roknewspager-cat">
 				<?php echo $cat->title; ?>
@@ -46,7 +50,7 @@ defined('_JEXEC') or die('Restricted access'); ?>
 				<?php if($show_author && $item->author):?><?php echo JText::_('by'); ?><span class="author"> <?php echo $item->author; ?>, </span><?php endif;?>
 				<?php if($show_published_date && $item->published_date):?><span class="published-date"><?php echo JHTML::_('date', $item->published_date, JText::_('DATE_FORMAT_LC33')); ?></span><?php endif;?>
 				
-				<?php if($show_preview_text && $item->introtext):?><div class="introtext"><?php echo $item->introtext; ?></div><?php endif;?>
+				<?php if($show_preview_text):?><div class="fulltext"><?php echo $cat->fulltext; ?></div><?php endif;?>
 				
 	            <?php if($show_ratings && $item->rating):?>
 					<div class="article-rating">
@@ -56,6 +60,10 @@ defined('_JEXEC') or die('Restricted access'); ?>
 					</div>
 				<?php endif;?>
 	            <?php if($show_readmore):?><a href="<?php echo $item->link; ?>" class="readon"><span><?php echo $readmore_text;?></span></a><?php endif;?>
+				
+				<div class="content-info">
+					<?php echo $con->jr_city; ?>, <?php echo str_replace("*", "", $con->jr_state); ?>, <?php echo $con->jr_zipcode; ?>
+				</div>
 	        </div>
 	    </li>
 	<?php endforeach; ?>

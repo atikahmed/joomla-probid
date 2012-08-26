@@ -85,7 +85,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 		<!-- Date created -->
 		<li>
 			<span class="catItemDateCreated">
-				<?php echo JHTML::_('date', $this->item->created , JText::_('K2_DATE_FORMAT_LC2')); ?>
+				<?php echo JHTML::_('date', $this->item->created , JText::_('K2_DATE_FORMAT_LC22')); ?>
 			</span>
 		</li>
 		<?php endif; ?>
@@ -131,6 +131,8 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 	  <?php if($this->item->params->get('catItemImage') && !empty($this->item->image)): ?>
 	  <!-- Item Image -->
 	  <div class="catItemImageBlock">
+			<span class="itemNumOfComments"><?php echo $this->item->numOfComments; ?></span> <?php echo ($this->item->numOfComments>1) ? JText::_('K2_COMMENTS') : JText::_('K2_COMMENT'); ?>
+			
 		  <span class="catItemImage">
 		    <a href="<?php echo $this->item->link; ?>" title="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>">
 		    	<img src="<?php echo $this->item->image; ?>" alt="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>" style="width:<?php echo $this->item->imageWidth; ?>px; height:auto;" />
