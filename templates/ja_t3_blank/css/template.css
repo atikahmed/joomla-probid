@@ -1,21 +1,5 @@
-/*
- * ------------------------------------------------------------------------
- * JA T3 Blank template for joomla 2.5
- * ------------------------------------------------------------------------
- * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
- * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
- * Author: J.O.O.M Solutions Co., Ltd
- * Websites: http://www.joomlart.com - http://www.joomlancers.com
- * ------------------------------------------------------------------------
-*/
-/* COMMON STYLE
---------------------------------------------------------- */
-body {
-	color: #1d1d1d;
-	font-family: Arial, sans-serif;
-}
-
-body#bd { background: #fff; color: #1d1d1d; }
+body {color: #3f3f3f;font-family: Arial, sans-serif; background-color:#f3f3f3}
+body#bd { background-color:#f3f3f3 ;color: #3f3f3f}
 
 /* Normal links ---*/
 a { color: #069; text-decoration: none; }
@@ -233,22 +217,11 @@ div.bannergroup_text div.banneritem { border-bottom: 1px dotted #ccc; padding:5p
 /* HEADER
 --------------------------------------------------------- */
 
-h1.logo, div.logo-text h1 { font-size: 250%; line-height: 1; margin-left: 10px;}
+h1.logo, div.logo-text h1 { font-size: 250%; line-height: 1; margin-left: 6px;}
 
 /* Logo Image ---*/
-h1.logo {width: 324px;	
-	height: 81px;
-	float:left;
-	margin-bottom:0px!important
-	}
-
-h1.logo a {
-	background: url(../images/t3_logo_light_17.png) no-repeat left;
-	display: block;
-	width: 324px;	
-	height: 81px;
-	text-indent:-999em;font-size:0px
-}
+h1.logo {width: 324px; padding-top:14px;height: 82px;float:left;margin-bottom:0px!important}
+h1.logo a {background: url(../images/t3_logo_light_17.png) no-repeat left;display: block;width: 324px;height: 82px;text-indent:-999em;font-size:0px}
 
 /* Logo Text ---*/
 div.logo-text h1 {
@@ -405,16 +378,18 @@ a.ja-icon-video:hover span { color: #0F85D8; }
 	background-position: left bottom;
 	text-decoration: none;
 }
+
+
 /*huuthe*/
 body.bd .main{}
 #ja-search{float:right}
 .prologin{overflow:hidden}
-.prologin > div{float:left}
-.prologin span{float:left;color:#787878;font-size:20px;font-family:arial;padding:12px 13px 0px 13px}
-.proupaccount{}
-.proaccount a{display:block;width:240px;height:43px;background: url(../images/create_account_bg.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
-.prologinout a{display:block;width:91px;height:44px;background: url(../images/bg_logout.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
-.prologin{padding-top:30px;background: url(../images/bg_joinourner.png) no-repeat left top;padding-left:3px}
+	.prologin > div{float:left}
+	.prologin span{float:left;color:#787878;font-size:20px;font-family:arial;padding:12px 13px 0px 13px}
+	.proupaccount{}
+	.proaccount a{display:block;width:240px;height:43px;background: url(../images/create_account_bg.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
+	.prologinout a{display:block;width:91px;height:44px;background: url(../images/bg_logout.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
+	.prologin{background: url(../images/probid/bg_joinourner.png) no-repeat left top;padding:26px 0 0 7px; clear:both}
 #ja-mainnav{}
 #ja-mainnav .main-inner1{background:#000!important;height:44px;}
 #ja-mainnav .main-inner1 .mainlevel {height:100%}
@@ -446,3 +421,53 @@ ul.roknewspager-numbers{background:none!important}
 #home_intro li .bot img{border:1px solid #ddd}
 #home_intro li .bot p{position:absolute;bottom:0px;left:0px;background: url(../images/bg_home_intro_bot.png) repeat left center;height:40px;width:325px;margin-bottom:0px}
 #home_intro li .bot p strong{display:block;}
+
+
+/* tr */
+@font-face {
+    font-family: 'avantgarde_md_btmedium';
+    src: url('../fonts/avgardm-webfont.eot');
+    src: url('../fonts/avgardm-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avgardm-webfont.woff') format('woff'),
+         url('../fonts/avgardm-webfont.ttf') format('truetype'),
+         url('../fonts/avgardm-webfont.svg#avantgarde_md_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'avantgarde_dm';
+    src: url('../fonts/avgardd-webfont.eot');
+    src: url('../fonts/avgardd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avgardd-webfont.woff') format('woff'),
+         url('../fonts/avgardd-webfont.ttf') format('truetype'),
+         url('../fonts/avgardd-webfont.svg#avantgarde_dm') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* footer */
+#ja-footer {padding:18px 0}
+#ja-footer .ja-box { border-left:1px dotted #000} 
+#ja-footer .ja-box.ja-box-center .ja-moduletable{ padding:0 10px}
+#ja-footer .ja-box:first-child { border:none}
+#ja-footer .ja-box h3 { font-size:14px; letter-spacing:-1px}
+#ja-footer .ja-box-ct a { background: url(../images/probid/i_arrow.png) no-repeat right center; padding-right:15px; font-size:11px; color:#db2127; display:block; margin-bottom:3px}
+#ja-footer .ja-box-ct br { display:none}
+.pb_footer_1 {}
+#ja-footer .ja-box  .pb_footer_1 h3 {  font:24px 'avantgarde_dm'; color:#000; text-align:right }
+#ja-footer .ja-box  .pb_footer_1 p{  font:24px 'avantgarde_md_btmedium'; color:#000; text-align:right }
+.pb_footer_1 div.icon { border-top:1px dotted #000}
+.pb_footer_1 div.icon a{ width:24px; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; padding-left:20px; display:inline-block}
+#ja-footer .ja-box-ct div.icon a{ width:auto; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; display:inline-block; padding:8px 0 3px 30px; margin:15px 10px ; font:12px Arial,sans-serif;}
+#ja-footer .ja-box-ct div.icon a.icon-twitter { background-position:left -3px}
+#ja-footer .ja-box-ct div.icon a.icon-facebook{ background-position:left -53px}
+
+.profooterlogo {  background: url(../images/probid/logo_footer.png) no-repeat right top;width:188px; height:48px; font-size:0; text-indent:-9999px; text-align:right; float:right} 
+#ja-footer .ja-box-ct .proaccount { float:right}
+#ja-footer .ja-box-ct .proaccount a{display:block;width:163px;height:40px;background: url(../images/probid/create_account_bg1.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent; padding:0}
+#ja-footer .ja-box-ct .prologin{background: url(../images/probid/bg_joinourner_2.png) no-repeat left bottom;padding:0 0 30px 7px; clear:both}
+
+#ja-footer .ja-box-ct .posttext { border-top:1px dotted #000; margin-top:10px}
+#ja-footer .ja-box-ct .posttext p { text-align:right; font:bold 11px Arial; color:#6a6a6a; margin-top:10px}
