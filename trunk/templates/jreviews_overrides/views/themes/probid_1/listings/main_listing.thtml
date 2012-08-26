@@ -4,13 +4,21 @@
                     <?php echo $Rating->overallRatings($listing, 'content'); ?>
 
                     <div class="contentInfo">
+					
+					<div class="div_contentInfo">
+						<ul class="ul_contentInfo">
+							<li>
+							<?php if($this->Config->list_show_author):?>
+								<?php echo $Community->avatar($listing); // Listing owner avatar?>
+								<?php __t("by");?> <?php echo $Community->screenName($listing);?>&nbsp;&nbsp;&nbsp;&nbsp;
+							<?php endif;?>
+							</li>
 
-                        <?php if($this->Config->list_show_author):?>
-                            <?php echo $Community->avatar($listing); // Listing owner avatar?>
-                            <?php __t("Written by");?> <?php echo $Community->screenName($listing);?>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <?php endif;?>
-
-                        <?php if($this->Config->list_show_date):?><?php echo $Time->nice($listing['Listing']['created']);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?>
+							<li>
+							<?php if($this->Config->list_show_date):?><?php echo $Time->nice($listing['Listing']['created']);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?>
+							</li>
+						</ul>
+					</div>
 
                         <?php if($this->Config->list_show_hits):?>
                         <span class="jrHitsWidget" title="<?php __t("Views");?>">
