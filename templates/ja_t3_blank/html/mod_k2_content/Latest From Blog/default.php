@@ -14,11 +14,11 @@ defined('_JEXEC') or die('Restricted access');
 <script type="text/javascript">
 	window.addEvent("domready", function() {
 		var gallery1 = new slideGallery($$(".gallery1"), {
-			steps: 1,
+			steps: 3,
 			mode: "callback",
-			autoplay: true,
+			autoplay: false,
 			paging: true,
-			pagingHolder: ".paging",
+			pagingHolder: ".pagingGallery",
 			onStart: function() {
 				//this.gallery.getElement(".info").set("html", parseInt(this.current+1) + "-" + parseInt(this.visible+this.current) + " from " + this.items.length);
 			},
@@ -52,10 +52,6 @@ defined('_JEXEC') or die('Restricted access');
 			</a>
       <?php endif; ?>
 
-      <?php if($params->get('itemTitle')): ?>
-      <a class="moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
-      <?php endif; ?>
-
       <?php if($params->get('itemAuthor')): ?>
       <div class="moduleItemAuthor">
 	      <?php echo K2HelperUtilities::writtenBy($item->authorGender); ?>
@@ -87,15 +83,23 @@ defined('_JEXEC') or die('Restricted access');
 
       <?php if($params->get('itemImage') || $params->get('itemIntroText')): ?>
       <div class="moduleItemIntrotext">
-	      <?php if($params->get('itemImage') && isset($item->image)): ?>
-	      <a class="moduleItemImage" href="<?php echo $item->link; ?>" title="<?php echo JText::_('K2_CONTINUE_READING'); ?> &quot;<?php echo K2HelperUtilities::cleanHtml($item->title); ?>&quot;">
-	      	<img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
-	      </a>
-	      <?php endif; ?>
+	      <div class="moduleItemIntrotextHead">
+			  <?php if($params->get('itemImage') && isset($item->image)): ?>
+			  <a class="moduleItemImage" href="<?php echo $item->link; ?>" title="<?php echo JText::_('K2_CONTINUE_READING'); ?> &quot;<?php echo K2HelperUtilities::cleanHtml($item->title); ?>&quot;">
+				<img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
+			  </a>
+			  <?php endif; ?>
+		  </div>
 
-      	<?php if($params->get('itemIntroText')): ?>
-      	<?php echo $item->introtext; ?>
-      	<?php endif; ?>
+		  <div class="moduleItemIntrotextContent">
+		  <?php if($params->get('itemTitle')): ?>
+		  <a class="moduleItemTitle" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
+		  <?php endif; ?>
+		  
+			<?php if($params->get('itemIntroText')): ?>
+			<?php echo $item->introtext; ?>
+			<?php endif; ?>
+		</div>
       </div>
       <?php endif; ?>
 
@@ -204,7 +208,7 @@ defined('_JEXEC') or die('Restricted access');
 		<a href="#" class="next">next</a>
 		<span class="info"></span>
 	</div>
-	<div class="paging"></div>
+	<div class="pagingGallery"></div>
 </div>
   <?php endif; ?>
 

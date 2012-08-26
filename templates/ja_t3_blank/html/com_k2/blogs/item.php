@@ -93,7 +93,7 @@ defined('_JEXEC') or die('Restricted access');
 		<!-- Date created -->
 		<li>
 		<span class="itemDateCreated">
-			<?php echo JHTML::_('date', $this->item->created , JText::_('K2_DATE_FORMAT_LC2')); ?>
+			<?php echo JHTML::_('date', $this->item->created , JText::_('K2_DATE_FORMAT_LC22')); ?>
 		</span>
 		</li>
 		<?php endif; ?>
@@ -179,13 +179,9 @@ defined('_JEXEC') or die('Restricted access');
 					<!-- K2 Plugins: K2CommentsCounter -->
 					<?php echo $this->item->event->K2CommentsCounter; ?>
 				<?php else: ?>
-					<?php if($this->item->numOfComments > 0): ?>
+					<?php if($this->item->numOfComments >= 0): ?>
 					<a class="itemCommentsLink k2Anchor" href="<?php echo $this->item->link; ?>#itemCommentsAnchor">
 						<span class="itemNumOfComments"><?php echo $this->item->numOfComments; ?></span> <?php echo ($this->item->numOfComments>1) ? JText::_('K2_COMMENTS') : JText::_('K2_COMMENT'); ?>
-					</a>
-					<?php else: ?>
-					<a class="itemCommentsLink k2Anchor" href="<?php echo $this->item->link; ?>#itemCommentsAnchor">
-						<?php echo JText::_('K2_BE_THE_FIRST_TO_COMMENT'); ?>
 					</a>
 					<?php endif; ?>
 				<?php endif; ?>
