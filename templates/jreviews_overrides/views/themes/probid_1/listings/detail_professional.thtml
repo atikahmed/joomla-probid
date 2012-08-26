@@ -169,6 +169,32 @@ $pos = strpos($myPath,$checkPath);
 	<!-- END PATHWAY -->
 	<?php endif;?>
 
+
+	<?php if((!empty($listing['Listing']['images']) || $this->Config->content_default_image) && $enableIntroImage && $introImage):?>
+	<div class="contentSidebar">
+		<!-- MAIN IMAGE -->
+		<div class="itemMainImage" style="width:<?php echo $introThumbnailSize;?>px;"><?php echo $introImage;?></div>
+		
+		<div class="my_jr_esp">
+			<div class="fieldValue"></div>
+			<div class="fieldLabel"></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		 jQuery(document).ready(function() { 
+			if(jQuery('.fieldGroup .jr_esp')[0]){
+				jQuery('.my_jr_esp .fieldValue').html(jQuery('.jr_esp .fieldValue').html());
+				jQuery('.my_jr_esp .fieldLabel').html('Emergency Service Provider');
+				
+				jQuery('.fieldGroup .jr_esp').remove();
+			}
+		 });
+	</script>
+	
+	<?php endif;?>
+	
+<div class="contentMain">
     <h1 class="contentheading item">
 		<!-- BEGIN TITLE AND ICONS -->
         <span class="fn"><?php echo $this->action == 'detail' ? $Routes->content($listing['Listing']['title'],$listing) : $listing['Listing']['title'];?></span> 
@@ -186,29 +212,44 @@ $pos = strpos($myPath,$checkPath);
 		</span>
 		<!-- END TITLE AND ICONS -->		
 	</h1>
+	
+	<!-- LISTING MANAGER -->		
+	<?php $Jreviews->listingManager($listing);?>
     
 		<!-- BEGIN CODE ADDED BY  Focus Data Systems-->	
- 		<?php if($groupID): ?>
+ 		<!--<?php if($groupID): ?>
         
         <p style="float:left;">&nbsp;<a href="myoffice/<?php echo $listing['Listing']['listing_id'];?>" style="font-size:15px;">Go to My Office</a></p>
           
-        <?php endif; ?>
+        <?php endif; ?>-->
 		<!-- END CODE ADDED BY  Focus Data Systems-->	
 
 	<div class="contentInfoContainer">			
 
 		<!-- OVERALL RATINGS -->
 		<?php echo $Rating->overallRatings($listing, 'content'); ?>
+		<script type="text/javascript">
+			 jQuery(document).ready(function() { 
+				var review_count = jQuery('.rating_value .count').html();
+				var review_s = '';
+				if(review_count > 1)
+					review_s = 'reviews';
+				else
+					review_s = 'review';
+				
+				jQuery('.rating_value .count').html(review_count + ' ' + review_s);
+			 });
+		</script>
 	
         <div class="contentInfo">
-			
+			<!--
 			<?php if($this->Config->list_show_author):?>			
 				<?php echo $Community->avatar($listing); // Listing owner avatar?>
 	            <?php __t("Written by");?> <?php echo $Community->screenName($listing);?>&nbsp;&nbsp;&nbsp;&nbsp;
 	        <?php endif;?>
             
             <?php if($this->Config->list_show_date):?><?php echo $Time->nice($listing['Listing']['created']);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?>
-			
+			-->
 			<?php if($this->Config->list_show_hits):?>
             <span class="jrHitsWidget" title="<?php __t("Views");?>">
 				<span class="jrIcon jrIconGraph"></span>
@@ -237,9 +278,6 @@ $pos = strpos($myPath,$checkPath);
 				<?php echo $Jreviews->compareCheckbox($listing); ?>
 			<?php endif;?>			
 
-			<!-- LISTING MANAGER -->		
-            <?php $Jreviews->listingManager($listing);?>                            
-			
             <div class="clr"></div>
 
 		</div>
@@ -263,47 +301,15 @@ $pos = strpos($myPath,$checkPath);
 			    <?php echo $Widgets->claim($listing); ?>
             <?php endif;?>        
 		</div>
-        
-		<?php if((!empty($listing['Listing']['images']) || $this->Config->content_default_image) && $enableIntroImage && $introImage):?>
-			<!-- MAIN IMAGE -->
-			<div class="itemMainImage" style="width:<?php echo $introThumbnailSize;?>px;"><?php echo $introImage;?></div>
-		<?php endif;?>
-        
+
         	<!-- SUMMARY/DESCRIPTION -->
 		<div class="contentFulltext">
-			<!-- TAGS and link could go HERE for Business Listings only -->
-        <?php
-        //BEGIN JOEYG CODE HERE
-        $tagsquery = "SELECT `text` FROM `jos_jreviews_fieldoptions` WHERE `optionid` IN (SELECT `tag_id` FROM `jos_probid_tags_articles` WHERE `article_id` = ";
-		$tagsquery .= $listing['Listing']['listing_id'] . ") ORDER BY `text`";
-		$db =& JFactory::getDBO();
-		$currentUser =& JFactory::getUser();
-		$db->setQuery($tagsquery);
-		$tagsrows = $db->loadAssocList();
-		echo '<div class="fieldGroup">';
-		echo '<h3 class="fieldGroupTitle" style="visibility: visible;display:inline;margin-right:10px;">Category Tags</h3>';
-		//ONLY SHOW ADD/EDIT IF THE CURRENT USER IS THE PROFILE OWNER
-		if($currentUser->id == $listing['Listing']['user_id']) {
-			echo '<a href="/edit-business-profile-tags?lid=' . $listing['Listing']['listing_id'] . '" style="font-size:smaller">Add/Remove Tags</a><br/>';						
-			if(empty($tagsrows)) {	
-				echo '<p class="attention">You must add Category Tags to your Profile or Project notifications and Project Owners will not find your Profile</p>';
-			}
-		}//ends if user is owner
-		$tagsOutput = "";
-		foreach ($tagsrows as $row) {
-			$tagsOutput .= $row['text'] . ", ";
-		}
-		$tagsOutput = substr(trim($tagsOutput), 0, -1);
-		echo $tagsOutput;
-		echo '</div>';
-        //END JOEYG CODE HERE
-		?>
 			<?php echo $listing['Listing']['text'] !== strip_tags($listing['Listing']['text']) ? $listing['Listing']['text'] : nl2br($listing['Listing']['text']);?>
 		</div>
 
 		<!-- CUSTOM FIELDS -->
 		<?php echo $CustomFields->displayAll($listing,'content');?>
-        
+ </div>
 		<!-- IMAGE GALLERY -->		
 		<?php if(($enableGallery && (($enableIntroImage && $imageCount > 1) || (!$enableIntroImage && $imageCount >= 1)))):?>
 			<div class="clear"></div>
