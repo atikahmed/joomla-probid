@@ -87,29 +87,49 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 				<div class="contentInfoContainer">
 					<!-- OVERALL RATINGS -->
 					<?php echo $Rating->overallRatings($listing, 'list'); ?>
-							
-					<div class="contentTitle"><?php echo $Routes->content($listing['Listing']['title'],$listing,array('id'=>'jr_listing'.$listing['Listing']['listing_id'],'class'=>'jr_listingTitle'))?>               
-						<span class="contentIndicators">
-						<?php if($this->Config->list_featured && $listing['Listing']['featured']):?>
-							<span class="featuredListing"><?php __t("Featured");?></span>
-						<?php endif;?>						
-						<?php if($this->Config->list_new && $Jreviews->newIndicator($this->Config->list_new_days,$listing['Listing']['created'])):?>
-							<span class="newListing"><?php __t("New");?></span>
-						<?php endif;?>
-						<?php if($this->Config->list_hot && $this->Config->list_hot_hits <= $listing['Listing']['hits']):?>
-							<span class="hotListing"><?php __t("Hot");?></span>
-						<?php endif;?>
-						</span>        
-					</div>            
+					
+				 <ul class="ul_contentTitle">
+					<li>
+						<div class="contentTitle"><?php echo $Routes->content($listing['Listing']['title'],$listing,array('id'=>'jr_listing'.$listing['Listing']['listing_id'],'class'=>'jr_listingTitle'))?>               
+							<span class="contentIndicators">
+							<?php if($this->Config->list_featured && $listing['Listing']['featured']):?>
+								<span class="featuredListing"><?php __t("Featured");?></span>
+							<?php endif;?>						
+							<?php if($this->Config->list_new && $Jreviews->newIndicator($this->Config->list_new_days,$listing['Listing']['created'])):?>
+								<span class="newListing"><?php __t("New");?></span>
+							<?php endif;?>
+							<?php if($this->Config->list_hot && $this->Config->list_hot_hits <= $listing['Listing']['hits']):?>
+								<span class="hotListing"><?php __t("Hot");?></span>
+							<?php endif;?>
+							</span>        
+						</div>  
+					</li>
+					<li>
+						<div class="my_jr_projectstatus"></div>
+					</li>
+				  </ul>
 
 					<div class="contentInfo">
-						<?php if($this->action!='category'):?>
-							<!-- BEGIN SHOW LISTING SECTION AND CATEGORY -->
-						<?php if(isset($listing['Section'])):/*J16*/?><?php echo $listing['Section']['title'];?> &raquo; <?php endif;?><?php echo $listing['Category']['title'];?><br />
-							<!-- END SHOW LISTING SECTION AND CATEGORY -->
-						<?php endif;?>
-						<?php if($this->Config->list_show_author):?><?php __t("Written by");?> <?php echo $Community->screenName($listing);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?> 
-						<?php if($this->Config->list_show_date):?><?php echo $Time->nice($listing['Listing']['created']);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?>
+						<ul>
+							<li>
+								<ul class="ul_contentInfo">
+									<li>
+									<?php if($this->Config->list_show_author):?><?php __t("by");?> <?php echo $Community->screenName($listing);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?> 
+									</li>
+									<li>
+									<?php if($this->Config->list_show_date):?><?php echo $Time->nice($listing['Listing']['created']);?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endif;?>
+									</li>
+								</ul>
+							
+							</li>
+							<li>
+								<?php if($this->action!='category'):?>
+									<!-- BEGIN SHOW LISTING SECTION AND CATEGORY -->
+								<?php if(isset($listing['Section'])):/*J16*/?><?php echo $listing['Section']['title'];?> &raquo; <?php endif;?><?php echo $listing['Category']['title'];?><br />
+									<!-- END SHOW LISTING SECTION AND CATEGORY -->
+								<?php endif;?>
+							</li>
+						</ul>
 						
 						<?php if($this->Config->list_show_hits):?>
 						<span class="jrHitsWidget" title="<?php __t("Views");?>">
@@ -132,8 +152,8 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 					    <!-- COMPARE -->
 					    <?php if ($this->Config->getOverride('list_compare',$listing['ListingType']['config'])):?>
 						    <?php echo $Jreviews->compareCheckbox($listing); ?>
-					    <?php endif;?>			
-				    
+					    <?php endif;?>
+
 					    <!-- LISTING MANAGER -->		
 					    <?php $Jreviews->listingManager($listing);?>
                         
@@ -156,8 +176,46 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 
 				</div>				
 				
+				<?php 
+					$db = JFactory::getDBO();
+					$query = 'SELECT cc.fulltext FROM #__content_copy as cc WHERE cc.id = ' . $listing['Listing']['listing_id'];
+					$db->setQuery($query);
+						
+					$content_copy = $db->loadObject();
+				?>
+	
+				<div class="fieldGroup"><div class="fieldRow jr_fulltext"><div class="fieldLabel">Project Description</div><div class="fieldValue "><?php echo $content_copy->fulltext !== strip_tags($content_copy->fulltext) ? $content_copy->fulltext : nl2br($content_copy->fulltext);?> <a href="<?php echo $listing['Listing']['url']; ?>"><?php __t("read more") ?></a></div></div></div>
+	
 				<!-- CUSTOM FIELDS -->
 				<?php echo $CustomFields->displayAll($listing,'list');?>
+				
+				 <script type="text/javascript">
+					jQuery(document).ready(function() { 
+						if(jQuery('.jr_projectstatus .fieldValue')[0]) {							
+							jQuery('.my_jr_projectstatus').html(jQuery('.jr_projectstatus .fieldValue').html());
+							
+							switch(jQuery('.jr_projectstatus .fieldValue').html().toLowerCase()){
+								case 'completed':
+									jQuery('.my_jr_projectstatus').addClass('completed_jr_projectstatus');
+								break;
+								
+								case 'open':
+									jQuery('.my_jr_projectstatus').addClass('open_jr_projectstatus');
+								break;
+								
+								case 'awarded':
+									jQuery('.my_jr_projectstatus').addClass('awarded_jr_projectstatus');
+								break;
+								
+								default:
+									jQuery('.my_jr_projectstatus').addClass('others_jr_projectstatus');
+								break;
+							}
+							
+							jQuery('.jr_projectstatus').remove();
+						}
+					});
+				 </script>
 			   
 			   <!-- BEGIN INTROTEXT --> 
 			   <?php if($this->Config->list_show_abstract && ($this->Config->list_abstract_trim!='' || $this->Config->list_abstract_trim>0)):?>  

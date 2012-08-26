@@ -124,10 +124,57 @@ if($this->action == 'detail' || $this->action == 'view')
 	<div class="clr">&nbsp;</div>
 	<!-- END PATHWAY -->
 	<?php endif;?>
+	
+	<ul class="ul_contentTitle">
+		<li>
+			<div class="contentTitle">
+				<span class="fn"><?php echo $this->action == 'detail' ? $Routes->content($listing['Listing']['title'],$listing) : $listing['Listing']['title'];?></span> 
+			</div>
+		</li>
+		<li>
+			<div class="my_jr_projectstatus"></div>
+		</li>
+	</ul>
+	
+	<div class="my_div_contentInfo"></div>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function() { 
+			// status
+			if(jQuery('.jr_projectstatus .fieldValue')[0]) {				
+				jQuery('.my_jr_projectstatus').html(jQuery('.jr_projectstatus .fieldValue').html());
+				switch(jQuery('.jr_projectstatus .fieldValue').html().toLowerCase()){
+					case 'completed':
+						jQuery('.my_jr_projectstatus').addClass('completed_jr_projectstatus');
+					break;
+					
+					case 'open':
+						jQuery('.my_jr_projectstatus').addClass('open_jr_projectstatus');
+					break;
+					
+					case 'awarded':
+						jQuery('.my_jr_projectstatus').addClass('awarded_jr_projectstatus');
+					break;
+					
+					default:
+						jQuery('.my_jr_projectstatus').addClass('others_jr_projectstatus');
+					break;
+				}
+				jQuery('.jr_projectstatus').remove();
+			}
+			
+			
+			// author and date
+			if(jQuery('.contentInfo .div_contentInfo')[0]) {				
+				jQuery('.my_div_contentInfo').html(jQuery('.contentInfo .div_contentInfo').html());
+				jQuery('.contentInfo .div_contentInfo').remove();
+			}
+		});
+	 </script>
                           
     <h1 class="contentheading item">
 		<!-- BEGIN TITLE AND ICONS -->
-        <span class="fn"><?php echo $this->action == 'detail' ? $Routes->content($listing['Listing']['title'],$listing) : $listing['Listing']['title'];?></span> 
+        
 		<span class="jr_hidden"><?php echo $introImage;?></span>
 		<span class="contentIndicators">
 		<?php if($this->Config->list_featured && $listing['Listing']['featured']):?>
