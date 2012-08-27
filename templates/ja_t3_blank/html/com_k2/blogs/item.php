@@ -12,6 +12,16 @@ defined('_JEXEC') or die('Restricted access');
 
 ?>
 
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('#ja-right1').hide();
+		$('#ja-right').width('20%');
+		$('#ja-right2').width('100%');
+		
+		$('#ja-mainbody').width('80%');
+	});
+</script>
+
 <?php if(JRequest::getInt('print')==1): ?>
 <!-- Print button at the top of the print page only -->
 <a class="itemPrintThisPage" rel="nofollow" href="#" onclick="window.print();return false;">
