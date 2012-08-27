@@ -85,8 +85,7 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 			<div class="listItem<?php echo $featured; ?>">
 			
 				<div class="contentInfoContainer">
-					<!-- OVERALL RATINGS -->
-					<?php echo $Rating->overallRatings($listing, 'list'); ?>
+					
 					
 				 <ul class="ul_contentTitle">
 					<li>
@@ -102,7 +101,9 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 								<span class="hotListing"><?php __t("Hot");?></span>
 							<?php endif;?>
 							</span>        
-						</div>  
+						</div> 
+						<!-- OVERALL RATINGS -->
+						<?php echo $Rating->overallRatings($listing, 'list'); ?>
 					</li>
 					<li>
 						<div class="my_jr_projectstatus"></div>
