@@ -1,5 +1,5 @@
 @import url{../../../plugins/system/jat3/jat3/base-themes/default/css/layout.css}
-.column div.ja-moduletable, .column div.moduletable, .column div.ja-module, .column div.module { margin:0 10px}
+.column div.ja-moduletable, .column div.moduletable, .column div.ja-module, .column div.module { margin:0}
 
 #ja-header { padding:8px 0 4px}
 

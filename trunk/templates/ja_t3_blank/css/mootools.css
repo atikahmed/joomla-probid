@@ -1,55 +1,3 @@
-body {
-	margin: 0;
-	font: 12px/14px Arial, Helvetica, sans-serif;
-	color: #555;
-	background: #f4f5f5;
-}
-img { border: none; }
-a { color: #6b7b95; }
-a:hover { color: #e79d35; }
-#wrapper {
-	margin: 0 auto;
-	width: 964px;
-	padding: 20px 5px 0;
-	overflow: hidden;
-}
-h1 {
-	margin: 0 0 25px;
-	font: 40px/43px Georgia, "Times New Roman", Times, serif;
-	text-align: center;
-	color: #c17878
-}
-h1 em {
-	font-size: 13px;
-	font-style: normal;
-}
-h2 {
-	margin: 0 0 10px;
-	font-size: 24px;
-	line-height: 27px;
-	font-weight: normal;
-	border-bottom: 1px dashed #78ba91;
-	color: #78ba91;
-}
-h3 {
-	margin: 0 0 5px;
-	font-size: 16px;
-	line-height: 19px;
-	color: #000;
-}
-p {
-	font-size: 14px;
-	line-height: 17px;
-	margin: 0 0 10px;
-}
-pre {
-	margin: 0 0 15px;
-	padding: 5px 10px;
-	color: #444;
-	display: block;
-	border: 1px solid #eee;
-	background: #fff;
-}
 .gallery {
 	margin: 0 0 20px;
 	width: 964px;
@@ -278,3 +226,9 @@ pre {
 	font-size: 11px;
 	line-height: 14px;
 }
+
+.gallery1 { width:100% }
+.gallery1 .pagingGallery { float:right}
+.gallery1 .pagingGallery li { float:left; padding-left:5px}
+.gallery1 .pagingGallery li a { font-size:0; text-indent:-9999px; background: url(../images/mootool/i_slide.png) no-repeat -12px 0; width:8px; height:8px; display:inline-block}
+.gallery1 .pagingGallery li a.active , .gallery1 .pagingGallery li a:hover{ background-position:0 0}
