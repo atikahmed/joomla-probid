@@ -127,12 +127,30 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 	  <?php echo $this->item->event->K2BeforeDisplayContent; ?>
 
 	  
+	  <div class="clr"></div>
+
+	<?php if($this->item->params->get('catItemCommentsAnchor') && ( ($this->item->params->get('comments') == '2' && !$this->user->guest) || ($this->item->params->get('comments') == '1')) ): ?>
+	<!-- Anchor link to comments below -->
+	<div class="catItemCommentsLink">
+		<?php if(!empty($this->item->event->K2CommentsCounter)): ?>
+			<!-- K2 Plugins: K2CommentsCounter -->
+			<?php echo $this->item->event->K2CommentsCounter; ?>
+		<?php else: ?>
+			<?php if($this->item->numOfComments >= 0): ?>
+			<a href="<?php echo $this->item->link; ?>#itemCommentsAnchor">
+				<?php echo $this->item->numOfComments; ?> <?php echo ($this->item->numOfComments>1) ? JText::_('K2_COMMENTS') : JText::_('K2_COMMENT'); ?>
+			</a>
+			<?php endif; ?>
+		<?php endif; ?>
+	</div>
+	<?php endif; ?>
+
+	
+	  
 	  
 	  <?php if($this->item->params->get('catItemImage') && !empty($this->item->image)): ?>
 	  <!-- Item Image -->
 	  <div class="catItemImageBlock">
-			<span class="itemNumOfComments"><?php echo $this->item->numOfComments; ?></span> <?php echo ($this->item->numOfComments>1) ? JText::_('K2_COMMENTS') : JText::_('K2_COMMENT'); ?>
-			
 		  <span class="catItemImage">
 		    <a href="<?php echo $this->item->link; ?>" title="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>">
 		    	<img src="<?php echo $this->item->image; ?>" alt="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>" style="width:<?php echo $this->item->imageWidth; ?>px; height:auto;" />
@@ -261,29 +279,6 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
   </div>
   <?php endif; ?>
 
-  <div class="clr"></div>
-
-	<?php if($this->item->params->get('catItemCommentsAnchor') && ( ($this->item->params->get('comments') == '2' && !$this->user->guest) || ($this->item->params->get('comments') == '1')) ): ?>
-	<!-- Anchor link to comments below -->
-	<div class="catItemCommentsLink">
-		<?php if(!empty($this->item->event->K2CommentsCounter)): ?>
-			<!-- K2 Plugins: K2CommentsCounter -->
-			<?php echo $this->item->event->K2CommentsCounter; ?>
-		<?php else: ?>
-			<?php if($this->item->numOfComments > 0): ?>
-			<a href="<?php echo $this->item->link; ?>#itemCommentsAnchor">
-				<?php echo $this->item->numOfComments; ?> <?php echo ($this->item->numOfComments>1) ? JText::_('K2_COMMENTS') : JText::_('K2_COMMENT'); ?>
-			</a>
-			<?php else: ?>
-			<a href="<?php echo $this->item->link; ?>#itemCommentsAnchor">
-				<?php echo JText::_('K2_BE_THE_FIRST_TO_COMMENT'); ?>
-			</a>
-			<?php endif; ?>
-		<?php endif; ?>
-	</div>
-	<?php endif; ?>
-
-	
 
 	<div class="clr"></div>
 
