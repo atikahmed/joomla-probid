@@ -1,0 +1,116 @@
+
+
+/* ++++++++++++++  tabs/ slide  ++++++++++++++ */
+.slide
+{
+        height:auto !important;
+
+}
+
+ul.tabs
+{
+    overflow:hidden;
+    padding:0 !important;
+    margin:0 !important
+}
+
+.tabopen ul.newsflash-horiz,
+.tabopen ul.newsflash-vert,
+.tabopen ul.latestnews
+{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.tabopen ul.newsflash-horiz li,
+.tabopen ul.newsflash-vert li
+{
+    padding:0 6px !important;
+}
+
+ul.tabs li
+{
+    list-style-type:none;
+    float:left;
+    width:auto;
+    padding:0;
+    display:block;
+    margin:0;
+    font-size:1em;
+}
+
+ul.tabs li a:link,
+ul.tabs li a:visited
+{
+    text-decoration:none;
+    padding:7px 5px;
+    margin:0px ;
+    display:block;
+    font-size:0.9em;
+    font-weight:normal;
+}
+
+ul.tabs li a.linkopen:link,
+ul.tabs li a.linkopen:visited
+{
+    font-weight:bold;
+}
+
+ul.tabs li a:hover,
+ul.tabs li a:active,
+ul.tabs li a:focus
+{
+        text-decoration:underline;
+}
+
+.tabcontent
+{
+        padding:15px 10px;
+        margin-top:-1px;
+}
+
+.tabcontent:focus
+{
+	outline:none
+}
+.tabopen
+{
+        display:block;
+        margin-bottom:20px;
+        overflow:hidden
+}
+
+.tabclosed
+{
+        display:none
+}
+
+.tabcontent ul
+{
+        padding:0
+}
+
+.tabcontent ul li
+{
+        list-style-type:none
+}
+
+.tabcontent .linkclosed
+{
+
+}
+
+a.linkopen
+{
+
+}
+
+.tabouter
+{
+        margin-top:20px
+}
+
+
+.module_content
+{border:solid 1px #000;
+padding:10px}

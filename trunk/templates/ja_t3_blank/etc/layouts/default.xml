@@ -4,6 +4,8 @@
 	<stylesheets>
 		<file>css/jquery.fancybox-1.3.4.css</file>
 		<file>css/mootools.css</file>
+		<file>css/layout_import.css</file>
+		<file>css/layout_tab_slide.css</file>
 	</stylesheets>
 	<blocks name="top" style="xhtml">
 		<block name="absolute" type="modules" style="raw">absolute</block>
@@ -31,5 +33,6 @@
 	<scripts>
 		<file>js/jquery.fancybox-1.3.4.js</file>
 		<file>js/slideGallery.js</file>
+		<file>js/hide.js</file>
 	</scripts>
 </layout>

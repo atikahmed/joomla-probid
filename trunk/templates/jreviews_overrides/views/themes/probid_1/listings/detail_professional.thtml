@@ -215,6 +215,11 @@ $pos = strpos($myPath,$checkPath);
 	
 	<!-- LISTING MANAGER -->		
 	<?php $Jreviews->listingManager($listing);?>
+	
+	<!-- OVERALL RATINGS -->
+	<?php echo $Rating->overallRatings($listing, 'content'); ?>
+	
+	
     
 		<!-- BEGIN CODE ADDED BY  Focus Data Systems-->	
  		<!--<?php if($groupID): ?>
@@ -226,21 +231,8 @@ $pos = strpos($myPath,$checkPath);
 
 	<div class="contentInfoContainer">			
 
-		<!-- OVERALL RATINGS -->
-		<?php echo $Rating->overallRatings($listing, 'content'); ?>
-		<script type="text/javascript">
-			 jQuery(document).ready(function() { 
-				var review_count = jQuery('.rating_value .count').html();
-				var review_s = '';
-				if(review_count > 1)
-					review_s = 'reviews';
-				else
-					review_s = 'review';
-				
-				jQuery('.rating_value .count').html(review_count + ' ' + review_s);
-			 });
-		</script>
-	
+		
+
         <div class="contentInfo">
 			<!--
 			<?php if($this->Config->list_show_author):?>			
