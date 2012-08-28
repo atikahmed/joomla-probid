@@ -71,7 +71,7 @@ $resultReferencesProducts=mysql_query($query);
 $numReferencesProducts=mysql_numrows($resultReferencesProducts);
 
 //Get reviews for this business listing - My Reviews
-$query="SELECT jos_jreviews_comments.title, jos_jreviews_comments.comments, jos_jreviews_ratings.ratings_sum
+$query="SELECT jos_jreviews_comments.title, jos_jreviews_comments.comments, jos_jreviews_comments.username, jos_jreviews_comments.created, jos_jreviews_ratings.ratings_sum
 				FROM jos_jreviews_comments INNER JOIN jos_jreviews_ratings 
 				ON jos_jreviews_comments.id = jos_jreviews_ratings.reviewid
 				WHERE jos_jreviews_comments.pid = $myListingID";
@@ -194,13 +194,14 @@ $numReviews=mysql_numrows($resultReviews);
 				$myRating=number_format($ratings_sum/3,1);
 				echo "<p><b>$title</b>&nbsp;$comments&nbsp;</p>";
 				
-				print_r($resultReviews);die;
 				
 				$myRating = $myRating*100/5;
 				
 				echo '<span class="rating_label">Rating: </span><div class="rating_star_user"><div style="width:'.$myRating.'%;">&nbsp;</div></div>';
 				
-				echo '<span class="reviewScreenName">'.(Sanitize::getInt($resultReviews['Criteria'],'state')!=2) ? __t("Reviewed by") : __t("Commented by") . $Community->screenName($resultReviews) .'</span> <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span> <span class="reviewNice">'.$Time->nice($resultReviews['Review']['created']).'</span>';
+				//(Sanitize::getInt($resultReviews['Criteria'],'state')!=2) ? __t("Reviewed by") : __t("Commented by") 
+				
+				echo '<span class="reviewScreenName">'. mysql_result($resultReviews,$i,"username") .'</span> <span>&nbsp;,&nbsp;</span> <span class="reviewNice">'.mysql_result($resultReviews,$i,"created").'</span>';
 				
 				$i++;
 				} ?></div>
