@@ -23,8 +23,10 @@
           <block name="right1">left</block>
           <block name="right2">right</block>
       </blocks>
-	<blocks name="bottom" style="xhtml">
+      <blocks name="mainbottoms" style="xhtml">
 		<block name="mainbottom" type="spotlight" main-inner="1">mainbottom1, mainbottom2, mainbottom3</block>
+	</blocks>
+	<blocks name="bottom" style="xhtml">
 		<block name="bottom" type="spotlight" main-inner="1">bottom</block>
                <block name="footer" type="spotlight" main-inner="1">footer1, footer2, footer3, footer4</block>
 		<block name="copyright" type="copyright"></block>

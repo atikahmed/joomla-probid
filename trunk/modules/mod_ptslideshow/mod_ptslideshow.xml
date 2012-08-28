@@ -56,6 +56,17 @@
 					<option
 						value="0">JNO</option>
 				</field>
+				<field
+					name="load_rotator_css"
+					type="radio"
+					default="1"
+					label="Load CSS for rotator"
+					description="">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
 				</fieldset>
 				<fieldset name="CONFIGURE">
 				<field
