@@ -51,13 +51,17 @@
 	$vstripe_delay = $params->get('vstripe_delay');
 	$hstripe_delay = $params->get('hstripe_delay');
 	
-	
-	$doc->addStyleSheet(JURI::base()."modules/mod_ptslideshow/css/wt-rotator.css"); // load css
+	$load_rotator_css = $params->get('load_rotator_css');
+	if($load_rotator_css == 1)
+	{
+		$doc->addStyleSheet(JURI::base()."modules/mod_ptslideshow/css/wt-rotator.css"); // load css
+	}
 	
 	$load_rotator = $params->get('load_rotator');
 	if($load_rotator == 1)
 	{
-		$doc->addScript(JURI::base()."modules/mod_ptslideshow/js/jquery.wt-rotator.min.js"); // load js
+		//$doc->addScript(JURI::base()."modules/mod_ptslideshow/js/jquery.wt-rotator.min.js"); // load js
+		$doc->addScript(JURI::base()."modules/mod_ptslideshow/js/jquery.wt-rotator.js"); // load js
 	}
 			
 	require(JModuleHelper::getLayoutPath('mod_ptslideshow'));
