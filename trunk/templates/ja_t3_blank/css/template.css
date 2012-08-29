@@ -1,4 +1,4 @@
-body {color: #3f3f3f;font-family: Arial, sans-serif; background-color:#f3f3f3}
+body {color: #3f3f3f;font:12px Arial, sans-serif; background-color:#f3f3f3}
 body#bd { background-color:#f3f3f3 ;color: #3f3f3f}
 
 /* Normal links ---*/
@@ -382,7 +382,7 @@ a.ja-icon-video:hover span { color: #0F85D8; }
 
 /*huuthe*/
 body.bd .main{}
-#ja-search{float:right}
+#ja-search{float:right; }
 .prologin{overflow:hidden}
 	.prologin > div{float:left}
 	.prologin span{float:left;color:#787878;font-size:20px;font-family:arial;padding:12px 13px 0px 13px}
@@ -390,12 +390,12 @@ body.bd .main{}
 	.proaccount a{display:block;width:240px;height:43px;background: url(../images/create_account_bg.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
 	.prologinout a{display:block;width:91px;height:44px;background: url(../images/bg_logout.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
 	.prologin{background: url(../images/probid/bg_joinourner.png) no-repeat left top;padding:26px 0 0 7px; clear:both}
-#ja-mainnav{}
+#ja-mainnav{ background:#f3f3f3}
 #ja-mainnav .main-inner1{background:#000!important;height:44px;}
 #ja-mainnav .main-inner1 .mainlevel {height:100%}
 #ja-mainnav .main-inner1 .mainlevel >ul >li{height:44px;float:left;padding:0px 15px}
 #ja-wrapper{width:960px!important;margin:0 auto}
-div.ja-moduletable h3, div.moduletable h3{ background-color:#e7e7e7; color:#000; font:bold 18px Arial; padding:10px 15px}
+div.ja-moduletable h3, div.moduletable h3{ background-color:#e7e7e7; color:#000; font:bold 18px Arial; padding:10px 15px; margin-bottom:20px}
 div.ja-moduletable div h3, div.moduletable div h3 { padding:0; background-color:transparent; font:}
 /*menu*/
 #ja-mainnav .main-inner1 li{height:44px!important}
@@ -414,14 +414,7 @@ ul.roknewspager-numbers{background:none!important}
 /*k2*/
 .k2ItemsBlock .paging{display:none}
 /**/
-#home_intro{overflow:hidden}
-#home_intro li{float:left;width:325px;margin-right:10px}
-#home_intro li.vendor{margin-right:0px}
-#home_intro li .top{background: url(../images/home_owner_icon.jpg) no-repeat left center;padding-left:45px;margin-bottom:15px}
-#home_intro li .bot{position:relative}
-#home_intro li .bot img{border:1px solid #ddd}
-#home_intro li .bot p{position:absolute;bottom:0px;left:0px;background: url(../images/bg_home_intro_bot.png) repeat left center;height:40px;width:325px;margin-bottom:0px}
-#home_intro li .bot p strong{display:block;}
+
 
 
 /* tr */
@@ -447,21 +440,55 @@ ul.roknewspager-numbers{background:none!important}
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'avantgarde_dn';
+    src: url('../fonts/avgardn-webfont.eot');
+    src: url('../fonts/avgardn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avgardn-webfont.woff') format('woff'),
+         url('../fonts/avgardn-webfont.ttf') format('truetype'),
+         url('../fonts/avgardn-webfont.svg#avantgarde_dn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*pd_content*/
+#pt_content { background:#fff}
+#ja-feature { padding:0 9px}
+body.bd #pt_content  .main { width:100%}
+
+.pt_slideshow  {}
+.pt_slideshow .pt_header { font:40px 'avantgarde_dn';}
+
+#ja-mainbottom{ padding:0 10px}
+#home_intro{overflow:hidden}
+#home_intro li{float:left;width: 32.6%;margin-left:10px;border-top:4px solid #000; color:#fff}
+#home_intro li:first-child{margin-left:0px}
+#home_intro li .top{background: url(../images/home_owner_icon.jpg) no-repeat left center;padding-left:45px;margin-bottom:15px}
+#home_intro li .top h3 { margin-bottom:0}
+#home_intro li .top span { color:#969595}
+#home_intro li .bot{position:relative; width:100%;border:1px solid #ddd;}
+#home_intro li .bot img{ width:100%}
+#home_intro li .bot p{position:absolute;bottom:1px;left:1px;background: url(../images/bg_home_intro_bot.png) repeat left center;width:93.6%;margin-bottom:0px; padding:15px 9px}
+#home_intro li .bot p strong{display:block;}
+#home_intro li .bot p strong , #home_intro li .bot p span { letter-spacing:-0.2px}
+#home_intro  a { background: url(../images/probid/btn_34_red.png) no-repeat left top;padding-left:6px; float:right; display:inline-block;height: 34px;line-height: 34px;}
+#home_intro a span { background: url(../images/probid/btn_34_red.png) no-repeat right -34px;padding:0 40px 0 10px;display:inline-block}
 
 /* footer */
 #ja-footer {padding:18px 0}
-#ja-footer .ja-box { border-left:1px dotted #000} 
+#ja-footer .column div.ja-moduletable, #ja-footer .column div.moduletable { margin:0 10px}
+#ja-footer .ja-box { border-left:1px dotted #000; min-height: 233px !important;} 
 #ja-footer .ja-box.ja-box-center .ja-moduletable{ padding:0 10px}
 #ja-footer .ja-box:first-child { border:none}
-#ja-footer .ja-box h3 { font-size:14px; letter-spacing:-1px}
-#ja-footer .ja-box-ct a { background: url(../images/probid/i_arrow.png) no-repeat right center; padding-right:15px; font-size:11px; color:#db2127; display:block; margin-bottom:3px}
+#ja-footer .ja-box h3 { font-size:14px; letter-spacing:-1px; background:none; padding:0 0 10px 0; margin-bottom:0}
+#ja-footer .ja-box-ct a { background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0; font-size:11px; color:#db2127; float:left; clear:left; margin-bottom:3px}
 #ja-footer .ja-box-ct br { display:none}
 .pb_footer_1 {}
 #ja-footer .ja-box  .pb_footer_1 h3 {  font:24px 'avantgarde_dm'; color:#000; text-align:right }
 #ja-footer .ja-box  .pb_footer_1 p{  font:24px 'avantgarde_md_btmedium'; color:#000; text-align:right }
 .pb_footer_1 div.icon { border-top:1px dotted #000}
 .pb_footer_1 div.icon a{ width:24px; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; padding-left:20px; display:inline-block}
-#ja-footer .ja-box-ct div.icon a{ width:auto; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; display:inline-block; padding:8px 0 3px 30px; margin:15px 10px ; font:12px Arial,sans-serif;}
+#ja-footer .ja-box-ct div.icon a{ width:auto; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; display:inline-block; padding:8px 0 3px 30px; margin:15px 10px ; font:12px Arial,sans-serif; clear: none;}
 #ja-footer .ja-box-ct div.icon a.icon-twitter { background-position:left -3px}
 #ja-footer .ja-box-ct div.icon a.icon-facebook{ background-position:left -53px}
 
@@ -472,3 +499,12 @@ ul.roknewspager-numbers{background:none!important}
 
 #ja-footer .ja-box-ct .posttext { border-top:1px dotted #000; margin-top:10px}
 #ja-footer .ja-box-ct .posttext p { text-align:right; font:bold 11px Arial; color:#6a6a6a; margin-top:10px}
+
+/*k2*/
+.even, .odd { background:none; border:none}
+div.k2ItemsBlock ul li div.moduleItemIntrotext { padding:0 10px}
+div.k2ItemsBlock ul li div.moduleItemIntrotext .moduleItemIntrotextHead { float:left; margin:2px 12px 10px 0}
+div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage img{ border:1px solid #d1d1d1; margin:0}
+.moduleItemIntrotextContent{ display:block; overflow:hidden}
+div.k2ItemsBlock ul li a.moduleItemTitle { display:block; padding-bottom:10px}
+.moduleItemIntrotextContent  a { color:#dd2228}

@@ -4,9 +4,12 @@
 	<stylesheets>
 		<file>css/jquery.fancybox-1.3.4.css</file>
 		<file>css/mootools.css</file>
+<<<<<<< .mine
+                <file>css/layout_import.css</file>
+=======
 		<file>css/layout_import.css</file>
 		<file>css/layout_tab_slide.css</file>
-		<file>css/wt-rotator.css</file>
+>>>>>>> .r24
 	</stylesheets>
 	<blocks name="top" style="xhtml">
 		<block name="absolute" type="modules" style="raw">absolute</block>
@@ -24,10 +27,8 @@
           <block name="right1">left</block>
           <block name="right2">right</block>
       </blocks>
-      <blocks name="mainbottoms" style="xhtml">
-		<block name="mainbottom" type="spotlight" main-inner="1">mainbottom1, mainbottom2, mainbottom3</block>
-	</blocks>
 	<blocks name="bottom" style="xhtml">
+		<block name="mainbottom" type="spotlight" main-inner="1">mainbottom1, mainbottom2, mainbottom3</block>
 		<block name="bottom" type="spotlight" main-inner="1">bottom</block>
                <block name="footer" type="spotlight" main-inner="1">footer1, footer2, footer3, footer4</block>
 		<block name="copyright" type="copyright"></block>
