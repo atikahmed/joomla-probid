@@ -1,0 +1,184 @@
+July 28, 2012, 1:44 am----------------------------------
+Can't DROP 'average'; check that column/key exists SQL=ALTER TABLE `jos_jreviews_ratings` DROP INDEX `average`;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'review_id' SQL=ALTER TABLE `jos_jreviews_ratings` ADD INDEX `review_id` ( `reviewid` );
+July 28, 2012, 1:44 am----------------------------------
+Can't DROP 'entry'; check that column/key exists SQL=ALTER TABLE `jos_jreviews_comments` DROP INDEX `entry`;
+July 28, 2012, 1:44 am----------------------------------
+Can't DROP 'myreviews'; check that column/key exists SQL=ALTER TABLE `jos_jreviews_comments` DROP INDEX `myreviews`;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'listing_id' SQL=ALTER TABLE `jos_jreviews_comments` ADD INDEX `listing_id` ( `pid` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'published' SQL=ALTER TABLE `jos_jreviews_comments` ADD INDEX `published` ( `published` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'required' SQL=ALTER TABLE `jos_jreviews_criteria` ADD `required` mediumtext AFTER `criteria`;
+July 28, 2012, 1:44 am----------------------------------
+Table 'jos_jreviews_listing_totals' already exists SQL=CREATE TABLE `jos_jreviews_listing_totals` (
+  `listing_id` int(11) NOT NULL,
+  `extension` varchar(50) NOT NULL,
+  `user_rating` text NOT NULL,
+  `user_rating_count` int(11) NOT NULL,
+  `user_criteria_rating` text NOT NULL,
+  `user_criteria_rating_count` text NOT NULL,
+  `user_comment_count` int(11) NOT NULL,
+  `editor_rating` text NOT NULL,
+  `editor_rating_count` int(11) NOT NULL,
+  `editor_criteria_rating` text NOT NULL,
+  `editor_criteria_rating_count` text NOT NULL,
+  `editor_comment_count` int(11) NOT NULL,
+  PRIMARY KEY  (`listing_id`, `extension`)
+) ENGINE=MyISAM;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'listing_note' SQL=ALTER TABLE `jos_jreviews_content` ADD `listing_note` MEDIUMTEXT NOT NULL AFTER `email`;
+July 28, 2012, 1:44 am----------------------------------
+Can't DROP 'checked_out'; check that column/key exists SQL=ALTER TABLE `jos_jreviews_comments` 
+ADD `posts` INT( 11 ) NOT NULL AFTER `ipaddress`,
+ADD `owner_reply_text` TEXT NOT NULL AFTER `posts`,
+ADD `owner_reply_created` DATETIME NOT NULL AFTER `owner_reply_text`,
+ADD `owner_reply_approved` TINYINT( 4 ) NOT NULL DEFAULT '0' AFTER `owner_reply_created`,
+ADD `owner_reply_note` MEDIUMTEXT NOT NULL AFTER `owner_reply_approved`,
+ADD `vote_helpful` INT( 10 ) NOT NULL AFTER `posts`,  
+ADD `vote_total` INT( 10 ) NOT NULL AFTER `posts`,
+ADD `review_note` MEDIUMTEXT NOT NULL,
+DROP `checked_out`,
+DROP `checked_out_time`;
+July 28, 2012, 1:44 am----------------------------------
+Table 'jos_jreviews_activities' already exists SQL=CREATE TABLE `jos_jreviews_activities` (
+`activity_id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`activity_type` mediumtext NOT NULL,
+`user_id` INT( 11 ) NOT NULL,
+`email` TINYTEXT NOT NULL,
+`created` DATETIME NOT NULL,
+`ipaddress` TINYTEXT NOT NULL,
+`activity_new` INT( 4 ) NOT NULL,
+`listing_id` INT( 11 ) NOT NULL,
+`review_id` INT( 11 ) NOT NULL,
+`helpful_vote_id` INT( 11 ) NOT NULL,
+`post_id` INT( 11 ) NOT NULL,
+`extension` TINYTEXT NOT NULL,
+`value` INT( 4 ) NOT NULL
+) ENGINE = MYISAM;
+July 28, 2012, 1:44 am----------------------------------
+Table 'jos_jreviews_predefined_replies' already exists SQL=CREATE TABLE `jos_jreviews_predefined_replies` (
+`reply_id` INT( 8 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`reply_type` TINYTEXT NOT NULL ,
+`reply_subject` MEDIUMTEXT NOT NULL ,
+`reply_body` TEXT NOT NULL
+) ENGINE = MYISAM;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '1' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(1, 'listing', 'Your listing has been approved', '{name},\n\nThank you for submitting your listing. It has been approved and you can see it by visiting the link below:\n\n{url}');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '2' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(2, 'listing', 'Your listing has been rejected', '{name},\n\nThank you for your recent listing submission. Unfortunately, it has been rejected.');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '3' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(3, 'listing', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '4' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(4, 'listing', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '5' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(5, 'listing', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '6' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(6, 'review', 'Your review has been approved', '{name},\n\nThank you for submitting your review. It has been approved and you can see it by visiting the link below:\n\n{url}');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '7' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(7, 'review', 'Your review has been rejected', '{name},\n\nThank you for your recent review submission. Unfortunately, it has been rejected.');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '8' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(8, 'review', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '9' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(9, 'review', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '10' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(10, 'review', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '11' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(11, 'owner_reply', 'Your owner reply has been approved', '{name},\n\nThank you for submitting your owner reply. It has been approved and you can see it by visiting the link below:\n\n{url}');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '12' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(12, 'owner_reply', 'Your owner reply has been rejected', '{name},\n\nThank you for your recent review reply for one of your listings. Unfortunately, it has been rejected.');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '13' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(13, 'owner_reply', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '14' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(14, 'owner_reply', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '15' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(15, 'owner_reply', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '16' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(16, 'discussion_post', 'Your review comment has been approved', '{name},\n\nThank you for submitting your comment. It has been approved and you can see it by visiting the link below:\n\n{url}');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '17' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(17, 'discussion_post', 'Your review comment has been rejected', '{name},\n\nThank you for your recent review comment. Unfortunately, it has been rejected.');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '18' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(18, 'discussion_post', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '19' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(19, 'discussion_post', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Duplicate entry '20' for key 1 SQL=INSERT INTO `jos_jreviews_predefined_replies` (`reply_id`, `reply_type`, `reply_subject`, `reply_body`) VALUES(20, 'discussion_post', '', '');
+July 28, 2012, 1:44 am----------------------------------
+Table 'jos_jreviews_claims' already exists SQL=CREATE TABLE `jos_jreviews_claims` (
+`claim_id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`user_id` INT( 11 ) NOT NULL ,
+`listing_id` INT( 11 ) NOT NULL ,
+`claim_text` MEDIUMTEXT NOT NULL ,
+`created` DATETIME NOT NULL ,
+`claim_note` MEDIUMTEXT NOT NULL ,
+`approved` TINYINT( 4 ) NOT NULL DEFAULT '0' ,
+INDEX ( `listing_id` )
+) ENGINE = MYISAM ;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'permalink' SQL=ALTER TABLE `jos_jreviews_activities` ADD `permalink` MEDIUMTEXT NOT NULL AFTER `value` ;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'listing_activity' SQL=ALTER TABLE  `jos_jreviews_activities` ADD INDEX  `listing_activity` (  `listing_id` ,  `activity_type` ( 20 ) ,  `activity_new` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'review_activity' SQL=ALTER TABLE  `jos_jreviews_activities` ADD INDEX  `review_activity` (  `review_id` ,  `activity_type` ( 20 ) ,  `activity_new` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'post_activity' SQL=ALTER TABLE  `jos_jreviews_activities` ADD INDEX  `post_activity` (  `post_id` ,  `activity_type` ( 20 ) ,  `activity_new` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'groupid' SQL=ALTER TABLE  `jos_jreviews_fields` ADD INDEX  `groupid` ( `groupid` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'ip_address' SQL=ALTER TABLE  `jos_jreviews_captcha` ADD INDEX  `ip_address` ( `ip_address` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'listing_id' SQL=ALTER TABLE  `jos_jreviews_reports` ADD INDEX  `listing_id` ( `listing_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'review_id' SQL=ALTER TABLE  `jos_jreviews_reports` ADD INDEX  `review_id` ( `review_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'post_id' SQL=ALTER TABLE  `jos_jreviews_reports` ADD INDEX  `post_id` ( `post_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'user_id' SQL=ALTER TABLE  `jos_jreviews_reports` ADD INDEX  `user_id` ( `user_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'approved' SQL=ALTER TABLE  `jos_jreviews_reports` ADD INDEX  `approved` ( `approved` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'extension' SQL=ALTER TABLE  `jos_jreviews_reports` ADD INDEX  `extension` ( `extension` (20) );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'ipaddress' SQL=ALTER TABLE  `jos_jreviews_votes` ADD INDEX  `ipaddress` ( `ipaddress` (16) );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'parent_post_id' SQL=ALTER TABLE  `jos_jreviews_discussions` ADD INDEX  `parent_post_id` ( `parent_post_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'review_id' SQL=ALTER TABLE  `jos_jreviews_discussions` ADD INDEX  `review_id` ( `review_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'user_id' SQL=ALTER TABLE  `jos_jreviews_discussions` ADD INDEX  `user_id` ( `user_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'approved' SQL=ALTER TABLE  `jos_jreviews_discussions` ADD INDEX  `approved` ( `approved` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'user_id' SQL=ALTER TABLE  `jos_jreviews_claims` ADD INDEX  `user_id` ( `user_id` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'approved' SQL=ALTER TABLE  `jos_jreviews_claims` ADD INDEX  `approved` ( `approved` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'extension' SQL=ALTER TABLE  `jos_jreviews_activities` ADD INDEX  `extension` ( `extension` (20));
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'config' SQL=ALTER TABLE  `jos_jreviews_criteria` ADD  `config` MEDIUMTEXT NOT NULL AFTER  `state`;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'compareview' SQL=ALTER TABLE  `jos_jreviews_fields` ADD  `compareview` TINYINT( 1 ) NOT NULL default '0' AFTER  `listview`;
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'user_rating' SQL=ALTER TABLE  `jos_jreviews_listing_totals` ADD INDEX  `user_rating` (  `user_rating` ,  `user_rating_count` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'editor_rating' SQL=ALTER TABLE  `jos_jreviews_listing_totals` ADD INDEX  `editor_rating` (  `editor_rating` ,  `editor_rating_count` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'user_comment_count' SQL=ALTER TABLE  `jos_jreviews_listing_totals` ADD INDEX `user_comment_count` (  `user_comment_count` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'editor_comment_count' SQL=ALTER TABLE  `jos_jreviews_listing_totals` ADD INDEX `editor_comment_count` (  `editor_comment_count` );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate key name 'title' SQL=ALTER TABLE  `jos_jreviews_directories` ADD INDEX `title` ( `title` ( 35 ) );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'control_field' SQL=ALTER TABLE  `jos_jreviews_fields` ADD  `control_field` VARCHAR( 50 ) NOT NULL , 
+ADD  `control_value` VARCHAR( 255 ) NOT NULL ,
+ADD INDEX ( control_field, control_value );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'control_field' SQL=ALTER TABLE  `jos_jreviews_groups` ADD  `control_field` VARCHAR( 50 ) NOT NULL ,
+ADD  `control_value` VARCHAR( 255 ) NOT NULL ,
+ADD INDEX ( control_field, control_value );
+July 28, 2012, 1:44 am----------------------------------
+Duplicate column name 'control_field' SQL=ALTER TABLE  `jos_jreviews_fieldoptions` ADD  `control_field` VARCHAR( 50 ) NOT NULL ,
+ADD  `control_value` VARCHAR( 255 ) NOT NULL ,
+ADD INDEX ( control_field, control_value );
