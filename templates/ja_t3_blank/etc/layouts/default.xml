@@ -18,7 +18,7 @@
 		<block name="topsl" type="spotlight" main-inner="1">user1,user2,user3,user4,user5</block>
                 <block name="utility" type="spotlight" main-inner="1">utility</block>	
 	</blocks>
-        <blocks name="middle" colwidth="20" fixheight="1">
+        <blocks name="middle" colwidth="25.5" fixheight="1">
           <block name="right-mass-top" >right-mass-top</block>
           <block name="content-mass-top">content-mass-top</block>
           <block name="right1">left</block>
