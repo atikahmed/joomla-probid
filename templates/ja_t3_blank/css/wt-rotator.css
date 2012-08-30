@@ -6,7 +6,7 @@
 	display:block;
 	width:942px!important;
 	height:331px!important;
-	overflow:hidden; 
+	overflow:hidden; background:none; border:none
 }
 .wt-rotator a {
 	outline:none;
@@ -28,16 +28,16 @@
 	border:none;		
 }
 .desc { float:right;
-	background-color:#2d3789;
+	background:#2d3789;
 	color:#FFF;
 	text-align:left;
 	display:none;
-	position:relative;
+	position:absolute;
 	top:0;
-	right:0;
+	right:0;left:auto;
 	z-index:4;
-	width:458px!important; height:331px!important;
-	padding:0;
+	width:410px!important; height:223px!important;
+	padding:54px 24px;
 	overflow:hidden;
 }
 .tmp-desc {

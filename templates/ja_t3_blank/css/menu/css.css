@@ -30,17 +30,17 @@ The second part will define the visual look for this menu.
 
 /* 2nd level and above */
 #ja-cssmenu li ul {
-	border: 1px solid #ccc;
+	border: 1px solid #e3e2e2;
 	background: #000;
-	top:44px
+	top:44px;
 }
 
 #ja-cssmenu li ul ul {
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #e3e2e2;
 }
 
 #ja-cssmenu li ul li {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #e3e2e2;
 	background: none;
 }
 
