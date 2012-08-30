@@ -228,7 +228,6 @@
 }
 
 .gallery1 { width:100% }
-.gallery1 .holder{ margin-left:-10px}
 .gallery1 .holder ul li { border-right:1px solid #b1b1b1; width:319px}
 .gallery1 .pagingGallery { float:right}
 .gallery1 .pagingGallery li { float:left; padding-left:5px}

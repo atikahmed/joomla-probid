@@ -25,14 +25,14 @@ The second part will define the visual look for this menu.
 #ja-cssmenu li a.active:hover,
 #ja-cssmenu li a.active:active,
 #ja-cssmenu li a.active:focus {
-	color: #333;
+	color: #777;
 }
 
 /* 2nd level and above */
 #ja-cssmenu li ul {
 	border: 1px solid #ccc;
-	border-top: 0;
-	background: #fff;
+	background: #000;
+	top:44px
 }
 
 #ja-cssmenu li ul ul {
@@ -43,3 +43,8 @@ The second part will define the visual look for this menu.
 	border-bottom: 1px solid #ccc;
 	background: none;
 }
+
+#ja-cssmenu li:hover > a { color:#777}
+#ja-cssmenu li.havechild span.menu-title, #ja-cssmenu li.havechildsfhover span.menu-title{ background: url(../../images/probid/i_menu.png) no-repeat right 8px;padding-right:10px}
+#ja-cssmenu li.havechild ul span.menu-title, #ja-cssmenu li.havechildsfhover ul span.menu-title { background:none; padding:0}
+#ja-cssmenu li a { font-weight:normal}
