@@ -1,5 +1,5 @@
 body {color: #3f3f3f;font:12px Arial, sans-serif; background-color:#f3f3f3}
-body#bd { background-color:#f3f3f3 ;color: #3f3f3f}
+body#bd { background-color:#f3f3f3 ;color: #000}
 
 /* Normal links ---*/
 a { color: #069; text-decoration: none; }
@@ -451,9 +451,19 @@ ul.roknewspager-numbers{background:none!important}
     font-style: normal;
 
 }
+input { overflow:hidden}
+#login-form{ }
+.login-greeting { float:right;border-right:2px solid #8d8d8d; padding-right:10px; margin-right:10px}
+.login-greeting strong { color:#191919}
+.logout-button { float:right; }
+.logout-button  input{ background:none; border:none; padding:0; color:#dd2228; margin-top:-2px; cursor:default}
+.proupaccount  { clear:both;background: url(../images/probid/bkg_goto.png) no-repeat left bottom;padding:25px 0 5px 70px; display:inline-block; float:right}
+.proupaccount  a , #ja-footer  .ja-box-ct .proupaccount  a{ font:14px 'avantgarde_dn';background: url(../images/probid/bkg_red_38.png) repeat-x 0 0; border:1px solid #b2181d; -moz-border-radius: 5px;-webkit-border-radius: 5px; border-radius:5px; height:38px; line-height:38px; padding: 0 15px; color:#fff; text-shadow:0 1px 1px #300708; text-decoration:none; display:inline-block}
+#ja-footer  .ja-box-ct .proupaccount { padding-top:5px; margin-bottom:15px}
+
 /*pd_content*/
 #pt_content { background:#fff; margin-bottom:15px}
-#ja-feature { padding:0 9px}
+#ja-feature { padding:9px 9px 0}
 body.bd #pt_content  .main { width:100%}
 
 .pt_slideshow  {}
@@ -480,14 +490,18 @@ body.bd #pt_content  .main { width:100%}
 #ja-utility  ul.roknewspager-numbers li.active{ color:#000}
 
 #ja-container{ padding:0 9px 20px}
-#ja-container .main .inner { padding:0 15px 0 0}
+#ja-container .main .inner { padding:0}
 #ja-container div.ja-moduletable ,#ja-container div.moduletable{ border-top:4px solid #000; padding-top:3px;}
 #ja-container div.ja-moduletable h3, #ja-container div.moduletable h3 { background: url(../images/probid/i_icon_2.png) no-repeat 0 0; padding:4px 0 18px 54px }
 #ja-container #ja-content-mass-top div.ja-moduletable h3 { background-position:4px -76px}
+#ja-container #ja-right-mass-top { margin-left:15px}
 #ja-container #ja-right-mass-top div.ja-moduletable h3 {background-position:4px 5px }
-#ja-container #ja-right-mass-top p { margin-top:-10px}
 #gm_module_results { border:1px solid #b1b1b1; margin-top:-5px}
-
+#ja-container #ja-right-mass-top div.custom div.first{ color:#969595;margin:-35px 0 17px 54px}
+#ja-container #ja-right-mass-top div.custom img{ border:1px solid #b1b1b1; padding:1px; margin:5px 0 10px}
+#ja-container #ja-right-mass-top div.custom p a {background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0;  color:#db2127; text-decoration:underline; display:inline-block; margin-top:15px}
+#ja-container #ja-right-mass-top div.custom p a:hover { text-decoration:none}
+ 
 #ja-mainbottom{ padding:0 10px}
 #home_intro{overflow:hidden}
 #home_intro li{float:left;width: 32.6%;margin-left:10px;border-top:4px solid #000; color:#fff; padding-top:5px}
@@ -506,21 +520,33 @@ body.bd #pt_content  .main { width:100%}
 #home_intro li.service .top{ background-position:0 -252px}
 #home_intro li.vendor .top{ background-position:0 -347px}
 
+/* saerch*/
+.rsform{}
+.rsform #userForm { background:#f7f7f7; border:1px solid #e0dfdf; overflow:hidden}
+#formDiv ul {  clear:both} #formDiv ul  ul{ padding:0}
+#formDiv ul  li { padding:10px;} #formDiv ul  ul li { padding:0}
+#formDiv ul.fsform-head li ,
+ul.fsform-foot li{ float:left} #formDiv ul.fsform-head  ul li , ul.fsform-foot ul li{ clear:left; padding:0}
+.fsform-head{}   
+.rsform ul li:first-child { font:bold 11px Arial; color:#000; padding-bottom:5px}
+.rsform #userForm  select, .rsform #userForm  input { border:1px solid #ccc; background:#fff; border-radius:0; padding:5px}
+
 /* footer */
 #ja-footer {padding:18px 0}
 #ja-footer .column div.ja-moduletable, #ja-footer .column div.moduletable { margin:0 10px}
-#ja-footer .ja-box { border-left:1px dotted #000; min-height: 233px !important;} 
+#ja-footer .ja-box { border-left:1px dotted #000; min-height: 233px !important; width:23%!important} 
+#ja-footer .ja-box.ja-box-right{ width:30%!important}
 #ja-footer .ja-box.ja-box-center .ja-moduletable{ padding:0 10px}
 #ja-footer .ja-box:first-child { border:none}
 #ja-footer .ja-box h3 { font-size:14px; letter-spacing:-1px; background:none; padding:0 0 10px 0; margin-bottom:0}
 #ja-footer .ja-box-ct a { background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0; font-size:11px; color:#db2127; float:left; clear:left; margin-bottom:3px}
 #ja-footer .ja-box-ct a.viewall_project{ font-weight:bold}
 #ja-footer .ja-box-ct br { display:none}
-.pb_footer_1 {}
-#ja-footer .ja-box  .pb_footer_1 h3 {  font:24px 'avantgarde_dm'; color:#000; text-align:right }
-#ja-footer .ja-box  .pb_footer_1 p{  font:24px 'avantgarde_md_btmedium'; color:#000; text-align:right }
-.pb_footer_1 div.icon { border-top:1px dotted #000}
-.pb_footer_1 div.icon a{ width:24px; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; padding-left:20px; display:inline-block}
+.pt_footer_1 {}
+#ja-footer .ja-box .pt_footer_1 h3 {  font:24px 'avantgarde_dm'!important; color:#000; text-align:right }
+#ja-footer .ja-box .pt_footer_1 p{  font:24px 'avantgarde_md_btmedium'!important; color:#000; text-align:right }
+.pt_footer_1 div.icon { border-top:1px dotted #000; margin-top:30px}
+.pt_footer_1 div.icon a{ width:24px; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; padding-left:20px; display:inline-block}
 #ja-footer .ja-box-ct div.icon a{ width:auto; height:23px;background-image: url(../images/probid/i_icon.png); background-repeat: no-repeat ; display:inline-block; padding:8px 0 3px 30px; margin:15px 10px ; font:12px Arial,sans-serif; clear: none;}
 #ja-footer .ja-box-ct div.icon a.icon-twitter { background-position:left -3px}
 #ja-footer .ja-box-ct div.icon a.icon-facebook{ background-position:left -53px}
@@ -528,9 +554,9 @@ body.bd #pt_content  .main { width:100%}
 .profooterlogo {  background: url(../images/probid/logo_footer.png) no-repeat right top;width:188px; height:48px; font-size:0; text-indent:-9999px; text-align:right; float:right} 
 #ja-footer .ja-box-ct .proaccount { float:right}
 #ja-footer .ja-box-ct .proaccount a{display:block;width:163px;height:40px;background: url(../images/probid/create_account_bg1.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent; padding:0}
-#ja-footer .ja-box-ct .prologin{background: url(../images/probid/bg_joinourner_2.png) no-repeat left bottom;padding:0 0 30px 7px; clear:both}
+#ja-footer .ja-box-ct .prologin{background: url(../images/probid/bg_joinourner_2.png) no-repeat left bottom;padding:5px 0 30px 7px; clear:both}
 
-#ja-footer .ja-box-ct .posttext { border-top:1px dotted #000; margin-top:10px}
+#ja-footer .ja-box-ct .posttext { border-top:1px dotted #000; margin-top:10px;clear: both;}
 #ja-footer .ja-box-ct .posttext p { text-align:right; font:bold 11px Arial; color:#6a6a6a; margin-top:10px}
 
 /*k2*/
