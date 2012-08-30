@@ -46,13 +46,15 @@ defined('_JEXEC') or die;
 					
 					$('#ja-right1').width('46%');
 					$('#ja-right2').width('54%');
-				} else {
+				} 
+
+				if($('#ja-right1')[0]  && $('#ja-right2')[0] == null){
 					$('#ja-mainbody').width('72.5%');
 					$('#ja-right').width('25.5%');
 				}
 				
 				if($('#ja-right-mass-top')[0]){
-					$('#ja-right-mass-top').parent().width('32.5%');
+					$('#ja-right-mass-top').parent().width('32.0%');
 					
 					$('#ja-mainbody').width('67.5%');
 				}

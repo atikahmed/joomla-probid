@@ -7,6 +7,7 @@
 		<file>css/layout_import.css</file>
 		<file>css/layout_tab_slide.css</file>
 		<file>css/wt-rotator.css</file>
+		<file>css/template_more.css</file>
 	</stylesheets>
 	<blocks name="top" style="xhtml">
 		<block name="absolute" type="modules" style="raw">absolute</block>

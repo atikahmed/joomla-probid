@@ -15,10 +15,10 @@ defined('_JEXEC') or die('Restricted access');
 <script type="text/javascript">
 	jQuery(document).ready(function($){
 		$('#ja-right1').hide();
-		$('#ja-right').width('20%');
+		$('#ja-right').width('24.4%');
 		$('#ja-right2').width('100%');
 		
-		$('#ja-mainbody').width('80%');
+		$('#ja-mainbody').width('74%');
 	});
 </script>
 
@@ -48,7 +48,7 @@ defined('_JEXEC') or die('Restricted access');
 		  <span><?php echo JText::_('K2_TAGGED_UNDER'); ?></span>
 		  <ul class="itemTags">
 		    <?php foreach ($this->item->tags as $tag): ?>
-		    <li><a href="<?php echo $tag->link; ?>"><?php echo $tag->name; ?></a></li>
+		    <li><a href="<?php echo $tag->link; ?>">// <?php echo $tag->name; ?></a></li>
 		    <?php endforeach; ?>
 		  </ul>
 		  <div class="clr"></div>
