@@ -32,13 +32,33 @@ defined('_JEXEC') or die;
 			jQuery.noConflict();
 			jQuery(document).ready(	function($) 
 			{
-	<?php 
-				// for add active class to home(default)
-				if (JFactory::getApplication()->getMenu()->getActive()->home == JFactory::getApplication()->getMenu()->getDefault()->home) :?>
+				<?php 
+					// for add active class to home(default)
+					if (JFactory::getApplication()->getMenu()->getActive()->home == JFactory::getApplication()->getMenu()->getDefault()->home) :?>
 					$('body').addClass('cc_home_page');
 				<?php endif;?>	
-	});
-		</script>
+				
+				
+				
+				if($('#ja-right1')[0] && $('#ja-right2')[0]){
+					$('#ja-mainbody').width('53%');
+					$('#ja-right').width('45%');
+					
+					$('#ja-right1').width('46%');
+					$('#ja-right2').width('54%');
+				} else {
+					$('#ja-mainbody').width('72.5%');
+					$('#ja-right').width('25.5%');
+				}
+				
+				if($('#ja-right-mass-top')[0]){
+					$('#ja-right-mass-top').parent().width('32.5%');
+					
+					$('#ja-mainbody').width('67.5%');
+				}
+				
+			});
+	</script>
 
     <?php echo $this->showBlock ('css') ?>
 </head>
