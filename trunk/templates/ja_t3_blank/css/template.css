@@ -395,7 +395,9 @@ body.bd .main{}
 #ja-mainnav .main-inner1 .mainlevel {height:100%}
 #ja-mainnav .main-inner1 .mainlevel >ul >li{height:44px;float:left;padding:0px 15px}
 #ja-wrapper{width:960px!important;margin:0 auto}
-div.ja-moduletable h3, div.moduletable h3{ background-color:#e7e7e7; color:#000; font:bold 18px Arial; padding:10px 15px; margin-bottom:20px}
+.cc_home_page div.ja-moduletable h3, div.moduletable h3{ color:#000; font:bold 18px Arial; padding:10px 15px; margin-bottom:20px}
+.cc_home_page #ja-utility div.ja-moduletable h3, .cc_home_page #ja-utility  div.moduletable h3,
+.cc_home_page #ja-bottom div.ja-moduletable h3, .cc_home_page #ja-bottom  div.moduletable h3{ background-color:#e7e7e7;}
 div.ja-moduletable div h3, div.moduletable div h3 { padding:0; background-color:transparent; font:}
 /*menu*/
 #ja-mainnav .main-inner1 li{height:44px!important}
@@ -526,10 +528,13 @@ body.bd #pt_content  .main { width:100%}
 #formDiv ul {  clear:both} #formDiv ul  ul{ padding:0}
 #formDiv ul  li { padding:10px;} #formDiv ul  ul li { padding:0}
 #formDiv ul.fsform-head li ,
-ul.fsform-foot li{ float:left} #formDiv ul.fsform-head  ul li , ul.fsform-foot ul li{ clear:left; padding:0}
+ul.fsform-foot li{ float:left; width:47.8%} #formDiv ul.fsform-head  ul li , ul.fsform-foot ul li{ clear:left; padding:0; width:100%}
 .fsform-head{}   
 .rsform ul li:first-child { font:bold 11px Arial; color:#000; padding-bottom:5px}
-.rsform #userForm  select, .rsform #userForm  input { border:1px solid #ccc; background:#fff; border-radius:0; padding:5px}
+.rsform #userForm  select, .rsform #userForm  input { border:1px solid #ccc; background:#fff; border-radius:0; padding:5px;width:100%}
+.rsform #userForm  input { padding:6px 5px}
+.rsform #userForm  input#Keywords{ width:99%}
+inout.rsform-submit-button { }
 
 /* footer */
 #ja-footer {padding:18px 0}
