@@ -41,20 +41,14 @@
 					vstripe_delay: <?php echo $vstripe_delay; ?>,
 					hstripe_delay: <?php echo $hstripe_delay; ?>			
 				});
-			}
-		);
+		});
 	</script> 
 				
-	<div class="container">
+	<div class="container" style="width:500px; float: left;">
 		<div class="wt-rotator">
 			<div class="screen">
 			</div>
 			<div class="c-panel">
-				<div class="buttons">
-					<div class="prev-btn">prev</div>
-					<div class="play-btn">play</div>
-					<div class="next-btn">next</div>
-				</div>
 				<div class="thumbnails">
 					<ul>
 					<?php
@@ -63,21 +57,54 @@
 						<?php if($item->url_):?>
 						<li>
 							<a href="<?php echo $item->url_; ?>" title="<?php echo $item->title_; ?>"></a>					
-										
-							<div style="top: 5px; left: 484px; width: 336px; height: auto; color: #fff; background-color: #000;">
-								<?php echo $item->description_; ?>
-							</div>
 						</li>
 						<?php endif;?>
 					<?php
-						endforeach
+						endforeach;
 					?>
 					</ul>
 				</div>
-				
 			</div>
-			
 		</div>
+	</div>
+	
+	
+	<script type="text/javascript">
+	window.addEvent("domready", function() {
+		var gallery22 = new slideGallery($$(".gallery22"), {
+			steps: 1,
+			mode: "line",
+			autoplay: false,
+			paging: true,
+			pagingHolder: ".pagingSlide",
+			onStart: function() {
+				//this.gallery.getElement(".info").set("html", parseInt(this.current+1) + "-" + parseInt(this.visible+this.current) + " from " + this.items.length);
+			},
+			onPlay: function() { this.fireEvent("start"); }
+		});
+	});
+</script>
+	
+	<div class="gallery gallery22">
+		<div class="holder">
+			<ul>
+			<?php
+				foreach($slideshow as $item):
+			?>
+				<li>
+					<?php echo $item->description_; ?>				
+				</li>
+			<?php
+				endforeach;
+			?>
+			</ul>
+		</div>
+		<div class="control">
+			<a href="#" class="prev">prev</a>
+			<a href="#" class="next">next</a>
+			<span class="info"></span>
+		</div>
+		<div class="pagingSlide"></div>
 	</div>
 </div>
 <?php endif; ?>

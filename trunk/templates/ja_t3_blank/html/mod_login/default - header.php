@@ -23,8 +23,12 @@ JHtml::_('behavior.keepalive');
 			'titlePosition'		: 'inside',
 			'transitionIn'		: 'elastic',
 			'transitionOut'		: 'none',
-			width				: 700
+			'Width'		: 700,
+			'onComplete'		: function(){
+				$.fancybox.resize();
+			}
 		});
+		$('#facy_outer').css({'width':500});
 	});
 </script>
 

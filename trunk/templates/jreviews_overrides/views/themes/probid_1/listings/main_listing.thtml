@@ -142,10 +142,7 @@
                                 <!--  BEGIN MAP -->
                                 <?php if($show_map && isset($listing['Geomaps']) && abs($listing['Geomaps']['lat']) > 0 && abs($listing['Geomaps']['lon']) > 0):?>
                                 <div class="clear"></div>
-                                <h3 class="jrHeading">
-                                    <span class="jrIcon jrIconMap"></span>
-                                    <span class="jrHeadingText"><?php __t("Map");?></span>
-                                </h3>
+                                <div class="jrHeading moduletable"><?php __t("Map");?></div>
                                 <?php echo $this->renderControllerView('geomaps','map_detail',array('width'=>'100%','height'=>'300'));?>
                                 <?php endif;?>
                                 <!--  END MAP -->

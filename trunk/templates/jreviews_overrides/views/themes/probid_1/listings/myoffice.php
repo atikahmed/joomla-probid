@@ -78,11 +78,6 @@ $query="SELECT jos_jreviews_comments.title, jos_jreviews_comments.comments, jos_
 $resultReviews=mysql_query($query);
 $numReviews=mysql_numrows($resultReviews);
 
-//
-$query = "SELECT jos_content.ID, jos_content.title, jos_categories.alias 
-				FROM jos_content,  jos_categories, jos_jreviews_criteria
-				WHERE jos_content.ID =  $myListingID and jos_content.catid = jos_categories.id and and jos_jreviews_criteria.id = jos_categories";
-
 ?>
 
 <?php // echo $listing['Listing']['listing_id'] ?>
@@ -204,9 +199,8 @@ $query = "SELECT jos_content.ID, jos_content.title, jos_categories.alias
 				
 				echo '<span class="rating_label">Rating: </span><div class="rating_star_user"><div style="width:'.$myRating.'%;">&nbsp;</div></div>';
 				
-				//(Sanitize::getInt($resultReviews['Criteria'],'state')!=2) ? __t("Reviewed by") : __t("Commented by") 
 				
-				echo '<span class="reviewScreenName">'. mysql_result($resultReviews,$i,"username") .'</span> <span>,&nbsp;</span> <span class="reviewNice">'.JHTML::_('date', mysql_result($resultReviews,$i,"created") , JText::_('DATE_FORMAT_LC33')).'</span>';
+				echo '<span class="reviewScreenName">' . __t("by ") . mysql_result($resultReviews,$i,"username") .'</span> <span>,&nbsp;</span> <span class="reviewNice">'.JHTML::_('date', mysql_result($resultReviews,$i,"created") , JText::_('DATE_FORMAT_LC33')).'</span>';
 				
 				$i++;
 				} ?></div>
@@ -266,12 +260,11 @@ $query = "SELECT jos_content.ID, jos_content.title, jos_categories.alias
 </div>
 
 
-
-<div class="rightSideTitle"><h4>Our Location</h4></div>
+<div class="rightSideTitle moduletable"><h3>Our Location</h3></div>
 <div class="rightSideBox"><!-- MAP -->
 		<?php if($show_map && isset($listing['Geomaps']) && abs($listing['Geomaps']['lat']) > 0 && abs($listing['Geomaps']['lon']) > 0):?>
         <?php echo $this->renderControllerView('geomaps','map_detail',array('width'=>'100%','height'=>'288'));?>
         <?php endif;?>
 </div>
 
-<div class="middleClear"></div>
+<div class="middleClear" style=""></div>
