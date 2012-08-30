@@ -28,6 +28,17 @@ defined('_JEXEC') or die;
         $this->showBlock ($block);
     endforeach;
     ?>
+	<script type="text/javascript">
+			jQuery.noConflict();
+			jQuery(document).ready(	function($) 
+			{
+	<?php 
+				// for add active class to home(default)
+				if (JFactory::getApplication()->getMenu()->getActive()->home == JFactory::getApplication()->getMenu()->getDefault()->home) :?>
+					$('body').addClass('cc_home_page');
+				<?php endif;?>	
+	});
+		</script>
 
     <?php echo $this->showBlock ('css') ?>
 </head>
