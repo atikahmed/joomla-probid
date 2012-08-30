@@ -68,7 +68,7 @@
 		</div>
 	</div>
 	
-	
+	<!--
 	<script type="text/javascript">
 	window.addEvent("domready", function() {
 		var gallery22 = new slideGallery($$(".gallery22"), {
@@ -106,5 +106,6 @@
 		</div>
 		<div class="pagingSlide"></div>
 	</div>
+	-->
 </div>
 <?php endif; ?>
