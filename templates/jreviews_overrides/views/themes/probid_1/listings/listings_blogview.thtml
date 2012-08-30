@@ -183,9 +183,20 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 					$db->setQuery($query);
 						
 					$content_copy = $db->loadObject();
+					
+					$content_copy->fulltext !== strip_tags($content_copy->fulltext) ? $content_copy->fulltext : nl2br($content_copy->fulltext);
+
+					$numwords = 13;
+					$con_fulltext = strtok($content_copy->fulltext, " \n");
+					while(--$numwords > 0) $con_fulltext .= " " . strtok(" \n");
+						if($con_fulltext != $content_copy->fulltext) $output .= " ";
+						
+					if(strlen($con_fulltext) < strlen($content_copy->fulltext))
+						$con_fulltext .= "...";
+
 				?>
 
-				<div class="fieldGroup"><div class="fieldRow jr_fulltext"><div class="fieldLabel">Project Description:</div><div class="fieldValue "><?php echo $content_copy->fulltext !== strip_tags($content_copy->fulltext) ? $content_copy->fulltext : nl2br($content_copy->fulltext);?> <a href="<?php echo $listing['Listing']['url']; ?>"><?php __t("read more") ?></a></div></div></div>
+				<div class="fieldGroup"><div class="fieldRow jr_fulltext"><div class="fieldLabel">Project Description:</div><div class="fieldValue "><?php echo $con_fulltext; ?> <a href="<?php echo $listing['Listing']['url']; ?>"><?php __t("read more") ?></a></div></div></div>
 	
 				<!-- CUSTOM FIELDS -->
 				<?php echo $CustomFields->displayAll($listing,'list');?>
