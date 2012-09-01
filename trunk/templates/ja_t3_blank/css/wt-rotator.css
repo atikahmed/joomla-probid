@@ -4,7 +4,7 @@
 	font-size:12px;
 	position:relative;
 	display:block;
-	width:942px!important;
+	width:484px!important;
 	height:331px!important;
 	overflow:hidden; background:none; border:none
 }
@@ -31,7 +31,7 @@
 	background:#2d3789;
 	color:#FFF;
 	text-align:left;
-	display:none;
+	display:none!important;
 	position:absolute;
 	top:0;
 	right:0;left:auto;
@@ -179,3 +179,5 @@
 	height:50px;
 	z-index:2;
 }
+
+.screen { position:relative; left:0; top:0; height:auto; width:auto; overflow:hidden}
