@@ -233,3 +233,12 @@
 .gallery1 .pagingGallery li { float:left; padding-left:5px}
 .gallery1 .pagingGallery li a { font-size:0; text-indent:-9999px; background: url(../images/mootool/i_slide.png) no-repeat -12px 0; width:8px; height:8px; display:inline-block}
 .gallery1 .pagingGallery li a.active , .gallery1 .pagingGallery li a:hover{ background-position:0 0}
+
+.gallery22  { width:402px;height:237px ; background:#2d3789; margin:0 ; padding:47px 28px}
+.gallery22 .control { display:none}
+.gallery22 .holder ul li  { width:402px}
+.gallery22 .pagingSlide  { text-align:center; margin-top:-22px; position:absolute; z-index:5; bottom:12px; left:0; width:100%}
+.gallery22 .pagingSlide li { display:inline-block; padding-left:7px}
+.gallery22 .pagingSlide li a { font-size:0; text-indent:-9999px; background: url(../images/mootool/i_slide_22.png) no-repeat -19px 0; width:8px; height:8px; display:inline-block}
+.gallery22 .pagingSlide li a.active , .gallery22 .pagingSlide li a:hover{ background-position:0 0}
+
