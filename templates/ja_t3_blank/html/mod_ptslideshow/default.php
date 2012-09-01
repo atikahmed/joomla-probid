@@ -44,7 +44,7 @@
 		});
 	</script> 
 				
-	<div class="container" style="width:500px; float: left;">
+	<div class="container" style="width:484px; float: left;">
 		<div class="wt-rotator">
 			<div class="screen">
 			</div>
