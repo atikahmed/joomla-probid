@@ -393,13 +393,15 @@ body.bd .main{}
 #ja-mainnav .main-inner1 .mainlevel {height:100%}
 #ja-mainnav .main-inner1 .mainlevel >ul >li{height:44px;float:left;padding:0px 15px}
 #ja-wrapper{width:960px!important;margin:0 auto}
-.cc_home_page div.ja-moduletable h3, div.moduletable h3{ color:#000; font:bold 18px Arial; padding:10px 15px; margin-bottom:20px}
+.cc_home_page div.ja-moduletable h3, .cc_home_page div.moduletable h3{ color:#000; font:bold 18px Arial; padding:10px 15px; margin-bottom:20px; border:none}
 .cc_home_page #ja-utility div.ja-moduletable h3, .cc_home_page #ja-utility  div.moduletable h3,
-.cc_home_page #ja-bottom div.ja-moduletable h3, .cc_home_page #ja-bottom  div.moduletable h3{ background-color:#e7e7e7;}
+.cc_home_page #ja-bottom div.ja-moduletable h3, .cc_home_page #ja-bottom  div.moduletable h3{ background-color:#e7e7e7; }
 div.ja-moduletable div h3, div.moduletable div h3 { padding:0; background-color:transparent; font:}
+
 /*menu*/
 #ja-mainnav .main-inner1 li{height:44px!important}
 #ja-mainnav .main-inner1 li a{text-transform:uppercase;padding-top:14px;color:#fff}
+
 /*recent project*/
 .roknewspager-overlay{display:none!important}
 ul.roknewspager{overflow:hidden;}
@@ -452,7 +454,7 @@ ul, li { list-style:none}
     font-style: normal;
 
 }
-input { overflow:hidden}
+
 #login-form{ }
 .login-greeting { float:right;border-right:2px solid #8d8d8d; padding-right:10px; margin-right:10px}
 .login-greeting strong { color:#191919}
@@ -474,7 +476,7 @@ body.bd #pt_content  .main { width:100%}
 .pt_link a{ background: url(../images/probid/btn_55.png) no-repeat right -55px;text-decoration:none; font:22px 'avantgarde_dm'; text-shadow:-1px 1px 1px #96151a; color:#fff; line-height:54px; padding:0 40px 0 10px; float:left}
 .pt_link a:hover {text-transform:-1px 1px 1px #96151a; color:#fff }
 
-#ja-utility { padding:12px 9px 0}
+#ja-utility { padding:4px 9px 0}
 #ja-utility .roknewspager-wrapper{ border-bottom:3px solid #c7c7c7}
 #ja-utility ul.roknewspager { padding:0}
 #ja-utility ul.roknewspager  { border:1px solid #e3e2e2}
@@ -540,19 +542,30 @@ body.bd #pt_content  .main { width:100%}
 #login-form  input.button { font:18px 'avantgarde_dm';background: url(../images/probid/btn_42_red.png) repeat-x 0 0; height:42px; line-height:42px;border:1px solid #b2181d; -moz-border-radius: 7px;-webkit-border-radius: 7px; border-radius:7px; color:#fff }
 #login-form  .inputbox{ width:80%}
 
+div.ja-moduletable h3, div.moduletable h3 { font:bold 24px Arial; color:#010101; border-bottom:4px solid #000; padding:0 0 3px 13px}
+
 /* saerch*/
 .rsform{}
-.rsform #userForm { background:#f7f7f7; border:1px solid #e0dfdf; overflow:hidden}
-#formDiv ul {  clear:both} #formDiv ul  ul{ padding:0}
-#formDiv ul  li { padding:10px;} #formDiv ul  ul li { padding:0}
+.rsform #userForm { background:#f7f7f7; border:1px solid #e0dfdf; overflow:hidden;padding:7px 0 10px}
+#formDiv ul {  clear:both; padding:9px 7px 13px;overflow: hidden;  border-bottom:1px solid #e0dfdf; border-top:1px solid #fff} #formDiv ul  ul{ padding:0; overflow:visible; border:0}
+#formDiv ul.fsform-head { border-top:0; padding-top:0}
+#formDiv .fsform-foot { border-bottom:0}
+#formDiv ul  li {} #formDiv ul  ul li {}
 #formDiv ul.fsform-head li ,
-ul.fsform-foot li{ float:left; width:47%} #formDiv ul.fsform-head  ul li , ul.fsform-foot ul li{ clear:left; padding:0; width:100%}
+ul.fsform-foot li{ float:left; width:49.7%;} #formDiv ul.fsform-head  ul li , ul.fsform-foot ul li{ clear:left; padding:0; width:100%; }
+#formDiv ul.fsform-head  ul li:first-child , ul.fsform-foot ul li:first-child { padding-bottom:5px }
 .fsform-head{}   
 .rsform ul li:first-child { font:bold 11px Arial; color:#000; padding-bottom:5px}
-.rsform #userForm  select, .rsform #userForm  input { border:1px solid #ccc; background:#fff; border-radius:0; padding:5px;width:100%}
+.rsform #userForm  select, .rsform #userForm  input { border:1px solid #ccc; background:#fff; border-radius:0; padding:6px 5px 7px;width:100%}
 .rsform #userForm  input { padding:6px 5px}
-.rsform #userForm  input#Keywords{ width:99%}
-inout.rsform-submit-button { }
+.rsform #userForm  select#time , .rsform #userForm  select#Radius{ margin-left:7px}
+.rsform #userForm  select#Category, .rsform #userForm  input#Zipcode { margin-right:7px}
+.rsform #userForm  input { padding:7px 5px 8px}
+.rsform #userForm  input#Keywords{ width:98.9%}
+.rsform #userForm  input#Zipcode { width:97%}
+.rsform-block-submit{}
+.rsform  #userForm .rsform-block-submit li:first-child { background:url(../images/probid/bkg_search.png) no-repeat 0 0; width:92px; height:44px; font-size:0; text-indent:-9999px}
+.rsform  #userForm .rsform-block-submit input.rsform-submit-button { font:18px 'avantgarde_dm';background: #b2181d url(../images/probid/btn_42_red.png) repeat-x 0 0; height:52px; line-height:52px;border:1px solid #b2181d; -moz-border-radius: 7px;-webkit-border-radius: 7px; border-radius:7px; color:#fff ; width:auto; float:right}
 
 
 /* footer */
