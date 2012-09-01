@@ -52,6 +52,7 @@ JHtml::_('behavior.keepalive');
 				<p><?php echo $params->get('pretext'); ?></p>
 				</div>
 			<?php endif; ?>
+			<h3>Member Login</h3>
 			<fieldset class="userdata">
 			<p id="form-login-username">
 				<label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
@@ -85,7 +86,7 @@ JHtml::_('behavior.keepalive');
 				<?php
 				$usersConfig = JComponentHelper::getParams('com_users');
 				if ($usersConfig->get('allowUserRegistration')) : ?>
-				<li>
+				<li class="pt-last">
 					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">
 						<?php echo JText::_('MOD_LOGIN_REGISTER'); ?></a>
 				</li>
