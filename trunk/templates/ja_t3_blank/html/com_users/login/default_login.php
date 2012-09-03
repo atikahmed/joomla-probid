@@ -53,8 +53,7 @@ JHtml::_('behavior.keepalive');
 			<?php echo JHtml::_('form.token'); ?>
 		</fieldset>
 	</form>
-</div>
-<div>
+	<div>
 	<ul>
 		<li>
 			<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>">
@@ -74,3 +73,5 @@ JHtml::_('behavior.keepalive');
 		<?php endif; ?>
 	</ul>
 </div>
+</div>
+
