@@ -31,7 +31,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 		  <span><?php echo JText::_('K2_TAGGED_UNDER'); ?></span>
 		  <ul class="catItemTags">
 		    <?php foreach ($this->item->tags as $tag): ?>
-		    <li><a href="<?php echo $tag->link; ?>"><?php echo $tag->name; ?></a></li>
+		    <li><a href="<?php echo $tag->link; ?>">// <?php echo $tag->name; ?></a></li>
 		    <?php endforeach; ?>
 		  </ul>
 		  <div class="clr"></div>
@@ -164,10 +164,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 	  <!-- Item introtext -->
 	  <div class="catItemIntroText">
 	  	<?php echo $this->item->introtext; ?>
-	  </div>
-	  <?php endif; ?>
-	  
-	  <?php if ($this->item->params->get('catItemReadMore')): ?>
+		<?php if ($this->item->params->get('catItemReadMore')): ?>
 		<!-- Item "read more..." link -->
 		<div class="catItemReadMore">
 			<a class="k2ReadMore" href="<?php echo $this->item->link; ?>">
@@ -175,6 +172,10 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 			</a>
 		</div>
 		<?php endif; ?>
+	  </div>
+	  <?php endif; ?>
+	  
+	  
 
 		<div class="clr"></div>
 

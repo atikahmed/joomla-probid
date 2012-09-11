@@ -15,10 +15,10 @@ defined('_JEXEC') or die('Restricted access');
 <script type="text/javascript">
 	jQuery(document).ready(function($){
 		$('#ja-right1').hide();
-		$('#ja-right').width('24.4%');
+		$('#ja-right').width('24%');
 		$('#ja-right2').width('100%');
 		
-		$('#ja-mainbody').width('74%');
+		$('#ja-mainbody').width('74%'); 
 	});
 </script>
 
