@@ -41,11 +41,11 @@ defined('_JEXEC') or die;
 				
 				
 				if($('#ja-right1')[0] && $('#ja-right2')[0]){
-					$('#ja-mainbody').width('53%');
+					$('#ja-mainbody').width('55%');
 					$('#ja-right').width('45%');
 					
-					$('#ja-right1').width('46%');
-					$('#ja-right2').width('54%');
+					$('#ja-right1').width('46.5%');
+					$('#ja-right2').width('53.5%');
 				} 
 
 				if($('#ja-right1')[0]  && $('#ja-right2')[0] == null){
