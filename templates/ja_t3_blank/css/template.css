@@ -4,7 +4,7 @@ body#bd { background-color:#f3f3f3 ;color: #000}
 /* Normal links ---*/
 a { color: #069; text-decoration: none; }
 
-a:hover, a:active, a:focus { text-decoration: underline; color: #1d1d1d; }
+a:hover, a:active, a:focus { text-decoration: none; color: #1d1d1d; }
 
 /* Readon links ---*/
 p.readmore a { text-transform: uppercase; }
@@ -238,7 +238,7 @@ p.site-slogan {
 /* NAVIGATION
 --------------------------------------------------------- */
 /* Main Nav ---*/
-#ja-mainnav .main { border-bottom: 1px solid #ccc; }
+#ja-mainnav .main { /*border-bottom: 1px solid #ccc; */}
 
 /* Breadcrumbs ---*/
 #ja-navhelper .main {
@@ -497,7 +497,7 @@ body.bd #pt_content  .main { width:100%}
 	#ja-utility  ul.roknewspager-numbers li { color:#6f6f6f; font-size:11px}
 	#ja-utility  ul.roknewspager-numbers li.active{ color:#000}
 
-#ja-container{ padding:0 9px 20px}
+.com_content #ja-container{ padding:0 9px 20px}
 	#ja-container .main .inner { padding:0}
 	.cc_home_page #ja-container div.ja-moduletable ,.cc_home_page #ja-container div.moduletable{ border-top:4px solid #000; padding-top:3px;}
 	.cc_home_page #ja-container div.ja-moduletable h3, .cc_home_page #ja-container div.moduletable h3 { background: url(../images/probid/i_icon_2.png) no-repeat 0 0; padding:4px 0 18px 54px }
@@ -603,6 +603,16 @@ body.bd #pt_content  .main { width:100%}
 	#ja-footer .ja-box-ct .posttext p { text-align:right; font:bold 11px Arial; color:#6a6a6a; margin-top:10px}
 
 /*k2*/
+.com_k2  #pt_content{ background: url(../images/probid/bkg_k2.gif) repeat-y left top; }
+.com_k2  #ja-right{}
+.com_k2  #ja-right1  div.ja-moduletable  h3  { padding:5px 10px 8px!important; border-bottom:1px solid #e7e7e7}
+.com_k2  #ja-right2  div.ja-moduletable  h3  { padding:5px 15px 8px !important;border-bottom:1px solid #e7e7e7}
+div.k2ItemsBlock li { padding:13px 10px 10px; border-bottom:1px solid #e7e7e7}
+.com_k2  #ja-right div.k2ItemsBlock ul li div.moduleItemIntrotext{ padding:0}
+.com_k2  #ja-right div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage img { float:none ;  padding:0; border:2px solid #e8e8e8}
+.com_k2  #ja-right div.k2ItemsBlock ul li a.moduleItemTitle{ font-weight:bold}
+
+
 .even, .odd { background:none; border:none}
 div.k2ItemsBlock ul li div.moduleItemIntrotext { padding:0 10px}
 div.k2ItemsBlock ul li div.moduleItemIntrotext .moduleItemIntrotextHead { float:left; margin:2px 12px 10px 0}

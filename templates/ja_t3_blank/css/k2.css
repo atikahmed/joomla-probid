@@ -118,7 +118,7 @@ div.k2Pagination {padding:8px;margin:24px 0 4px 0;text-align:center;color:#999;}
 
 /* --- Pagination (additional styling for Joomla! 1.6+) --- */
 div.k2Pagination ul {text-align:center;}
-div.k2Pagination ul li {display:inline;}
+div.k2Pagination ul li {display:inline; padding:0 5px}
 
 /* --- Extra fields: CSV data styling --- */
 table.csvData {}
@@ -138,7 +138,7 @@ div.userItemIsFeatured {background:url(../images/system/featuredItem.png) no-rep
 a.itemPrintThisPage {display:block;width:160px;margin:4px auto 16px;padding:4px;background:#F7FAFE;border:1px solid #ccc;text-align:center;color:#555;font-size:13px;}
 a.itemPrintThisPage:hover {background:#eee;text-decoration:none;}
 
-div.itemView {padding:8px 0 24px 0;margin:0 0 24px 0;border-bottom:1px dotted #ccc;} /* this is the item container for this view */
+div.itemView {padding:8px 0 24px 20px!important;margin:0 0 24px 0;background:#fff} /* this is the item container for this view */
 div.itemIsFeatured {} /* Attach a class for each featured item */
 
 span.itemEditLink {float:right;display:block;padding:4px 0;margin:0;width:120px;text-align:right;}
@@ -146,15 +146,17 @@ span.itemEditLink a {padding:2px 12px;border:1px solid #ccc;background:#eee;text
 span.itemEditLink a:hover {background:#ffffcc;}
 
 div.itemHeader {}
-	div.itemHeader span.itemDateCreated {color:#999;font-size:11px;}
-	div.itemHeader h2.itemTitle {font-family:Georgia, "Times New Roman", Times, serif;font-size:36px;font-weight:normal;line-height:110%;padding:10px 0 4px 0;margin:0;}
+	div.itemHeader span.itemDateCreated {}
+	div.itemHeader h2.itemTitle {font:bold 30px Arial;line-height:110%;padding:10px 0 4px 0;margin:0;}
 	div.itemHeader h2.itemTitle span {}
 	div.itemHeader h2.itemTitle span sup {font-size:12px;color:#CF1919;text-decoration:none;} /* "Featured" presented in superscript */
 	div.itemHeader span.itemAuthor {display:block;padding:0;margin:0;}
 	div.itemHeader span.itemAuthor a {color:#DB2127}
 	div.itemHeader span.itemAuthor a:hover {}
+	div.itemHeader  li { color:#1d1d1d; display:inline-block; font:bold 11px Arial; border-left:1px solid #1d1d1d; padding-left:10px; margin-left:8px}
+	div.itemHeader  li:first-child { padding:0; margin:0; border:none}
 
-div.itemToolbar {padding:2px 0;margin:16px 0 0 0;border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;background:#f7fafe;}
+div.itemToolbar {padding:6px 0;margin:5px 0 0 0;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7}
 	div.itemToolbar ul {text-align:right;list-style:none;padding:0;margin:0;}
 	div.itemToolbar ul li {display:inline;list-style:none;padding:0 4px 0 8px;margin:0;border-left:1px solid #ccc;text-align:center;background:none;font-size:12px;}
 	div.itemToolbar ul > li:first-child {border:none;} /* remove the first CSS border from the left of the toolbar */
@@ -169,7 +171,7 @@ div.itemToolbar {padding:2px 0;margin:16px 0 0 0;border-top:1px dotted #ccc;bord
 	div.itemToolbar ul li a.itemVideoLink span {}
 	div.itemToolbar ul li a.itemImageGalleryLink {}
 	div.itemToolbar ul li a.itemImageGalleryLink span {}
-	div.itemToolbar ul li a.itemCommentsLink {}
+	div.itemToolbar ul li a.itemCommentsLink { color:#1d1d1d; font:bold 11px Arial}
 	div.itemToolbar ul li a.itemCommentsLink span {}
 	div.itemToolbar ul li a img {vertical-align:middle;}
 	div.itemToolbar ul li span.itemTextResizerTitle {}
@@ -191,13 +193,13 @@ div.itemImageBlock {padding:8px;margin:0 0 16px 0;}
 	span.itemImageCaption {color:#666;float:left;display:block;font-size:11px;}
 	span.itemImageCredits {color:#999;float:right;display:block;font-style:italic;font-size:11px;}
 
-div.itemIntroText {color:#444;font-size:18px;font-weight:bold;line-height:24px;padding:4px 0 12px 0;}
+div.itemIntroText {font:italic 16px Arial;line-height:120%}
 	div.itemIntroText img {}
 
 div.itemFullText {}
 	div.itemFullText h3 {margin:0;padding:16px 0 4px 0;}
-	div.itemFullText p {}
-	div.itemFullText img {}
+	div.itemFullText p { margin:5px 0 10px}
+	div.itemFullText img { float:left; margin:5px 10px 5px 0; width:100%}
 
 div.itemExtraFields {margin:16px 0 0 0;padding:8px 0 0 0;border-top:1px dotted #ddd;}
 	div.itemExtraFields h3 {margin:0;padding:0 0 8px 0;line-height:normal !important;}
@@ -215,12 +217,12 @@ div.itemSocialSharing {padding:8px 0;}
 	div.itemFacebookButton {float:left;margin-right:24px;width:200px;}
 	div.itemGooglePlusOneButton {}
 	
-div.itemLinks {margin:16px 0;padding:0;}
+div.itemLinks {margin:16px 0;padding:0; display:none}
 
 div.itemCategory {padding:4px;border-bottom:1px dotted #ccc;}
 	div.itemCategory span {font-weight:bold;color:#555;padding:0 4px 0 0;}
 	div.itemCategory a {}
-div.itemTagsBlock {padding:4px;}
+div.itemTagsBlock {}
 	div.itemTagsBlock span {font-weight:bold;color:#555;padding:0 4px 0 0;}
 	div.itemTagsBlock ul.itemTags {list-style:none;padding:0;margin:0;display:inline;}
 	div.itemTagsBlock ul.itemTags li {display:inline;list-style:none;padding:0 4px 0 0;margin:0;text-align:center;}
@@ -236,7 +238,7 @@ div.itemAttachmentsBlock {padding:4px;border-bottom:1px dotted #ccc;}
 	div.itemAttachmentsBlock ul.itemAttachments li span {font-size:10px;color:#999;font-weight:normal;}
 
 /* Author block */
-div.itemAuthorBlock {background:#f7fafe;border:1px solid #ddd;margin:0 0 16px 0;padding:8px;}
+div.itemAuthorBlock {background:#e7e7e7;padding:9px; margin:0 -20px}
 	div.itemAuthorBlock img.itemAuthorAvatar {float:left;display:block;background:#fff;padding:4px;border:1px solid #ddd;margin:0 8px 0 0;}
 	div.itemAuthorBlock div.itemAuthorDetails {margin:0;padding:4px 0 0 0;}
 	div.itemAuthorBlock div.itemAuthorDetails h3.authorName {margin:0 0 4px 0;padding:0;}
@@ -291,7 +293,7 @@ div.itemNavigation {padding:4px 8px;margin:0 0 24px 0;border-top:1px dotted #ccc
 	div.itemNavigation a.itemNext {padding:0 12px;}
 
 /* Comments */
-div.itemComments {background:#f7fafe;border:1px solid #ddd;padding:16px;}
+div.itemComments {padding:10px 0}
 
 	div.itemComments ul.itemCommentsList {margin:0 0 16px;padding:0;list-style:none;}
 	div.itemComments ul.itemCommentsList li {padding:4px;margin:0;border-bottom:1px dotted #ddd;}
@@ -315,13 +317,13 @@ div.itemCommentsPagination {padding:4px;margin:0 0 24px 0;}
 	div.itemCommentsPagination span.pagination {display:block;float:right;clear:both;}
 
 div.itemCommentsForm h3 {margin:0;padding:0 0 4px 0;}
-	div.itemCommentsForm p.itemCommentsFormNotes {border-top:2px solid #ccc;}
+	div.itemCommentsForm p.itemCommentsFormNotes { }
 	div.itemCommentsForm form {}
-	div.itemCommentsForm form label.formComment {display:block;margin:12px 0 0 2px;}
-	div.itemCommentsForm form label.formName {display:block;margin:12px 0 0 2px;}
-	div.itemCommentsForm form label.formEmail {display:block;margin:12px 0 0 2px;}
-	div.itemCommentsForm form label.formUrl {display:block;margin:12px 0 0 2px;}
-	div.itemCommentsForm form label.formRecaptcha {display:block;margin:12px 0 0 2px;}
+	div.itemCommentsForm form label.formComment {display:block;margin:10px 0 5px;}
+	div.itemCommentsForm form label.formName {display:block;margin:10px 0 5px;}
+	div.itemCommentsForm form label.formEmail {display:block;margin:10px 0 5px;}
+	div.itemCommentsForm form label.formUrl {display:block;margin:10px 0 5px;}
+	div.itemCommentsForm form label.formRecaptcha {display:block;margin:10px 0 5px;}
 	div.itemCommentsForm form textarea.inputbox {display:block;width:350px;height:160px;margin:0;}
 	div.itemCommentsForm form input.inputbox {display:block;width:350px;margin:0;}
 	div.itemCommentsForm form input#submitCommentButton {display:block;margin:16px 0 0 0;padding:4px;border:1px solid #ccc;background:#eee;font-size:16px;}
@@ -389,7 +391,7 @@ div.itemList {}
 		div.itemContainerLast {} /* this class is appended to the last container on each row of items (useful when you want to set 0 padding/margin to the last container) */
 
 /* --- Item block for each item group --- */
-div.catItemView {padding:4px;} /* this is the item container for this view - we add a generic padding so that items don't get stuck with each other */
+div.catItemView { } /* this is the item container for this view - we add a generic padding so that items don't get stuck with each other */
 
 	/* Additional class appended to the element above for further styling per group item */
 	div.groupLeading {}
@@ -404,24 +406,27 @@ span.catItemEditLink a {padding:2px 12px;border:1px solid #ccc;background:#eee;t
 span.catItemEditLink a:hover {background:#ffffcc;}
 
 div.catItemHeader {}
-	div.catItemHeader span.catItemDateCreated {color:#999;font-size:11px;}
-	div.catItemHeader h3.catItemTitle {font-family:Georgia, "Times New Roman", Times, serif;font-size:24px;font-weight:normal;line-height:110%;padding:10px 0 4px 0;margin:0;}
+	div.catItemHeader span.catItemDateCreated {}
+	div.catItemHeader h3.catItemTitle {font:bold 18px Arial;line-height:110%;padding:5px 0 4px 0;margin:0; color:#1d1d1d}
+	div.catItemHeader h3.catItemTitle  a {color:#1d1d1d}
+	div.catItemHeader h3.catItemTitle  a:hover { color:#da2127}
 	div.catItemHeader h3.catItemTitle span {}
 	div.catItemHeader h3.catItemTitle span sup {font-size:12px;color:#CF1919;text-decoration:none;} /* superscript */
 	div.catItemHeader span.catItemAuthor {display:block;padding:0;margin:0;}
 	div.catItemHeader span.catItemAuthor a {}
 	div.catItemHeader span.catItemAuthor a:hover {}
-
+	div.catItemHeader li { color:#1d1d1d; display:inline-block; font:bold 11px Arial; border-left:1px solid #1d1d1d; padding-left:10px; margin-left:8px}
+	div.catItemHeader li:first-child { padding:0; margin:0; border:none}
 div.catItemRatingBlock {padding:8px 0;}
 	div.catItemRatingBlock span {display:block;float:left;font-style:normal;padding:0 4px 0 0;margin:0;color:#999;}
 
-div.catItemBody {padding:8px 0;margin:0;}
+div.catItemBody {margin:0;}
 
-div.catItemImageBlock {padding:8px;margin:0 0 16px 0;}
-	span.catItemImage {display:block;text-align:center;margin:0 0 8px 0;}
-	span.catItemImage img {border:1px solid #ccc;padding:8px;}
+div.catItemImageBlock { padding-top:5px}
+	span.catItemImage {display:block;text-align:center;margin:0 0 4px 0;}
+	span.catItemImage img {border:1px solid #e7e7e7;padding:1px; width:99%!important}
 
-div.catItemIntroText {font-size:inherit;font-weight:normal;line-height:inherit;padding:4px 0 12px 0;}
+div.catItemIntroText {font-size:inherit;font-weight:normal;line-height:inherit;padding:0 0 12px 0;}
 	div.catItemIntroText img {}
 
 div.catItemExtraFields, div.genericItemExtraFields {margin:16px 0 0 0;padding:8px 0 0 0;border-top:1px dotted #ddd;}
@@ -431,7 +436,7 @@ div.catItemExtraFields, div.genericItemExtraFields {margin:16px 0 0 0;padding:8p
 	div.catItemExtraFields ul li span.catItemExtraFieldsLabel, div.genericItemExtraFields ul li span.genericItemExtraFieldsLabel {display:block;float:left;font-weight:bold;margin:0 4px 0 0;width:30%;}
 	div.catItemExtraFields ul li span.catItemExtraFieldsValue {}
 
-div.catItemLinks {margin:0 0 16px 0;padding:0;}
+div.catItemLinks {margin:0 0 16px 0;padding:0; display:none}
 
 div.catItemHitsBlock {padding:4px;border-bottom:1px dotted #ccc;}
 	span.catItemHits {}
@@ -470,7 +475,7 @@ div.catItemCommentsLink {display:inline;margin:0 8px 0 0;padding:0 8px 0 0;borde
 
 /* Read more link */
 div.catItemReadMore {display:inline;}
-	div.catItemReadMore a {}
+	div.catItemReadMore a {  background: url(../images/probid/i_arrow.png) no-repeat right 5px; padding-right:10px; font-weight:bold}
 	div.catItemReadMore a:hover {}
 
 /* Modified date */
@@ -930,8 +935,8 @@ div.k2CategorySelectBlock form select option {}
 /* --- Category List/Menu --- */
 div.k2CategoriesListBlock {}
 div.k2CategoriesListBlock ul {}
-div.k2CategoriesListBlock ul li {}
-div.k2CategoriesListBlock ul li a {}
+div.k2CategoriesListBlock ul li { border-bottom:1px solid #e7e7e7; padding:5px 0 2px }
+div.k2CategoriesListBlock ul li a { font-weight:bold; color:#1d1d1d;padding:0 5px 0 34px}
 div.k2CategoriesListBlock ul li a:hover {}
 div.k2CategoriesListBlock ul li a span.catTitle {padding-right:4px;}
 div.k2CategoriesListBlock ul li a span.catCounter {}
@@ -939,6 +944,9 @@ div.k2CategoriesListBlock ul li a:hover span.catTitle {}
 div.k2CategoriesListBlock ul li a:hover span.catCounter {}
 div.k2CategoriesListBlock ul li.activeCategory {}
 div.k2CategoriesListBlock ul li.activeCategory a {font-weight:bold;}
+div.k2CategoriesListBlock ul ul  {margin-top:3px}
+div.k2CategoriesListBlock ul ul li{ border-top:1px solid #e7e7e7; border-bottom:0; padding:3px 0 2px }
+div.k2CategoriesListBlock ul ul li a { color:#db2127;padding:0 5px 0 39px; font-weight:normal} 
 
 	/* Root level (0) */
 	ul.level0 {}
@@ -972,9 +980,9 @@ div.k2SearchBlock div.k2LiveSearchResults {display:none;background:#fff;position
 	div.k2SearchBlock div.k2LiveSearchResults ul.liveSearchResults li a:hover {background:#fffff0;}
 	
 /* --- Tag Cloud --- */
-div.k2TagCloudBlock {padding:8px 0;}
-div.k2TagCloudBlock a {padding:4px;float:left;display:block;}
-div.k2TagCloudBlock a:hover {padding:4px;float:left;display:block;background:#135cae;color:#fff;text-decoration:none;}
+div.k2TagCloudBlock {padding:8px 12px;}
+div.k2TagCloudBlock a {padding:4px;float:left;display:block; color:#1d1d1d; font-weight:bold}
+div.k2TagCloudBlock a:hover {text-decoration:none;}
 
 /* --- Custom Code --- */
 div.k2CustomCodeBlock {}
@@ -1009,6 +1017,14 @@ div.k2UsersBlock ul li h3 {clear:both;margin:8px 0 0 0;padding:0;}
 div.k2UsersBlock ul li ul.ubUserItems {}
 div.k2UsersBlock ul li ul.ubUserItems li {}
 
+#itemListPrimary div.itemContainer { border-top:1px solid #e7e7e7; padding-top:10px}
+#itemListPrimary div.itemContainer:first-child { border-top:0; padding-top:0}
+#itemListPrimary div.itemContainer div.catItemView { padding:0 9px}
+#itemListPrimary div.itemContainer:first-child  h3.catItemTitle { font-size:25px; padding-top:10px}
 
 
 /* --- END --- */
+
+
+
+
