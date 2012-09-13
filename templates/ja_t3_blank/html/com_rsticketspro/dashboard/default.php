@@ -111,17 +111,17 @@ function rsticketspro_close()
 	</div><!-- searchbox -->
 	<ul id="rsticketspro_items">
 		<li>
-			<a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=submit'); ?>"><img src="<?php echo JURI::root(true); ?>/components/com_rsticketspro/assets/images/icon1.gif" alt="" /></a>
+			<a class="pt_ticket pt_ticket_1" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=submit'); ?>"><img src="<?php echo JURI::root(true); ?>/components/com_rsticketspro/assets/images/icon1.gif" alt="" /></a>
 			<p><strong><a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=submit'); ?>"><?php echo JText::_('RST_SUBMIT_TICKET'); ?></a></strong></p>
 			<p><?php echo JText::_($this->params->get('submit_ticket_desc')); ?></p>
 		</li>
 		<li>
-			<a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=rsticketspro'); ?>"><img src="<?php echo JURI::root(true); ?>/components/com_rsticketspro/assets/images/icon2.gif" alt="" /></a>
+			<a class="pt_ticket pt_ticket_2" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=rsticketspro'); ?>"><img src="<?php echo JURI::root(true); ?>/components/com_rsticketspro/assets/images/icon2.gif" alt="" /></a>
 			<p><strong><a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=rsticketspro'); ?>"><?php echo JText::_('RST_VIEW_TICKETS'); ?></a></strong></p>
 			<p><?php echo JText::_($this->params->get('view_tickets_desc')); ?></p>
 		</li>
 		<li>
-			<a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=search'); ?>"><img src="<?php echo JURI::root(true); ?>/components/com_rsticketspro/assets/images/icon3.gif" alt="" /></a>
+			<a class="pt_ticket pt_ticket_3" href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=search'); ?>"><img src="<?php echo JURI::root(true); ?>/components/com_rsticketspro/assets/images/icon3.gif" alt="" /></a>
 			<p><strong><a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=search'); ?>"><?php echo JText::_('RST_SEARCH_TICKETS'); ?></a></strong></p>
 			<p><?php echo JText::_($this->params->get('search_tickets_desc')); ?></p>
 		</li>
@@ -134,7 +134,8 @@ function rsticketspro_close()
 			<?php foreach ($this->categories as $category) { ?>
 			<?php $category->thumb = !$category->thumb ? '../../images/kb-icon.png' : $category->thumb; ?>
 			<li>
-				<strong><?php echo JHTML::image('components/com_rsticketspro/assets/thumbs/small/'.$category->thumb, $category->name); ?> <a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=knowledgebase&cid='.$category->id.':'.JFilterOutput::stringURLSafe($category->name)); ?>"><?php echo $this->escape($category->name); ?></a></strong>
+				<?php echo JHTML::image('components/com_rsticketspro/assets/thumbs/small/'.$category->thumb, $category->name); ?> 
+				<strong><a href="<?php echo RSTicketsProHelper::route('index.php?option=com_rsticketspro&view=knowledgebase&cid='.$category->id.':'.JFilterOutput::stringURLSafe($category->name)); ?>"><?php echo $this->escape($category->name); ?></a></strong>
 				<?php if ($category->description) { ?>
 				<?php echo $category->description; ?>
 				<?php } ?>
