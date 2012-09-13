@@ -462,7 +462,8 @@ a:hover{ text-decoration:none}
 #ja-footer  .ja-box-ct .proupaccount { padding-top:5px; margin-bottom:15px}
 
 /*pd_content*/
-div.ja-moduletable h3, div.moduletable h3 { font:bold 24px Arial; color:#010101; border-bottom:4px solid #000; padding:0 0 3px 13px;letter-spacing:-1px}
+div.ja-moduletable h3, div.moduletable h3 ,
+.ja-content-main h1{ font:bold 24px Arial; color:#010101; border-bottom:4px solid #000; padding:0 0 3px 13px;letter-spacing:-1px}
 	.cc_home_page div.ja-moduletable h3, .cc_home_page div.moduletable h3 { border:none; font-size:18px; color:#000; margin-bottom:10px}
 
 #pt_content { background:#fff; margin-bottom:15px}
@@ -497,7 +498,7 @@ body.bd #pt_content  .main { width:100%}
 	#ja-utility  ul.roknewspager-numbers li { color:#6f6f6f; font-size:11px}
 	#ja-utility  ul.roknewspager-numbers li.active{ color:#000}
 
-.com_content #ja-container{ padding:0 9px 20px}
+.com_content #ja-container, .ja-content-main { padding:0 9px 20px}
 	#ja-container .main .inner { padding:0}
 	.cc_home_page #ja-container div.ja-moduletable ,.cc_home_page #ja-container div.moduletable{ border-top:4px solid #000; padding-top:3px;}
 	.cc_home_page #ja-container div.ja-moduletable h3, .cc_home_page #ja-container div.moduletable h3 { background: url(../images/probid/i_icon_2.png) no-repeat 0 0; padding:4px 0 18px 54px }
@@ -507,7 +508,7 @@ body.bd #pt_content  .main { width:100%}
 	#gm_module_results { border:1px solid #b1b1b1; margin-top:-5px}
 	#ja-container #ja-right-mass-top div.custom div.first{ color:#969595;margin:-28px 0 8px 54px}
 	#ja-container #ja-right-mass-top div.custom img{ border:1px solid #b1b1b1; padding:1px; margin:5px 0 10px}
-	#ja-container #ja-right-mass-top div.custom p a {background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0;  color:#db2127; text-decoration:underline; display:inline-block; margin-top:15px}
+	#ja-container #ja-right-mass-top div.custom p a {background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0;   text-decoration:underline; display:inline-block; margin-top:15px}
 	#ja-container #ja-right-mass-top div.custom p a:hover { text-decoration:none}
 	 
 #ja-mainbottom{ padding:0 10px}
@@ -538,7 +539,7 @@ body.bd #pt_content  .main { width:100%}
 	#login-form ul , .login ul { padding-top:18px}
 	#login-form ul li{float:left}
 	#login-form ul li.last { clear:both}
-	#login-form ul li a , .login ul li a{ color:#db2127; text-decoration:underline}
+	#login-form ul li a , .login ul li a{  text-decoration:underline}
 	#login-form ul li a:hover,  .login ul li a:hover{ text-decoration:none}
 	#login-form  input.button ,.login button.button{ font:18px 'avantgarde_dm';background: url(../images/probid/btn_42_red.png) repeat-x 0 0; height:42px; line-height:42px;border:1px solid #b2181d; -moz-border-radius: 7px;-webkit-border-radius: 7px; border-radius:7px; color:#fff; padding:0 10px }
 	#login-form  .inputbox{ width:80%}
@@ -582,7 +583,7 @@ body.bd #pt_content  .main { width:100%}
 	#ja-footer .ja-box.ja-box-center .ja-moduletable{ padding:0 10px}
 	#ja-footer .ja-box:first-child { border:none}
 	#ja-footer .ja-box h3 { font-size:14px; letter-spacing:-1px; background:none; padding:0 0 10px 0; margin-bottom:0; border:none}
-	#ja-footer .ja-box-ct a { background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0; font-size:11px; color:#db2127; float:left; clear:left; margin-bottom:3px}
+	#ja-footer .ja-box-ct a { background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0; font-size:11px;  float:left; clear:left; margin-bottom:3px}
 	#ja-footer .ja-box-ct a.viewall_project{ font-weight:bold}
 	#ja-footer .ja-box-ct br { display:none}
 	.pt_footer_1 {}
@@ -619,7 +620,7 @@ div.k2ItemsBlock ul li div.moduleItemIntrotext .moduleItemIntrotextHead { float:
 div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage img{ border:1px solid #d1d1d1; margin:0}
 .moduleItemIntrotextContent{ display:block; overflow:hidden}
 div.k2ItemsBlock ul li a.moduleItemTitle { display:block; padding-bottom:10px}
-.moduleItemIntrotextContent  a { color:#dd2228}
+.moduleItemIntrotextContent  a { }
 div.catItemTagsBlock {padding:0;border-bottom:none;}
 	div.catItemTagsBlock span {font-weight:bold;color:#cdcdcd;padding:0 4px 0 0;}
 	div.catItemTagsBlock ul.catItemTags {list-style:none;padding:0;margin:0;display:inline;}

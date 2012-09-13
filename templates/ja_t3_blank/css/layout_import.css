@@ -3,6 +3,24 @@
 
 #ja-header { padding:8px 0 4px; background:#f3f3f3}
 #pt_content .wrap { width:auto}
-
 #ja-footer { border-top:4px solid #000}
+
+
 @import url{../../../components/com_rsticketspro/assets/css/newstyle.css}
+#rsticketspro_container { padding:0}
+#rsticketspro_searchbox { background: url(../images/probid/gradient_1.png) repeat-x 0 bottom; border-bottom:1px solid #c7c7c7; margin-bottom:0}
+	#rsticketspro_searchbtn { background:none; color:#fff; font:bold 16px Arial;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e);background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e));}
+	#rsticketspro_searchinp {  margin: 26px 0.5em 25px 1%;}
+ul#rsticketspro_items { clear:both;border-bottom: 4px solid #000000;}
+	ul#rsticketspro_items li { background:none; border-left:1px solid #c7c7c7}
+	ul#rsticketspro_items li:first-child { border:none}
+	ul#rsticketspro_items li  a { font:bold 15px Arial}
+
+.rsticketspro_halfbox { background:none; margin:0; width:50%}
+
+p.rsticketspro_title { background:none; border:none; font:bold 18px Arial; color:#010101; border-bottom:1px solid #000; margin:0}
+ul.rsticketspro_categories { border-right:1px solid #000; padding:0!important}
+ul.rsticketspro_categories li { border:none; border-top:1px solid #000}
+ul.rsticketspro_categories li:first-child { border-top:0}
+ul.rsticketspro_categories li  a { font:bold 18px Arial}
+.rsticketspro_text p { font:bold 14px Arial; color:#acacac}
