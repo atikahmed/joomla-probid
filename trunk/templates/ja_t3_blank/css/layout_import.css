@@ -11,16 +11,48 @@
 #rsticketspro_searchbox { background: url(../images/probid/gradient_1.png) repeat-x 0 bottom; border-bottom:1px solid #c7c7c7; margin-bottom:0}
 	#rsticketspro_searchbtn { background:none; color:#fff; font:bold 16px Arial;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e);background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e));}
 	#rsticketspro_searchinp {  margin: 26px 0.5em 25px 1%;}
-ul#rsticketspro_items { clear:both;border-bottom: 4px solid #000000;}
-	ul#rsticketspro_items li { background:none; border-left:1px solid #c7c7c7}
+ul#rsticketspro_items { clear:both;border-bottom: 4px solid #000000; margin:0 0 6px 0}
+	ul#rsticketspro_items li { background:none; border-left:1px solid #c7c7c7; padding:13px 15px !important!important; width:28%;min-height: 105px;}
 	ul#rsticketspro_items li:first-child { border:none}
 	ul#rsticketspro_items li  a { font:bold 15px Arial}
+	ul#rsticketspro_items li  a.pt_ticket  {background: url(../images/probid/i_icons.png) no-repeat 0 0; font-size:0; text-indent:-9999px; float:left; width:30px; height:30px; margin:0 15px 0 0 }
+	ul#rsticketspro_items li  a.pt_ticket_1 { background-position:0 0}
+	ul#rsticketspro_items li  a.pt_ticket_2 { background-position:0 -30px}
+	ul#rsticketspro_items li  a.pt_ticket_3 { background-position:0 -60px}
+	ul#rsticketspro_items li  a.pt_ticket  img { display:none}
+	ul#rsticketspro_items li  p  { padding-bottom:10px}
+	ul#rsticketspro_items li  p a  { display:inline-block; padding-top:7px}
 
 .rsticketspro_halfbox { background:none; margin:0; width:50%}
 
-p.rsticketspro_title { background:none; border:none; font:bold 18px Arial; color:#010101; border-bottom:1px solid #000; margin:0}
+p.rsticketspro_title { background:none; border:none; font:bold 18px Arial; color:#010101; border-bottom:1px solid #000; margin:0;height: 25px;text-align: center;}
 ul.rsticketspro_categories { border-right:1px solid #000; padding:0!important}
-ul.rsticketspro_categories li { border:none; border-top:1px solid #000}
+ul.rsticketspro_categories li { border:none; border-top:1px solid #000; clear:both; padding:30px!important; margin:0!important}
 ul.rsticketspro_categories li:first-child { border-top:0}
-ul.rsticketspro_categories li  a { font:bold 18px Arial}
-.rsticketspro_text p { font:bold 14px Arial; color:#acacac}
+ul.rsticketspro_categories li  a { font:bold 18px Arial; letter-spacing:-1px}
+.rsticketspro_text p { font:bold 14px Arial; color:#acacac; padding-top:15px}
+ul.rsticketspro_categories img{ background: url(../images/probid/i_icons.png) no-repeat 0 -30px; font-size:0; text-indent:-9999px;width:0; height:0;padding: 15px; margin:15px 10px 18px 0 ; float:left}
+
+.rsticketspro_tablebig { background:none; border-left:0}
+.rsticketspro_tablebig th { }
+.rsticketspro_tablebig th:first-child , .rsticketspro_tablebig td:first-child{ text-align:right; padding-right:5px; border-left:none!important}
+.rsticketspro_tablebig td { font-size:10px; word-break: break-all; text-align: center; border-right:0!important; border-left:1px solid #a4a4a4; background:#ededed}
+a.rst_flag { display:inline-block!important}
+body .rst_clear { margin:0!important; height:auto}
+
+#rsticketspro_form label.float_left, .rsticketspro_form label.float_left { width:8em; position:relative; top:8px}
+form#rsticketspro_form{ padding:10px 15px 0 37px; background:none}	
+	form#rsticketspro_form a { font-weight:bold ; padding-bottom:10px;display: block;}
+	#submitForm  td { padding:5px 0!important}
+	form#rsticketspro_form label{ font-weight:bold ; color:#000; width:7em; display: inline-block;}
+	form#rsticketspro_form  select {border:1px solid #ccc; padding:6px;width: 514px;margin-bottom:10px}
+	form#rsticketspro_form  select#filter_order { margin-right:10px}
+	form#rsticketspro_form  select#filter_order,form#rsticketspro_form  select#filter_order_Dir{width: 250px;}
+	form#rsticketspro_form  input, form#rsticketspro_form   textarea, form#rsticketspro_form .inputbox{ border:1px solid #ccc; padding:6px;width: 500px; margin-bottom:10px}
+	form#rsticketspro_form  button.button { background:none; color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e);background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e)); -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;font:normal 22px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding:9px 20px;margin-left: 95px;}
+.rsticketspro_fullbox { margin:0!important; width: 100% !important; }
+.rsticketspro_fullbox ul.rsticketspro_categories { border-right:none}
+
+.rsticketspro_tablebig2 th { padidng-left:25px}
+.rsticketspro_tablebig2 th, .rsticketspro_tablebig2 td { text-align:left; padding-left:10px}
+.rsticketspro_tablebig2 td  a { font-weight:bold}
