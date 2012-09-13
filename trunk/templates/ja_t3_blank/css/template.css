@@ -472,8 +472,8 @@ body.bd #pt_content  .main { width:100%}
 .pt_slideshow  { color:#fff}
 	.pt_slideshow .pt_header { font:40px 'avantgarde_dn'; line-height:100%; padding-bottom:15px; letter-spacing:-2px}
 	.pt_main { line-height:14px}
-	.pt_link{ background: url(../images/probid/btn_55.png) no-repeat left 0; display:inline-block; height:55px; padding-left:9px; margin-top:22px}
-	.pt_link a{ background: url(../images/probid/btn_55.png) no-repeat right -55px;text-decoration:none; font:22px 'avantgarde_dm'; text-shadow:-1px 1px 1px #96151a; color:#fff; line-height:54px; padding:0 40px 0 10px; float:left}
+	.pt_link{ background: url(../images/probid/btn_55.png) no-repeat left 0; display:inline-block; height:55px; padding-left:8px; margin-top:22px}
+	.pt_link a{ background: url(../images/probid/btn_55.png) no-repeat right -55px;text-decoration:none; font:22px 'avantgarde_dm'; text-shadow:-1px 1px 1px #96151a; color:#fff; line-height:54px; padding:0 40px 0 6px; float:left}
 	.pt_link a:hover {text-transform:-1px 1px 1px #96151a; color:#fff }
 
 #ja-utility { padding:4px 9px 0}
