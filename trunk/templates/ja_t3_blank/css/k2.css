@@ -151,7 +151,7 @@ div.itemHeader {}
 	div.itemHeader h2.itemTitle span {}
 	div.itemHeader h2.itemTitle span sup {font-size:12px;color:#CF1919;text-decoration:none;} /* "Featured" presented in superscript */
 	div.itemHeader span.itemAuthor {display:block;padding:0;margin:0;}
-	div.itemHeader span.itemAuthor a {color:#DB2127}
+	div.itemHeader span.itemAuthor a {}
 	div.itemHeader span.itemAuthor a:hover {}
 	div.itemHeader  li { color:#1d1d1d; display:inline-block; font:bold 11px Arial; border-left:1px solid #1d1d1d; padding-left:10px; margin-left:8px}
 	div.itemHeader  li:first-child { padding:0; margin:0; border:none}
@@ -946,7 +946,7 @@ div.k2CategoriesListBlock ul li.activeCategory {}
 div.k2CategoriesListBlock ul li.activeCategory a {font-weight:bold;}
 div.k2CategoriesListBlock ul ul  {margin-top:3px}
 div.k2CategoriesListBlock ul ul li{ border-top:1px solid #e7e7e7; border-bottom:0; padding:3px 0 2px }
-div.k2CategoriesListBlock ul ul li a { color:#db2127;padding:0 5px 0 39px; font-weight:normal} 
+div.k2CategoriesListBlock ul ul li a { padding:0 5px 0 39px; font-weight:normal} 
 
 	/* Root level (0) */
 	ul.level0 {}
