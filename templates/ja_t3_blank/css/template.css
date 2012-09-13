@@ -409,7 +409,7 @@ ul.roknewspager-numbers{background:none!important}
 .k2ItemsBlock .paging{display:none}
 /**/
 
-
+.com_rsticketspro #ja-container , .com_jreviews #ja-container { padding-top:15px}
 
 /* tr */
 ul, li { list-style:none}
@@ -546,10 +546,21 @@ body.bd #pt_content  .main { width:100%}
 	.login ul li{ padding-bottom:5px}
 	.login  .login-fields #remember-lbl { display:inline }
 	.login  .login-fields #remember { float:left; width:auto; margin-right:10px}
+
+.jr_pgContainer{}
+.jr_pgContainer h1.contentheading { border-bottom:4px solid #000;padding: 0 0 3px 13px;}
 /* right */
 #ja-right{}
 #ja-right #ja-container div.ja-moduletable, #ja-right #ja-container div.moduletable{ border:none}
 #ja-right div.ja-moduletable h3, #ja-right div.moduletable h3 {border:none; color:#1d1d1d; padding:0; font-size:14px}
+
+.pt_myaccount {}
+.pt_myaccount h3 { border-top:4px solid #000!important; }
+.pt_myaccount h3 span {background: url(../images/probid/i_icon_2.png) no-repeat 18px -420px; padding: 6px 0 18px 62px; font-size:18px; color:#010101; display:inline-block}
+.pt_myaccount ul.menu li { border-top:1px dotted #1d1d1d; padding:5px 5px 5px 35px; border-bottom:0!important}
+.pt_myaccount ul.menu li:first-child { border-top:0}
+.pt_myaccount ul.menu li a{background: url(../images/probid/i_arrow_li.png) no-repeat left center; padding-left:28px}
+.pt_myaccount ul.menu li.active a, .pt_myaccount ul.menu li:hover a { color:#000; font-weight:bold}
 
 /* saerch*/
 .rsform{}
