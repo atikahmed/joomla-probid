@@ -31,7 +31,7 @@ hr { border-top: 1px solid #ccc; }
 
 /* FORM
 --------------------------------------------------------- */
-input, select, textarea, .inputbox {
+input, select, textarea, .inputbox { border:1px solid #C7C7C7; border-radius:0!important; background:#fff!important;
 	padding: 2px;
 	font-family: Helvetica, Arial, sans-serif;
 }
@@ -141,7 +141,7 @@ tr.cat-list-row1 td,
 tr.cat-list-row2 td { border-bottom: 1px solid #ccc; padding: 5px; }
 
 .cat-list-row1:hover,
-.cat-list-row2:hover { background: #ffffcc; }
+.cat-list-row2:hover {/* background: #ffffcc; */}
 
 .cat-list-row2,
 tr.cat-list-row2 td { background-color: #f6f6f6; }
@@ -416,6 +416,7 @@ ul.roknewspager-numbers{background:none!important}
 ul, li { list-style:none}
 input[type="submit"]{ cursor:pointer}
 input[type="checkbox"], input[type="radio"]{ margin:0; width: auto !important;}
+
 button { background:none; border:none; visible:visible; overflow:visible; margin:0; padding:0; cursor:pointer}
 a{ color:#db2127}
 a:hover{ text-decoration:none}
@@ -452,6 +453,11 @@ a:hover{ text-decoration:none}
     font-style: normal;
 
 }
+/*button*/
+#jr_newFields input.jrButton{color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e)!important;background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;font:normal 14px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding: 10px 10px 7px;  }
+
+#jr_newFields input#jr_canceListing.jrButton { color:#101010; display: inline-block;
+	 box-shadow: 0 1px 0 0 #f2f2f2 inset; border:1px solid #acacac;background: -moz-linear-gradient(top,#e7e7e7 0%,#cacaca)!important;background: -webkit-gradient(linear, left top, left bottom, from(#de2228),to(#cacaca))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;padding:10px 10px 7px;font:normal 14px 'avantgarde_dm';text-shadow:0 1px 1px #e9e9e9 ;}
 
 #login-form{ }
 .login-greeting { float:right;border-right:2px solid #8d8d8d; padding-right:10px; margin-right:10px}
@@ -548,6 +554,7 @@ body.bd #pt_content  .main { width:100%}
 	.login ul li{ padding-bottom:5px}
 	.login  .login-fields #remember-lbl { display:inline }
 	.login  .login-fields #remember { float:left; width:auto; margin-right:10px}
+	#login-form  .logout-button   input.button{ background:none!important; border:none; border-radius:none; color:#dd2228; font:normal 12px Arial; padding:0; height:auto}
 
 .jr_pgContainer{}
 	.jr_pgContainer h1.contentheading { border-bottom:4px solid #000;padding: 0 0 3px 13px;}
@@ -563,10 +570,23 @@ body.bd #pt_content  .main { width:100%}
 	#submitForm input#submit_captcha{ width:200px}
 	#submitForm  button.button { background:none; color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e);background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e)); -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;font:normal 22px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding:9px 20px;margin-left: 84px;}
 button { background:none; visibility:visible; overflow:visible; margin:0; padding:0; border:none; cursor:pointer}	
+table { width:98%; }
+table.category{ margin:10px 0}
+	table.category td { padding:7px 0}
+	table.category th { text-align:left; padding:7px 0}
+	table.category th:first-child { padding-left:7px}
+	
+.pagination { clear:both; text-align:center; overflow:hidden;padding:5px 0 25px; margin-bottom:16px;}
+	.pagination p.counter{ display:inline; float:left}
+	.pagination  ul {display:inline;}
+	.pagination  ul  li { display:inline-block; margin:0 6px; font-size:12px;font-weight:bold;}
+	.pagination  ul  li  a { font-size:12px; color:#4f4f4f}
+	.pagination  ul  li  a:hover { color:#323232}
+	.pagination span.pagenav { font-weight:bold; color:#323232; background:url(../images/tag/bkg_pagi.png)no-repeat center center; padding: 8px 14px 8px 13px; }
+	.pagination  .pagination-start span.pagenav, .pagination .pagination-prev span.pagenav, .pagination  .pagination-next span.pagenav, .pagination  .pagination-end  span.pagenav{ color:#4f4f4f; background:none; width:auto; padding:0}
+	.pagination  ul li.pagination-start, .pagination  ul li.pagination-prev , .pagination  ul li.pagination-next , .pagination  ul li.pagination-end { margin:0 15px}
 
-#rsticketspro_form{}
-
-{ background-color: #1a82f7; background: url(images/linear_bg_2.png); background-repeat: repeat-x; /* Safari 4-5, Chrome 1-9 */ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2F2727)); /* Safari 5.1, Chrome 10+ */ background: -webkit-linear-gradient(top, #2F2727, #1a82f7); /* Firefox 3.6+ */ background: -moz-linear-gradient(top, #2F2727, #1a82f7); /* IE 10 */ background: -ms-linear-gradient(top, #2F2727, #1a82f7); /* Opera 11.10+ */ background: -o-linear-gradient(top, #2F2727, #1a82f7);}
+.jr_pgContainer h1.contentheading.item { border:none}
 
 /* right */
 #ja-right{}
