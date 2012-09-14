@@ -49,10 +49,54 @@ form#rsticketspro_form{ padding:10px 15px 0 37px; background:none}
 	form#rsticketspro_form  select#filter_order { margin-right:10px}
 	form#rsticketspro_form  select#filter_order,form#rsticketspro_form  select#filter_order_Dir{width: 250px;}
 	form#rsticketspro_form  input, form#rsticketspro_form   textarea, form#rsticketspro_form .inputbox{ border:1px solid #ccc; padding:6px;width: 500px; margin-bottom:10px}
-	form#rsticketspro_form  button.button { background:none; color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e);background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e)); -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;font:normal 22px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding:9px 20px;margin-left: 95px;}
+	form#rsticketspro_form  button.button { color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e);background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e)); -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px;font:normal 22px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding:9px 20px;margin-left: 95px;}
 .rsticketspro_fullbox { margin:0!important; width: 100% !important; }
 .rsticketspro_fullbox ul.rsticketspro_categories { border-right:none}
 
 .rsticketspro_tablebig2 th { padidng-left:25px}
 .rsticketspro_tablebig2 th, .rsticketspro_tablebig2 td { text-align:left; padding-left:10px}
 .rsticketspro_tablebig2 td  a { font-weight:bold}
+
+@import url{../../../components/com_jreviews/jreviews/views/themes/default/theme_css/theme.css}
+@import url{../../../components/com_jreviews/jreviews/views/themes/default/theme_css/form.css}
+@import url{../../../components/com_jreviews/jreviews/views/themes/default/theme_css/list.css}
+body .jr_pathway { width:100%; border-bottom:1px solid #e6e6e6; padding-bottom:6px}
+.jr_pathway a , .jr_pathway span{ font-size:10px}
+body .jr_pathway a {background: url(../images/probid/i_arrow_li.png) no-repeat  right center ; padding-right: 10px;}
+
+body .jr_formContainer {  border:none!important; padding:0}
+.jr_form legend { text-transform:uppercase; padding:10px!important; background:#dddcdc; margin-bottom:10px; width:97%}
+body .jr_form input[type="text"], body .jr_form textarea, body .jr_form select {border:1px solid #ccc; background:#fff; width:86.3%!important; padding:6px}
+.jr_form .jrSelect, .jr_form .jrSelectMultiple { width:88%!important}
+body .jr_form fieldset { border:none!important; padding:0}
+body .jr_form .jr_fieldDiv label { display:inline-block; font-weight:normal; width:6em; font-size:11px}
+body #fulltext.jrTextArea {padding:6px;width: 500px; height:10em; resize:none}
+.jr_form .jr_fieldDiv.jr_city, .jr_form .jr_fieldDiv.jr_state, .jr_form .jr_fieldDiv.jr_zipcode{ float:left; margin-right:10px}
+.jr_form .jr_fieldDiv.jr_city  input[type="text"], .jr_form .jr_fieldDiv.jr_state select, .jr_form .jr_fieldDiv.jr_zipcode input[type="text"], .jr_form  .jr_fieldDiv.jr_country select{ width:154px!important}
+.jr_form .jr_fieldDiv.jr_state label { width:3em}
+.jr_fieldDiv.jr_country { clear:both}
+body .jr_form span#gm_geocode input.jrButton  , a.jrButton{ font:bold 12px Arial; color:#585858!important; display: inline-block;
+	 box-shadow: 0 1px 0 0 #f2f2f2 inset; border:1px solid #acacac;background: -moz-linear-gradient(top,#e7e7e7 0%,#cacaca)!important;background: -webkit-gradient(linear, left top, left bottom, from(#de2228),to(#cacaca))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;padding:7px 12px 5px; margin-right:5px; text-shadow:none}
+
+#jr_newFields .jrButton { margin-right:5px} 
+	 
+#image_upload_container { font-size:11px}
+#image_upload_container label{ display:block!important; width:auto; color:#707070}
+.image_upload_container_primary { padding-bottom:15px}
+.image_upload_container_others .jr_imageUpload_left , .image_upload_container_others .jr_imageUpload_right{ float:left; padding-bottom:10px}
+
+.jr_pagenav_results { font:bold 14px Arial!important; color:#000}
+
+body div.jr_pgContainer li { margin:0}
+body div.jr_blogview div.listItem { border-bottom:4px solid #e3e2e2}
+div.jr_blogview div.contentInfoContainer { background:none; border:none}
+div.jr_blogview div.contentTitle, div.jr_blogview div.contentTitle a { font-size:18px!important}
+.ul_contentTitl { position:relative}
+.my_jr_projectstatus{background: url(../images/probid/i_icon_3.png) no-repeat 0 0 ;height:28px; display:inline-block; text-indent:-9999px; font-size:0; position:absolute; right:0; top:5px}
+.awarded_jr_projectstatus{background-position:0 0; width:42px }
+#jr_pgResults{}
+body div.jr_pgContainer .contentInfo  { }
+	body div.jr_pgContainer .contentInfo { color:#888; font-size:11px}
+	body div.jr_pgContainer .contentInfo ul {width:100%; float:left}
+	body div.jr_pgContainer .contentInfo ul li { float:right}
+	body div.jr_pgContainer .contentInfo ul li:first-child { float:left}
