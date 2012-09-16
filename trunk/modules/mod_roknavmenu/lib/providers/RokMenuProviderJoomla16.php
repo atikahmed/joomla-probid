@@ -1,8 +1,8 @@
 <?php
 /**
- * @version   1.7 October 12, 2011
+ * @version   1.11 June 6, 2012
  * @author    RocketTheme http://www.rockettheme.com
- * @copyright Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
 
@@ -35,16 +35,17 @@ if (!class_exists('RokMenuProviderJoomla16'))
                 $menuitems = $this->getFullMenuItems($this->args);
             }
 
-            $jmenu = JSite::getMenu();
-            $active = $jmenu->getActive();
-
-            if (is_object($active))
-            {
-                if (array_key_exists($active->id, $menuitems))
-                {
-                	$this->current_node = $active->id;                	
-                }
-            }
+/*moved to getFullMenuItems function*/
+//            $jmenu = JSite::getMenu();
+//            $active = $jmenu->getActive();
+//
+//            if (is_object($active))
+//            {
+//                if (array_key_exists($active->id, $menuitems))
+//                {
+//                	$this->current_node = $active->id;
+//                }
+//            }
 
             $this->populateActiveBranch($menuitems);
             return $menuitems;
@@ -53,10 +54,17 @@ if (!class_exists('RokMenuProviderJoomla16'))
         public function getFullMenuItems($args)
         {
             $menu = JSite::getMenu();
+            $active = $menu->getActive();
+
+            if (is_object($active))
+            {
+                $this->current_node = $active->id;
+            }
             // Get Menu Items
             $rows = $menu->getItems('menutype', $args['menutype']);
 
             $outputNodes = array();
+
             if (is_array($rows) && count($rows) > 0)
             {
                 foreach ($rows as $item)
@@ -68,7 +76,7 @@ if (!class_exists('RokMenuProviderJoomla16'))
                     $node->setParent($item->parent_id);
                     $node->setTitle(addslashes(htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8')));
                     $node->setParams($item->params);
-                    $node->setLink($item->link);
+                    //$node->setLink($item->link);
 
                     // Menu Link is a special type that is a link to another item
                     if ($item->type == 'alias' && $newItem = $menu->getItem($item->params->get('aliasoptions')))
@@ -97,6 +105,8 @@ if (!class_exists('RokMenuProviderJoomla16'))
                             if ((strpos($node->getLink(), 'index.php?') === 0) && (strpos($node->getLink(), 'Itemid=') === false))
                             {
                                 $node->setLink($node->getLink() . '&amp;Itemid=' . $node->getId());
+                            } elseif (!empty($item->link) && ($item->link != null)){
+                                $node->setLink($item->link);
                             }
                             $node->setType('menuitem');
                             break;
@@ -105,17 +115,23 @@ if (!class_exists('RokMenuProviderJoomla16'))
                             if ($node->isAlias() && $newItem)
                             {
                                 $menu_id = $item->params->get('aliasoptions');
+                                $node->setMenuId($menu_id);
+                                //for aliased items formatter.php doesn't cover
+                                if ($node->getMenuId() == $this->current_node) {
+                                    $node->addListItemClass('active');
+                                    $node->setCssId('current');
+                                }
                             }
                             else
                             {
                                 $menu_id = $node->getId();
+                                $node->setMenuId($menu_id);
                             }
                             $link = ($router->getMode() == JROUTER_MODE_SEF) ? 'index.php?Itemid=' . $menu_id : $node->getLink() . '&Itemid=' . $menu_id;
                             $node->setLink($link);
                             $node->setType('menuitem');
                             break;
                     }
-
 
                     if ($node->getLink() != null)
                     {
@@ -140,7 +156,8 @@ if (!class_exists('RokMenuProviderJoomla16'))
                         // Get the final URL
                         if ($item->home == 1)
                         { // Set Home Links to the Base
-                            $node->setLink(JURI::base());
+                            //removed because it breaks SEF extensions
+                            //$node->setLink(JRoute::_(JURI::base()));
                         }
 
                         if ($item->type != 'separator' && $item->type != 'url')
@@ -169,8 +186,8 @@ if (!class_exists('RokMenuProviderJoomla16'))
 
                     $outputNodes[$node->getId()] = $node;
                 }
-                return $outputNodes;
             }
+            return $outputNodes;
         }
 
         /**

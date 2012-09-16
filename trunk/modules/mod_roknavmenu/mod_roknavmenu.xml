@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.6.0" client="site">
+<extension type="module" version="1.6.0" client="site" method="upgrade">
 	<name>RokNavMenu</name>
 	<author>RocketTheme, LLC</author>
-	<creationDate>October 12, 2011</creationDate>
+	<creationDate>June 6, 2012</creationDate>
 	<authorEmail>support@rockettheme.com</authorEmail>
 	<authorUrl>http://www.rockettheme.com</authorUrl>
-	<copyright>(C) 2005 - 2011 RocketTheme, LLC. All rights reserved.</copyright>
+	<copyright>(C) 2005 - 2012 RocketTheme, LLC. All rights reserved.</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-	<version>1.7</version>
+	<version>1.11</version>
 	<description>RocketTheme Customizable Navigation Menu</description>
 
     <scriptfile>install.script.php</scriptfile>
@@ -91,7 +91,7 @@
 						value="1">JYES</option>
 				</field>
                 <field name="filteringspacer1" type="spacer" hr="true" />
-                <field name="window_open" type="text" default="" label="Target Position" description="PARAMTARGETPOSITION" />
+                <!--<field name="window_open" type="text" default="" label="Target Position" description="PARAMTARGETPOSITION" />-->
                 <field name="filteringspacer2" type="spacer" default="" label="" description="" />
                 <field name="theme" type="hidden" default="default"/>
                 <!--<field name="theme" type="themelist" default="/modules/mod_roknavmenu/themes/basic" label="ROKNAVMENU.LABEL.THEME" description="ROKNAVMENU.DESC.THEME" filter="" exclude="" hide_none="true" hide_default="true"/>		-->
