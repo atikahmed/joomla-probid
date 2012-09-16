@@ -40,7 +40,7 @@ defined('_JEXEC') or die('Restricted access');
 <?php } ?>
 
 
-<ul>
+<ul class="pt_membership">
 	<li></li>
 	<li>Cost of different membership plans</li>
 	<li>Unlimited support</li>
@@ -59,7 +59,7 @@ $replace = array('{price}', '{buy}', '{extras}', '{stock}');
 $with 	 = array($price, '<a href="'.$link.'">'.JText::_('RSM_SUBSCRIBE').'</a>', '', $item->stock > -1 ? $item->stock : 0);
 $item->description = str_replace($replace, $with, $item->description);
 ?>
-<div class="rsm_container<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+<div class="rsm_container<?php echo $this->escape($this->params->get('pageclass_sfx')); ?> pt_membership">
 
 <ul>
 	<li><a href="<?php echo $link; ?>"><?php $names = explode("-", $item->name); echo $names[1]; ?></a></li>
