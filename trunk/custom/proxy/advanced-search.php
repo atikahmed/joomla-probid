@@ -6,6 +6,7 @@
  * 
  * 
  */
+ 
 $htmlOutput = "<p class='alert'>You must choose a Category to search through</p>";
 $genericError = "<p class='attention'>There were no matches found for your Search.  Add more Tags to get better results.</p>";
 //local variables
@@ -59,19 +60,19 @@ if(!empty($category_id)) {
 		require_once('../connections/dbMDB2.php');
 		//get total count first
 		if($isProject) {
-			$ttlquery = "SELECT COUNT(a.`id`) as totalrows FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid` JOIN `jos_categories` c ON  ";
-			$ttlquery .= "a.`catid` = c.`id` WHERE a.`id` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id . " OR c.`parent_id` = " . $category_id . ")";	
+			$ttlquery = "SELECT COUNT(a.`id`) as totalrows FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid` JOIN `jos_categories` c ON ";
+			$ttlquery .= "a.`catid` = c.`id` JOIN `jos_users` d ON a.`created_by` = d.`id` WHERE a.`id` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id . " OR c.`parent_id` = " . $category_id . ")";	
 			//build query while we are here
-			$query = "SELECT a.`id`, a.`title`, a.`catid` , b.`jr_projectstatus`, b.`jr_spcontact`, b.`jr_spofficephone`, b.`jr_spcellphone`, b.`jr_city`, ";
-			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id` FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
-			$query .= "JOIN `jos_categories` c ON  a.`catid` = c.`id` WHERE a.`state` = 1 AND a.`id` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id;
+			$query = "SELECT a.`id`, a.`title`, a.`catid` , a.`fulltext`, a.`created`, a.`images`, a.`hits`, b.`jr_projectstatus`, b.`jr_spcontact`, b.`jr_spofficephone`, b.`jr_spcellphone`, b.`jr_city`, ";
+			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id`, c.`title` title_cat, d.`name`, e.`text` jr_state_text FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
+			$query .= "JOIN `jos_categories` c ON  a.`catid` = c.`id` JOIN `jos_users` d ON a.`created_by` = d.`id` JOIN `jos_jreviews_fieldoptions` e ON REPLACE(b.`jr_state`, '*', '') = e.`value` WHERE a.`state` = 1 AND a.`id` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id;
 			$query .= " OR c.`parent_id` = " . $category_id . ")";
 		} else {  //is provider
 			$ttlquery = "SELECT COUNT(a.`id`) as totalrows FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid` JOIN `jos_categories` c ON  ";
 			$ttlquery .= "a.`catid` = c.`id` WHERE a.`created_by` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id . " OR c.`parent_id` = " . $category_id . ")";
-			$query = "SELECT a.`id`, a.`title`, a.`catid` , b.`jr_projectstatus`, b.`jr_spcontact`, b.`jr_spofficephone`, b.`jr_spcellphone`, b.`jr_city`, ";
-			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id` FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
-			$query .= "JOIN `jos_categories` c ON  a.`catid` = c.`id` WHERE a.`state` = 1 AND a.`created_by` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id;
+			$query = "SELECT a.`id`, a.`title`, a.`catid` , a.`fulltext`, a.`created`, a.`images`, a.`hits` ,  b.`jr_projectstatus`, b.`jr_spcontact`, b.`jr_spofficephone`, b.`jr_spcellphone`, b.`jr_city`, ";
+			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id`, c.`title` title_cat, d.`name`, e.`text` jr_state_text FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
+			$query .= "JOIN `jos_categories` c ON  a.`catid` = c.`id` JOIN `jos_users` d ON a.`created_by` = d.`id` JOIN `jos_jreviews_fieldoptions` e ON REPLACE(b.`jr_state`, '*', '') = e.`value` WHERE a.`state` = 1 AND a.`created_by` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id;
 			$query .= " OR c.`parent_id` = " . $category_id . ")";
 			if($is_esp) {
 				$query .= " AND ( b.`jr_esp` LIKE '*1*' )";
@@ -117,25 +118,8 @@ if(!empty($category_id)) {
 	        } 
 	        else {
 	        	$htmlOutput = "<div id='jr_pgResults'><!--  BLOGVIEW  -->";
-	        	$htmlOutput .= "<div class='jr_blogview'>";
-	            while($row = $result->fetchRow()) {
-					$htmlOutput .= "<div class='listItem'>";
-					$htmlOutput .= "<h4><a href='/advanced-search-redirect?lid=" . $row['id'] . "' target='_blank'>" . $row['title'] . "</a></h4>";
-					if(!$isProject) {  //this is a provider so show more in the results
-						$htmlOutput .= "Contact: " . $row['jr_spcontact'] . "<br/>";
-						$htmlOutput .= "Phone: " . $row['jr_spofficephone'] . "<br/>";
-						$htmlOutput .= "Email: <a href='mailto:" . $row['email'] . "'>" . $row['email'] . "</a><br/>";
-					}
-					//$htmlOutput .= "Contact - " . $row['jr_spcontact'] . "<br/>";
-					//$htmlOutput .= "Phone - " . $row['jr_spofficephone'] . "<br/>";
-					//$htmlOutput .= "Mobile - " . $row['jr_spcellphone'] . "<br/>";
-					$htmlOutput .= $row['jr_city'] . ", " . str_replace("*", "", $row['jr_state']) . "<br/>";
-					//$htmlOutput .= "Status - " . ucfirst(str_replace("*", "",$row['jr_projectstatus'])) . "<br/>";
-					$htmlOutput .= "</div><hr/>";
-	            }//ends while loop
-	            $htmlOutput .= "</div><div class='clr'>&nbsp;</div>";
-	            $htmlOutput .= "</div><!-- end jr_pgResults --><div class='clr'>&nbsp;</div>";
-	            //add pagination
+				$htmlOutput .= "<div class='ja-moduletable moduletable  clearfix'><h3><span>Search Results</span></h3></div>";
+				//add pagination
 	            $htmlOutput .= "<div class='pbd-pagination'>";
 			    //logic for paging
 			    if($page > 1) {
@@ -148,6 +132,70 @@ if(!empty($category_id)) {
 					$htmlOutput .= $endNum . " of " . $totalRows . " results <a id='nextPBDLink' href='#searchResults' onclick='advancedSearchRequest(as_page+1);'>Next</a>";
 				}			
 				$htmlOutput .= "</div>";
+				
+	        	$htmlOutput .= "<div class='jr_blogview'>";
+				$count = 1;
+	            while($row = $result->fetchRow()) {
+					//print_r($row);die;
+					$htmlOutput .= "<div class='listItem'><div class='contentInfoContainer'>";
+					$htmlOutput .= "<div class='contentTitle'><a href='/advanced-search-redirect?lid=".$row['id']."' class='jr_listingTitle'>".$row['title']."</a></div> ";
+					$htmlOutput .= "<div class='contentInfo'>";
+					$htmlOutput .= "<ul><li><ul class='ul_contentInfo'><li>by ".$row['name']."</li><li>".date("F d, Y", strtotime($row['created']))."</li></ul></li><li>".$row['title_cat']."</li></ul>";
+					
+					$htmlOutput .= "<span class='jrHitsWidget' title='Views'><span class='jrIcon jrIconGraph'></span><span class='jrButtonText'>".$row['hits']."</span></span>";
+					
+					$htmlOutput .= "<span class='jrFavoriteWidget' title='Preferred/Favorites'><span class='jrIcon jrIconFavorites'></span><span id='jr_favoriteCount229'>1</span></span>";
+
+					$htmlOutput .= "</div></div>";
+					$images = explode("|", $row['images']);
+					
+					$htmlOutput .= "<div class='contentColumn'>";
+					if($row['images']){
+						$htmlOutput .= "<div class='contentThumbnail'><a href='/advanced-search-redirect?lid=".$row['id']."'><img src='http://localhost/themes/probid/images/".$images[0]."' border='0' alt='".$row['title']."' title='".$row['title']."' id='thumb".$row['id']."' style='width: 150px; height: 112px'></a></div>";
+					}
+					$htmlOutput .= "</div>";
+					
+					$fulltext = $row['fulltext'];
+					$numwords = 13;
+					$con_fulltext = strtok($fulltext, " \n");
+					while(--$numwords > 0) $con_fulltext .= " " . strtok(" \n");
+						if($con_fulltext != $fulltext) $output .= " ";
+						
+					if(strlen($con_fulltext) < strlen($fulltext))
+						$con_fulltext .= "...";
+					
+					$htmlOutput .= "<div class='fieldGroup'><div class='fieldRow jr_fulltext'><div class='fieldLabel'>Project Description:</div><div class='fieldValue '><p>".$con_fulltext."<a href='/advanced-search-redirect?lid=".$row['id']."'>read more</a></p></div></div></div>";
+					
+					$htmlOutput .= "<div class='jr_customFields'><div class='fieldGroup address-information'>";
+					
+					$htmlOutput .= "<div class='fieldRow jr_city'><div class='fieldLabel'>City:</div><div class='fieldValue '>".$row['jr_city']."</div></div>";
+					
+					$htmlOutput .= "<div class='fieldRow jr_state'><div class='fieldLabel'>State:</div><div class='fieldValue '>".$row['jr_state_text']."</div></div>";
+					
+					
+					if(!$isProject) {  //this is a provider so show more in the results
+						$htmlOutput .= "<div class='fieldRow jr_spcontact'><div class='fieldLabel'>Contact:</div><div class='fieldValue '>".$row['jr_spcontact']."</div></div>";
+						
+						$htmlOutput .= "<div class='fieldRow jr_spofficephone'><div class='fieldLabel'>Phone:</div><div class='fieldValue '>".$row['jr_spofficephone']."</div></div>";
+						
+						$htmlOutput .= "<div class='fieldRow jr_email'><div class='fieldLabel'>Email:</div><div class='fieldValue '><a href='mailto:" . $row['email'] . "'>" . $row['email'] . "</a></div></div>";
+					}
+					
+					$htmlOutput .= "</div></div>";
+					//$htmlOutput .= "Contact - " . $row['jr_spcontact'] . "<br/>";
+					//$htmlOutput .= "Phone - " . $row['jr_spofficephone'] . "<br/>";
+					//$htmlOutput .= "Mobile - " . $row['jr_spcellphone'] . "<br/>";
+					//$htmlOutput .= $row['jr_city'] . ", " . str_replace("*", "", $row['jr_state']) . "<br/>";
+					//$htmlOutput .= "Status - " . ucfirst(str_replace("*", "",$row['jr_projectstatus'])) . "<br/>";
+					$htmlOutput .= "</div>";
+					
+					if($count < $result->numRows())
+						$htmlOutput .= "<hr />";
+					$count++;
+	            }//ends while loop
+	            $htmlOutput .= "</div><div class='clr'>&nbsp;</div>";
+	            $htmlOutput .= "</div><!-- end jr_pgResults --><div class='clr'>&nbsp;</div>";
+	            
 	        }//ends if else numRows < 1
 		}// if $totalRows > 0		
 		else {

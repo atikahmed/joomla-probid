@@ -34,7 +34,7 @@ JHtml::_('behavior.keepalive');
 
 <div class="prologin">
 	<div class="proaccount">
-		<a href="#">Create a Free Account</a>
+		<a href="index.php/memberships-sp">Create a Free Account</a>
 	</div>
 	<span> or </span>
 	<div class="prologinout">
@@ -65,10 +65,10 @@ JHtml::_('behavior.keepalive');
 			<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
 			<p id="form-login-remember">
 				<label for="modlgn-remember"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label>
-				<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+				<input id="modlgn-remember" checked="checked" type="checkbox" name="remember" class="inputbox" value="yes"/>
 			</p>
 			<?php endif; ?>
-			<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGIN') ?>" />
+			<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JSIGNIN') ?>" />
 			<input type="hidden" name="option" value="com_users" />
 			<input type="hidden" name="task" value="user.login" />
 			<input type="hidden" name="return" value="<?php echo $return; ?>" />
@@ -76,12 +76,21 @@ JHtml::_('behavior.keepalive');
 			</fieldset>
 			<ul>
 				<li>
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind'); ?>">
+					<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?></a>
+				</li>
+				<li>
+					or
+				</li>
+				<li>
 					<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>">
 					<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?></a>
 				</li>
+			</ul>
+				
+			<ul>
 				<li>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind'); ?>">
-					<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?></a>
+					<?php echo JText::_('NOT_REGISTERED'); ?>
 				</li>
 				<?php
 				$usersConfig = JComponentHelper::getParams('com_users');
@@ -104,7 +113,7 @@ JHtml::_('behavior.keepalive');
 <?php if ($type == 'logout'): ?>
 	<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">	
 		<div class="logout-button">
-			<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGOUT'); ?>" />
+			<input type="submit" name="Submit" style="cursor:pointer;" class="button_logout" value="<?php echo JText::_('JLOGOUT'); ?>" />
 			<input type="hidden" name="option" value="com_users" />
 			<input type="hidden" name="task" value="user.logout" />
 			<input type="hidden" name="return" value="<?php echo $return; ?>" />
@@ -122,6 +131,13 @@ JHtml::_('behavior.keepalive');
 	</form>
 	
 	<div class="proupaccount">
-		<a href="#">Upgrade Account Now</a>
+		<?php 
+			$db = JFactory::getDBO();
+			$query = 'SELECT mem.* FROM #__rsmembership_membership_users mem WHERE mem.user_id = ' . $user->id;
+			$db->setQuery($query);
+			
+			$membership_user = $db->loadObject();
+		?>
+		<a href="<?php echo JRoute::_('index.php?option=com_rsmembership&view=mymembership&cid='.$membership_user->id); ?>"><?php echo JText::_('Upgrade Account Now'); ?></a>
 	</div>
 <?php endif; ?>

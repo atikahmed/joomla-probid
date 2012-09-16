@@ -28,7 +28,14 @@ JHtml::_('behavior.keepalive');
 
 <?php if ($type == 'logout'): ?>
 	<div class="proupaccount">
-		<a href="#">Upgrade Account Now</a>
+		<?php 
+			$db = JFactory::getDBO();
+			$query = 'SELECT mem.* FROM #__rsmembership_membership_users mem WHERE mem.user_id = ' . $user->id;
+			$db->setQuery($query);
+			
+			$membership_user = $db->loadObject();
+		?>
+		<a href="<?php echo JRoute::_('index.php?option=com_rsmembership&view=mymembership&cid='.$membership_user->id); ?>"><?php echo JText::_('Upgrade Account Now'); ?></a>
 	</div>
 <?php endif; ?>
 
