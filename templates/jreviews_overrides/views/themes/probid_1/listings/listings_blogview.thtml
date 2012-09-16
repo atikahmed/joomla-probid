@@ -102,8 +102,7 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 							<?php endif;?>
 							</span>        
 						</div> 
-						<!-- OVERALL RATINGS -->
-						<?php echo $Rating->overallRatings($listing, 'list'); ?>
+						
 					</li>
 					<li>
 						<div class="my_jr_projectstatus"></div>
@@ -131,7 +130,7 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 								<?php endif;?>
 							</li>
 						</ul>
-						
+						<div class="pt_border">
 						<?php if($this->Config->list_show_hits):?>
 						<span class="jrHitsWidget" title="<?php __t("Views");?>">
 							<span class="jrIcon jrIconGraph"></span>
@@ -147,16 +146,21 @@ $show_map = (!isset($GeomapsCenter) /*not proximity search*/ && Sanitize::getBoo
 								<span id="jr_favoriteCount<?php echo $listing['Listing']['listing_id'];?>"><?php echo $listing['Favorite']['favored'];?></span> 
 							</span>
 						<?php endif;?>
-						
-					    &nbsp;&nbsp;&nbsp;
-					      
-					    <!-- COMPARE -->
+						 <!-- COMPARE -->
 					    <?php if ($this->Config->getOverride('list_compare',$listing['ListingType']['config'])):?>
 						    <?php echo $Jreviews->compareCheckbox($listing); ?>
 					    <?php endif;?>
-
-					    <!-- LISTING MANAGER -->		
+						  <!-- LISTING MANAGER -->		
 					    <?php $Jreviews->listingManager($listing);?>
+						<!-- OVERALL RATINGS -->
+						<?php echo $Rating->overallRatings($listing, 'list'); ?>
+						</div>
+						
+					    &nbsp;&nbsp;&nbsp;
+					      
+					   
+
+					  
                         
 					</div>
 					
