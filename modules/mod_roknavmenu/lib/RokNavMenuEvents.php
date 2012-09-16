@@ -1,8 +1,8 @@
 <?php
 /**
- * @version   1.7 October 12, 2011
+ * @version   1.11 June 6, 2012
  * @author    RocketTheme http://www.rockettheme.com
- * @copyright Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
 
@@ -29,7 +29,7 @@ class RokNavMenuEvents extends JPlugin
         $module = $this->getModuleType($data);
 
 
-        if ($option == 'com_modules' && $layout == 'edit' && $module == 'mod_roknavmenu')
+        if (in_array($option, array('com_modules', 'com_advancedmodules')) && $layout == 'edit' && $module == 'mod_roknavmenu')
         {
 
             require_once(JPATH_ROOT . '/modules/mod_roknavmenu/lib/RokNavMenu.php');

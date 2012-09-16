@@ -1,8 +1,8 @@
 <?php
 /**
- * @version   1.7 October 12, 2011
+ * @version   1.11 June 6, 2012
  * @author    RocketTheme http://www.rockettheme.com
- * @copyright Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
 
@@ -327,8 +327,8 @@ class RokNavMenuTree extends RokMenuTreeBase
 
             		
 			// Get the final URL
-			if ($tmp->home == 1) {  											// Set Home Links to the Base
-				$tmp->url = JURI::base();
+			if ($tmp->home == 1) {// Set Home Links to the Base
+				$tmp->url = str_replace(array($tmp->route.'/', $tmp->route), '', JRoute::_( $tmp->url ));
 			} 
 			
 			if ($tmp->type != 'separator' && $tmp->type != 'url') {		

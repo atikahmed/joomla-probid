@@ -64,14 +64,14 @@ if(!empty($category_id)) {
 			$ttlquery .= "a.`catid` = c.`id` JOIN `jos_users` d ON a.`created_by` = d.`id` WHERE a.`id` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id . " OR c.`parent_id` = " . $category_id . ")";	
 			//build query while we are here
 			$query = "SELECT a.`id`, a.`title`, a.`catid` , a.`fulltext`, a.`created`, a.`images`, a.`hits`, b.`jr_projectstatus`, b.`jr_spcontact`, b.`jr_spofficephone`, b.`jr_spcellphone`, b.`jr_city`, ";
-			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id`, c.`title` title_cat, d.`name`, e.`text` jr_state_text FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
+			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id`, c.`title` title_cat, d.`username`, e.`text` jr_state_text FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
 			$query .= "JOIN `jos_categories` c ON  a.`catid` = c.`id` JOIN `jos_users` d ON a.`created_by` = d.`id` JOIN `jos_jreviews_fieldoptions` e ON REPLACE(b.`jr_state`, '*', '') = e.`value` WHERE a.`state` = 1 AND a.`id` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id;
 			$query .= " OR c.`parent_id` = " . $category_id . ")";
 		} else {  //is provider
 			$ttlquery = "SELECT COUNT(a.`id`) as totalrows FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid` JOIN `jos_categories` c ON  ";
 			$ttlquery .= "a.`catid` = c.`id` WHERE a.`created_by` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id . " OR c.`parent_id` = " . $category_id . ")";
 			$query = "SELECT a.`id`, a.`title`, a.`catid` , a.`fulltext`, a.`created`, a.`images`, a.`hits` ,  b.`jr_projectstatus`, b.`jr_spcontact`, b.`jr_spofficephone`, b.`jr_spcellphone`, b.`jr_city`, ";
-			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id`, c.`title` title_cat, d.`name`, e.`text` jr_state_text FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
+			$query .= "b.`jr_state`, b.`jr_esp`, b.`email`, c.`parent_id`, c.`title` title_cat, d.`username`, e.`text` jr_state_text FROM `jos_content` a JOIN  `jos_jreviews_content` b ON a.`id` = b.`contentid`";
 			$query .= "JOIN `jos_categories` c ON  a.`catid` = c.`id` JOIN `jos_users` d ON a.`created_by` = d.`id` JOIN `jos_jreviews_fieldoptions` e ON REPLACE(b.`jr_state`, '*', '') = e.`value` WHERE a.`state` = 1 AND a.`created_by` IN (" . $third_pos . ") AND (a.`catid` = " . $category_id;
 			$query .= " OR c.`parent_id` = " . $category_id . ")";
 			if($is_esp) {
@@ -140,7 +140,7 @@ if(!empty($category_id)) {
 					$htmlOutput .= "<div class='listItem'><div class='contentInfoContainer'>";
 					$htmlOutput .= "<div class='contentTitle'><a href='/advanced-search-redirect?lid=".$row['id']."' class='jr_listingTitle'>".$row['title']."</a></div> ";
 					$htmlOutput .= "<div class='contentInfo'>";
-					$htmlOutput .= "<ul><li><ul class='ul_contentInfo'><li>by ".$row['name']."</li><li>".date("F d, Y", strtotime($row['created']))."</li></ul></li><li>".$row['title_cat']."</li></ul>";
+					$htmlOutput .= "<ul><li><ul class='ul_contentInfo'><li>by ".$row['username']."</li><li>".date("F d, Y", strtotime($row['created']))."</li></ul></li><li>".$row['title_cat']."</li></ul>";
 					
 					$htmlOutput .= "<span class='jrHitsWidget' title='Views'><span class='jrIcon jrIconGraph'></span><span class='jrButtonText'>".$row['hits']."</span></span>";
 					

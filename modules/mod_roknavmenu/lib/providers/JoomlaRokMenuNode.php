@@ -1,8 +1,8 @@
 <?php
 /**
- * @version   1.7 October 12, 2011
+ * @version   1.11 June 6, 2012
  * @author    RocketTheme http://www.rockettheme.com
- * @copyright Copyright (C) 2007 - 2011 RocketTheme, LLC
+ * @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  */
 
@@ -13,6 +13,7 @@ if (!class_exists('JoomlaRokMenuNode')) {
         protected $access = 0;
         protected $params = '';
         protected $type = 'menuitem';
+        protected $menuId = null;
 
         /**
          * Gets the image
@@ -109,6 +110,20 @@ if (!class_exists('JoomlaRokMenuNode')) {
          */
         public function setType($type) {
             $this->type = $type;
+        }
+
+        /**
+         * @param $menuId
+         */
+        public function setMenuId($menuId){
+            $this->menuId = $menuId;
+        }
+
+        /**
+         * @return null
+         */
+        public function getMenuId(){
+            return $this->menuId;
         }
     }
 }
