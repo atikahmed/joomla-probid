@@ -597,10 +597,14 @@ table.category{ margin:10px 0}
 .pt_myaccount {}
 .pt_myaccount h3 { border-top:4px solid #000!important; }
 .pt_myaccount h3 span {background: url(../images/probid/i_icon_2.png) no-repeat 18px -420px; padding: 6px 0 18px 62px; font-size:18px; color:#010101; display:inline-block}
-.pt_myaccount ul.menu li { border-bottom:1px dotted #1d1d1d!important; padding:5px 5px 5px 35px; }
+.pt_myaccount ul.menu li { border-bottom:1px dotted #1d1d1d!important; padding:5px 5px 5px 0; }
 .pt_myaccount ul.menu li:first-child { border-top:0}
-.pt_myaccount ul.menu li a{background: url(../images/probid/i_arrow_li.png) no-repeat left center; padding-left:28px}
-.pt_myaccount ul.menu li.active a, .pt_myaccount ul.menu li:hover a { color:#000; font-weight:bold}
+.pt_myaccount ul.menu li > a{background: url(../images/probid/i_arrow_li.png) no-repeat left center; padding-left:28px; margin-left:35px;color:#DB2127}
+.pt_myaccount ul.menu li.active > a, .pt_myaccount ul.menu li:hover > a { color:#000; font-weight:bold}
+.pt_myaccount ul.menu li.active { padding-bottom:0}
+.pt_myaccount ul.menu li ul { padding-top:5px}
+.pt_myaccount ul.menu li  li { border-top:1px dotted #1d1d1d!important; border-bottom:none!important}
+.pt_myaccount ul.menu li  li  > a { color:#DB2127; margin-left:62px }
 
 /* saerch*/
 .rsform{}
