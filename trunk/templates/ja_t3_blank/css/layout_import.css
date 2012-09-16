@@ -87,10 +87,11 @@ body .jr_form span#gm_geocode input.jrButton  , a.jrButton{ font:bold 12px Arial
 
 .jr_pagenav_results { font:bold 14px Arial!important; color:#000}
 
+body div.fieldGroup { padding:0}
 body div.jr_pgContainer li { margin:0}
-body div.jr_blogview div.listItem { border-bottom:4px solid #e3e2e2}
+body div.jr_blogview div.listItem { border-bottom:4px solid #e3e2e2; color:#888}
 div.jr_blogview div.contentInfoContainer { background:none; border:none}
-div.jr_blogview div.contentTitle, div.jr_blogview div.contentTitle a { font-size:18px!important}
+div.jr_blogview div.contentTitle, div.jr_blogview div.contentTitle a { font:bold 18px Arial!important}
 .ul_contentTitl { position:relative}
 .my_jr_projectstatus{background: url(../images/probid/i_icon_3.png) no-repeat 0 0 ;height:28px; display:inline-block; text-indent:-9999px; font-size:0; position:absolute; right:0; top:5px}
 .awarded_jr_projectstatus{background-position:0 0; width:42px }
@@ -100,3 +101,6 @@ body div.jr_pgContainer .contentInfo  { }
 	body div.jr_pgContainer .contentInfo ul {width:100%; float:left}
 	body div.jr_pgContainer .contentInfo ul li { float:right}
 	body div.jr_pgContainer .contentInfo ul li:first-child { float:left}
+div.fieldGroup.address-information  { padding-left:45px}
+	div.fieldGroup.address-information div.fieldLabel { text-align:left}
+	div.fieldGroup.address-information div.fieldValue { margin-left:5px}
