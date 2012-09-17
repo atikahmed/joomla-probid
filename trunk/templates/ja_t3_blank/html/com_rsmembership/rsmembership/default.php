@@ -45,10 +45,10 @@ defined('_JEXEC') or die('Restricted access');
 	<li>Cost of different membership plans</li>
 	<li>Unlimited support</li>
 	<li>No. of Jobs listings you can apply to</li>
-	<li></li>
+	<li class="last"></li>
 </ul>
 
-<?php $i = 0; foreach ($this->items as $item) {
+<?php $i = 0; foreach ($this->items as $key=>$item) {
 $catid 		= $item->category_id ? '&catid='.$item->category_id.':'.JFilterOutput::stringURLSafe($item->category_name) : '';
 $link  		= JRoute::_('index.php?option=com_rsmembership&view=membership'.$catid.'&cid='.$item->id.':'.JFilterOutput::stringURLSafe($item->name).$this->Itemid);
 $apply_link = JRoute::_('index.php?option=com_rsmembership&task=subscribe'.$catid.'&cid='.$item->id.':'.JFilterOutput::stringURLSafe($item->name).$this->Itemid);
@@ -59,14 +59,14 @@ $replace = array('{price}', '{buy}', '{extras}', '{stock}');
 $with 	 = array($price, '<a href="'.$link.'">'.JText::_('RSM_SUBSCRIBE').'</a>', '', $item->stock > -1 ? $item->stock : 0);
 $item->description = str_replace($replace, $with, $item->description);
 ?>
-<div class="rsm_container<?php echo $this->escape($this->params->get('pageclass_sfx')); ?> pt_membership">
+<div class="rsm_container<?php echo $this->escape($this->params->get('pageclass_sfx')); ?> pt_membership pt_membership_<?php echo $key; ?>">
 
 <ul>
-	<li><a href="<?php echo $link; ?>"><?php $names = explode("-", $item->name); echo $names[1]; ?></a></li>
-	<li><?php echo $price; ?></li>
-	<li><span class="<?php if($price == 'FREE!') echo 'unlimited_no'; else echo 'unlimited_yes'; ?>"><?php if($price == 'FREE!') echo 'no'; else echo 'yes'; ?></span></li>
-	<li></li>
-	<li>
+	<li class="pt_membership_link"><a href="<?php echo $link; ?>"><?php $names = explode("-", $item->name); echo $names[1]; ?></a></li>
+	<li class="pt_membership_price"><?php echo $price; ?></li>
+	<li class="pt_membership_cost"><span class="<?php if($price == 'FREE!') echo 'unlimited_no'; else echo 'unlimited_yes'; ?>"><?php if($price == 'FREE!') echo 'no'; else echo 'yes'; ?></span></li>
+	<li class="pt_membership_support">10</li>
+	<li class="pt_membership_nojobs">
 		<div class="membership_plan">
 			<a href="<?php echo $apply_link; ?>"><span>Sign up</span></a>
 		</div>

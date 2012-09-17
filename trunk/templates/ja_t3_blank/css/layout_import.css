@@ -4,6 +4,8 @@
 @import url{../../../components/com_jreviews/jreviews/views/themes/default/theme_css/list.css}
 @import url{../../../components/com_jreviews/jreviews/views/themes/default/theme_css/detail.css}
 @import url{../../../components/com_rsmembership/assets/css/rsmembership.css}
+@import url{../../../components/com_jreviews/jreviews/views/themes/default/theme_css/jquery_ui_theme/jquery-ui-1.8.17.custom.css}
+
 .column div.ja-moduletable, .column div.moduletable, .column div.ja-module, .column div.module { margin:0}
 
 #ja-header { padding:8px 0 4px; background:#f3f3f3}
@@ -187,7 +189,7 @@ div.fieldGroup.address-information  {}
 	div.fieldGroup.address-information div.fieldLabel { }
 	div.fieldGroup.address-information div.fieldValue {}
 body #jr_pgResults .pbd-pagination { color:#000; font-size:14px; display:block; padding:5px 15px}
-.pt_border { border:1px solid #dddada; background:#f5f5f5; border-width:1px 0; padding:4px 0; clear:both; margin-bottom:10px}
+.pt_border { border:1px solid #dddada; background:#f5f5f5; border-width:1px 0; padding:4px 0; clear:both; margin-bottom:10px;overflow: hidden;}
 body div.overall_ratings { float:left}
 body div.overall_ratings span.rating_label {display:none}
 body .rating_star_user, .rating_star_editor { margin:0}
@@ -204,7 +206,7 @@ body div.itemMainImage { float:none; margin:0; padding:0}
 .jr_itemDetail .contentMain{ display:block; overflow:hidden}
 .jr_itemDetail .contentheading.item{ float:left; width:auto; padding:0; font-size:18px;margin-bottom:4px}
 body .jr_itemDetail div.overall_ratings { clear:both; }
-.jr_itemDetail div.contentInfoContainer { display:inline-block; margin-top:15px; width:100%; border:1px solid #dddada; background:#f5f5f5; border-width:1px 0; padding:3px 0 0}
+.jr_itemDetail div.contentInfoContainer { display:inline-block; margin:15px 0 10px; width:100%; border:1px solid #dddada; background:#f5f5f5; border-width:1px 0; padding:3px 0 0}
 .jr_itemDetail .jrFavoriteWidget{ margin-right:1px!important}
 .jr_itemDetail .contentInfo { float:left}
 .jr_itemDetail .contentInfoButtons { float:right}
@@ -216,7 +218,7 @@ span.socialBookmarks #___plusone_0 { width:67px!important}
 body div.jr_itemDetail .contentFulltext { color:#888; line-height:15px}
 body div.jr_itemDetail .fieldGroup div.fieldLabel { text-align:left; color:#494949;font-weight:normal}
 div.jr_itemDetail div.fieldGroup div.fieldValue { color:#1d1d1d; font-weight:bold}
-body div.jr_pgContainer.jr_itemDetail .jrHeading, body div.jr_pgContainer.jr_itemDetail .moduletable h3{ background:#dddcdc; border:none; border-radius:0; color:#1d1d1d; font:bold  14px Arial; text-transform:none; padding:8px 9px}
+body div.jr_pgContainer.jr_itemDetail .jrHeading, body div.jr_pgContainer.jr_itemDetail .moduletable h3{ background:#dddcdc; border:none; border-radius:0; color:#1d1d1d; font:bold  14px Arial; text-transform:none; padding:12px 9px;box-shadow: none;}
 body div.jr_pgContainer.jr_itemDetail .moduletable h3 { text-transform:uppercase}
 .jrIconUserReviews { display:none!important}
 
@@ -226,3 +228,45 @@ body div.jr_pgContainer.jr_itemDetail .moduletable h3 { text-transform:uppercase
 .membershiptable td , .membershiptable td a { color:#888}
 body .rsm_cancel  a, body .rsm_renew a{ text-shadow:none!important; font:bold 11px Arial; padding:3px 10px; -moz-border-radius: 6px;-webkit-border-radius: 6px; border-radius:6px!important;}
 .rsm_renew a {text-shadow:none!important }
+
+#tabs { border-radius:0; border:none; padding:0; margin-top:25px}
+#tabs  .ui-tabs-nav { border-radius:0; border:none; background:#dddcdc; padding: 5px 5px 0 5px; margin-bottom:10px}
+#tabs  .ui-tabs-nav li{background:none;border-radius:0;border:none }
+#tabs  .ui-tabs-nav li.ui-state-active { background:#fff; border-top:2px solid #df2228}
+#tabs  .ui-tabs-nav li a { font:bold 14px Arial; color:#1d1d1d} 
+#tabs .ui-tabs-panel { padding: 0 10px}
+#tabs .twitter-share-button.twitter-count-horizontal { margin-top:-11px}
+#tabs  span.socialBookmarks .fb-like { margin-top:-10px}
+#tabs  .itemMainImage { margin:0 0 10px 20px; float:right}
+#tabs .contentFulltext , #tabs > .fieldGroup, #tabs .jr_customFields { clear:none!important; display:block; overflow:hidden; color:#888!important; border-bottom:1px solid #dddada; margin-bottom:10px; font-size:11px}
+#tabs  div.fieldGroup.address-information div.fieldValue { color:#888; font-size:11px; text-transform:none}
+#tabs .fieldGroup  { font-size:11px;color:#888}
+#tabs .fieldGroup p { margin-left:120px}
+#tabs .fieldGroup h3.fieldGroupTitle{ display:block!important; color:#888;font-size:11px; text-transform:none}
+body #tabs  div.fieldGroup div.fieldLabel { text-align:right; color:#888}
+#tabs  #wall #bottom_img , #tabs .rsform img{ display:none }
+#tabs  #wall , #tabs .rsform #userForm{ border:1px solid #d4d4d4;-moz-box-shadow: 0 0 5px 0 #d4d4d4;-webkit-box-shadow: 0 0 5px 0 #d4d4d4;box-shadow: 0 0 5px 0 #d4d4d4 ;-moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px; margin:5px; padding:0; background:#fff}
+#tabs  #wall-wrapper p ,#tabs  #wall-wrapper a#emailProjectLink  { padding:5px; display:block}
+#tabs  #wall  .post-bubble { width:100%}
+#tabs .post-owner, #tabs .post-sp{ width: 98.5%; border-top:1px solid #d4d4d4; -webkit-box-shadow: 0 0 5px 0 #d4d4d4;
+box-shadow: 0 -1px 2px 0 #d4d4d4 ;-moz-border-radius: 2px 2px 0 0;-webkit-border-radius: 2px 2px 0 0; border-radius:2px 2px 0 0; padding:9px 5px 6px; font-size:11px}
+#tabs .post-owner .post-owner, #tabs .post-sp .post-sp { border:none; box-shadow:none; border-radius:0; padding:0}
+#tabs .post-owner span , #tabs .post-sp span { white-space:pre}
+#tabs .post-sp .top_area .createdby , #tabs span.post-sp{ color:#2d3789}
+#tabs .post-sp .top_area .createdby { margin-left:16px}
+#tabs .post-sp .mid_area { }
+#tabs  .post-sp .bottom_area { border-top:1px solid #d4d4d4;margin: 0 6px; width: 98%;}
+#tabs .post-sp .bottom_area .attachment {  float:none; padding:10px 0 10px 13px; display:block}
+#tabs .post-sp .bottom_area .attachment a { color: #DF2228;}
+#tabs .rsform #userForm { font-size:11px; padding:10px; margin-top:20px} 
+#tabs .rsform #userForm .rsform-block { margin-bottom:10px}
+#tabs .rsform #userForm  div {padding:0!important; width:100%!important}
+#tabs .rsform #userForm  div  textarea{ width:99%; overflow:hidden; resize:none}
+#tabs .rsform #userForm input.rsform-submit-button{ font-size:14px; float:left; padding:5px 10px 4px}
+#tabs .rsform #userForm .rsform-block.rsform-block-attachments {}
+#tabs .rsform #userForm .rsform-block.rsform-block-attachments br { display:none}
+#tabs .rsform #userForm .rsform-block.rsform-block-attachments  strong { display:inline; padding-left:10px}
+#tabs .rsform #userForm .rsform-block.rsform-block-attachments input { width:auto}
+#service-providers h3 , #service-providers h4, #service-providers  strong{ padding-bottom:5px;display: inline-block;}
+#service-providers  #tags-ul li { padding:3px 0}
+#project-files h3 { padding-bottom:5px;display: inline-block;}
