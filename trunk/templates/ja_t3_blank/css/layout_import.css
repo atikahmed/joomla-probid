@@ -198,7 +198,8 @@ body div.jr_pgContainer a.jr_readon, body div.jr_pgContainer a.jr_rateit { paddi
 body div.jr_pgContainer .contentActions { left:0;position: static; margin-bottom:5px}
 
 .jr_itemDetail {}
-body div.itemMainImage { float:none; margin:0; padding:0} 
+body div.itemMainImage { float:none; margin:0; padding:0; border:none} 
+body div.itemMainImage  img{ border:1px solid #bfbfbf}
 .jr_itemDetail  .contentSidebar{ float:left; margin-right:10px}
 .my_jr_esp  { padding-top:15px}
 .my_jr_esp div{ float:left; margin:24px 10px 0 0 ; color:#1d1d1d; font:bold 11px Arial}
