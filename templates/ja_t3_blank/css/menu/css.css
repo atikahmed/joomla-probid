@@ -48,3 +48,4 @@ The second part will define the visual look for this menu.
 #ja-cssmenu li.havechild span.menu-title, #ja-cssmenu li.havechildsfhover span.menu-title{ background: url(../../images/probid/i_menu.png) no-repeat right 8px;padding-right:10px}
 #ja-cssmenu li.havechild ul span.menu-title, #ja-cssmenu li.havechildsfhover ul span.menu-title { background:none; padding:0}
 #ja-cssmenu li a { font-weight:normal; padding: 10px}
+#ja-cssmenu li ul a { padding:7px 15px !important }

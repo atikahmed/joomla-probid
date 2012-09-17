@@ -103,9 +103,9 @@ form#searchForm { border-top: 1px solid #ccc; }
 /* JOOMLA STYLE
 --------------------------------------------------------- */
 /* Layout Deco ---*/
-.items-leading { border-bottom: 1px solid #ccc; }
+.items-leading { border-bottom: 1px solid #ccc; padding-bottom:10px; margin-bottom:10px }
 
-.items-row { border-bottom: 1px solid #ccc; }
+.items-row { border-bottom: 1px solid #ccc; padding-bottom:10px; margin-bottom:10px}
 
 /* Meta ---*/
 dl.article-info { color: #999; text-transform: none; }
@@ -257,7 +257,7 @@ p.site-slogan {
 .ja-links li { padding: 0 10px; }
 
 /* Default Joomla! Menu ---*/
-#ja-container ul.menu li { border-bottom: 1px dotted #ccc; }
+#ja-container ul.menu li { border-bottom: 1px dotted #ccc;  }
 
 #ja-container ul.menu li li { border-bottom: 0; border-top: 1px dotted #ccc; }
 
@@ -456,7 +456,8 @@ a:hover{ text-decoration:none}
 /*button*/
 #jr_newFields input.jrButton,
 .rsform  #userForm  input.rsform-submit-button, 
-.rsm_renew  a, .membership_plan a{color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e)!important;background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;font:normal 14px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding: 10px 10px 7px;  }
+.rsm_renew  a, .membership_plan a, .pt_link ,
+div.itemCommentsForm form input#submitCommentButton{color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e)!important;background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;font:normal 14px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding: 10px 10px 7px;  }
 
 #jr_newFields input#jr_canceListing.jrButton ,.rsm_cancel  a{ color:#101010; display: inline-block;
 	 box-shadow: 0 1px 0 0 #f2f2f2 inset; border:1px solid #acacac;background: -moz-linear-gradient(top,#e7e7e7 0%,#cacaca)!important;background: -webkit-gradient(linear, left top, left bottom, from(#de2228),to(#cacaca))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;padding:10px 10px 7px;font:normal 14px 'avantgarde_dm';text-shadow:0 1px 1px #e9e9e9 ;}
@@ -482,8 +483,8 @@ body.bd #pt_content  .main { width:100%}
 .pt_slideshow  { color:#fff}
 	.pt_slideshow .pt_header { font:40px 'avantgarde_dn'; line-height:100%; padding-bottom:15px; letter-spacing:-2px}
 	.pt_main { line-height:14px}
-	.pt_link{ background: url(../images/probid/btn_55.png) no-repeat left 0; display:inline-block; height:55px; padding-left:8px; margin-top:22px}
-	.pt_link a{ background: url(../images/probid/btn_55.png) no-repeat right -55px;text-decoration:none; font:22px 'avantgarde_dm'; text-shadow:-1px 1px 1px #96151a; color:#fff; line-height:54px; padding:0 40px 0 6px; float:left}
+	.pt_link{  margin-top:22px;  box-shadow: 0 2px 1px #2A6199;-moz-border-radius: 6px;-webkit-border-radius: 6px; border-radius:6px!important;padding: 12px 0 10px 10px;}
+	.pt_link a{ text-decoration:none; font:22px 'avantgarde_dm'; text-shadow:-2px 2px 0px #A1171C; color:#fff;background: url(../images/probid/arrow_button.png) no-repeat right center ; padding-right:19px}
 	.pt_link a:hover {text-transform:-1px 1px 1px #96151a; color:#fff }
 
 #ja-utility { padding:4px 9px 0}
@@ -591,21 +592,60 @@ table.category{ margin:10px 0}
 
 .jr_pgContainer h1.contentheading.item { border:none}
 
+dl.article-info  {}
+	dl.article-info  dt.article-info-term { display:none}
+	dl.article-info  dd{ display:inline; font-size:11px; border-right:1px solid #ccc; padding-right:5px; margin-right:5px}
+	dl.article-info  dd.createdby{ padding:0; margin:0; border-right:0}
+ul.pagenav { padding-top:10px}
+	ul.pagenav  li:first-child { float:left}
+	ul.pagenav  li { float:right}
+h2.caption a{ font-size:14px}
+.ul_contentInfo li { float:left; border-left:1px solid #adadad; margin-left:5px; padding-left:5px; line-height:12px; color:#888; font-size:11px}
+.ul_contentInfo li:first-child { border-left:0; padding:0; margin:0}
+	
 /* member ship */
 .membershipdiv { padding:12px}
 .membershiptable { width:100%!important}
 .pt_membership {}
 .com_rsmembership #ja-container #ja-right-mass-top div.ja-moduletable h3 ,
-#ja-container #ja-content-mass-top div.ja-moduletable.pt_membership  h3{ background: url(../images/probid/i_icon_2.png) no-repeat 4px 5px; padding:4px 0 20px 54px }
+#ja-container #ja-content-mass-top div.ja-moduletable.pt_membership  h3{ background: url(../images/probid/i_icon_2.png) no-repeat 4px 5px; padding:4px 0 20px 45px; text-align:left }
 .com_rsmembership #ja-container #ja-right-mass-top div.ja-moduletable,
 #ja-container #ja-content-mass-top div.ja-moduletable.pt_membership  { border-top:4px solid #000; padding-top: 4px; border-bottom:0}
 #ja-container #ja-content-mass-top div.ja-moduletable.pt_membership  h3{ background-position:0 -599px; border-bottom:0; font-size:18px; margin-left:17px}
-.pt_membership ul.menu  { float:right}
-.pt_membership ul.menu  li { display:inline; border:none!important}
-.pt_membership ul.menu  li  a { font:bold 14px Arial; color:#a1a1a1}
+.pt_membership ul.menu  { float:right; padding:0 51px 28px 0; margin-top:30px}
+.pt_membership ul.menu  li { display:inline; border:none!important; margin:0 24px  }
+.pt_membership ul.menu  li  a { font:bold 14px Arial; color:#a7a7a7; letter-spacing:-0.1em}
+.pt_membership ul.menu  li.active { background:#db2127; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px; color:#fff; padding:5px}
+.pt_membership ul.menu  li.active a { color:#fff}
 ul.pt_membership, .rsm_container.pt_membership { float:left; overflow: visible;}
-.membership_plan a  { font:bold 18px 'avantgarde_md_btmedium'; color:#fffl; text-shadow:-2px 2px 1px #931519; box-shadow: 0 2px 1px #CFCFCF; }
-.membership_plan a span { background: url(../images/probid/arrow_button.png) no-repeat right center;  padding-right:15px}
+div.pt_membership .membership_plan { margin-top:25px}
+div.pt_membership .membership_plan a  { font:bold 18px 'avantgarde_md_btmedium'; color:#fffl; text-shadow:-2px 2px 1px #931519; box-shadow: 0 2px 1px #CFCFCF; color:#fefefe }
+div.pt_membership .membership_plan a span { background: url(../images/probid/arrow_button.png) no-repeat right center;  padding-right:21px}
+ul.pt_membership  li  { color:#636363; font-weight:bold; border-bottom:1px solid #cbcbcb;  text-align: right;width:230px;  height: 45px;padding: 28px 10px 0 0;}
+.pt_membership li:first-child  { border-bottom:2px solid #0f206c}
+div.pt_membership  ul li{border-bottom:1px solid #cbcbcb}
+div.pt_membership a { color:#010101; font:bold 14px Arial}
+div.pt_membership{ text-align:center}
+div.pt_membership li { width:130px; height:73px}
+.pt_membership_link a { padding-top:48px;display: inline-block;}
+.pt_membership_price { font:bold 16px Arial; color:#6e6e6e}
+.pt_membership_support { font:bold 18px Arial; color:#b5b5b5}
+.pt_membership_price {background:#d7d7d7 }
+.pt_membership_cost { background:#dfdfde}
+.pt_membership_support{ background:#e6e6e5}
+.pt_membership li.last,.pt_membership li.pt_membership_nojobs { border-bottom:0}
+div.pt_membership li  { border-left:2px solid #fff}
+div.pt_membership.pt_membership_0  li  { border-left:none}
+div.pt_membership_2 .pt_membership_link{ background:#0f206c} div.pt_membership_2 .pt_membership_link a { color:#fff}
+div.pt_membership_2 .pt_membership_price { background:#0b1f8f; color:#fff}
+div.pt_membership_2 .pt_membership_cost { background:#435cc8}
+div.pt_membership_2 .pt_membership_support{ }
+div.pt_membership li.pt_membership_price, div.pt_membership li.pt_membership_support  { height: 45px;padding: 28px 0 0 0;}
+.pt_membership_cost span { font-size:0; text-indent:-9999px; width:30px; height:30px;background: url(../images/probid/i_support.png) no-repeat 0 0;  display: inline-block; opacity:0.3;fiterfilter: alpha(opacity = 30); margin-top: 23px; }
+.unlimited_yes , .unlimited_no{}
+.pt_membership_cost span.unlimited_yes { background-position:-30px 0}
+.pt_membership_cost span.unlimited_no {background-position:0 0}
+.com_rsmembership h1 { display:none}
 
 /* right */
 #ja-right{}
@@ -645,8 +685,8 @@ ul.pt_membership, .rsm_container.pt_membership { float:left; overflow: visible;}
 	.rsform #userForm  input { padding:7px 5px 8px}
 	.rsform #userForm  input#Keywords{ width:98.9%}
 	.rsform #userForm  input#Zipcode { width:97%}
-	.rsform-block-submit{}
-	.rsform  #userForm .rsform-block-submit li:first-child { background:url(../images/probid/bkg_search.png) no-repeat 0 0; width:92px; height:44px; font-size:0; text-indent:-9999px}
+	.rsform-block-submit{   border-bottom: none !important; position:relative}
+	.rsform  #userForm .rsform-block-submit li:first-child { background:url(../images/probid/bkg_search.png) no-repeat 0 0; width:92px; height:44px; font-size:0; text-indent:-9999px;   position: absolute; right: 109px; top:4px}
 	.rsform  #userForm  input.rsform-submit-button {  float:right; width:auto; font-size:18px}
 	#formDiv ul#tags-ul {padding-left: 18px !important;}
 	#formDiv ul#tags-ul li { float:left; list-style: disc inside none;padding: 0 5px;}

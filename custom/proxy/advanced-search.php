@@ -142,16 +142,16 @@ if(!empty($category_id)) {
 					$htmlOutput .= "<div class='contentInfo'>";
 					$htmlOutput .= "<ul><li><ul class='ul_contentInfo'><li>by ".$row['username']."</li><li>".date("F d, Y", strtotime($row['created']))."</li></ul></li><li>".$row['title_cat']."</li></ul>";
 					
-					$htmlOutput .= "<span class='jrHitsWidget' title='Views'><span class='jrIcon jrIconGraph'></span><span class='jrButtonText'>".$row['hits']."</span></span>";
+					$htmlOutput .= "<div class='pt_border'><span class='jrHitsWidget' title='Views'><span class='jrIcon jrIconGraph'></span><span class='jrButtonText'>".$row['hits']."</span></span>";
 					
-					$htmlOutput .= "<span class='jrFavoriteWidget' title='Preferred/Favorites'><span class='jrIcon jrIconFavorites'></span><span id='jr_favoriteCount229'>1</span></span>";
+					$htmlOutput .= "<span class='jrFavoriteWidget' title='Preferred/Favorites'><span class='jrIcon jrIconFavorites'></span><span id='jr_favoriteCount229'>1</span></span></div>";
 
 					$htmlOutput .= "</div></div>";
 					$images = explode("|", $row['images']);
 					
 					$htmlOutput .= "<div class='contentColumn'>";
 					if($row['images']){
-						$htmlOutput .= "<div class='contentThumbnail'><a href='/advanced-search-redirect?lid=".$row['id']."'><img src='http://localhost/themes/probid/images/".$images[0]."' border='0' alt='".$row['title']."' title='".$row['title']."' id='thumb".$row['id']."' style='width: 150px; height: 112px'></a></div>";
+						$htmlOutput .= "<div class='contentThumbnail'><a href='/advanced-search-redirect?lid=".$row['id']."'><img src='http://localhost/project_new/images/".$images[0]."' border='0' alt='".$row['title']."' title='".$row['title']."' id='thumb".$row['id']."' style='width: 150px; height: 112px'></a></div>";
 					}
 					$htmlOutput .= "</div>";
 					
@@ -190,7 +190,7 @@ if(!empty($category_id)) {
 					$htmlOutput .= "</div>";
 					
 					if($count < $result->numRows())
-						$htmlOutput .= "<hr />";
+						$htmlOutput .= "";
 					$count++;
 	            }//ends while loop
 	            $htmlOutput .= "</div><div class='clr'>&nbsp;</div>";
