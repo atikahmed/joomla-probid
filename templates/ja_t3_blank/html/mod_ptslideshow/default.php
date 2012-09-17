@@ -109,3 +109,14 @@
 
 </div>
 <?php endif; ?>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		
+		$('.pagingSlide ul li a').click(function() {
+			var index = $(this).html() - 1;
+			$('.c-panel .thumbnails ul li').get(index).click();
+		});
+		
+	});
+</script>
