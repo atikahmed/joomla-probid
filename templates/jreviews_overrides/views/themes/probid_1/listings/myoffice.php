@@ -82,6 +82,7 @@ $numReviews=mysql_numrows($resultReviews);
 
 <?php // echo $listing['Listing']['listing_id'] ?>
 
+<div class="pt_myoffice">
 <div class="rightSideBox"><!-- LOGO or PHOTO -->
 	<?php if((!empty($listing['Listing']['images']) || $this->Config->content_default_image) && $enableIntroImage && $introImage):?>
 		<!-- MAIN IMAGE -->
@@ -92,15 +93,18 @@ $numReviews=mysql_numrows($resultReviews);
 <h3>My Office:</h3>
 <h3><?php echo $listing['Listing']['title'] , " - " , $CustomFields->field('jr_city',$listing) , ", " , $CustomFields->field('jr_state',$listing);?></h3>
 
+<div class="pt_border">
 <div class="edit_profile">
 <?php if($this->Access->_user->id == $listingUserID):?><a href="component/jreviews/listings/edit?Itemid=&id=<?php echo $myListingID ?>">Edit Profile</a><?php endif?>
 </div>
+
 
 <h4><?php if($social_bookmarks == true): ?>
 	<span class="socialBookmarks">
 		<?php echo $Community->socialBookmarks($listing); ?>		
 	</span>
 <?php endif;?></h4>
+</div>
 
 <div class="description"><!-- MY COMPANY: Summary -->
 	<?php echo $listing['Listing']['description']; ?>
@@ -140,11 +144,11 @@ $numReviews=mysql_numrows($resultReviews);
 	<div tabindex="-1" class="tabcontent tabopen" id="module_myprojects">
 		<div class="leftSideBox"><!-- MY PROJECTS -->
 			<table width="100%">
-			<tr><th align="left">Current  Probid Projects</th>
+			<tr><th align="left"><div >Current  Probid Projects</div></th>
 			
 			<!--Show for SP Prem only-->
 			<?php if($groupID==20):?>
-			<th align="left">Portfolio Projects<?php if($this->Access->_user->id == $listingUserID):?><a class="edit_myprojects" href="my-projects-sp/portfolio">Edit Portfolio</a><?php endif?></th>
+			<th align="left"><div >Portfolio Projects<?php if($this->Access->_user->id == $listingUserID):?><a class="edit_myprojects" href="my-projects-sp/portfolio">Edit Portfolio</a><?php endif?></div></th>
 			<?php else: ?>
 			<th align="left">&nbsp;</th>
 			<?php endif; ?>
@@ -210,7 +214,7 @@ $numReviews=mysql_numrows($resultReviews);
 	<div tabindex="-1" class="tabcontent tabopen" id="module_myteam">
 		<div class="leftSideBox"><!-- MY TEAM -->
 			<table width="100%">
-				<tr><th align="left">Current  PROBID Projects</th><th align="left">Preferred Professionals and Vendors<?php if($this->Access->_user->id == $listingUserID):?>&nbsp;&nbsp;&nbsp;<a class="manage_myteam" href="my-team/my-team-sp">Manage</a><?php endif?></th></tr>
+				<tr><th align="left"><div >Current  PROBID Projects</div></th><th align="left"><div>Preferred Professionals and Vendors<?php if($this->Access->_user->id == $listingUserID):?>&nbsp;&nbsp;&nbsp;<a class="manage_myteam" href="my-team/my-team-sp">Manage</a><?php endif?></div></th></tr>
 				<tr valign="baseline"><td>
 			   <?php
 				$i=0;
@@ -268,3 +272,4 @@ $numReviews=mysql_numrows($resultReviews);
 </div>
 
 <div class="middleClear" style=""></div>
+</div>
