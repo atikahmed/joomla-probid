@@ -200,6 +200,7 @@ body div.jr_pgContainer .contentActions { left:0;position: static; margin-bottom
 .jr_itemDetail {}
 body div.itemMainImage { float:none; margin:0; padding:0; border:none} 
 body div.itemMainImage  img{ border:1px solid #bfbfbf}
+body .hReview-aggregate div.itemMainImage  { margin-bottom:10ox}
 .jr_itemDetail  .contentSidebar{ float:left; margin-right:10px}
 .my_jr_esp  { padding-top:15px}
 .my_jr_esp div{ float:left; margin:24px 10px 0 0 ; color:#1d1d1d; font:bold 11px Arial}
@@ -271,3 +272,11 @@ box-shadow: 0 -1px 2px 0 #d4d4d4 ;-moz-border-radius: 2px 2px 0 0;-webkit-border
 #service-providers h3 , #service-providers h4, #service-providers  strong{ padding-bottom:5px;display: inline-block;}
 #service-providers  #tags-ul li { padding:3px 0}
 #project-files h3 { padding-bottom:5px;display: inline-block;}
+.pt_info { border-top:1px solid #bfbfbf; padding-top:8px; margin-top:8px; color:#424242}
+.pt_info  p { float:left; width:80%}
+.pt_rating { float:right}
+.pt_myoffice.jrIconUserReviews , body  .pt_myoffice  div.overall_ratings  span.rating_label{ display:block!important}
+.pt_rating  span.rating_label {float:left; padding-right:10px; font-weight:bold}
+body .pt_rating .rating_star_user, .pt_rating .rating_star_editor { float:left}
+span.reviewScreenName { color:#e13d41}
+.pt_info_1 { clear:both}
