@@ -651,7 +651,7 @@ div.pt_membership li.pt_membership_price, div.pt_membership li.pt_membership_sup
 .unlimited_yes , .unlimited_no{}
 .pt_membership_cost span.unlimited_yes { background-position:-30px 0}
 .pt_membership_cost span.unlimited_no {background-position:0 0}
-.com_rsmembership h1 { display:none}
+.com_rsmembership h1 {/* display:none*/}
 /*my office*/
 .rightSideBox{ float:left; margin:0 20px 20px 0}
 .pt_myoffice h3 { color:#000; font-size:18px}

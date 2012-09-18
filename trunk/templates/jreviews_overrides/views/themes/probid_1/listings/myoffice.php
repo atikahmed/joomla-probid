@@ -196,15 +196,15 @@ $numReviews=mysql_numrows($resultReviews);
 				$comments=mysql_result($resultReviews,$i,"comments");
 				$ratings_sum=mysql_result($resultReviews,$i,"ratings_sum");
 				$myRating=number_format($ratings_sum/3,1);
-				echo "<p><b>$title</b>&nbsp;$comments&nbsp;</p>";
+				echo "<div class='pt_info'><p><b>$title</b>&nbsp;$comments&nbsp;</p>";
 				
 				
 				$myRating = $myRating*100/5;
 				
-				echo '<span class="rating_label">Rating: </span><div class="rating_star_user"><div style="width:'.$myRating.'%;">&nbsp;</div></div>';
+				echo '<div class="pt_rating"><span class="rating_label">Rating: </span><div class="rating_star_user"><div style="width:'.$myRating.'%;">&nbsp;</div></div></div><div class="pt_info_1">';
 				
 				
-				echo '<span class="reviewScreenName">' . __t("by ") . mysql_result($resultReviews,$i,"username") .'</span> <span>,&nbsp;</span> <span class="reviewNice">'.JHTML::_('date', mysql_result($resultReviews,$i,"created") , JText::_('DATE_FORMAT_LC33')).'</span>';
+				echo '<span class="reviewScreenName">' . __t("by ") . mysql_result($resultReviews,$i,"username") .'</span> <span>,&nbsp;</span> <span class="reviewNice">'.JHTML::_('date', mysql_result($resultReviews,$i,"created") , JText::_('DATE_FORMAT_LC33')).'</span></div></div>';
 				
 				$i++;
 				} ?></div>
@@ -265,7 +265,7 @@ $numReviews=mysql_numrows($resultReviews);
 
 
 <div class="rightSideTitle moduletable"><h3>Our Location</h3></div>
-<div class="rightSideBox"><!-- MAP -->
+<div class="rightSideBox last"><!-- MAP -->
 		<?php if($show_map && isset($listing['Geomaps']) && abs($listing['Geomaps']['lat']) > 0 && abs($listing['Geomaps']['lon']) > 0):?>
         <?php echo $this->renderControllerView('geomaps','map_detail',array('width'=>'100%','height'=>'288'));?>
         <?php endif;?>
