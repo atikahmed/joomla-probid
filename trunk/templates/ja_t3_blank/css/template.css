@@ -503,7 +503,7 @@ body.bd #pt_content  .main { width:100%}
 	#ja-utility ul.roknewspager li > div{ padding:0}
 	#ja-utility ul.roknewspager .roknewspager-div { padding:0;font:bold 10px Arial ; color:#888}
 	#ja-utility  .roknewspager-cat{ font:bold 10px Arial ; color:#888; margin-bottom:10px}
-	#ja-utility ul.roknewspager .roknewspager-title { font-size:28px; color:#000}
+	#ja-utility ul.roknewspager .roknewspager-title { font-size:28px!important; color:#000; line-height:24px}
 	#ja-utility ul.roknewspager  div.fulltext { color:#000; font:normal 11px Arial; margin-top:10px}
 	#ja-utility .content-info { border-top:1px solid #e3e2e2;  background: url(../images/probid/i_icon_recent.png) no-repeat 10px center; padding:0 0 3px 30px; position:absolute; bottom:0; left:0; width:84%; height:28px; line-height:28px}
 	#ja-utility  .roknewspager-prev, #ja-utility  .roknewspager-next, #ja-utility  .roknewspager-prev-disabled, #ja-utility  .roknewspager-next-disabled {background: url(../images/probid/light-page-controls.png) no-repeat 0 0; width:7px; height:6px ; top:6px}
@@ -740,7 +740,7 @@ a.edit_myprojects, a.manage_myteam { float:right; margin-top:-5px}
 	#ja-footer .ja-box-ct a.viewall_project{ font-weight:bold}
 	#ja-footer .ja-box-ct br { display:none}
 	.pt_footer_1 {}
-		.pt_footer_1 p:first-child  { margin:-32px 0 15px 55px}
+		.pt_footer_1 p:first-child  { margin: -11px 0 15px;white-space: nowrap;}
 		.pt_footer_1 p span { color:#969595;/*left: 55px;position: relative; top: -32px;*/ }
 	#ja-footer .ja-box .pt_footer_1 h3 {  font:24px 'avantgarde_dm'!important; color:#000; text-align:right }
 	#ja-footer .ja-box .pt_footer_1 p{  font:24px 'avantgarde_md_btmedium'!important; color:#000; text-align:right }
