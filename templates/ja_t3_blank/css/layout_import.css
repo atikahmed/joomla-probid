@@ -183,6 +183,7 @@ div.fieldGroup div.fieldLabel {
 }
 .jrFavoriteButton.jrButton { float:left; }
 div.jr_pgContainer span.jrManagement { float:left; margin:-2px 0 0 0}
+div.jr_pgContainer span.jrManagement.jrButton { float:right; margin:4px 0 0 0}
 
 body div.fieldGroup div.fieldLabel { text-align:right}	
 div.fieldGroup.address-information  {}
@@ -228,7 +229,8 @@ body div.jr_pgContainer.jr_itemDetail .moduletable h3 { text-transform:uppercase
 .membershiptable th { background:#216b98; color:#f0f5f8; text-align:center}
 .membershiptable td:first-child {  text-align:center}
 .membershiptable td , .membershiptable td a { color:#888}
-body .rsm_cancel  a, body .rsm_renew a{ text-shadow:none!important; font:bold 11px Arial; padding:3px 10px; -moz-border-radius: 6px;-webkit-border-radius: 6px; border-radius:6px!important;}
+.membershiptable td a:hover { text-decoration:underline}
+body .rsm_cancel  a, body .rsm_renew a{ text-shadow:none!important; font:bold 11px Arial; padding:3px 10px; -moz-border-radius: 6px;-webkit-border-radius: 6px; border-radius:6px!important; display:inline-block}
 .rsm_renew a {text-shadow:none!important }
 
 #tabs { border-radius:0; border:none; padding:0; margin-top:25px}
@@ -251,7 +253,7 @@ body #tabs  div.fieldGroup div.fieldLabel { text-align:right; color:#888}
 #tabs  #wall-wrapper p ,#tabs  #wall-wrapper a#emailProjectLink  { padding:5px; display:block}
 #tabs  #wall  .post-bubble { width:100%}
 #tabs .post-owner, #tabs .post-sp{ width: 98.5%; border-top:1px solid #d4d4d4; -webkit-box-shadow: 0 0 5px 0 #d4d4d4;
-box-shadow: 0 -1px 2px 0 #d4d4d4 ;-moz-border-radius: 2px 2px 0 0;-webkit-border-radius: 2px 2px 0 0; border-radius:2px 2px 0 0; padding:9px 5px 6px; font-size:11px}
+box-shadow: 0 -1px 2px 0 #d4d4d4 ;-moz-border-radius: 2px 2px 0 0;-webkit-border-radius: 2px 2px 0 0; border-radius:2px 2px 0 0; padding:9px 5px 6px; font-size:11px; }
 #tabs .post-owner .post-owner, #tabs .post-sp .post-sp { border:none; box-shadow:none; border-radius:0; padding:0}
 #tabs .post-owner span , #tabs .post-sp span { white-space:pre}
 #tabs .post-sp .top_area .createdby , #tabs span.post-sp{ color:#2d3789}
@@ -280,3 +282,12 @@ box-shadow: 0 -1px 2px 0 #d4d4d4 ;-moz-border-radius: 2px 2px 0 0;-webkit-border
 body .pt_rating .rating_star_user, .pt_rating .rating_star_editor { float:left}
 span.reviewScreenName { color:#e13d41}
 .pt_info_1 { clear:both}
+
+body .roundedPanelLt { border-radius:0; border:0; padding:0!important; border-top:1px solid #dddada;}
+body div.jr_pgContainer div.ratingInfo { background:none; border:0; border-radius:0; border-left:1px solid #dddada; margin:0; padding:10px 0 10px 15px} 
+.my_reviewInfo_new { width:100%; float:left; border-bottom:1px solid #dddada}
+body div.reviewActions {border-top:1px solid #dddada; padding-top:0}
+body div.reviewComments .jrButton { float:left; margin-right:5px}
+div.jr_reviewContainer { }
+body div.reviewInfo { margin-top:0}
+body div.jr_pgContainer td.rating_value { padding-right:0}

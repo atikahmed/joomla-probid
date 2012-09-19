@@ -715,26 +715,32 @@ h2.latestItemTitleList {font-size:14px;padding:2px 0;margin:8px 0 2px 0;font-fam
 	Component: Register & profile page views (register.php & profile.php)
 ----------------------------------------------------------------------*/
 .k2AccountPage {}
-.k2AccountPage table {}
+.k2AccountPage table { width:100%}
 .k2AccountPage table tr th {}
 .k2AccountPage table tr td {}
 .k2AccountPage table tr td label {white-space:nowrap;}
 img.k2AccountPageImage {border:4px solid #ddd;margin:10px 0;padding:0;display:block;}
 .k2AccountPage div.k2AccountPageNotice {padding:8px;}
-.k2AccountPage div.k2AccountPageUpdate {border-top:1px dotted #ccc;margin:8px 0;padding:8px;text-align:right;}
+.k2AccountPage div.k2AccountPageUpdate {margin:8px 0;padding:8px;text-align:left;}
 
-.k2AccountPage th.k2ProfileHeading {text-align:left;font-size:18px;padding:8px;background:#f6f6f6;/*border-bottom:1px solid #e9e9e9;*/}
+.k2AccountPage th.k2ProfileHeading {text-align:left;font:bold 12px Arial;padding:6px 0 7px 13px;border-bottom:1px solid #000; color:#808080; border-top:4px solid #000}
+.k2AccountPage tr:first-child th.k2ProfileHeading{ border-top:none}
 .k2AccountPage td#userAdminParams {padding:0;margin:0;}
 .k2AccountPage table.admintable td.key,
-.k2AccountPage table.admintable td.paramlist_key {background:#f6f6f6;border-bottom:1px solid #e9e9e9;border-right:1px solid #e9e9e9;color:#666;font-weight:bold;text-align:right;font-size:11px;width:140px;}
+.k2AccountPage table.admintable td.paramlist_key {color:#000;font-weight:bold;text-align:right;font-size:12px;width:180px; padding-right:10px}
 
 /* Profile edit */
 .k2AccountPage table.admintable {}
-.k2AccountPage table.admintable tr td {}
+.k2AccountPage table.admintable tr td { padding:5px 0 2px}
 .k2AccountPage table.admintable tr td span {}
 .k2AccountPage table.admintable tr td span label {}
-
-
+.k2AccountPage table.admintable tr td span b { border:1px solid #d4d4d4; padding:7px 10px 5px ; width:310px ; display:inline-block; font-weight:normal}
+.k2AccountPage table.admintable tr td input[type="text"],
+.k2AccountPage table.admintable tr td input[type="email"],
+.k2AccountPage table.admintable tr td input[type="password"] { width:310px; padding:7px 10px 5px;border:1px solid #d4d4d4; }
+.k2AccountPageUpdate { position:relative; left:180px}
+.k2AccountPageUpdate button.button { padding: 9px 15px 11px !important; font-size:22px!important;margin-right:5px}
+.k2AccountPageUpdate a{padding: 10px 15px 12px !important; font-size:22px!important; color:#858585!important;text-shadow: 0 1px 1px #efefef}
 
 /*----------------------------------------------------------------------
 	Modules: mod_k2_comments

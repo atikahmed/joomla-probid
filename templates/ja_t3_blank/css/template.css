@@ -11,10 +11,7 @@ p.readmore a { text-transform: uppercase; }
 
 
 
-h1.componentheading, .componentheading {
-	border-bottom: 1px solid #ccc;
-	font-weight: normal;
-}
+h1.componentheading, .componentheading {border-bottom: 4px solid #000000;color: #010101;font: bold 24px Arial;  letter-spacing: -1px;padding: 0 0 3px 13px;}
 
 h2.contentheading, .contentheading {
 	font-weight: normal;
@@ -453,14 +450,25 @@ a:hover{ text-decoration:none}
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'Janna-sue';
+    src: url('../fonts/JennaSue.eot');
+    src: url('../fonts/JennaSue.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/JennaSue.woff') format('woff'),
+         url('../fonts/JennaSue.ttf') format('truetype'),
+         url('../fonts/JennaSue.svg#JennaSue') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 /*button*/
-#login-form  input.button ,.login button.button,
+#login-form  input.button ,.login button.button, .k2AccountPageUpdate button.button,.profile  a, div.proupaccount a ,
 #jr_newFields input.jrButton,
 .rsform  #userForm  input.rsform-submit-button, 
 .rsm_renew  a, .membership_plan a, .pt_link , .edit_profile a,a.edit_imagegallery,a.edit_myprojects,a.manage_myteam,  .rightSideTitle h4,
 div.itemCommentsForm form input#submitCommentButton{color:#fff;  box-shadow: 0 1px 0 0 #f2686b inset; border:1px solid #b2181d;background: -moz-linear-gradient(top,#de2228 0%,#b3191e)!important;background: -webkit-gradient(linear, left top, left bottom, 	from(#de2228),to(#b3191e))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;font:normal 14px 'avantgarde_dm'; text-shadow:0 1px 1px #3a080a ; padding: 10px 10px 7px;  }
 
-#jr_newFields input#jr_canceListing.jrButton ,.rsm_cancel  a{ color:#101010; display: inline-block;
+#jr_newFields input#jr_canceListing.jrButton ,.rsm_cancel  a , .k2AccountPageUpdate a{ color:#101010; display: inline-block;
 	 box-shadow: 0 1px 0 0 #f2f2f2 inset; border:1px solid #acacac;background: -moz-linear-gradient(top,#e7e7e7 0%,#cacaca)!important;background: -webkit-gradient(linear, left top, left bottom, from(#E7E7E7 ),to(#cacaca))!important; -moz-border-radius: 3px;-webkit-border-radius: 3px; border-radius:3px!important;padding:10px 10px 7px;font:normal 14px 'avantgarde_dm';text-shadow:0 1px 1px #e9e9e9 ;  
 	background: -webkit-linear-gradient(#E7E7E7 , #cacaca);
     background: -moz-linear-gradient(#E7E7E7 , #cacaca);
@@ -516,7 +524,7 @@ body.bd #pt_content  .main { width:100%}
 
 .com_content {}
 	#ja-container .main .inner { padding:0 0 10px 0}
-	.cc_home_page #ja-container div.ja-moduletable ,.cc_home_page #ja-container div.moduletable{ border-top:4px solid #000; padding-top:3px;}
+	.cc_home_page #ja-container div.ja-moduletable ,.cc_home_page #ja-container div.moduletable, #ja-container div.moduletable.pt_area{ border-top:4px solid #000; padding-top:3px;}
 	.cc_home_page #ja-container div.ja-moduletable h3, .cc_home_page #ja-container div.moduletable h3 { background: url(../images/probid/i_icon_2.png) no-repeat 0 0; padding:4px 0 20px 54px }
 	#ja-container #ja-content-mass-top div.ja-moduletable h3 { background-position:4px -76px}
 	#ja-container #ja-right-mass-top { margin-left:15px}
@@ -527,7 +535,8 @@ body.bd #pt_content  .main { width:100%}
 	#ja-container #ja-right-mass-top div.custom img{ border:1px solid #b1b1b1; padding:1px; margin:5px 0 10px}
 	#ja-container #ja-right-mass-top div.custom p a {background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0;   text-decoration:underline; display:inline-block; margin-top:15px; font-weight:bold}
 	#ja-container #ja-right-mass-top div.custom p a:hover { text-decoration:none}
-	 
+	#ja-container div.moduletable.pt_area h3{ background: url(../images/probid/i_icon_2.png) no-repeat 0 0; padding:4px 0 20px 54px; font-size:18px}
+	 .pt_member p:first-child { color:#969595; margin: -30px 0 13px 55px;}
 #ja-mainbottom{ padding:0 10px}
 #home_intro{overflow:hidden}
 	#home_intro li{float:left;width: 32.6%;margin-left:10px;border-top:4px solid #000; color:#fff; padding-top:5px}
@@ -567,7 +576,7 @@ body.bd #pt_content  .main { width:100%}
 	#login-form  .logout-button   input.button{ background:none!important; border:none; border-radius:none; color:#dd2228; font:normal 12px Arial; padding:0; height:auto}
 
 .jr_pgContainer{}
-	.jr_pgContainer h1.contentheading { border-bottom:4px solid #000;padding: 0 0 3px 13px;}
+	.jr_pgContainer h1.contentheading { border-bottom:4px solid #000;padding: 0 0 3px 13px; margin:0 0 3px}
 
 .rst_message { background:#ffe4ba;border-bottom:2px solid #fbd293; padding:15px; color:#000}
 .rst_message  p { background: url(../images/probid/i_icon_2.png) no-repeat 0 -511px; padding-left:40px}
@@ -610,7 +619,20 @@ h2.caption a{ font-size:14px}
 .ul_contentInfo li:first-child { border-left:0; padding:0; margin:0}
 	
 /* member ship */
-.membershipdiv { padding:12px}
+.membershipdiv { padding:12px; border:1px solid #e2e2e2; background:#f2f2f2;box-shadow:0 1px 0 0 #fff inset; margin:5px 0 14px; overflow:hidden}
+.membershipdiv  li { float:left}
+li.img_rms_full {background: url(../images/probid/li_full.png) no-repeat 0 0; width:89px; height:89px; float:left; margin:0 10px 0 0}
+li.img_rms_piece{ background: url(../images/probid/li_full_1.png) no-repeat 0 0; width:89px; height:89px; float:left; margin:0 10px 0 0}
+li.img_rms_none{ background: url(../images/probid/li_full_2.png) no-repeat 0 0; width:89px; height:89px; float:left; margin:0 10px 0 0}
+.membershipdiv  li.rsm_upgrade_rms_full{ width:32%; float:right}
+div.woohoo{font:48px 'Janna-sue' ; padding:29px 0 0 36px}
+div.proupaccount {  margin-top:15px}
+div.proupaccount a { font-size:12px!important; padding:14px 17px 11px ; height:auto}
+ 
+.membershipdiv li.rsm_description_{ width:53%; padding-top:10px}
+.membershipdiv li.rsm_description_ a {font-weight:bold ; background: url(../images/probid/i_arrow.png) no-repeat right center ;padding-right: 15px;}
+.membershipdiv  .rsm_name{ font:bold 18px Arial; color:#000; display:block; padding-bottom:4px}
+.com_rsmembership .rsm_actions { margin-bottom:25px; overflow:hidden}
 .membershiptable { width:100%!important}
 .pt_membership {}
 .com_rsmembership #ja-container #ja-right-mass-top div.ja-moduletable h3 ,
@@ -681,6 +703,26 @@ a.edit_myprojects, a.manage_myteam { float:right; margin-top:-5px}
 .rightSideBox b { padding:4px 0}
 #module_mybusiness{}
 .rightSideTitle.moduletable h3 { background:#dddcdc; text-transform:uppercase; font-size:14px; border:0; color:#1d1d1d; padding:10px 13px}
+/* account */
+.profile{}
+.profile  legend { color:#808080; font-weight:bold; padding:8px 0 8px 13px; border-bottom:1px solid #000; float:left; width:100%}
+.profile .users-profile-custom-profile { padding-top:15px}
+.profile .users-profile-custom-profile  legend  { border-top:4px solid #000}
+.profile dl { clear:left; padding:10px 0 0 50px}
+.profile dt, .profile dd{ float:left; padding:5px 0}
+.profile dt { clear:left; width:180px; padding-right:10px; text-align:right; font:bold 12px Arial}
+.profile  a {float:right; padding: 2px 15px 3px !important; font:bold 12px Arial!important;margin-top:10px; display:inline-block; text-shadow:none!important}
+
+#jr_itemReviews {}
+#jr_itemReviews.jr_pgContainer table.jr_pagination{ border-top:0; border-bottom:1px solid #000;}
+#jr_itemReviews.jr_pgContainer table.jr_pagination tr td{  padding: 0 0 20px;}
+#jr_itemReviews.jr_pgContainer table.jr_pagination tr td:first-child { padding-left:13px;font: 12px Arial !important;}
+#jr_itemReviews td.jr_pagenav_limitbox select { padding:8px ;  border-color: #cccc #ebebeb!important;}
+#jr_itemReviews.jr_pgContainer .contentTitle { padding:10px 0 8px 5px}
+#jr_itemReviews.jr_pgContainer .contentTitle a{ font-size:18px}
+.my_reviewInfo  { float:left; color:#888; font-size:11px; padding-left:5px}
+.my_reviewInfo  .reviewScreenName { color:#888}
+body #jr_itemReviews div.jr_pathway { float:right; width:auto;color:#888; border:none;padding: 0 0 3px;}
 
 /* right */
 #ja-right{}
