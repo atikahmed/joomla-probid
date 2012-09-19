@@ -502,7 +502,7 @@ body.bd #pt_content  .main { width:100%}
 	.pt_link a:hover {text-transform:-1px 1px 1px #96151a; color:#fff }
 
 #ja-utility { padding:4px 9px 0}
-	.cc_home_page #ja-utility div.ja-moduletable h3, .cc_home_page #ja-utility  div.moduletable h3{ background-color:#e7e7e7;padding:6px 15px 6px 23px; margin-bottom:5px;font:bold 18px Arial, sans-serif; border:none}
+	.cc_home_page #ja-utility div.ja-moduletable h3, .cc_home_page #ja-utility  div.moduletable h3{ background-color:#e7e7e7;padding:6px 15px 6px 23px; margin-bottom:8px;font:bold 18px Arial, sans-serif; border:none}
 	#ja-utility .roknewspager-wrapper{ border-bottom:3px solid #c7c7c7}
 	#ja-utility ul.roknewspager { padding:0}
 	#ja-utility ul.roknewspager  { border:1px solid #e3e2e2}
@@ -680,6 +680,7 @@ div.pt_membership li.pt_membership_price, div.pt_membership li.pt_membership_sup
 .pt_myoffice .pt_border { clear:none; margin-top:5px}
 .pt_myoffice .description{color:#888}
 .pt_myoffice .tabouter { clear:both}
+.pt_myoffice .pt_border { width:63%}
 .edit_profile a , a.edit_imagegallery, a.edit_myprojects, a.manage_myteam, .rightSideTitle h4{ padding:3px;font:bold 11px Arial; text-shadow:none}
 .edit_profile { float:left;margin-top: 3px;}
 .pt_myoffice h4 { float:right}
