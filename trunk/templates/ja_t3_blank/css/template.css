@@ -772,7 +772,7 @@ body #jr_itemReviews div.jr_pathway { float:right; width:auto;color:#888; border
 	.rsform #userForm  input#Keywords{ width:98.9%}
 	.rsform #userForm  input#Zipcode { width:97%}
 	.rsform-block-submit{   border-bottom: none !important; position:relative}
-	.rsform  #userForm .rsform-block-submit li:first-child { background:url(../images/probid/bkg_search.png) no-repeat 0 0; width:92px; height:44px; font-size:0; text-indent:-9999px;   position: absolute; right: 109px; top:4px}
+	.rsform  #userForm .rsform-block-submit li:first-child { background:url(../images/probid/bkg_search.png) no-repeat 0 0; width:92px; height:44px; font-size:0; text-indent:-9999px;   position: absolute; right: 190px; top:4px}
 	.rsform  #userForm  input.rsform-submit-button {  float:right; width:auto; font-size:18px}
 	#formDiv ul#tags-ul {padding-left: 18px !important;}
 	#formDiv ul#tags-ul li { float:left; list-style: disc inside none;padding: 0 5px;}
@@ -837,3 +837,5 @@ div.catItemTagsBlock {padding:0;border-bottom:none;}
 
 .rms_nodetails{font-family: Arial; font-size: 18px; text-align: center; color: #c1c1c1; margin-top:36px;}
 .ja-moduletable .ja-box-ct .proupaccount,#ja-search .proupaccount{margin-top:0px!important}
+
+.ja-megamenu ul.level1 .childcontent{top:24px!important}
