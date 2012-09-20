@@ -12,7 +12,7 @@ JHtml::_('behavior.keepalive');
 ?>
 
 <?php 
-	$user = JFactory::getUser();
+	$user = JFactory::getUser(); 
 	$type = (!$user->get('guest')) ? 'logout' : 'login';
 ?>
 
