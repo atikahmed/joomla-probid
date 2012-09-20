@@ -834,3 +834,6 @@ div.catItemTagsBlock {padding:0;border-bottom:none;}
 	div.catItemTagsBlock ul.catItemTags li a { color:#cdcdcd}
 	div.catItemTagsBlock ul.catItemTags li a:hover {}
 .custom img { text-align:center}
+
+.rms_nodetails{font-family: Arial; font-size: 18px; text-align: center; color: #c1c1c1; margin-top:36px;}
+.ja-moduletable .ja-box-ct .proupaccount,#ja-search .proupaccount{margin-top:0px!important}
