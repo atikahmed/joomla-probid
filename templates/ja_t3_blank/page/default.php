@@ -59,6 +59,29 @@ defined('_JEXEC') or die;
 					$('#ja-mainbody').width('67.5%');
 				}
 				
+				
+				$('.ja-megamenu .megamenu.level0>.mega.haschild').hover(function() {
+					//var x = $(this).find('.megamenu.level1 .mega.first>.mega.first').first().onmouseover();
+					//var x = $(this).find('.megamenu.level1>.mega.first').html();
+					//$(this).find('.megamenu.level1>.mega.first').mouseover();
+					//$(this).find('.megamenu.level1 li.mega.first>a.mega.first').mouseover();
+					$('#outer').mouseover();
+					//$('.childcontent .childcontent-inner-wrap').css('width', '620');
+					//$('.childcontent .childcontent-inner-wrap .childcontent-inner').css('width', '620');
+					//alert(x);
+				});
+				
+				$('.ja-megamenu .megamenu.level1>.mega.haschild').hover(function() {
+					//var x = $(this).find('.megamenu.level1 .mega.first>.mega.first').first().onmouseover();
+					//var x = $(this).find('.megamenu.level1>.mega.first').html();
+					//$(this).find('.megamenu.level1>.mega.first').mouseover();
+					//$(this).find('.megamenu.level1 li.mega.first>a.mega.first').mouseover();
+					//$('#outer').mouseover();
+					$('.ja-megamenu .megamenu.level1>.mega.haschild .childcontent .childcontent-inner-wrap').css('width', '620');
+					$('.ja-megamenu .megamenu.level1>.mega.haschild .childcontent .childcontent-inner-wrap .childcontent-inner').css('width', '620');
+					//alert(x);
+				});
+				
 			});
 	</script>
 
@@ -67,6 +90,7 @@ defined('_JEXEC') or die;
 
 <body id="bd" class="<?php if (!T3Common::mobile_device_detect()):?>bd<?php endif;?> <?php echo $this->getBodyClass();?>">
 <a name="Top" id="Top"></a>
+<a href="#" id="outer">aaaaaaaaaa</a>
 <div id="ja-wrapper">
 <div id="pt_content">
 
