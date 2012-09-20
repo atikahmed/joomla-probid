@@ -90,7 +90,7 @@ defined('_JEXEC') or die;
 
 <body id="bd" class="<?php if (!T3Common::mobile_device_detect()):?>bd<?php endif;?> <?php echo $this->getBodyClass();?>">
 <a name="Top" id="Top"></a>
-<a href="#" id="outer">aaaaaaaaaa</a>
+
 <div id="ja-wrapper">
 <div id="pt_content">
 
