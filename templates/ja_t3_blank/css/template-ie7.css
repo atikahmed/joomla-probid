@@ -33,3 +33,5 @@ fieldset.ja-typo-fieldset {
 .custombadge-new li {
 	zoom: 0 !important;
 }
+
+.pt_footer_1 p:first-child { margin-top:-15px}

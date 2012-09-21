@@ -6,9 +6,9 @@
 @import url{../../../components/com_rsmembership/assets/css/rsmembership.css}
 @import url{../../../components/com_jreviews/jreviews/views/themes/default/theme_css/jquery_ui_theme/jquery-ui-1.8.17.custom.css}
 
-.column div.ja-moduletable, .column div.moduletable, .column div.ja-module, .column div.module { margin:0}
+.column div.ja-moduletable, .column div.moduletable, .column div.ja-module, .column div.module { margin:0!important}
 
-#ja-header { padding:8px 0 4px; background:#f3f3f3}
+#ja-header { padding:8px 0 4px; background:#f3f3f3; position:relative; z-index:999}
 #pt_content .wrap { width:auto}
 #ja-footer { border-top:4px solid #000}
 
