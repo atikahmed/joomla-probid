@@ -462,6 +462,7 @@ a:hover{ text-decoration:none}
 
 }
 /*button*/
+/*
 #login-form  input.button ,.login button.button, .k2AccountPageUpdate button.button,.profile  a, div.proupaccount a ,
 #jr_newFields input.jrButton,
 .rsform  #userForm  input.rsform-submit-button, 
@@ -473,7 +474,37 @@ div.itemCommentsForm form input#submitCommentButton{color:#fff;  box-shadow: 0 1
 	background: -webkit-linear-gradient(#E7E7E7 , #cacaca);
     background: -moz-linear-gradient(#E7E7E7 , #cacaca);
     background: -o-linear-gradient(#E7E7E7 , #cacaca);
-    background: -ms-linear-gradient(#E7E7E7 , #cacaca);}
+    background: -ms-linear-gradient(#E7E7E7 , #cacaca);} */
+	
+#login-form  input.button ,.login button.button, .k2AccountPageUpdate button.button,.profile  a, div.proupaccount a ,
+#jr_newFields input.jrButton,
+.rsform  #userForm  input.rsform-submit-button, 
+.rsm_renew  a, .membership_plan a, .pt_link , .edit_profile a,a.edit_imagegallery,a.edit_myprojects,a.manage_myteam,  .rightSideTitle h4,
+div.itemCommentsForm form input#submitCommentButton {	color: #fff;
+	border: solid 1px #b2181d;
+	background: #de2228!important;
+	background: -webkit-gradient(linear, left top, left bottom, from(#de2228), to(#b3191e))!important;
+	background: -moz-linear-gradient(top,  #de2228,  #b3191e)!important;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#de2228', endColorstr='#b3191e')!important;
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal 14px 'avantgarde_dm';
+	padding: 10px 10px 7px;
+	text-shadow: 0 1px 1px #3a080a;
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px #f2686b inset;
+	-moz-box-shadow: 0 1px 2px #f2686b inset;
+	box-shadow: 0 1px 2px #f2686b inset;
+	
+}
+	
+	
+	
 
 #login-form{ }
 	#login-form h3 { background:url(../images/probid/i_icon_2.png) no-repeat 70px -425px; margin-bottom: 20px; padding: 10px 0 10px 45px;text-align: center;}
