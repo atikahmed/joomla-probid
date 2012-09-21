@@ -64,7 +64,7 @@
 
 
 @import url{../../../plugins/system/jat3/jat3/base-themes/default/css/menu/mega.css}
-.ja-megamenu li.mega .childcontent, .ja-megamenu li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.mega li.mega li.haschild-over li.mega .childcontent { left:0!important; width:100%}
+.ja-megamenu li.mega .childcontent, .ja-megamenu li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.mega li.mega li.haschild-over li.mega .childcontent { left:0!important; width:100%!important}
 .ja-megamenu li.mega.last .childcontent { left:auto!important; right:0!important}
 
 .ja-megamenu .childcontent .childcontent{ }

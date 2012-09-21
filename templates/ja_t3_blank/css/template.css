@@ -812,10 +812,11 @@ body #jr_itemReviews div.jr_pathway { float:right; width:auto;color:#888; border
 #ja-bottom div.ja-moduletable h3, #ja-bottom  div.moduletable h3{ background-color:#e7e7e7;padding:6px 15px 6px 23px; margin-bottom:15px;font:bold 18px Arial, sans-serif; border:none}
 #ja-bottom  .ja-box-full{ width:960px!important}
 /* footer */
-#ja-footer {padding:18px 0}
-	#ja-footer .column div.ja-moduletable, #ja-footer .column div.moduletable { margin:0 10px}
-	#ja-footer .ja-box { border-left:1px dotted #000; min-height: 233px !important; width:23%!important} 
-	#ja-footer .ja-box.ja-box-right{ width:30%!important}
+#ja-footer {padding:18px 0;width: 960px;}
+	#ja-footer .main-inner1 { width:100%}
+	#ja-footer .column div.ja-moduletable, #ja-footer .column div.moduletable { margin:0 10px!important}
+	#ja-footer .ja-box { border-left:1px dotted #000; min-height: 233px !important; width:23%!important; position:static!important} 
+	#ja-footer .ja-box.ja-box-right{ width:29%!important}
 	#ja-footer .ja-box.ja-box-center .ja-moduletable{ padding:0 10px}
 	#ja-footer .ja-box:first-child { border:none}
 	#ja-footer .ja-box h3 { font-size:14px; letter-spacing:-1px; background:none; padding:0 0 10px 0; margin-bottom:0; border:none}
