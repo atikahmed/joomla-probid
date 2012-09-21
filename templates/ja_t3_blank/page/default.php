@@ -59,13 +59,13 @@ defined('_JEXEC') or die;
 					$('#ja-mainbody').width('67.5%');
 				}
 				
-				
+				/*
 				$('.ja-megamenu .megamenu.level0>.mega.haschild').hover(function() {
 					//var x = $(this).find('.megamenu.level1 .mega.first>.mega.first').first().onmouseover();
 					//var x = $(this).find('.megamenu.level1>.mega.first').html();
 					//$(this).find('.megamenu.level1>.mega.first').mouseover();
 					//$(this).find('.megamenu.level1 li.mega.first>a.mega.first').mouseover();
-					$('#outer').mouseover();
+					//$('a#outer').unbind('mouseenter mouseleave');
 					//$('.childcontent .childcontent-inner-wrap').css('width', '620');
 					//$('.childcontent .childcontent-inner-wrap .childcontent-inner').css('width', '620');
 					//alert(x);
@@ -77,9 +77,16 @@ defined('_JEXEC') or die;
 					//$(this).find('.megamenu.level1>.mega.first').mouseover();
 					//$(this).find('.megamenu.level1 li.mega.first>a.mega.first').mouseover();
 					//$('#outer').mouseover();
-					$('.ja-megamenu .megamenu.level1>.mega.haschild .childcontent .childcontent-inner-wrap').css('width', '620');
-					$('.ja-megamenu .megamenu.level1>.mega.haschild .childcontent .childcontent-inner-wrap .childcontent-inner').css('width', '620');
+					//$('.ja-megamenu .megamenu.level1>.mega.haschild .childcontent .childcontent-inner-wrap').css('width', '620');
+					//$('.ja-megamenu .megamenu.level1>.mega.haschild .childcontent .childcontent-inner-wrap .childcontent-inner').css('width', '620');
 					//alert(x);
+				});
+				*/
+				
+				$('li.mega_menu_probid').hover(function() {
+					$(this).find('.childcontent').first().css('width', '');
+					$(this).find('.childcontent .childcontent-inner-wrap').first().css('width', '');
+					$(this).find('.childcontent .childcontent-inner-wrap .childcontent-inner').first().css('width', '');
 				});
 				
 			});
@@ -90,7 +97,6 @@ defined('_JEXEC') or die;
 
 <body id="bd" class="<?php if (!T3Common::mobile_device_detect()):?>bd<?php endif;?> <?php echo $this->getBodyClass();?>">
 <a name="Top" id="Top"></a>
-
 <div id="ja-wrapper">
 <div id="pt_content">
 
