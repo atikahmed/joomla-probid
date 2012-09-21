@@ -54,3 +54,10 @@
 	color: #999;
 	padding-left: 0 !important;
 }
+
+.ja-megamenu a.haschild  span.menu-title{background: url(../../images/probid/i_menu.png) no-repeat right 8px!important; padding-right:10px!important;}
+
+.ja-megamenu .childcontent-inner .megacol ul.megamenu{background:black; border:1px solid #E3E2E2; margin:0px!important}
+
+.ja-megamenu .childcontent{/*top:44px; */ padding-top:7px;}
+.ja-megamenu .mega_menu_probid  .childcontent{top:29px;}
