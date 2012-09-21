@@ -34,6 +34,7 @@ input, select, textarea, .inputbox { border:1px solid #C7C7C7; border-radius:0!i
 }
 
 .inputbox, input[ type="text"] , input[type="password"]{ border: 1px solid #e3e3e3; background: #fff; padding:5px 5px 6px }
+input[ type="radio"] , input[type="checkbox"] { margin:0; padding:0; border:0}
 
 .inputbox:hover, .inputbox:focus { background: #ffffcc; }
 
@@ -379,12 +380,13 @@ body.bd .main{}
 	.proaccount a{display:block;width:240px;height:43px;background: url(../images/create_account_bg.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
 	.prologinout a{display:block;width:91px;height:44px;background: url(../images/bg_logout.png) no-repeat left top;font-size:0px;text-indent:-999em;color:transparent}
 	.prologin{background: url(../images/probid/bg_joinourner.png) no-repeat left top;padding:26px 0 0 7px; clear:both}
-#ja-mainnav{ background:#f3f3f3}
+#ja-mainnav{ background:#f3f3f3;position: relative;z-index: 99;}
 #ja-mainnav .main-inner1{background:#000!important;height:44px;}
 #ja-mainnav .main-inner1 .mainlevel {height:100%}
 #ja-mainnav .main-inner1 .mainlevel >ul >li{height:44px;float:left;padding:0px 15px}
-#ja-wrapper{width:960px!important;margin:0 auto}
+#ja-wrapper{width:960px!important;margin:0 auto; overflow:hidden}
 /*.cc_home_page div.ja-moduletable h3, .cc_home_page div.moduletable h3{ color:#000; font:bold 18px Arial, sans-serif;; padding:10px 15px; margin-bottom:20px; border:none}*/
+
 
 
 /*menu*/
@@ -477,7 +479,7 @@ div.itemCommentsForm form input#submitCommentButton{color:#fff;  box-shadow: 0 1
     background: -ms-linear-gradient(#E7E7E7 , #cacaca);} */
 	
 #login-form  input.button ,.login button.button, .k2AccountPageUpdate button.button,.profile  a, div.proupaccount a ,
-#jr_newFields input.jrButton,
+#jr_newFields input.jrButton,#home_intro  a,
 .rsform  #userForm  input.rsform-submit-button, 
 .rsm_renew  a, .membership_plan a, .pt_link , .edit_profile a,a.edit_imagegallery,a.edit_myprojects,a.manage_myteam,  .rightSideTitle h4,
 div.itemCommentsForm form input#submitCommentButton {	color: #fff;
@@ -494,9 +496,9 @@ div.itemCommentsForm form input#submitCommentButton {	color: #fff;
 	font: normal 14px 'avantgarde_dm';
 	padding: 10px 10px 7px;
 	text-shadow: 0 1px 1px #3a080a;
-	-webkit-border-radius: .5em; 
-	-moz-border-radius: .5em;
-	border-radius: .5em;
+	-webkit-border-radius: .3em; 
+	-moz-border-radius: .3em;
+	border-radius: .3em;
 	-webkit-box-shadow: 0 1px 2px #f2686b inset;
 	-moz-box-shadow: 0 1px 2px #f2686b inset;
 	box-shadow: 0 1px 2px #f2686b inset;
@@ -566,36 +568,34 @@ body.bd #pt_content  .main { width:100%}
 	#ja-container #ja-right-mass-top div.custom img{ border:1px solid #b1b1b1; padding:1px; margin:5px 0 10px}
 	#ja-container #ja-right-mass-top div.custom p a {background: url(../images/probid/i_arrow.png) no-repeat right center; padding: 3px 15px 3px 0;   text-decoration:underline; display:inline-block; margin-top:15px; font-weight:bold}
 	#ja-container #ja-right-mass-top div.custom p a:hover { text-decoration:none}
-<<<<<<< .mine
-	
+
 	.pt_area { }	
 	#ja-container #ja-content-mass-top div.ja-moduletable.pt_area { border-top:4px solid #000;padding-top:3px;}
 	#ja-container #ja-content-mass-top div.ja-moduletable.pt_area h3{background: url(../images/probid/i_icon_2.png) no-repeat 0 -76px; padding:4px 0 20px 54px ; font-size:18px }
-	 
-=======
+
 	#ja-container div.moduletable.pt_area h3{ background: url(../images/probid/i_icon_2.png) no-repeat 0 0; padding:4px 0 20px 54px; font-size:18px}
 	 .pt_member p:first-child { color:#969595; margin: -30px 0 13px 55px;}
->>>>>>> .r78
+
 #ja-mainbottom{ padding:0 10px}
 #home_intro{overflow:hidden}
 	#home_intro li{float:left;width: 32.6%;margin-left:10px;border-top:4px solid #000; color:#fff; padding-top:5px}
 	#home_intro li:first-child{margin-left:0px}
-	#home_intro li .top{background: url(../images/probid/i_icon_2.png) no-repeat 0 0;padding-left:45px;margin-bottom:15px}
+	#home_intro li .top{background: url(../images/probid/i_icon_2.png) no-repeat 0 0;padding-left:45px;margin-bottom:12px; padding-bottom:3px}
 	#home_intro li .top h3 { margin-bottom:0}
 	#home_intro li .top span { color:#969595;letter-spacing: -0.2px;}
 	#home_intro li .bot{position:relative; width:100%;border:1px solid #ddd;}
 	#home_intro li .bot img{ width:100%}
 	#home_intro li .bot p{position:absolute;bottom:1px;left:1px;background: url(../images/bg_home_intro_bot.png) repeat left center;width:93.6%;margin-bottom:0px; padding:15px 9px}
 	#home_intro li .bot p strong{display:block;}
-	#home_intro li .bot p strong , #home_intro li .bot p span { letter-spacing:-1px}
-	#home_intro  a { background: url(../images/probid/btn_34_red.png) no-repeat left top;padding-left:6px; float:right; display:inline-block;height: 31px;line-height: 31px; color:white; font-size: 18px; font-weight:bold;margin-top:-15px}
-	#home_intro a span { background: url(../images/probid/btn_34_red.png) no-repeat right -34px;padding:0 30px 0 5px;display:inline-block}
+	#home_intro li .bot p strong , #home_intro li .bot p span { letter-spacing:-0.8px}
+	#home_intro  a { height: 31px;line-height: 29px; color:white; font-size: 18px; font-weight:bold;margin-top:-15px; padding:0 2px; float:right}
+	#home_intro a span { background:url(../images/probid/arrow_button.png) no-repeat right 4px;padding:0 22px 0 5px;display:inline-block}
 	#home_intro li.onner .top{ background-position:0 -165px}
 	#home_intro li.service .top{ background-position:0 -252px}
 	#home_intro li.vendor .top{ background-position:0 -347px}
 
 /* login */
-.proformlogin { padding:20px 114px 28px}
+.proformlogin { padding:20px 114px 28px;width: 278px;}
 #login-form p { margin-bottom:20px}
 	#login-form p#form-login-password, #login-form p#form-login-remember, .login  .login-fields{ margin-bottom:10px}
 	#login-form label , .login label{ font-weight:bold ; color:#656565; padding-bottom:6px; display:block}
@@ -810,6 +810,7 @@ body #jr_itemReviews div.jr_pathway { float:right; width:auto;color:#888; border
 	#formDiv ul#tags-ul li:first-child, #formDiv ul#tags-ul li  { font:bold 11px Arial }
 
 #ja-bottom div.ja-moduletable h3, #ja-bottom  div.moduletable h3{ background-color:#e7e7e7;padding:6px 15px 6px 23px; margin-bottom:15px;font:bold 18px Arial, sans-serif; border:none}
+#ja-bottom  .ja-box-full{ width:960px!important}
 /* footer */
 #ja-footer {padding:18px 0}
 	#ja-footer .column div.ja-moduletable, #ja-footer .column div.moduletable { margin:0 10px}
@@ -853,7 +854,7 @@ div.k2ItemsBlock li { padding:13px 10px 10px; border-bottom:1px solid #e7e7e7}
 
 .even, .odd { background:none; border:none}
 div.k2ItemsBlock ul li div.moduleItemIntrotext { padding:0 10px}
-div.k2ItemsBlock ul li div.moduleItemIntrotext .moduleItemIntrotextHead { float:left; margin:2px 12px 10px 0}
+div.k2ItemsBlock ul li div.moduleItemIntrotext .moduleItemIntrotextHead { float:left; margin:2px 12px 10px 0;width:38%}
 div.k2ItemsBlock ul li div.moduleItemIntrotext a.moduleItemImage img{ border:1px solid #d1d1d1; margin:0}
 .moduleItemIntrotextContent{ display:block; overflow:hidden}
 div.k2ItemsBlock ul li a.moduleItemTitle { display:block; padding-bottom:10px}
