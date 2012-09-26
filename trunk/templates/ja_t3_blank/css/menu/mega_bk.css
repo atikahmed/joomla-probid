@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------------------
+ * JA T3 Blank template for joomla 2.5
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+*/
+.ja-megamenu a.over, .ja-megamenu a.active { color: #8d8d8d !important; }
+
+/* lv - 1 and below
+-----------------------------------*/
+/* Styling ---*/
+.ja-megamenu ul.level1 li.mega { border-top: 1px dotted #ccc; }
+
+.ja-megamenu ul.level1 li.first { border-top: 0; }
+
+.ja-megamenu ul.level1 li.mega a.mega {
+	border: 0;
+}
+
+ /* CHILD CONTENT
+-----------------------------------*/
+.ja-megamenu .childcontent-inner {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-top: 0;
+	color: #333;
+}
+
+.ja-megamenu .level1 .childcontent-inner { border-top: 1px solid #ccc; }
+
+.ja-megamenu .childcontent .ja-moduletable { color: #333; }
+
+.ja-megamenu .childcontent .ja-moduletable h3 {
+	background: none;
+	border-bottom: 1px dotted #ccc;
+	text-transform: uppercase;
+}
+
+/* Grouped --- */
+.ja-megamenu .group-title { border-bottom: 1px solid #ccc; }
+
+.ja-megamenu .group-title .menu-title {
+	color: #333;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 115%;
+}
+
+.ja-megamenu .group-title .menu-desc {
+	color: #999;
+	padding-left: 0 !important;
+}
+
+.ja-megamenu a.haschild  span.menu-title{background: url(../../images/probid/i_menu.png) no-repeat right 8px!important; padding-right:10px!important;}
+
+.ja-megamenu .childcontent-inner .megacol ul.megamenu{background:black; border:1px solid #E3E2E2; margin:0px!important}
+
+.ja-megamenu .childcontent{/*top:44px; */ padding-top:7px;}
+.ja-megamenu .mega_menu_probid  .childcontent{top:29px;}
+
+
+@import url{../../../plugins/system/jat3/jat3/base-themes/default/css/menu/mega.css}
+.ja-megamenu li.mega .childcontent, .ja-megamenu li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.mega li.haschild-over li.mega .childcontent, .ja-megamenu li.mega li.mega li.mega li.mega li.haschild-over li.mega .childcontent { left:0!important; width:100%!important}
+.ja-megamenu li.mega.last .childcontent { left:auto!important; right:0!important}
+
+.ja-megamenu .childcontent .childcontent{ }
+.ja-megamenu ul.level1 .childcontent {margin: -45px 0 0 200px !important;width: 760px !important;}
+.ja-megamenu ul.level1 .childcontent .childcontent-inner { width:99.8%!important}
+.ja-megamenu ul.level1 .childcontent .childcontent-inner h3 { display:none!important}
+.ja-megamenu ul.level1 li.mega a.mega span.menu-title { background:none!important; padding:0 9px 4px 9px!important}
+.ja-megamenu ul.level1 .childcontent .childcontent-inner  ul li { float:left; width:20%; text-align:left}
+.ja-megamenu ul.level1 .childcontent .childcontent-inner  ul li img, .ja-megamenu ul.level1 .childcontent .childcontent-inner  ul li  span { clear:both}
+.ja-megamenu ul.level1 .childcontent .childcontent-inner  ul li  a { color:#1e1e1e!important; text-transform:none!important; font-weight:bold}
+.ja-megamenu ul.level1 .childcontent .childcontent-inner  ul li  a:hover { color:#DB2127!important}

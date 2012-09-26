@@ -60,7 +60,7 @@ $with 	 = array($price, '<a href="'.$link.'">'.JText::_('RSM_SUBSCRIBE').'</a>',
 $item->description = str_replace($replace, $with, $item->description);
 ?>
 <div class="rsm_container<?php echo $this->escape($this->params->get('pageclass_sfx')); ?> pt_membership pt_membership_<?php echo $key; ?>">
-
+<?php print_r($this->items);die; ?>
 <ul>
 	<li class="pt_membership_link"><a href="<?php echo $link; ?>"><?php $names = explode("-", $item->name); echo $names[1]; ?></a></li>
 	<li class="pt_membership_price"><?php echo $price; ?></li>

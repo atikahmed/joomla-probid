@@ -82,8 +82,9 @@ defined('_JEXEC') or die;
 					//alert(x);
 				});
 				*/
-				
+			
 				$('li.mega_menu_probid').hover(function() { 
+					$(this).find('.mega_menu_probid >.childcontent').css('left', '0');
 					$(this).find('.childcontent').first().css('width', '');
 					$(this).find('.childcontent .childcontent-inner-wrap').first().css('width', '');
 					$(this).find('.childcontent .childcontent-inner-wrap .childcontent-inner').first().css('width', '');
