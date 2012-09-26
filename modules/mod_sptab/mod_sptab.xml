@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SP Tab</name>
+	<author>JoomShaper.com</author>
+	<creationDate>May 2011</creationDate>
+	<copyright>Copyright (C) 2010 - 2012 JoomShaper.com. All rights reserved.</copyright>
+	<license>PHP files are licensed under  GNU/GPL V2, CSS  - JS - IMAGE files  are Copyrighted material</license>
+	<authorEmail>support@joomshaper.com</authorEmail>
+	<authorUrl>www.joomshaper.com</authorUrl>
+	<version>1.8.0</version>
+	<description>SP Tab - Next generation tab module for joomla</description>
+	
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_sptab.ini</language>
+	</languages>
+	
+	<files>
+		<filename module="mod_sptab">mod_sptab.php</filename>
+		<folder>tmpl/</folder>
+		<folder>assets/</folder>
+		<folder>elements/</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+	</files>	
+	
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_sptab/elements">	
+			<fieldset name="Basic">
+				<field name="mods" id="mods" type="sql" default="0" multiple="multiple" size="10" label="MODS" description="MODS_DESC" query="SELECT id, module, title FROM #__modules WHERE  `client_id`=0 AND ( `published` !=-2 AND `published` !=0 ) ORDER BY position ASC" key_field="id" value_field="title" />
+				<field name="ordering" type="list" default="ordering" label="ORDERING" description="ORDERING_DESC">
+					<option value="ordering">ORDERING</option>
+					<option value="title">TITLE</option>
+				</field>
+				<field name="ordering_direction" type="list" default="ASC" label="ORDERING_FILTER" description="ORDERING_FILTER_DESC">
+					<option value="DESC">FILTER_DESC</option>
+					<option value="ASC">FILTER_ASC</option>
+				</field>
+				<field name="nav_height" type="text" size="8" default="30" label="NAV_HEIGHT" description="NAV_HEIGHT_DESC" />
+				<field name="nav_pos" type="list" default="top" label="NAV_POS" description="NAV_POS_DESC">
+					<option value="top">TOP</option>
+					<option value="bottom">BOTTOM</option>
+				</field>
+				<field name="body_padding" type="text" size="40" default="10px 10px 10px 10px" label="BODY_PADDING" description="BODY_PADDING_DESC" />				
+				<field name="body_height" type="list" default="1" label="BODY_HEIGHT" description="BODY_HEIGHT_DESC">
+					<option value="1">AUTO</option>
+					<option value="0">FIXED</option>
+				</field>
+				<field name="fixed_height" type="text" size="8" default="300" label="FIXED_HEIGHT_VAL" description="FIXED_HEIGHT_VAL_DESC" />
+			</fieldset>
+			
+			<fieldset name="STYLES">
+				<field name="style" type="list" default="custom" label="STLYES" description="STLYES_DESC">
+					<option value="style1">Style1</option>
+					<option value="style2">Style2</option>
+					<option value="style3">Style3</option>
+					<option value="style4">Style4</option>
+					<option value="style5">Style5</option>
+					<option value="style6">Style6</option>
+					<option value="style7">Style7</option>
+					<option value="style8">Style8</option>
+					<option value="style9">Style9</option>
+					<option value="style10">Style10</option>
+					<option value="raw">Raw</option>
+					<option value="custom">Custom</option>
+				</field>
+				<field name="color" type="list" default="sptab_red" label="COLORS" description="COLORS_DESC">
+					<option value="sptab_red">Red</option>
+					<option value="sptab_green">Green</option>
+					<option value="sptab_blue">Blue</option>
+				</field>
+				<field name="header_bg" type="picker" default="#333333" label="HEADER_BG" description="HEADER_BG_DESC" />
+				<field name="nav_bg" type="picker" default="#333333" label="NAV_BG" description="NAV_BG_DESC" />
+				<field name="nav_text" type="picker" default="#FFFFFF" label="NAV_TEXT" description="NAV_TEXT_DESC" />
+				<field name="nav_hover" type="picker" default="#057ea6" label="NAV_HOVER" description="NAV_HOVER_DESC" />
+				<field name="nav_hover_text" type="picker" default="#FFFFFF" label="NAV_HOVER_TEXT" description="NAV_HOVER_TEXT_DESC" />
+				<field name="nav_active" type="picker" default="#729c00" label="NAV_ACTIVE" description="NAV_ACTIVE_DESC" />
+				<field name="nav_active_text" type="picker" default="#FFFFFF" label="NAV_ACTIVE_TEXT" description="NAV_ACTIVE_TEXT_DESC" />
+				<field name="nav_border_color" type="picker" default="#666666" label="NAV_CBORDER" description="NAV_CBORDER_DESC" />
+				<field name="nav_border_pos" type="list" class="sp-input" default="right" label="NAV_BORDER_POS" description="NAV_BORDER_POS_DESC">
+					<option value="left">LEFT</option>
+					<option value="right">RIGHT</option>
+				</field>					
+				<field name="nav_wborder" type="text" size="8" class="sp-input" default="1" label="NAV_WBORDER" description="NAV_WBORDER_DESC" />
+				<field name="nav_margin" type="list" class="sp-input" default="right" label="NAV_MARGIN" description="NAV_MARGIN_DESC">
+					<option value="left">LEFT</option>
+					<option value="right">RIGHT</option>
+				</field>	
+				<field name="nav_margin_val" type="text" size="8" class="sp-input" default="0" label="NAV_MARGIN_VAL" description="NAV_MARGIN_VAL_DESC" />
+				<field name="body_bg" type="picker" default="#FFFFFF" label="BODY_BG" description="BODY_BG_DESC" />
+				<field name="body_text" type="picker" default="#444444" label="BODY_TEXT" description="BODY_TEXT_DESC" />
+				<field name="border_color" type="picker" default="#e1e1e1" label="BODY_CBORDER" description="BODY_CBORDER_DESC" />			
+				<field name="body_wborder" type="text" size="8" class="sp-input" default="1" label="BODY_WBORDER" description="BODY_WBORDER_DESC" />
+			</fieldset>	
+			
+			<fieldset name="ANIMATION">	
+				<field name="activator" type="list" default="click" label="ACTIVATOR" description="ACTIVATOR_DESC">
+					<option value="click">CLICK</option>
+					<option value="hover">HOVER</option>
+				</field>			
+				<field name="fx_speed" type="text" default="400" label="SPEED" description="SPEED_DESC" />
+				<field name="animation" type="list" default="scroll:fade" label="ANIMATION_TYPE" description="ANIMATION_TYPE_DESC">
+					<option value="fade">Fade</option>
+					<option value="scroll:horizontal">Horizontal Scroll</option>
+					<option value="scroll:vertical">Vertical Scroll</option>
+					<option value="none">No Animation</option>
+				</field>
+				<field name="transition" type="list" default="linear" label="TRANSITION" description="TRANSITION_DESC">
+					<option value="linear">linear</option>
+					<option value="Quad.easeOut">Quad.easeOut</option>
+					<option value="Quad.easeIn">Quad.easeIn</option>
+					<option value="Quad.easeInOut">Quad.easeInOut</option>
+					<option value="Cubic.easeOut">Cubic.easeOut</option>
+					<option value="Cubic.easeIn">Cubic.easeIn</option>
+					<option value="Cubic.easeInOut">Cubic.easeInOut</option>
+					<option value="Quart.easeOut">Quart.easeOut</option>
+					<option value="Quart.easeIn">Quart.easeIn</option>
+					<option value="Quart.easeInOut">Quart.easeInOut</option>
+					<option value="Quint.easeOut">Quint.easeOut</option>
+					<option value="Quint.easeIn">Quint.easeIn</option>
+					<option value="Quint.easeInOut">Quint.easeInOut</option>
+					<option value="Expo.easeOut">Expo.easeOut</option>
+					<option value="Expo.easeIn">Expo.easeIn</option>
+					<option value="Expo.easeInOut">Expo.easeInOut</option>
+					<option value="Circ.easeOut">Circ.easeOut</option>
+					<option value="Circ.easeIn">Circ.easeIn</option>
+					<option value="Circ.easeInOut">Circ.easeInOut</option>
+					<option value="Sine.easeOut">Sine.easeOut</option>
+					<option value="Sine.easeIn">Sine.easeIn</option>
+					<option value="Sine.easeInOut">Sine.easeInOut</option>
+					<option value="Back.easeOut">Back.easeOut</option>
+					<option value="Back.easeIn">Back.easeIn</option>
+					<option value="Back.easeInOut">Back.easeInOut</option>
+					<option value="Bounce.easeOut">Bounce.easeOut</option>
+					<option value="Bounce.easeIn">Bounce.easeIn</option>
+					<option value="Bounce.easeInOut">Bounce.easeInOut</option>
+					<option value="Elastic.easeOut">Elastic.easeOut</option>
+					<option value="Elastic.easeIn">Elastic.easeIn</option>
+					<option value="Elastic.easeInOut">Elastic.easeInOut</option>
+				</field>
+				<field type="asset" />
+			</fieldset>
+				
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" default="" label="MODSFX" description="MODSFX_DESC" />
+				<field name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+			</fieldset>
+			
+		</fields>
+	</config>
+   
+</extension>

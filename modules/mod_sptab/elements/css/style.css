@@ -1,0 +1,23 @@
+/*---------------------------------------------------------------
+# SP Tab - Next generation tab module for joomla
+# ---------------------------------------------------------------
+# Author - JoomShaper http://www.joomshaper.com
+# Copyright (C) 2010 - 2012 JoomShaper.com. All Rights Reserved.
+# license - PHP files are licensed under  GNU/GPL V2
+# license - CSS  - JS - IMAGE files  are Copyrighted material 
+# Websites: http://www.joomshaper.com
+-----------------------------------------------------------------*/
+.pane-sliders .panel { border: none !important; }
+div.panel > h3 { height: 30px!important;padding:0!important; background: #fff!important; border: 1px solid #ccc; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font: bold 12px/30px Arial, Helvetica, sans-serif}
+div.panel > h3 a { color: #333!important;}
+div.panel h3.pane-toggler-down{ background:#02a5db!important }
+div.panel h3.pane-toggler-down a { color: #fff!important }
+.pane-toggler span { padding: 0 17px !important;background: transparent url(../images/arrow.png) no-repeat 5px 50% !important; }
+.pane-toggler-down span { padding: 0 17px !important;background: transparent url(../images/arrow_down.png) no-repeat 5px 50% !important; }
+.pane-sliders .content { margin: 4px auto; width: 99%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.panel fieldset.panelform > ul > li > label { color: #444; font-size: 11px; font-weight: bold; height: 24px; line-height: 24px; padding: 0 20px 0 10px; text-align: right; max-width: 30%!important; min-width: 30%!important; }
+.panel fieldset.panelform > ul > li fieldset { line-height:28px; }
+fieldset.panelform input { height: 16px; color: #555; line-height: 16px; padding: 4px; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
+fieldset.panelform select { height: 26px; color: #555; line-height: 24px; padding: 4px; font-size:11px; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
+fieldset.panelform select[multiple=multiple] { height: auto!important}
+.fltrt ul.adminformlist li { overflow: hidden; border-bottom: 1px solid #eee; padding: 1px 10px; margin: 0; }
