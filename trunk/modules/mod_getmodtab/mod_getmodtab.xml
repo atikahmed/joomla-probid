@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+    <name>getmodtab</name>
+    <author>phong.dinh</author>
+    <version>1.0</version>
+    <description></description>
+    <files>
+        <filename>mod_getmodtab.xml</filename>
+        <filename module="mod_getmodtab">mod_getmodtab.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+    </files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_getmodtab.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_getmodtab.sys.ini</language>
+	</languages>
+    <config>
+		<fields name="params">
+			<fieldset name="Basic">
+				<field name="mods" id="mods" type="sql" default="0" multiple="multiple" size="10" label="GET_MOD_TAB_MODS" description="GET_MOD_TAB_MODS_DESC" query="SELECT id, module, title FROM #__modules WHERE  `client_id`=0 AND ( `published` !=-2 AND `published` !=0 ) ORDER BY position ASC" key_field="id" value_field="title" />
+				<field name="ordering" type="list" default="ordering" label="GET_MOD_TAB_ORDERING" description="GET_MOD_TAB_ORDERING_DESC">
+					<option value="ordering">GET_MOD_TAB_ORDERING</option>
+					<option value="title">GET_MOD_TAB_TITLE</option>
+				</field>
+				<field name="ordering_direction" type="list" default="ASC" label="GET_MOD_TAB_ORDERING_FILTER" description="GET_MOD_TAB_ORDERING_FILTER_DESC">
+					<option value="DESC">GET_MOD_TAB_FILTER_DESC</option>
+					<option value="ASC">GET_MOD_TAB_FILTER_ASC</option>
+				</field>
+				<field name="nav_pos" type="list" default="top" label="GET_MOD_TAB_NAV_POS" description="GET_MOD_TAB_NAV_POS_DESC">
+					<option value="top">GET_MOD_TAB_TOP</option>
+					<option value="bottom">GET_MOD_TAB_BOTTOM</option>
+				</field>
+				<field name="activator" type="list" default="click" label="Activator" description="Set the type of activator.">
+					<option value="click">Click</option>
+					<option value="hover">Hover</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" default="" label="GET_MOD_TAB_MODSFX" description="GET_MOD_TAB_MODSFX_DESC" />
+				<field name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+			</fieldset>
+		</fields>
+	</config>
+</install>
