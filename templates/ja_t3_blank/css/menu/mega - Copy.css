@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------------------
+ * JA T3 Blank template for joomla 2.5
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites: http://www.joomlart.com - http://www.joomlancers.com
+ * ------------------------------------------------------------------------
+*/
+.ja-megamenu a.over, .ja-megamenu a.active { color: #8d8d8d !important; }
+
+/* lv - 1 and below
+-----------------------------------*/
+/* Styling ---*/
+.ja-megamenu ul.level1 li.mega { border-top: 1px dotted #ccc; }
+
+.ja-megamenu ul.level1 li.first { border-top: 0; }
+
+.ja-megamenu ul.level1 li.mega a.mega {
+	border: 0;
+}
+
+ /* CHILD CONTENT
+-----------------------------------*/
+.ja-megamenu .childcontent-inner {
+	background: #fff;
+	border: none;
+	border-top: 0;
+	color: #333;
+}
+
+.ja-megamenu .level1 .childcontent-inner { border-top: 1px solid #ccc; }
+
+.ja-megamenu .childcontent .ja-moduletable { color: #333; }
+
+.ja-megamenu .childcontent .ja-moduletable h3 {
+	background: none;
+	border-bottom: 1px dotted #ccc;
+	text-transform: uppercase;
+}
+
+/* Grouped --- */
+.ja-megamenu .group-title { border-bottom: 1px solid #ccc; }
+
+.ja-megamenu .group-title .menu-title {
+	color: #333;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 115%;
+}
+
+.ja-megamenu .group-title .menu-desc {
+	color: #999;
+	padding-left: 0 !important;
+}
+
+.ja-megamenu .childcontent-inner .megacol ul.megamenu{background:black; border:1px solid #E3E2E2; margin:0px!important}
+
+.ja-megamenu .childcontent{/*top:44px; */ padding-top:7px;}
+.ja-megamenu .mega_menu_probid  .childcontent{top:29px;}
+
+
+.ja-megamenu a.haschild  span.menu-title{background: url(../../images/probid/i_menu.png) no-repeat right 8px!important; padding-right:10px!important;}
+
+@import url{../../../plugins/system/jat3/jat3/base-themes/default/css/menu/mega.css}
+
+.ja-megamenu .childcontent-inner .megacol ul.megamenu{background:#f6f6f6; border:1px solid #cfcfcf; margin:0px!importan; padding:0 5px}
+
+.ja-megamenu .childcontent{/*top:44px; */ padding-top:7px;}
+.ja-megamenu .mega_menu_probid  .childcontent{top:29px;}
+
+
+.ja-megamenu  .mega_menu_probid .childcontent{ left:0!important; width:100%!important}
+
+.ja-megamenu  .mega_menu_probid  .sptabs{width:100%}
+.ja-megamenu  .mega_menu_probid  .sptabs .tabs_buttons {float:left; width:18%}
+.ja-megamenu  .mega_menu_probid  .sptabs .items_mask {float:right; width:80%!important; top:0}
+.ja-megamenu  .mega_menu_probid  .sptabs .tabs_buttons  .tabs_mask ul li.tab{clear:both; width:100%; font-size:14px; border-top:1px black dotted; font-weight:bold}
+.ja-megamenu  .mega_menu_probid  .sptabs .tabs_buttons  .tabs_mask ul li.first-tab{border:0;}
+
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs {float:left; width:18%}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .ahidetabs {color:black!important; font-size:12px!important;font-weight:bold!important;text-decoration:none!important}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.hidetab{clear:both; padding-top:5px!important;padding-left:5px!important; width:100%; border-top:1px black dotted; font-weight:bold}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.firsttab{border:0;}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.hidetab:hover{color:#eee}
+
+
+
+#ja-mainnav .main-inner1 .childcontent  ul.megamenu  li a{ color:#3d3d3d; text-transform:none; font:bold 12px Arial}
