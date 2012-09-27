@@ -78,3 +78,9 @@
 .ja-megamenu  .mega_menu_probid  .sptabs .items_mask {float:right; width:80%!important; top:0}
 .ja-megamenu  .mega_menu_probid  .sptabs .tabs_buttons  .tabs_mask ul li.tab{clear:both; width:100%; font-size:14px; border-top:1px black dotted; font-weight:bold}
 .ja-megamenu  .mega_menu_probid  .sptabs .tabs_buttons  .tabs_mask ul li.first-tab{border:0;}
+
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs {float:left; width:18%}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .ahidetabs {color:black!important; font-size:12px!important;font-weight:bold!important;text-decoration:none!important}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.hidetab{clear:both; padding-top:5px!important;padding-left:5px!important; width:100%; border-top:1px black dotted; font-weight:bold}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.firsttab{border:0;}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.hidetab:hover{color:#eee}
