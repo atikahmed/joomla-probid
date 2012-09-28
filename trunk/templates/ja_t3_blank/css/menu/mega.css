@@ -13,7 +13,7 @@
 /* lv - 1 and below
 -----------------------------------*/
 /* Styling ---*/
-.ja-megamenu ul.level1 li.mega { border-top: 1px dotted #ccc; }
+.ja-megamenu ul.level1 li.mega { border-top: 1px dotted #3D3D3D; }
 
 .ja-megamenu ul.level1 li.first { border-top: 0; }
 
@@ -25,7 +25,7 @@
 -----------------------------------*/
 .ja-megamenu .childcontent-inner {
 	background: #fff;
-	border: 1px solid #ccc;
+	border: none;
 	border-top: 0;
 	color: #333;
 }
@@ -55,7 +55,7 @@
 	padding-left: 0 !important;
 }
 
-.ja-megamenu .childcontent-inner .megacol ul.megamenu{background:black; border:1px solid #E3E2E2; margin:0px!important}
+.ja-megamenu .childcontent-inner .megacol ul.megamenu{ margin:0px!important}
 
 .ja-megamenu .childcontent{/*top:44px; */ padding-top:7px;}
 .ja-megamenu .mega_menu_probid  .childcontent{top:29px;}
@@ -65,7 +65,7 @@
 
 @import url{../../../plugins/system/jat3/jat3/base-themes/default/css/menu/mega.css}
 
-.ja-megamenu .childcontent-inner .megacol ul.megamenu{background:black; border:1px solid #E3E2E2; margin:0px!important}
+.ja-megamenu .childcontent-inner .megacol ul.megamenu{ margin:0px!important;}
 
 .ja-megamenu .childcontent{/*top:44px; */ padding-top:7px;}
 .ja-megamenu .mega_menu_probid  .childcontent{top:29px;}
@@ -80,7 +80,28 @@
 .ja-megamenu  .mega_menu_probid  .sptabs .tabs_buttons  .tabs_mask ul li.first-tab{border:0;}
 
 .ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs {float:left; width:18%}
-.ja-megamenu  .mega_menu_probid  .hidetabouter .ahidetabs {color:black!important; font-size:12px!important;font-weight:bold!important;text-decoration:none!important}
-.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.hidetab{clear:both; padding-top:5px!important;padding-left:5px!important; width:100%; border-top:1px black dotted; font-weight:bold}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .ahidetabs {color:#3D3D3D!important; font-size:12px!important;font-weight:bold!important;text-decoration:none!important; text-transform:none!important}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.hidetab{clear:both; padding-top:0!important;padding-left:0!important; width:100%!important; border-top:1px #3D3D3D dotted; font-weight:bold}
 .ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.firsttab{border:0;}
 .ja-megamenu  .mega_menu_probid  .hidetabouter .hidetabs li.hidetab:hover{color:#eee}
+.ja-megamenu  .mega_menu_probid  .hidetabouter .ahidetabs:hover { color:#999!important}
+
+
+
+#ja-mainnav .main-inner1 .childcontent  ul.megamenu  li a{ color:#3d3d3d; text-transform:none; font:bold 12px Arial}
+.ja-megamenu .childcontent .ja-moduletable .ja-box-ct { padding:0!important}
+
+.ja-megamenu .childcontent-inner{background:#f6f6f6; border:1px solid #cfcfcf; margin:0px!important; padding:0 5px}
+#hidetab248 .hidetabcontent { padding:7px 10px!important}
+#hidetab248 ul.hidetabs li a:link, #hidetab248 ul.hidetabs li a:visited { padding:7px  0!important;}
+.hidetabouter .rg-gm-title{ color:#000; font:bold 13px Arial}
+.hidetabouter  h2 { color:#000; font:bold 19px Arial}
+.hidetabcontent.tabopen ul li { float:left;}
+.hidetabcontent.tabopen ul.bucket-list li { width:17%; padding:0 10px 10px; text-align:center}
+.hidetabcontent.tabopen ul.bucket-list li:first-child { padding-left:0}
+.hidetabcontent.tabopen ul.bucket-list li.last { padding-right:0}
+
+.hidetabcontent.tabopen ul li a img { float:none!important;}
+.hidetabcontent.tabopen ul li a span { display:block;color:#000; font:bold 13px Arial; text-transform:none }
+.rg-gm-slice-item:hover {background: #f2f2f2;}
+.rg-gm-slice {background: none!important;box-shadow: none!important;-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);}
