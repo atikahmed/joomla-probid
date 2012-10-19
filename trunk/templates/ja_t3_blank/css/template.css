@@ -588,8 +588,9 @@ body.bd #pt_content  .main { width:100%}
 	#home_intro li .bot p{position:absolute;bottom:1px;left:1px;background: url(../images/bg_home_intro_bot.png) repeat left center;width:93.6%;margin-bottom:0px; padding:15px 9px}
 	#home_intro li .bot p strong{display:block;}
 	#home_intro li .bot p strong , #home_intro li .bot p span { letter-spacing:-0.8px}
+	#home_intro li .bot p span { letter-spacing:0; white-space:normal;width:63%; display:inline-block}
 	#home_intro  a { height: 31px;line-height: 29px; color:white; font-size: 18px; font-weight:bold;margin-top:-15px; padding:0 2px; float:right}
-	#home_intro a span { background:url(../images/probid/arrow_button.png) no-repeat right 4px;padding:0 22px 0 5px;display:inline-block}
+	#home_intro a span { background:url(../images/probid/arrow_button.png) no-repeat right 4px;padding:0 22px 0 5px;display:inline-block; width:auto!important}
 	#home_intro li.onner .top{ background-position:0 -165px}
 	#home_intro li.service .top{ background-position:0 -252px}
 	#home_intro li.vendor .top{ background-position:0 -347px}
