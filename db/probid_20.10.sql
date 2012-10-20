@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 20, 2012 at 01:56 AM
+-- Generation Time: Oct 20, 2012 at 10:21 AM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -38,14 +38,14 @@ CREATE TABLE IF NOT EXISTS `jos_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=301 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=303 ;
 
 --
 -- Dumping data for table `jos_assets`
 --
 
 INSERT INTO `jos_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 1, 408, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1,"2":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 1, 412, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1,"2":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 2, 3, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 4, 9, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 10, 11, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
@@ -193,8 +193,10 @@ INSERT INTO `jos_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `tit
 (296, 1, 400, 401, 1, 'com_jaextmanager', 'com_jaextmanager', '{}'),
 (297, 1, 402, 403, 1, 'com_k2', 'k2', '{"core.admin":[],"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (298, 254, 155, 156, 4, 'com_content.article.286', 'Plumbing Repair', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(299, 1, 404, 407, 1, 'com_ptslideshow', 'ptslideshow', '{}'),
-(300, 299, 405, 406, 2, 'com_ptslideshow.category.137', 'ProBid Slideshow', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}');
+(299, 1, 404, 411, 1, 'com_ptslideshow', 'ptslideshow', '{}'),
+(300, 299, 405, 406, 2, 'com_ptslideshow.category.137', 'ProBid Slideshow', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(301, 299, 407, 408, 2, 'com_ptslideshow.category.138', 'Category Pre Login', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(302, 299, 409, 410, 2, 'com_ptslideshow.category.139', 'Category Post Login', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}');
 
 -- --------------------------------------------------------
 
@@ -363,14 +365,14 @@ CREATE TABLE IF NOT EXISTS `jos_categories` (
   KEY `idx_alias` (`alias`),
   KEY `idx_language` (`language`),
   KEY `jr_parent_id` (`parent_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=138 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=140 ;
 
 --
 -- Dumping data for table `jos_categories`
 --
 
 INSERT INTO `jos_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`) VALUES
-(1, 0, 0, 0, 123, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '', 0, '2011-01-01 00:00:01', 0, '2011-01-01 00:00:01', 0, '*'),
+(1, 0, 0, 0, 127, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '', 0, '2011-01-01 00:00:01', 0, '2011-01-01 00:00:01', 0, '*'),
 (9, 34, 1, 27, 28, 1, 'uncategorised', 'com_content', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 42, '2011-01-01 00:00:01', 62, '2012-01-27 18:10:16', 0, '*'),
 (10, 35, 1, 105, 106, 1, 'uncategorised', 'com_banners', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":"","foobar":""}', '', '', '{"page_title":"","author":"","robots":""}', 42, '2011-01-01 00:00:01', 0, '2011-01-01 00:00:01', 0, '*'),
 (11, 36, 1, 103, 104, 1, 'uncategorised', 'com_contact', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 42, '2011-01-01 00:00:01', 0, '2011-01-01 00:00:01', 0, '*'),
@@ -431,7 +433,9 @@ INSERT INTO `jos_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `leve
 (131, 255, 78, 8, 9, 2, 'cat-projects/product', 'com_content', 'Product', 'product', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 62, '2012-01-26 22:14:04', 0, '0000-00-00 00:00:00', 0, '*'),
 (135, 280, 1, 117, 118, 1, 'call-to-action-items', 'com_content', 'Call To Action Items', 'call-to-action-items', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 78, '2012-06-21 20:21:07', 0, '0000-00-00 00:00:00', 0, '*'),
 (136, 287, 1, 119, 120, 1, 'marketing', 'com_content', 'Marketing', 'marketing', '', '', -2, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 78, '2012-07-03 21:26:05', 0, '0000-00-00 00:00:00', 0, '*'),
-(137, 300, 1, 121, 122, 1, 'probid-slideshow', 'com_ptslideshow', 'ProBid Slideshow', 'probid-slideshow', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 222, '2012-08-25 04:12:52', 0, '0000-00-00 00:00:00', 0, '*');
+(137, 300, 1, 121, 122, 1, 'probid-slideshow', 'com_ptslideshow', 'ProBid Slideshow', 'probid-slideshow', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 222, '2012-08-25 04:12:52', 0, '0000-00-00 00:00:00', 0, '*'),
+(138, 301, 1, 123, 124, 1, 'category-pre-login', 'com_ptslideshow', 'Category Pre Login', 'category-pre-login', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 222, '2012-10-19 16:39:33', 0, '0000-00-00 00:00:00', 0, '*'),
+(139, 302, 1, 125, 126, 1, 'category-post-login', 'com_ptslideshow', 'Category Post Login', 'category-post-login', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 222, '2012-10-19 16:39:45', 0, '0000-00-00 00:00:00', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -567,7 +571,7 @@ INSERT INTO `jos_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `i
 (102, 244, 'Architect Needed', 'architect-needed', '', '', 'We would like to design a new office. We currently have a 3,200 SF building.', 1, 0, 0, 128, '2011-11-08 17:37:00', 86, '', '2012-07-25 22:31:00', 86, 0, '0000-00-00 00:00:00', '2011-11-08 17:37:00', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 0, '', '', 1, 365, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (100, 0, 'House Painting', 'house-painting', '', '', 'We need to have our house painted.', 1, 0, 0, 130, '2011-11-08 17:35:00', 86, '', '2012-08-26 06:04:00', 86, 0, '0000-00-00 00:00:00', '2011-11-08 17:35:00', '0000-00-00 00:00:00', 'jreviews/100_a009-1345961042.png|||0||bottom||', '', '', 1, 0, 0, '', '', 1, 88, '', 0, '*', ''),
 (93, 0, 'Driveway Paving', 'driveway-paving', '', '', 'Pave driveways and parking lot at our new office building.', 1, 0, 0, 128, '2011-11-04 02:45:00', 86, '', '2012-06-26 18:52:00', 86, 0, '0000-00-00 00:00:00', '2011-11-04 02:45:00', '0000-00-00 00:00:00', '', '', '', 1, 0, 0, '', '', 1, 83, '', 0, '*', ''),
-(215, 272, 'ADVANCED SEARCH JQUERY GEO PROXY CALL - PROJECTS', 'advanced-search-jquery-geo-proxy-call', '', '<div id="searchResults"> </div>', '', 1, 0, 0, 9, '2012-05-04 15:55:54', 78, '', '2012-05-22 16:06:24', 78, 0, '0000-00-00 00:00:00', '2012-05-04 15:55:54', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 6, 0, 8, 'construction projects, general contractors, licensed contractors', 'Search for Projects and/or Service Providers in your area using Probiddirect.com', 1, 520, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(215, 272, 'ADVANCED SEARCH JQUERY GEO PROXY CALL - PROJECTS', 'advanced-search-jquery-geo-proxy-call', '', '<div id="searchResults"> </div>', '', 1, 0, 0, 9, '2012-05-04 15:55:54', 78, '', '2012-05-22 16:06:24', 78, 0, '0000-00-00 00:00:00', '2012-05-04 15:55:54', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 6, 0, 8, 'construction projects, general contractors, licensed contractors', 'Search for Projects and/or Service Providers in your area using Probiddirect.com', 1, 528, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (210, 0, 'Chris''s Crane Service', 'chriss-crane-service', '', '', '<p>Full crane service</p>', 1, 0, 0, 79, '2012-05-01 17:25:00', 185, '', '2012-05-03 04:21:00', 62, 0, '0000-00-00 00:00:00', '2012-05-01 17:25:00', '0000-00-00 00:00:00', '', '', '', 1, 0, 1, '', '', 1, 34, '', 0, '*', ''),
 (95, 245, 'Granite Countertops', 'granite-countertops', '', '', '<p>We would like new granite countertops in our kitchen.</p>', 1, 0, 0, 129, '2011-11-04 18:02:00', 86, '', '2012-02-06 17:21:00', 62, 0, '0000-00-00 00:00:00', '2011-11-04 18:02:00', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 0, '', '', 1, 41, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (92, 249, 'Kitchen Remodel', 'kitchen-remodel', '', '', '<p>We are wanting to have our entire kitchen remodeled including cabinets, tile, counter tops, flooring, appliances and paint.</p>', 1, 0, 0, 129, '2011-11-04 02:43:00', 86, '', '2012-02-06 17:22:00', 62, 0, '0000-00-00 00:00:00', '2011-11-04 02:43:00', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 0, '', '', 1, 99, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -590,7 +594,7 @@ INSERT INTO `jos_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `i
 (115, 205, 'Search Top', 'search-top', '', '<p>Search for Projects, Service Providers, Vendors and Projects in you area!</p>\r\n<p>Search for Products</p>', '', 1, 0, 0, 81, '2011-12-07 18:53:56', 62, '', '2012-05-08 23:16:56', 62, 222, '2012-08-25 06:51:40', '2011-12-07 18:53:55', '0000-00-00 00:00:00', '', '', '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","alternative_readmore":"","article_layout":""}', 3, 0, 15, 'Construction, project, bid, provider, service, service provider, network, home improvement, home project', 'Construction Projects', 1, 552, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (116, 207, 'Footer-Content A', 'footer-content-a', '', '<p><span style="text-decoration: underline;">Find a Project</span></p>\r\n<p>Architecture<br />Building<br />Concrete<br />Doors &amp; Windows<br />Excavation<br />Framing<br /> </p>', '', -2, 0, 0, 77, '2011-09-12 18:31:13', 62, '', '2011-12-09 23:14:28', 62, 0, '0000-00-00 00:00:00', '2011-09-12 18:31:13', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (117, 208, 'Home-Main', 'home-main', '', '<p><img src="images/home/spacer_1px_clear.jpg" border="0" alt="" /></p>', '', 1, 0, 0, 81, '2011-12-15 19:15:11', 62, '', '2012-02-17 01:28:41', 62, 222, '2012-08-23 05:18:23', '2011-12-15 19:15:11', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 24, 0, 16, '', '', 1, 10764, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(118, 209, 'How PROBIDdirect Works', 'how-it-works', '', '<div>PROJECT OWNERS:   Your membership along with the entry of your project details will allow service providers-vendors in your area to discover your project and the opportunity to receive multiple proposals.  You control your information and you will have the opportunity to screen any service providers-vendors that respond to your project.  This will not only allow you greater exposure to qualified service providers and vendors but it will also result in more competitive bids.  Once you have selected the most qualified service providers-vendors you will be able to exchange information through our communication wall labeled the “Job Card”.  The selected service providers and vendors become part of “My Team” and you will then be able to continue to manage your project through the “Job Card” wall, exchanging dialog, plans, pictures and details related to your project.  Successful communication is one of the most important factors in completing a satisfactory project.  PROBIDdirect.com is here to ensure you get access to the most competitive bids and the best communication to fulfill your project needs.</div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>PROJECT PROFESSIONAL:  Your membership will allow you to market your services and products to a larger more geographically diverse group of clients.  Not only will you be able to represent your local community well, you will be able to extend your services and products into other communities in larger and larger circles.  By searching for project owners submittals for industry specific services or products you will be able to discover new territory and be well represented by your own “My Office” web page.  Your “My Office” web page, which is included in your PROBIDdirect.com membership, will contain your current business information.  This includes licensing, bonding and insurance information.  Additionally there are areas to submit company and work history, client referrals, client reviews, pictures, preferred partners and relevant details for your business.  This page can also be used as a stand-alone web presence for your business. </div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>For both PROJECT OWNERS and PROJECT PROFESSIONALS the “Job Card” wall will allow you to discuss the details of the project being bid including the exchange of relevant information and specifications specific to the project.  The PROJECT OWNERS and the PROJECT PROFESSIONALS will be able to manage the project including the exchange of plans, specifications, pictures, timelines and details.  The thorough and accurate exchange of information will contribute to a smoother and more successful bid and a satisfactorily completed project. </div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>Together, the PROJECT OWNERS and PROJECT PROFESSIONALS will benefit from increased exposure to each other.  The communication wall “Job Card” will help facilitate success and information and links at PROBIDdirect.com will have valuable advice and connections to better inform, equip and benefit all users.</div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>PROBIDdirect.com is here to provide you with a state of the art network for finding the right PROJECT OWNER or the right PROJECT PROFESSIONAL for your home or business construction, service or product needs. </div>\r\n<div>Try us today!</div>', '', 1, 0, 0, 81, '2011-12-16 00:33:08', 62, '', '2012-07-10 18:40:50', 62, 0, '0000-00-00 00:00:00', '2011-12-16 00:33:08', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 6, 0, 14, '', '', 1, 173, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(118, 209, 'How PROBIDdirect Works', 'how-it-works', '', '<div>PROJECT OWNERS:   Your membership along with the entry of your project details will allow service providers-vendors in your area to discover your project and the opportunity to receive multiple proposals.  You control your information and you will have the opportunity to screen any service providers-vendors that respond to your project.  This will not only allow you greater exposure to qualified service providers and vendors but it will also result in more competitive bids.  Once you have selected the most qualified service providers-vendors you will be able to exchange information through our communication wall labeled the “Job Card”.  The selected service providers and vendors become part of “My Team” and you will then be able to continue to manage your project through the “Job Card” wall, exchanging dialog, plans, pictures and details related to your project.  Successful communication is one of the most important factors in completing a satisfactory project.  PROBIDdirect.com is here to ensure you get access to the most competitive bids and the best communication to fulfill your project needs.</div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>PROJECT PROFESSIONAL:  Your membership will allow you to market your services and products to a larger more geographically diverse group of clients.  Not only will you be able to represent your local community well, you will be able to extend your services and products into other communities in larger and larger circles.  By searching for project owners submittals for industry specific services or products you will be able to discover new territory and be well represented by your own “My Office” web page.  Your “My Office” web page, which is included in your PROBIDdirect.com membership, will contain your current business information.  This includes licensing, bonding and insurance information.  Additionally there are areas to submit company and work history, client referrals, client reviews, pictures, preferred partners and relevant details for your business.  This page can also be used as a stand-alone web presence for your business. </div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>For both PROJECT OWNERS and PROJECT PROFESSIONALS the “Job Card” wall will allow you to discuss the details of the project being bid including the exchange of relevant information and specifications specific to the project.  The PROJECT OWNERS and the PROJECT PROFESSIONALS will be able to manage the project including the exchange of plans, specifications, pictures, timelines and details.  The thorough and accurate exchange of information will contribute to a smoother and more successful bid and a satisfactorily completed project. </div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>Together, the PROJECT OWNERS and PROJECT PROFESSIONALS will benefit from increased exposure to each other.  The communication wall “Job Card” will help facilitate success and information and links at PROBIDdirect.com will have valuable advice and connections to better inform, equip and benefit all users.</div>\r\n<div class="paragraph_break" style="display: block; margin-top: 3px; margin-right: 0px; margin-bottom: 16px; margin-left: 0px;"> </div>\r\n<div>PROBIDdirect.com is here to provide you with a state of the art network for finding the right PROJECT OWNER or the right PROJECT PROFESSIONAL for your home or business construction, service or product needs. </div>\r\n<div>Try us today!</div>', '', 1, 0, 0, 81, '2011-12-16 00:33:08', 62, '', '2012-07-10 18:40:50', 62, 0, '0000-00-00 00:00:00', '2011-12-16 00:33:08', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 6, 0, 14, '', '', 1, 174, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (119, 210, 'Why ProBid', 'why-probid', '', 'Here''s why ProBid is the best choice...', '', 1, 0, 0, 81, '2011-12-16 00:39:44', 62, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2011-12-16 00:39:44', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 1, 0, 13, '', '', 1, 131, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (120, 212, 'ProBidDirect Launches in Northern California!', 'probiddirect-launches-in-northern-california', '', '<p>ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. Owner and CEO, Scott Armstrong says, "We are excited to see this phase of the project become a reality!"</p>', '<p>ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market.</p> <p>ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market.</p> <p>ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market.</p> <p>ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market.</p> <p>ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market. ProBidDirect.com, the website for Project Professionals, Project Owners and Vendors has launched this week, starting in the Northern California market.</p>', 1, 0, 0, 100, '2011-12-20 19:00:54', 62, '', '2012-02-16 18:27:00', 62, 0, '0000-00-00 00:00:00', '2011-12-20 19:00:54', '0000-00-00 00:00:00', 'jreviews/120_logo-bgclear-white-1329416866.png|||0||bottom||', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 3, 0, 2, 'Construction, Home, House, Project, Home Project, Home Owner, Home Owners, Project Professionals, Service Providers, Bid.', 'ProBidDirect Launches in Northern California', 1, 23, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (122, 214, 'Considering an upgrade for you old furnace?', 'why-your-old-furnace-needs-an-upgrade', '', '<p><span class="Apple-style-span" style="color: #323232; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;">Before chilly autumn nights set in, you need to make an appointment for your furnace''s annual checkup. Without this yearly cleaning and inspection, a system can wear itself out quickly, pump deadly carbon monoxide into your home, or simply stop working.</span></p>', '<p><span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #323232;">Before chilly autumn nights set in, you need to make an appointment for your furnace''s annual checkup. Without this yearly cleaning and inspection, a system can wear itself out quickly, pump deadly carbon monoxide into your home, or simply stop working.<br /><br />We asked <em style="border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; font-size: 12px; vertical-align: baseline; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; background-position: initial initial; background-repeat: initial initial; border-width: 0px; padding: 0px; margin: 0px;">This Old House</em>plumbing and heating expert Richard Trethewey to show us the proper steps that a service professional would follow for an oil-burning forced-air furnace; the basics on a gas system are similar. In both, fuel is mixed with air and ignited, heating a sealed chamber. Fresh, filtered air then blows across the outside of the hot chamber and into the heating ducts. (Homes with radiators have boilers instead of furnaces. These heat water instead of air, but the annual checkup is similar.) In all, the dangerous exhaust from the combustion chamber is vented out a flue or chimney. <br /><br />Whatever type of system you have, don''t wait until it breaks down to call for service. A clean, well-adjusted heating system will save you money on fuel and prolong furnace life. Annual servicing is cheap — typically less than $100 — especially when compared with the price of a new furnace. "You wouldn''t wait more than a year to service your car," Richard says. "The heat in your house is just as important."</span></p> <p><span style="color: #323232; font-family: Arial, Helvetica, sans-serif;"><a href="http://www.thisoldhouse.com/toh/article/0,,387559,00.html" target="_blank">http://www.thisoldhouse.com/toh/article/0,,387559,00.html</a></span></p>', 1, 0, 0, 100, '2011-12-20 19:09:24', 62, '', '2012-04-27 00:32:00', 62, 0, '0000-00-00 00:00:00', '2011-12-20 19:09:24', '0000-00-00 00:00:00', 'jreviews/122_old-furnace-1335486638.jpg|||0||bottom||', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 0, 'furnace, heater, carbon monoxide, chimney, heating system', 'Older furnaces are not only inefficient, but they can become a health hazard in certain cases', 1, 61, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -672,8 +676,8 @@ INSERT INTO `jos_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `i
 (223, 0, 'Bedroom remodel', 'bedroom-remodel', '', '', '<p>Bedroom addition</p>', 1, 0, 0, 128, '2012-05-14 19:23:00', 86, '', '2012-05-18 22:48:00', 62, 0, '0000-00-00 00:00:00', '2012-05-14 19:23:00', '0000-00-00 00:00:00', '', '', '', 1, 0, 0, '', '', 1, 39, '', 0, '*', ''),
 (225, 0, 'Bedroom/Bathroom Remodel', 'bedroombathroom-remodel', '', '', 'A complete master bedroom and bathroom remodel, including new flooring, windows, paint, shower, toilet, tub, granite counter tops', 1, 0, 0, 129, '2012-05-21 21:24:00', 188, '', '2012-05-21 21:33:00', 188, 0, '0000-00-00 00:00:00', '2012-05-21 21:24:00', '0000-00-00 00:00:00', 'jreviews/225_bay-window-1337635785.jpg|||0||bottom||\njreviews/225_addition-master-bedroom4-1337636036.jpg|||0||bottom||\njreviews/225_stock-photo-modern-master-bath-with-glass-shower-and-skylight-70189786-1337636036.jpg|||0||bottom||', '', '', 1, 0, 0, '', '', 1, 78, '', 0, '*', ''),
 (226, 0, 'Game room Addition', 'game-room-addition', '', '', 'We want to build an addition.', 1, 0, 0, 128, '2012-05-21 22:03:00', 168, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2012-05-21 22:03:00', '0000-00-00 00:00:00', '', '', '', 1, 0, 0, '', '', 1, 54, '', 0, '*', ''),
-(227, 275, 'ADVANCED SEARCH JQUERY GEO PROXY CALL - PROVIDERS', 'advanced-search-jquery-geo-proxy-call-providers', '', '<div id="searchResults"> </div>', '', 1, 0, 0, 9, '2012-05-22 16:07:12', 78, '', '2012-05-22 16:07:25', 78, 222, '2012-08-25 18:01:36', '2012-05-22 16:07:12', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 3, '', '', 1, 148, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(228, 0, 'Landscaping, lawn and pool care', 'landscaping-lawn-and-pool-care', '', '', 'Looking for a reliable service company to provide landscaping, lawn and pool care. ', 1, 0, 0, 130, '2012-05-22 20:13:00', 188, '', '2012-05-22 20:29:00', 188, 0, '0000-00-00 00:00:00', '2012-05-22 20:13:00', '0000-00-00 00:00:00', 'jreviews/_sprinkler-2-1337717587.gif|||0||bottom||\njreviews/228_pbd-intro-email-doc-149af800-1337718541.jpg|||0||bottom||', '', '', 1, 0, 0, '', '', 1, 46, '', 0, '*', ''),
+(227, 275, 'ADVANCED SEARCH JQUERY GEO PROXY CALL - PROVIDERS', 'advanced-search-jquery-geo-proxy-call-providers', '', '<div id="searchResults"> </div>', '', 1, 0, 0, 9, '2012-05-22 16:07:12', 78, '', '2012-05-22 16:07:25', 78, 222, '2012-08-25 18:01:36', '2012-05-22 16:07:12', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 3, '', '', 1, 178, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(228, 0, 'Landscaping, lawn and pool care', 'landscaping-lawn-and-pool-care', '', '', 'Looking for a reliable service company to provide landscaping, lawn and pool care. ', 1, 0, 0, 130, '2012-05-22 20:13:00', 188, '', '2012-05-22 20:29:00', 188, 0, '0000-00-00 00:00:00', '2012-05-22 20:13:00', '0000-00-00 00:00:00', 'jreviews/_sprinkler-2-1337717587.gif|||0||bottom||\njreviews/228_pbd-intro-email-doc-149af800-1337718541.jpg|||0||bottom||', '', '', 1, 0, 0, '', '', 1, 47, '', 0, '*', ''),
 (229, 291, 'Backyard Gazebo and Hot Tub', 'backyard-gazebo-and-hot-tub', '', '', '\r\n<p>I would like to have a backyard Gazebo built that contains a hot tub</p>', 1, 0, 0, 128, '2012-05-22 20:31:00', 188, '', '2012-07-09 08:25:26', 222, 0, '0000-00-00 00:00:00', '2012-05-22 20:31:00', '0000-00-00 00:00:00', 'jreviews/_gazebo-2-1337718667.jpg|||0||bottom||', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 3, 0, 0, '', '', 1, 242, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (230, 0, 'Perry''s Pools', 'perrys-pools', '', '', 'Complete swimming pool construction, repair, remodel, plumbing, swimming pool service, swimming pool decking, hot tubs,', 1, 0, 0, 80, '2012-05-22 20:59:00', 190, '', '2012-05-22 21:01:00', 190, 0, '0000-00-00 00:00:00', '2012-05-22 20:59:00', '0000-00-00 00:00:00', 'jreviews/_pbd-intro-email-doc-149af800-1337720351.jpg|||0||bottom||', '', '', 1, 0, 0, '', '', 1, 9, '', 0, '*', ''),
 (231, 276, 'Registration Required', 'registration-required', '', '<div id="blank"> </div>', '', 1, 0, 0, 81, '2012-05-22 21:50:48', 62, '', '2012-05-22 21:58:41', 62, 0, '0000-00-00 00:00:00', '2012-05-22 21:50:48', '0000-00-00 00:00:00', '', '', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":""}', 2, 0, 1, '', '', 1, 102, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -1026,7 +1030,7 @@ CREATE TABLE IF NOT EXISTS `jos_extensions` (
   KEY `element_clientid` (`element`,`client_id`),
   KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   KEY `extension` (`type`,`element`,`folder`,`client_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10167 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10169 ;
 
 --
 -- Dumping data for table `jos_extensions`
@@ -1241,7 +1245,9 @@ INSERT INTO `jos_extensions` (`extension_id`, `name`, `type`, `element`, `folder
 (10163, 'User - K2', 'plugin', 'k2', 'user', 0, 1, 1, 0, '{"legacy":true,"name":"User - K2","type":"plugin","creationDate":"May 9th, 2012","author":"JoomlaWorks","copyright":"Copyright (c) 2006 - 2012 JoomlaWorks Ltd. All rights reserved.","authorEmail":"contact@joomlaworks.net","authorUrl":"www.joomlaworks.net","version":"2.5.7","description":"K2_A_USER_SYNCHRONIZATION_PLUGIN_FOR_K2","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10164, 'k2', 'component', 'com_k2', '', 1, 1, 0, 0, '{"legacy":true,"name":"K2","type":"component","creationDate":"May 9th, 2012","author":"JoomlaWorks","copyright":"Copyright (c) 2006 - 2012 JoomlaWorks Ltd. All rights reserved.","authorEmail":"contact@joomlaworks.net","authorUrl":"www.joomlaworks.net","version":"2.5.7","description":"Thank you for installing K2 by JoomlaWorks, the powerful content extension for Joomla!","group":""}', '{"enable_css":"1","jQueryHandling":"1.7remote","backendJQueryHandling":"remote","userName":"1","userImage":"1","userDescription":"1","userURL":"1","userEmail":"0","userFeedLink":"1","userFeedIcon":"1","userItemCount":"10","userItemTitle":"1","userItemTitleLinked":"1","userItemDateCreated":"1","userItemImage":"1","userItemIntroText":"1","userItemCategory":"1","userItemTags":"1","userItemCommentsAnchor":"1","userItemReadMore":"1","userItemK2Plugins":"1","defaultUsersItemid":"","tagItemCount":"10","tagItemTitle":"1","tagItemTitleLinked":"1","tagItemDateCreated":"1","tagItemImage":"1","tagItemIntroText":"1","tagItemCategory":"1","tagItemReadMore":"1","tagItemExtraFields":"0","tagOrdering":"","tagFeedLink":"1","tagFeedIcon":"1","defaultTagsItemid":"","genericItemCount":"10","genericItemTitle":"1","genericItemTitleLinked":"1","genericItemDateCreated":"1","genericItemImage":"1","genericItemIntroText":"1","genericItemCategory":"1","genericItemReadMore":"1","genericItemExtraFields":"0","genericFeedLink":"1","genericFeedIcon":"1","feedLimit":"10","feedItemImage":"1","feedImgSize":"S","feedItemIntroText":"1","feedTextWordLimit":"","feedItemFullText":"1","feedItemTags":"0","feedItemVideo":"0","feedItemGallery":"0","feedItemAttachments":"0","feedBogusEmail":"","introTextCleanup":"0","introTextCleanupExcludeTags":"","introTextCleanupTagAttr":"","fullTextCleanup":"0","fullTextCleanupExcludeTags":"","fullTextCleanupTagAttr":"","xssFiltering":"0","linkPopupWidth":"900","linkPopupHeight":"600","imagesQuality":"100","itemImageXS":"100","itemImageS":"112","itemImageM":"175","itemImageL":"495","itemImageXL":"900","itemImageGeneric":"300","catImageWidth":"100","catImageDefault":"1","userImageWidth":"100","userImageDefault":"1","commenterImgWidth":"48","onlineImageEditor":"splashup","imageTimestamp":"0","imageMemoryLimit":"","socialButtonCode":"","twitterUsername":"","facebookImage":"Small","comments":"1","commentsOrdering":"DESC","commentsLimit":"10","commentsFormPosition":"below","commentsPublishing":"1","commentsReporting":"2","commentsReportRecipient":"","inlineCommentsModeration":"0","gravatar":"1","recaptcha":"0","commentsFormNotes":"1","commentsFormNotesText":"","frontendEditing":"1","showImageTab":"1","showImageGalleryTab":"1","showVideoTab":"1","showExtraFieldsTab":"1","showAttachmentsTab":"1","showK2Plugins":"1","sideBarDisplayFrontend":"0","mergeEditors":"1","sideBarDisplay":"1","attachmentsFolder":"","hideImportButton":"0","taggingSystem":"1","lockTags":"0","showTagFilter":"0","googleSearch":"0","googleSearchContainer":"k2Container","K2UserProfile":"1","redirect":"648","adminSearch":"simple","cookieDomain":"","recaptcha_public_key":"","recaptcha_private_key":"","recaptcha_theme":"clean","recaptchaOnRegistration":"0","stopForumSpam":"0","stopForumSpamApiKey":"","showItemsCounterAdmin":"1","showChildCatItems":"1","disableCompactOrdering":"0","metaDescLimit":"150","SEFReplacements":"\\u00c5\\u00a0|S, \\u00c5\\u2019|O, \\u00c5\\u00bd|Z, \\u00c5\\u00a1|s, \\u00c5\\u201c|oe, \\u00c5\\u00be|z, \\u00c5\\u00b8|Y, \\u00c2\\u00a5|Y, \\u00c2\\u00b5|u, \\u00c3\\u20ac|A, \\u00c3\\ufffd|A, \\u00c3\\u201a|A, \\u00c3\\u0192|A, \\u00c3\\u201e|A, \\u00c3\\u2026|A, \\u00c3\\u2020|A, \\u00c3\\u2021|C, \\u00c3\\u02c6|E, \\u00c3\\u2030|E, \\u00c3\\u0160|E, \\u00c3\\u2039|E, \\u00c3\\u0152|I, \\u00c3\\ufffd|I, \\u00c3\\u017d|I, \\u00c3\\ufffd|I, \\u00c3\\ufffd|D, \\u00c3\\u2018|N, \\u00c3\\u2019|O, \\u00c3\\u201c|O, \\u00c3\\u201d|O, \\u00c3\\u2022|O, \\u00c3\\u2013|O, \\u00c3\\u02dc|O, \\u00c3\\u2122|U, \\u00c3\\u0161|U, \\u00c3\\u203a|U, \\u00c3\\u0153|U, \\u00c3\\ufffd|Y, \\u00c3\\u0178|s, \\u00c3\\u00a0|a, \\u00c3\\u00a1|a, \\u00c3\\u00a2|a, \\u00c3\\u00a3|a, \\u00c3\\u00a4|a, \\u00c3\\u00a5|a, \\u00c3\\u00a6|a, \\u00c3\\u00a7|c, \\u00c3\\u00a8|e, \\u00c3\\u00a9|e, \\u00c3\\u00aa|e, \\u00c3\\u00ab|e, \\u00c3\\u00ac|i, \\u00c3\\u00ad|i, \\u00c3\\u00ae|i, \\u00c3\\u00af|i, \\u00c3\\u00b0|o, \\u00c3\\u00b1|n, \\u00c3\\u00b2|o, \\u00c3\\u00b3|o, \\u00c3\\u00b4|o, \\u00c3\\u00b5|o, \\u00c3\\u00b6|o, \\u00c3\\u00b8|o, \\u00c3\\u00b9|u, \\u00c3\\u00ba|u, \\u00c3\\u00bb|u, \\u00c3\\u00bc|u, \\u00c3\\u00bd|y, \\u00c3\\u00bf|y, \\u00c3\\u0178|ss","sh404SefLabelCat":"","sh404SefLabelUser":"blog","sh404SefLabelItem":"2","sh404SefTitleAlias":"alias","sh404SefModK2ContentFeedAlias":"feed","sh404SefInsertItemId":"0","sh404SefInsertUniqueItemId":"0","cbIntegration":"0"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10165, 'ptslideshow', 'component', 'com_ptslideshow', '', 1, 1, 0, 0, '{"legacy":false,"name":"ptslideshow","type":"component","creationDate":"August 24 2012","author":"ptslideshow","copyright":"Copyright (C) 2012. All rights reserved.","authorEmail":"","authorUrl":"","version":"1.0","description":"","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10166, 'Ptslideshow', 'module', 'mod_ptslideshow', '', 0, 1, 0, 0, '{"legacy":true,"name":"Ptslideshow","type":"module","creationDate":"Unknown","author":"Ptslideshow","copyright":"","authorEmail":"","authorUrl":"","version":"1.0","description":"","group":""}', '{"category_":"1","load_jquery":"1","load_rotator":"1","width":"720","height":"400","button_width":"24","button_height":"24","button_margin":"5","auto_start":"false","delay":"2000","transition":"random","transition_speed":"400","auto_center":"false","cpanel_position":"inside","cpanel_align":"BR","timer_align":"top","display_thumbs":"true","display_dbuttons":"true","display_playbutton":"true","display_numbers":"true","display_timer":"true","mouseover_pause":"false","cpanel_mouseover":"false","text_mouseover":"false","text_effect":"fade","text_sync":"true","tooltip_type":"image","shuffle":"false","block_size":"75","vert_size":"55","horz_size":"50","block_delay":"25","vstripe_delay":"75","hstripe_delay":"180","cache":"1","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(10166, 'Ptslideshow', 'module', 'mod_ptslideshow', '', 0, 1, 0, 0, '{"legacy":true,"name":"Ptslideshow","type":"module","creationDate":"Unknown","author":"Ptslideshow","copyright":"","authorEmail":"","authorUrl":"","version":"1.0","description":"","group":""}', '{"category_":"1","load_jquery":"1","load_rotator":"1","width":"720","height":"400","button_width":"24","button_height":"24","button_margin":"5","auto_start":"false","delay":"2000","transition":"random","transition_speed":"400","auto_center":"false","cpanel_position":"inside","cpanel_align":"BR","timer_align":"top","display_thumbs":"true","display_dbuttons":"true","display_playbutton":"true","display_numbers":"true","display_timer":"true","mouseover_pause":"false","cpanel_mouseover":"false","text_mouseover":"false","text_effect":"fade","text_sync":"true","tooltip_type":"image","shuffle":"false","block_size":"75","vert_size":"55","horz_size":"50","block_delay":"25","vstripe_delay":"75","hstripe_delay":"180","cache":"1","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10167, 'SP Tab', 'module', 'mod_sptab', '', 0, 1, 0, 0, '{"legacy":false,"name":"SP Tab","type":"module","creationDate":"May 2011","author":"JoomShaper.com","copyright":"Copyright (C) 2010 - 2012 JoomShaper.com. All rights reserved.","authorEmail":"support@joomshaper.com","authorUrl":"www.joomshaper.com","version":"1.8.0","description":"SP Tab - Next generation tab module for joomla","group":""}', '{"mods":"0","ordering":"ordering","ordering_direction":"ASC","nav_height":"30","nav_pos":"top","body_padding":"10px 10px 10px 10px","body_height":"1","fixed_height":"300","style":"custom","color":"sptab_red","header_bg":"#333333","nav_bg":"#333333","nav_text":"#FFFFFF","nav_hover":"#057ea6","nav_hover_text":"#FFFFFF","nav_active":"#729c00","nav_active_text":"#FFFFFF","nav_border_color":"#666666","nav_border_pos":"right","nav_wborder":"1","nav_margin":"right","nav_margin_val":"0","body_bg":"#FFFFFF","body_text":"#444444","border_color":"#e1e1e1","body_wborder":"1","activator":"click","fx_speed":"400","animation":"scroll:fade","transition":"linear","moduleclass_sfx":"","cache":"1","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10168, 'getmodtab', 'module', 'mod_getmodtab', '', 0, 1, 0, 0, '{"legacy":true,"name":"getmodtab","type":"module","creationDate":"Unknown","author":"phong.dinh","copyright":"","authorEmail":"","authorUrl":"","version":"1.0","description":"","group":""}', '{"mods":"0","ordering":"ordering","ordering_direction":"ASC","nav_pos":"top","moduleclass_sfx":"","cache":"1","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -10109,7 +10115,7 @@ INSERT INTO `jos_jreviews_config` (`id`, `value`) VALUES
 ('viewTheme', ''),
 ('app', 'jreviews'),
 ('file_prefix', ''),
-('last_cache_clean', '1348073013'),
+('last_cache_clean', '1350698821'),
 ('display_list_limit', '1'),
 ('url_param_joomla', '1'),
 ('cache_session', '0'),
@@ -11422,7 +11428,7 @@ CREATE TABLE IF NOT EXISTS `jos_k2_users` (
   PRIMARY KEY (`id`),
   KEY `userID` (`userID`),
   KEY `group` (`group`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=85 ;
 
 --
 -- Dumping data for table `jos_k2_users`
@@ -11490,7 +11496,29 @@ INSERT INTO `jos_k2_users` (`id`, `userID`, `userName`, `gender`, `description`,
 (59, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
 (60, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
 (61, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
-(62, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', '');
+(62, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(63, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(64, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(65, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(66, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(67, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(68, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(69, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(70, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(71, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(72, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(73, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(74, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(75, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(76, 0, NULL, 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'www.internetdownloadmanager.com', ''),
+(77, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(78, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(79, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(80, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(81, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(82, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(83, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', ''),
+(84, 0, NULL, 'm', '', NULL, NULL, 1, '', '::1', 'Truc-PC', '');
 
 -- --------------------------------------------------------
 
@@ -11788,9 +11816,9 @@ INSERT INTO `jos_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `lin
 (764, 'main', 'COM_PTSLIDESHOW_SLIDESHOWS', 'com-ptslideshow-slideshows', '', 'com-ptslideshow/com-ptslideshow-slideshows', 'index.php?option=com_ptslideshow&view=slideshows', 'component', 0, 763, 2, 10165, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_ptslideshow/images/icon_slideshow.png', 0, '', 322, 323, 0, '', 1),
 (765, 'main', 'COM_PTSLIDESHOW_CATEGORIES', 'com-ptslideshow-categories', '', 'com-ptslideshow/com-ptslideshow-categories', 'index.php?option=com_categories&view=categories&extension=com_ptslideshow', 'component', 0, 763, 2, 10165, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:category', 0, '', 324, 325, 0, '', 1),
 (766, 'probid-hidden', 'Home', 'homepage', 'Homepage Aftef Sign in', 'homepage', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"featured_categories":[""],"layout_type":"blog","num_leading_articles":"0","num_intro_articles":"0","num_columns":"0","num_links":"0","multi_column_order":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"210"}', 327, 328, 0, '*', 0),
-(768, 'pro-main-menu', 'Mega Menu', 'mega', '', 'mega', '#', 'url', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"244"}', 341, 348, 0, '*', 0),
-(803, 'pro-main-menu', 'Mega Menu Item 2', '2012-09-17-15-55-00', '', 'mega/2012-09-17-15-55-00', '#', 'url', 1, 768, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"mod","mega_subcontent_mod_modules":"244"}', 344, 345, 0, '*', 0),
-(804, 'pro-main-menu', 'Mega Menu Item 3', '2012-09-17-15-55-37', '', 'mega/2012-09-17-15-55-37', '#', 'url', 1, 768, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"mod","mega_subcontent_mod_modules":"244"}', 346, 347, 0, '*', 0),
+(768, 'pro-main-menu', 'Mega Menu', 'mega', '', 'mega', '#', 'url', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"mega_menu_probid","mega_subcontent":"mod","mega_subcontent_mod_modules":"248"}', 341, 348, 0, '*', 0),
+(803, 'pro-main-menu', 'Mega Menu Item 2', '2012-09-17-15-55-00', '', 'mega/2012-09-17-15-55-00', '#', 'url', 0, 768, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"mod","mega_subcontent_mod_modules":"244"}', 344, 345, 0, '*', 0),
+(804, 'pro-main-menu', 'Mega Menu Item 3', '2012-09-17-15-55-37', '', 'mega/2012-09-17-15-55-37', '#', 'url', 0, 768, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"mod","mega_subcontent_mod_modules":"244"}', 346, 347, 0, '*', 0),
 (769, 'pro-main-menu', 'How it works', 'how-it-works', '', 'how-it-works', 'index.php?option=com_content&view=article&id=118', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"0","show_intro":"","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"210"}', 349, 350, 0, '*', 0),
 (770, 'pro-main-menu', 'Why ProBid', 'why-probid', '', 'why-probid', 'index.php?option=com_content&view=article&id=119', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"0","show_intro":"","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"210"}', 351, 352, 0, '*', 0),
 (771, 'pro-main-menu', 'Registration', 'registration', '', 'registration', 'index.php?option=com_users&view=registration', 'component', 1, 1, 1, 25, 0, 0, '0000-00-00 00:00:00', 0, 7, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"210"}', 355, 356, 0, '*', 0),
@@ -11823,7 +11851,7 @@ INSERT INTO `jos_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `lin
 (798, 'sp-main-menu', 'My Membership', 'my-membership-sp', '', 'my-membership-sp', 'index.php?Itemid=', 'alias', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 0, 8, '', 0, '{"aliasoptions":"697","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"210"}', 435, 436, 0, '*', 0),
 (799, 'pro-main-menu', 'My Office', 'my-office-home', '', 'my-office-home', 'index.php?Itemid=', 'alias', 0, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 0, 8, '', 0, '{"aliasoptions":"592","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"210"}', 447, 448, 0, '*', 0),
 (801, 'probid-hidden', 'Memberships', 'memberships', '', 'memberships', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"featured_categories":[""],"layout_type":"blog","num_leading_articles":"0","num_intro_articles":"0","num_columns":"0","num_links":"0","multi_column_order":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"0","mega_subcontent_mod_modules":"214"}', 451, 452, 0, '*', 0),
-(802, 'pro-main-menu', 'Mega Menu Item 1', '2012-09-17-15-53-33', '', 'mega/2012-09-17-15-53-33', '#', 'url', 1, 768, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"mod","mega_subcontent_mod_modules":"244"}', 342, 343, 0, '*', 0);
+(802, 'pro-main-menu', 'Mega Menu Item 1', '2012-09-17-15-53-33', '', 'mega/2012-09-17-15-53-33', '#', 'url', 0, 768, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"mega_showtitle":"1","mega_desc":"","mega_cols":"1","mega_group":"0","mega_width":"","mega_colw":"","mega_colxw":"","mega_class":"","mega_subcontent":"mod","mega_subcontent_mod_modules":"244"}', 342, 343, 0, '*', 0);
 
 -- --------------------------------------------------------
 
@@ -11928,7 +11956,7 @@ CREATE TABLE IF NOT EXISTS `jos_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=245 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=250 ;
 
 --
 -- Dumping data for table `jos_modules`
@@ -12015,7 +12043,7 @@ INSERT INTO `jos_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 (142, 'TAGS CHECKBOX LIST JOOMLA API', '', '', 3, 'sp-list', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_flexi_customcode', 1, 0, '{"code_area":"<?php\\r\\n$db = JFactory::getDbo();\\r\\n$query = ''SELECT optionid, fieldid, text FROM `#__jreviews_fieldoptions` WHERE `fieldid` = 34 ORDER BY `text`'';\\r\\n$db->setQuery($query);\\r\\n$rows = $db->loadAssocList();\\r\\n\\r\\n$htmlOutput = \\"<div id=''sp-checkbox-list''>\\";\\r\\nforeach ($rows as $row) {\\r\\n $htmlOutput .= ''<div class=\\"five-row\\" data-query=\\"'' . strtoupper(substr($row[''text''], 0, 1)) . ''\\">'';\\r\\n $htmlOutput .= ''<input type=\\"checkbox\\" class=\\"tags_checkboxes\\" id=\\"tag_'' . $row[''optionid''] . ''\\" value=\\"'' . $row[''optionid''] . ''\\">'';\\r\\n $htmlOutput .= ''<label for=\\"tag_'' . $row[''optionid''] . ''\\">'' . $row[''text''] . ''<\\/label>'';\\r\\n $htmlOutput .= ''<\\/div>'';\\r\\n}\\r\\n$htmlOutput .= \\"<\\/div>\\";\\r\\necho $htmlOutput\\r\\n?>","use_php":"1","userlevel":"1","clean_js":"1","clean_css":"1","clean_all":"1","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
 (143, 'SERVICE PROVIDER LIST JS JQUERY DATA', '', '', 1, 'sp-list', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_flexi_customcode', 1, 1, '{"code_area":"<script type=\\"text\\/javascript\\">\\r\\nfunction filterCheckboxes(letter) {\\r\\n  var selector = \\"div[data-query=''\\" + letter +\\"'']\\";\\r\\njQuery(selector).removeClass(''closed'');\\r\\n}\\r\\njQuery(document).ready(function() {  \\r\\njQuery(''.checkbox-choose'').click(function() {\\r\\n  jQuery(''.five-row'').addClass(''closed'');\\r\\nfilterCheckboxes(this.text);\\r\\n});\\r\\njQuery(''a#all-checkboxes'').click(function () {\\r\\n  jQuery(''.five-row'').removeClass(''closed'');\\r\\n});\\r\\n});\\r\\n<\\/script>\\r\\n","use_php":"1","userlevel":"1","clean_js":"1","clean_css":"1","clean_all":"1","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
 (156, 'HOME - Top Memberships', '', '<p><a href="free-memberships"><img src="images/home/memberships_featured_7.jpg" border="0" alt="" /></a></p>', 1, 'maintop-a', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
-(147, 'Rok Gallery', '', '', 1, 'content-top-a', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_rokgallery', 1, 1, '{"gallery_id":"1","link":"slice_link","default_menuitem":"562","title":"1","caption":"1","sort_by":"gallery_ordering","sort_direction":"ASC","limit_count":"10","style":"light","layout":"grid","columns":"3","arrows":"yes","navigation":"none","animation_type":"random","animation_duration":"500","autoplay_enabled":"0","autoplay_delay":"7","showcase_arrows":"yes","showcase_image_position":"right","showcase_imgpadding":"5","showcase_fixedheight":"0","showcase_animatedheight":"1","showcase_animation_type":"blindsMirrorOut","showcase_captionsanimation":"topdown","showcase_animation_duration":"500","showcase_autoplay_enabled":"1","showcase_autoplay_delay":"7","cache":"0","module_cache":"1","cache_time":"900","moduleclass_sfx":""}', 0, '*'),
+(147, 'Rok Gallery 1', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_rokgallery', 1, 1, '{"gallery_id":"1","link":"slice_link","default_menuitem":"648","title":"1","caption":"1","sort_by":"gallery_ordering","sort_direction":"ASC","limit_count":"10","style":"light","layout":"grid","columns":"3","arrows":"yes","navigation":"none","animation_type":"random","animation_duration":"500","autoplay_enabled":"0","autoplay_delay":"7","showcase_arrows":"yes","showcase_image_position":"right","showcase_imgpadding":"5","showcase_fixedheight":"0","showcase_animatedheight":"1","showcase_animation_type":"blindsMirrorOut","showcase_captionsanimation":"topdown","showcase_animation_duration":"500","showcase_autoplay_enabled":"1","showcase_autoplay_delay":"7","cache":"0","module_cache":"1","cache_time":"900","moduleclass_sfx":""}', 0, '*'),
 (153, 'Recent Projects', '', '', 1, 'content-bottom-b', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_roknewspager', 1, 1, '{"load_css":"1","theme":"light","content_type":"joomla","catid":["128","129","130","131"],"show_front":"1","article_count":"3","show_accordion":"0","show_paging":"1","maxpages":"8","show_title":"1","show_thumbnails":"0","thumb_width":"90","thumbnail_link":"0","show_overlay":"0","overlay":"-1","show_ratings":"0","show_readmore":"0","readmore_text":"Read More...","itemsOrdering":"rdate","show_preview_text":"1","strip_tags":"a,br","preview_count":"200","show_comment_count":"0","show_author":"0","show_published_date":"0","autoupdate":"1","autoupdate_delay":"2700","moduleclass_sfx":"","cache":"0","module_ident":"id","cache_time":"900"}', 0, '*'),
 (167, 'Auto-Login', '', '', 1, 'footer-a', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_flexi_customcode', 1, 1, '{"code_area":"<?php\\r\\nif (isset($_GET[''userID''])) {\\r\\n\\t$userID = $_GET[''userID''];\\r\\n}else {\\r\\n\\t$userID = 0;\\r\\n}\\r\\n\\r\\nif ($userID != 0) {\\r\\n\\t\\r\\njimport(''joomla.user.helper'');\\r\\n$spoofPassword = JUserHelper::genRandomPassword(9);\\r\\n$salt = JUserHelper::genRandomPassword(32);\\r\\n$crypted\\t= JUserHelper::getCryptedPassword($spoofPassword, $salt);\\r\\n$tempPassword\\t= $crypted.'':''.$salt;\\r\\n\\r\\nglobal $mainframe;\\r\\n$db = JFactory::getDBO();\\r\\n\\r\\n\\/\\/Fetching User Details according to User ID start\\r\\n\\r\\n$query = \\"select * from #__users where ID=\\" .$userID;\\r\\n$db->setQuery( $query );\\r\\n$UserDetailsInArray = $db->loadObjectList();\\r\\n\\r\\n\\/\\/Fetching User Details according to User ID end\\r\\n\\r\\nif(isset($UserDetailsInArray[0]))\\r\\n{\\r\\n$truePassword = $UserDetailsInArray[0]->password;   \\/\\/ Storing user actual password\\r\\n\\r\\n$sql = \\"UPDATE #__users\\"\\r\\n   . \\"\\\\n SET password = \\" . $db->Quote( $tempPassword )\\r\\n   . \\"\\\\n WHERE id = \\" . (int) $userID;\\r\\n   $db->setQuery( $sql );\\r\\n   if (!$db->query()) {\\r\\n      die(\\"SQL error\\" . $database->stderr(true));\\r\\n   }\\r\\n\\r\\n$app = JFactory::getApplication();\\r\\n\\r\\n\\t\\t\\/\\/ Populate the data array:\\r\\n\\t\\t$data = array();\\r\\n\\t\\t$data[''return''] = base64_decode(JRequest::getVar(''return'', '''', ''POST'', ''BASE64''));\\r\\n\\t\\t$data[''username''] = $UserDetailsInArray[0]->username;\\r\\n\\t\\t$data[''password''] = $spoofPassword;\\r\\n\\r\\n\\t\\t\\/\\/ Set the return URL if empty.\\r\\n\\t\\tif (empty($data[''return''])) {\\r\\n\\t\\t\\t$data[''return''] = ''index.php?option=com_users&view=profile'';\\r\\n\\t\\t}\\r\\n\\r\\n\\t\\t\\/\\/ Get the log in options.\\r\\n\\t\\t$options = array();\\r\\n\\t\\t$options[''remember''] = JRequest::getBool(''remember'', false);\\r\\n\\t\\t$options[''return''] = $data[''return''];\\r\\n\\r\\n\\t\\t\\/\\/ Get the log in credentials.\\r\\n\\t\\t$credentials = array();\\r\\n\\t\\t$credentials[''username''] = $data[''username''];\\r\\n\\t\\t$credentials[''password''] = $data[''password''];\\r\\n\\r\\n\\t\\t\\/\\/ Perform the log in.\\r\\n\\t\\t$error = $app->login($credentials, $options);\\r\\n\\t\\t\\r\\n\\t\\t\\/\\/Reset the original password\\r\\n\\t\\t$sql = \\"UPDATE #__users\\"\\r\\n   \\t\\t. \\"\\\\n SET password = \\" . $db->Quote( $truePassword )\\r\\n   \\t\\t. \\"\\\\n WHERE id = \\" . (int) $userID;\\r\\n   \\t\\t$db->setQuery( $sql );\\r\\n   \\t\\tif (!$db->query()) {\\r\\n      \\tdie(\\"SQL error\\" . $database->stderr(true));\\r\\n   }\\r\\n\\r\\n\\t\\t\\/\\/$app->redirect(JRoute::_(''index.php?option=com_users&view=login'', false));\\r\\n\\t\\t$app->redirect(JRoute::_(''index.php'', false));\\r\\n}\\r\\n\\r\\n}else\\r\\necho \\"No URL.userID\\";\\r\\n?>","use_php":"1","userlevel":"1","clean_js":"1","clean_css":"1","clean_all":"1","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
 (168, 'Auto-Login TEST', '', '', 1, 'footer-a', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_flexi_customcode', 1, 1, '{"code_area":"<?php\\r\\njimport(''joomla.user.helper'');\\r\\n\\r\\n$spoofPassword = JUserHelper::genRandomPassword(9);\\r\\n\\r\\n$salt\\t= JUserHelper::genRandomPassword(32);\\r\\n\\r\\n$crypted = JUserHelper::getCryptedPassword($spoofPassword, $salt);\\r\\n\\r\\n$tempPassword = $crypted.'':''.$salt;\\r\\n\\r\\necho \\"Salt:\\" .$salt;\\r\\necho \\" Spoof:\\" .$spoofPassword;\\r\\n\\r\\n?>","use_php":"1","userlevel":"1","clean_js":"1","clean_css":"1","clean_all":"1","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
@@ -12057,7 +12085,7 @@ INSERT INTO `jos_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 (224, 'Service Professional', '', '<p>Sign-up for free to place a project and recieve bids</p>\r\n<p><img src="link hinh" border="0" alt="" /></p>\r\n<p>Need help with your new project? Sign-up for free to place a project and recieve bids <a href="#">Sign-up</a></p>', 1, 'mainbottom2', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
 (225, 'Vendor', '', '<p>Sign-up for free to place a project and recieve bids</p>\r\n<p><img src="link hinh" border="0" alt="" /></p>\r\n<div class="caption">Need help with your new project? Sign-up for free to place a project and recieve bids <a href="#">Sign-up</a></div>', 1, 'mainbottom3', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
 (226, 'Latest From the ProBid Blog', '', '', 1, 'bottom', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_k2_content', 1, 1, '{"moduleclass_sfx":"","getTemplate":"Latest From Blog","source":"filter","catfilter":"1","category_id":["2"],"getChildren":"0","itemCount":"10","itemsOrdering":"","FeaturedItems":"1","popularityRange":"","videosOnly":"0","item":"0","itemTitle":"1","itemAuthor":"0","itemAuthorAvatar":"0","itemAuthorAvatarWidthSelect":"custom","itemAuthorAvatarWidth":"50","userDescription":"0","itemIntroText":"1","itemIntroTextWordLimit":"20","itemImage":"1","itemImgSize":"Small","itemVideo":"0","itemVideoCaption":"0","itemVideoCredits":"0","itemAttachments":"0","itemTags":"0","itemCategory":"0","itemDateCreated":"0","itemHits":"0","itemReadMore":"0","itemExtraFields":"0","itemCommentsCounter":"0","feed":"0","itemPreText":"","itemCustomLink":"0","itemCustomLinkTitle":"","itemCustomLinkURL":"http:\\/\\/","itemCustomLinkMenuItem":"","K2Plugins":"1","JPlugins":"1","cache":"1","cache_time":"900"}', 0, '*'),
-(227, 'Ptslideshow', '', '', 1, 'feature', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_ptslideshow', 1, 0, '{"category_":"137","load_jquery":"0","load_rotator":"1","load_rotator_css":"1","width":"500","height":"333","button_width":"24","button_height":"24","button_margin":"5","auto_start":"true","delay":"7000","transition":"random","transition_speed":"400","auto_center":"false","cpanel_position":"inside","cpanel_align":"BR","timer_align":"top","display_thumbs":"true","display_dbuttons":"true","display_playbutton":"true","display_numbers":"true","display_timer":"true","mouseover_pause":"false","cpanel_mouseover":"false","text_mouseover":"false","text_effect":"fade","text_sync":"true","tooltip_type":"image","shuffle":"false","block_size":"75","vert_size":"55","horz_size":"50","block_delay":"25","vstripe_delay":"75","hstripe_delay":"180","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
+(227, 'Slideshow Pre Login', '', '', 1, 'feature', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_ptslideshow', 7, 0, '{"category_":"138","load_jquery":"0","load_rotator":"1","load_rotator_css":"1","width":"500","height":"333","button_width":"24","button_height":"24","button_margin":"5","auto_start":"false","delay":"7000","transition":"fade","transition_speed":"400","auto_center":"false","cpanel_position":"inside","cpanel_align":"BR","timer_align":"top","display_thumbs":"true","display_dbuttons":"true","display_playbutton":"true","display_numbers":"true","display_timer":"true","mouseover_pause":"false","cpanel_mouseover":"false","text_mouseover":"false","text_effect":"fade","text_sync":"true","tooltip_type":"image","shuffle":"false","block_size":"75","vert_size":"55","horz_size":"50","block_delay":"25","vstripe_delay":"75","hstripe_delay":"180","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
 (228, 'ProBid Blog Categories', '', '', 1, 'right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_k2_tools', 1, 1, '{"moduleclass_sfx":"","module_usage":"4","archiveItemsCounter":"1","archiveCategory":"0","authors_module_category":"0","authorItemsCounter":"1","authorAvatar":"1","authorAvatarWidthSelect":"custom","authorAvatarWidth":"50","authorLatestItem":"1","calendarCategory":"0","home":"","seperator":"","root_id":"2","end_level":"","categoriesListOrdering":"","categoriesListItemsCounter":"0","root_id2":"0","catfilter":"0","getChildren":"0","liveSearch":"","width":"20","text":"","button":"","imagebutton":"","button_text":"","min_size":"75","max_size":"300","cloud_limit":"30","cloud_category":["0"],"cloud_category_recursive":"0","customCode":"","parsePhp":"0","K2Plugins":"0","JPlugins":"0","cache":"1","cache_time":"900"}', 0, '*'),
 (229, 'Tag Cloud', '', '', 2, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_k2_tools', 1, 1, '{"moduleclass_sfx":"","module_usage":"7","archiveItemsCounter":"1","archiveCategory":"0","authors_module_category":"0","authorItemsCounter":"1","authorAvatar":"1","authorAvatarWidthSelect":"custom","authorAvatarWidth":"50","authorLatestItem":"1","calendarCategory":"0","home":"","seperator":"","root_id":"0","end_level":"","categoriesListOrdering":"","categoriesListItemsCounter":"1","root_id2":"0","catfilter":"0","getChildren":"0","liveSearch":"","width":"20","text":"","button":"","imagebutton":"","button_text":"","min_size":"100","max_size":"300","cloud_limit":"30","cloud_category":["1"],"cloud_category_recursive":"1","customCode":"","parsePhp":"0","K2Plugins":"0","JPlugins":"0","cache":"1","cache_time":"900"}', 0, '*');
 INSERT INTO `jos_modules` (`id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
@@ -12073,8 +12101,13 @@ INSERT INTO `jos_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 (240, 'Register - ESP', '', '<div style="display: block; position: absolute; right: 6px; top: 91px; z-index: 1000;"> <a href="advanced-search-esp"><img src="images/home/esp_61.png" border="0" alt="" style="float: left;" /></a></div>', 1, 'search', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"CreateFreeAccount","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
 (241, 'Advanced Search ESP', '', '', 1, 'content-mass-top', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_jreviews_advsearch', 2, 0, '{"tmpl_suffix":"_esp","cat_auto":"0","dir_id":"6","criteria_id":"","cat_id":"79","moduleclass_sfx":"","cache":"0","cache_time":"900","cachemode":"static"}', 0, '*'),
 (242, 'Advanced Search: Emergency Service Providers', 'AJAX FORM USED FOR SEARCHING ESPs', '', 1, 'content-mass-top', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_rsform', 1, 1, '{"formId":"8","moduleclass_sfx":""}', 0, '*'),
-(243, 'Project Owner', '', '', 1, 'right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"po-main-menu","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
-(244, 'Custom HTML', '', '<h2>Appliances</h2>\r\n<ul class="bucket-list">\r\n<li><a name="MASTHEAD_Appliances_Buckets_WashersDryers" href="../Appliances/Washers-Dryers/_/N-1z11pml/pc">  <img src="images/mega/appliances1.png" border="0" alt="" /><span class="bucket-title">Washers &amp; Dryers</span> </a></li>\r\n<li><a name="MASTHEAD_Appliances_Buckets_Refrigerators" href="../Appliances/Refrigerators/_/N-1z11pmd/pc">  <img src="images/mega/appliances2.png" border="0" alt="" /><span class="bucket-title">Refrigerators</span> </a></li>\r\n<li><a name="MASTHEAD_Appliances_Buckets_Cooking" href="../Kitchen/Cooking-Appliances/_/N-1z0z35b/pl">  <img src="images/mega/appliances3.png" border="0" alt="" /><span class="bucket-title">Cooking</span> </a></li>\r\n<li><a name="MASTHEAD_Appliances_Buckets_Dishwashers" href="../Appliances/Dishwashers/_/N-1z11pl1/pc">  <img src="images/mega/appliances4.png" border="0" alt="" /><span class="bucket-title">Dishwashers</span> </a></li>\r\n<li class="last"><a name="MASTHEAD_Appliances_Buckets_SmallAppliances" href="../Appliances/Small-Appliances/_/N-1z11pm2/pl">  <img src="images/mega/appliances5.png" border="0" alt="" /><span class="bucket-title">Small Appliances</span> </a></li>\r\n</ul>', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*');
+(243, 'Project Owner', '', '', 1, 'right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_menu', 1, 1, '{"menutype":"po-main-menu","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
+(244, 'Custom HTML', '', '<h2>Appliances</h2>\r\n<ul class="bucket-list">\r\n<li><a name="MASTHEAD_Appliances_Buckets_WashersDryers" href="../Appliances/Washers-Dryers/_/N-1z11pml/pc">  <img src="images/mega/appliances1.png" border="0" alt="" /><span class="bucket-title">Washers &amp; Dryers</span> </a></li>\r\n<li><a name="MASTHEAD_Appliances_Buckets_Refrigerators" href="../Appliances/Refrigerators/_/N-1z11pmd/pc">  <img src="images/mega/appliances2.png" border="0" alt="" /><span class="bucket-title">Refrigerators</span> </a></li>\r\n<li><a name="MASTHEAD_Appliances_Buckets_Cooking" href="../Kitchen/Cooking-Appliances/_/N-1z0z35b/pl">  <img src="images/mega/appliances3.png" border="0" alt="" /><span class="bucket-title">Cooking</span> </a></li>\r\n<li><a name="MASTHEAD_Appliances_Buckets_Dishwashers" href="../Appliances/Dishwashers/_/N-1z11pl1/pc">  <img src="images/mega/appliances4.png" border="0" alt="" /><span class="bucket-title">Dishwashers</span> </a></li>\r\n<li class="last"><a name="MASTHEAD_Appliances_Buckets_SmallAppliances" href="../Appliances/Small-Appliances/_/N-1z11pm2/pl">  <img src="images/mega/appliances5.png" border="0" alt="" /><span class="bucket-title">Small Appliances</span> </a></li>\r\n</ul>', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
+(245, 'SP Tab', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_sptab', 1, 0, '{"mods":["246","244","247","147"],"ordering":"ordering","ordering_direction":"DESC","nav_height":"30","nav_pos":"top","body_padding":"10px 10px 10px 10px","body_height":"0","fixed_height":"300","style":"raw","color":"sptab_red","header_bg":"#333333","nav_bg":"#333333","nav_text":"#FFFFFF","nav_hover":"#057ea6","nav_hover_text":"#FFFFFF","nav_active":"#729c00","nav_active_text":"#FFFFFF","nav_border_color":"#666666","nav_border_pos":"right","nav_wborder":"1","nav_margin":"right","nav_margin_val":"0","body_bg":"#FFFFFF","body_text":"#444444","border_color":"#e1e1e1","body_wborder":"1","activator":"hover","fx_speed":"400","animation":"fade","transition":"linear","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
+(246, 'Rok Gallery 2', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_rokgallery', 1, 1, '{"gallery_id":"1","link":"slice_link","default_menuitem":"648","title":"1","caption":"1","sort_by":"gallery_ordering","sort_direction":"ASC","limit_count":"10","style":"light","layout":"grid","columns":"3","arrows":"yes","navigation":"none","animation_type":"random","animation_duration":"500","autoplay_enabled":"0","autoplay_delay":"7","showcase_arrows":"yes","showcase_image_position":"right","showcase_imgpadding":"5","showcase_fixedheight":"0","showcase_animatedheight":"1","showcase_animation_type":"blindsMirrorOut","showcase_captionsanimation":"topdown","showcase_animation_duration":"500","showcase_autoplay_enabled":"1","showcase_autoplay_delay":"7","cache":"0","module_cache":"1","cache_time":"900","moduleclass_sfx":""}', 0, '*'),
+(247, 'Rok Gallery 3', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_rokgallery', 1, 1, '{"gallery_id":"1","link":"slice_link","default_menuitem":"648","title":"1","caption":"1","sort_by":"gallery_ordering","sort_direction":"ASC","limit_count":"10","style":"light","layout":"grid","columns":"3","arrows":"yes","navigation":"none","animation_type":"random","animation_duration":"500","autoplay_enabled":"0","autoplay_delay":"7","showcase_arrows":"yes","showcase_image_position":"right","showcase_imgpadding":"5","showcase_fixedheight":"0","showcase_animatedheight":"1","showcase_animation_type":"blindsMirrorOut","showcase_captionsanimation":"topdown","showcase_animation_duration":"500","showcase_autoplay_enabled":"1","showcase_autoplay_delay":"7","cache":"0","module_cache":"1","cache_time":"900","moduleclass_sfx":""}', 0, '*'),
+(248, 'getmodtab', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_getmodtab', 1, 0, '{"mods":["244","246","247","147"],"ordering":"ordering","ordering_direction":"ASC","nav_pos":"top","activator":"hover","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
+(249, 'Slideshow Post Login', '', '', 1, 'feature', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_ptslideshow', 2, 0, '{"category_":"139","load_jquery":"0","load_rotator":"1","load_rotator_css":"1","width":"500","height":"333","button_width":"24","button_height":"24","button_margin":"5","auto_start":"false","delay":"7000","transition":"fade","transition_speed":"400","auto_center":"false","cpanel_position":"inside","cpanel_align":"BR","timer_align":"top","display_thumbs":"true","display_dbuttons":"true","display_playbutton":"true","display_numbers":"true","display_timer":"true","mouseover_pause":"false","cpanel_mouseover":"false","text_mouseover":"false","text_effect":"fade","text_sync":"true","tooltip_type":"image","shuffle":"false","block_size":"75","vert_size":"55","horz_size":"50","block_delay":"25","vstripe_delay":"75","hstripe_delay":"180","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -12221,7 +12254,7 @@ INSERT INTO `jos_modules_menu` (`moduleid`, `menuid`) VALUES
 (143, 0),
 (144, -599),
 (144, -592),
-(147, 565),
+(147, 0),
 (153, 565),
 (154, 0),
 (155, 541),
@@ -12313,7 +12346,18 @@ INSERT INTO `jos_modules_menu` (`moduleid`, `menuid`) VALUES
 (240, 0),
 (242, 717),
 (243, 0),
-(244, 0);
+(244, 0),
+(245, 0),
+(246, 0),
+(247, 0),
+(248, 0),
+(249, 541),
+(249, 565),
+(249, 598),
+(249, 713),
+(249, 761),
+(249, 766),
+(249, 801);
 
 -- --------------------------------------------------------
 
@@ -12809,7 +12853,7 @@ CREATE TABLE IF NOT EXISTS `jos_ptslideshow` (
   `checked_out` int(11) NOT NULL,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `jos_ptslideshow`
@@ -12817,7 +12861,15 @@ CREATE TABLE IF NOT EXISTS `jos_ptslideshow` (
 
 INSERT INTO `jos_ptslideshow` (`id`, `title_`, `description_`, `category_`, `url_`, `link`, `ordering`, `state`, `checked_out`, `checked_out_time`) VALUES
 (1, 'slideshow 1', '<div class="pt_content">\r\n<div class="pt_header">ProBid Deal Days!</div>\r\n<div class="pt_main">Probid has partenered with Auburn<br />Hardwoods to bring you this Huge $avings...</div>\r\n<div class="pt_link"><a href="#">Learn More About This ProBid Deal</a></div>\r\n</div>', 137, 'images/slideshows/slide1.png', '#', 1, 1, 0, '0000-00-00 00:00:00'),
-(2, 'slideshow 2', '<div class="pt_content">\r\n<div class="pt_header">Find Professionals for your next construction project.</div>\r\n<div class="pt_main_small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac lectus nec neque vestibulum pulvinar. Suspendisse quis metus eget enim blandit blandit. Nam odio felis, luctus sed scelerisque quis, rutrum aleo.</div>\r\n<div class="pt_link"><a href="#">Create a Free Acount to Get Started</a></div>\r\n</div>', 137, 'images/slideshows/slide2.png', '#', 2, 1, 0, '0000-00-00 00:00:00');
+(2, 'slideshow 2', '<div class="pt_content">\r\n<div class="pt_header">Find Professionals for your next construction project.</div>\r\n<div class="pt_main_small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac lectus nec neque vestibulum pulvinar. Suspendisse quis metus eget enim blandit blandit. Nam odio felis, luctus sed scelerisque quis, rutrum aleo.</div>\r\n<div class="pt_link"><a href="#">Create a Free Acount to Get Started</a></div>\r\n</div>', 137, 'images/slideshows/slide2.png', '#', 2, 1, 0, '0000-00-00 00:00:00'),
+(3, 'Home and Business Owners', '<div class="pt_header">Home and Business Owners</div>\r\n<div class="pt_main">Your home or business is the most important investment you have, make sure you have the most qualified Professionals and Vendors available for all your improvement project needs.</div>\r\n<p class="pt_link"><a href="#">Create a Fee Account to Get Started</a></p>', 138, 'images/slideshows/cat_1/banner_1.jpg', '#', 3, 1, 222, '2012-10-20 01:48:24'),
+(4, 'Contractors and Professionals', '<div class="pt_header">Contractors and Professionals</div>\r\n<div class="pt_main">Being part of PROBIDdirect’s exclusive network you not only have access to hundreds of project leads, you have all the tools necessary to manage projects and YOUR Project Team on-line. You also have the tools available to promote your business listing on-line.</div>\r\n<p class="pt_link"><a href="#">Create a Free Account to Get Started</a></p>', 138, 'images/slideshows/cat_1/banner_3.jpg', '#', 4, 1, 222, '2012-10-19 17:41:05'),
+(5, 'Vendors and Suppliers', '<div class="pt_header">Vendors and Suppliers</div>\r\n<div class="pt_main">You and your products will be the first choice for hundreds of projects in PROBIDdirect. You will have the opportunity to showcase your business page and product offerings on-line and across across the Internet.</div>\r\n<p class="pt_link"><a href="#">Create a Fee Account to Get Started</a></p>', 138, 'images/slideshows/cat_1/banner_4.jpg', '#', 5, 1, 222, '2012-10-19 17:41:15'),
+(6, 'Find Professionals for your next construction project.', '<div class="pt_header">Find Professionals for your next construction project.</div>\r\n<div class="pt_main">connecting home and business owners with qualified construction, service professionals and product vendors.</div>\r\n<p class="pt_link"><a href="#">Create a Fee Account to Get Started</a></p>', 138, 'images/slideshows/cat_1/banner_2.jpg', '#', 6, 1, 0, '0000-00-00 00:00:00'),
+(7, 'Home and Business Owners', '<div class="pt_header">Home and Business Owners</div>\r\n<div class="pt_main">Your home or business is the most important investment you have, make sure you have the most qualified Professionals and Vendors available for all your improvement project needs.</div>\r\n<p class="pt_link"><a href="#">Create a Fee Account to Get Started</a></p>', 139, 'images/slideshows/cat_2/slide1.png', '#', 7, 1, 0, '0000-00-00 00:00:00'),
+(8, 'PROBIDdeal Days!', '<div class="pt_header"><strong>PROBID</strong>deal Days!</div>\r\n<p>Lowe''s gift card give away deal!</p>\r\n<div class="pt_main">No purchase necessary. PROBIDdirect.com will give away, to three (3) lucky winners, Lowe''s gift cards. Home owners, business owners, contractors, service professional, vendors and YOU are eligible to enter this PROBIDdeal Days! Click the link below to enter</div>\r\n<p class="pt_link pt_link_1"><a href="#">Enter This PROBIDdeal Days! Deal</a></p>', 139, 'images/slideshows/cat_2/banner_1.jpg', '#', 8, 1, 222, '2012-10-20 02:06:22'),
+(9, 'PROBIDdeal Days!', '<div class="pt_header"><strong>PROBID</strong>deal Days!</div>\r\n<p>char-Griller Gas and charcoal Grill Deal!</p>\r\n<div class="pt_main">No purchase necessary. PROBIDdirect.com is giving away a Char-Griller DUo S-5050 GAs and Charcoal grill valued at $300.00. This PROIDdeal is open only to home and business owners with premium membership. Click the link below to enter.</div>\r\n<p class="pt_link pt_link_1"><a href="#">Enter This PROBIDdeal Days! Deal</a></p>', 139, 'images/slideshows/cat_2/banner_2.jpg', '#', 9, 1, 0, '0000-00-00 00:00:00'),
+(10, 'PROBIDdeal Days!', '<div class="pt_header"><strong>PROBID</strong>deal Days!</div>\r\n<p>DEWALT CORDLESS TOOL SET DEAL!</p>\r\n<div class="pt_main">PROBIDdirect.com will give away to one lucky winner a complete DEWALT XRP 18v six tool combo kit valued at $550.00. This PROBIDdeal is open to current premium memebers only. Click the link below to enter</div>\r\n<p class="pt_link pt_link_1"><a href="#">Enter This PROBIDdeal Days! Deal</a></p>', 139, 'images/slideshows/cat_2/banner_3.jpg', '#', 10, 1, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -12838,7 +12890,7 @@ CREATE TABLE IF NOT EXISTS `jos_redirect_links` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_link_old` (`old_url`),
   KEY `idx_link_modifed` (`modified_date`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=499 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=505 ;
 
 --
 -- Dumping data for table `jos_redirect_links`
@@ -13318,7 +13370,7 @@ INSERT INTO `jos_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `commen
 (478, 'http://localhost/probid/administrator/plugin', '', 'http://localhost/probid/administrator/index.php', '', 274, 0, '2012-08-19 15:42:13', '0000-00-00 00:00:00'),
 (479, 'http://localhost/probid/link hinh', '', 'http://localhost/probid/administrator/index.php?option=com_modules&view=module&layout=edit', '', 385, 0, '2012-08-22 16:46:59', '0000-00-00 00:00:00'),
 (480, 'http://localhost/probid/all-memberships', '', '', '', 1, 0, '2012-08-23 11:15:16', '0000-00-00 00:00:00'),
-(481, 'http://localhost/themes/probid/administrator/plugin', '', 'http://localhost/themes/probid/administrator/index.php', '', 1235, 0, '2012-08-24 03:57:27', '0000-00-00 00:00:00'),
+(481, 'http://localhost/themes/probid/administrator/plugin', '', 'http://localhost/themes/probid/administrator/index.php', '', 1344, 0, '2012-08-24 03:57:27', '0000-00-00 00:00:00'),
 (482, 'http://localhost/themes/probid/component/k2/item/index.php', '', 'http://localhost/themes/probid/component/k2/item/7-lowes-becomes-offical-sponsor-of-probiddirectcom', '', 2, 0, '2012-08-24 05:21:19', '0000-00-00 00:00:00'),
 (483, 'http://localhost/themes/probid/probid-blog/item/index.php', '', 'http://localhost/themes/probid/probid-blog/item/8-lowes-becomes-offical-sponsor-of-probiddirectcom', '', 8, 0, '2012-08-24 06:08:03', '0000-00-00 00:00:00'),
 (484, 'http://localhost/themes/probid/?Itemid=767', '', 'http://localhost/themes/probid/', '', 1, 0, '2012-08-25 16:56:01', '0000-00-00 00:00:00'),
@@ -13330,12 +13382,18 @@ INSERT INTO `jos_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `commen
 (490, 'http://localhost/themes/probid/cat-service-professionals/index.php', '', 'http://localhost/themes/probid/cat-service-professionals/106-bobs-construction-company', '', 1, 0, '2012-08-30 06:51:19', '0000-00-00 00:00:00'),
 (491, 'http://localhost/themes/probid/topsearch/index.php', '', 'http://localhost/themes/probid/topsearch/advanced-search-products', '', 2, 0, '2012-09-04 04:09:07', '0000-00-00 00:00:00'),
 (492, 'http://localhost/themes/probid/paid-memberships/memberships-po', '', '', '', 1, 0, '2012-09-13 04:45:34', '0000-00-00 00:00:00'),
-(493, 'http://localhost/project_new/administrator/plugin', '', 'http://localhost/project_new/administrator/index.php', '', 59, 0, '2012-09-16 14:31:48', '0000-00-00 00:00:00'),
+(493, 'http://localhost/project_new/administrator/plugin', '', 'http://localhost/project_new/administrator/index.php', '', 91, 0, '2012-09-16 14:31:48', '0000-00-00 00:00:00'),
 (494, 'http://localhost/project_new/cat-projects/index.php', '', 'http://localhost/project_new/cat-projects/128-new-construction', '', 15, 0, '2012-09-17 03:06:12', '0000-00-00 00:00:00'),
 (495, 'http://localhost/project_new/home-registered/index.php', '', 'http://localhost/project_new/home-registered/81-cat-main-content', '', 7, 0, '2012-09-17 03:08:15', '0000-00-00 00:00:00'),
 (496, 'http://localhost/project_new/myoffice/index.php', '', 'http://localhost/project_new/myoffice/106', '', 7, 0, '2012-09-17 05:12:58', '0000-00-00 00:00:00'),
 (497, 'http://localhost/project_new/my-office', '', '', '', 2, 0, '2012-09-17 07:28:18', '0000-00-00 00:00:00'),
-(498, 'http://localhost/project_new/cat-service-professionals/index.php', '', 'http://localhost/project_new/cat-service-professionals/106-bobs-construction-company', '', 6, 0, '2012-09-19 15:38:06', '0000-00-00 00:00:00');
+(498, 'http://localhost/project_new/cat-service-professionals/index.php', '', 'http://localhost/project_new/cat-service-professionals/106-bobs-construction-company', '', 6, 0, '2012-09-19 15:38:06', '0000-00-00 00:00:00'),
+(499, 'http://localhost/themes/probid/Appliances/Dishwashers/_/N-1z11pl1/pc', '', 'http://localhost/themes/probid/administrator/index.php?option=com_modules&view=module&layout=edit&id=244', '', 1, 0, '2012-09-21 06:05:21', '0000-00-00 00:00:00'),
+(500, 'http://localhost/themes/probid/Appliances/Small-Appliances/_/N-1z11pm2/pl', '', 'http://localhost/themes/probid/administrator/index.php?option=com_modules&view=module&layout=edit&id=244', '', 1, 0, '2012-09-21 06:05:22', '0000-00-00 00:00:00'),
+(501, 'http://localhost/themes/probid/Appliances/Refrigerators/_/N-1z11pmd/pc', '', 'http://localhost/themes/probid/administrator/index.php?option=com_modules&view=module&layout=edit&id=244', '', 1, 0, '2012-09-21 06:05:21', '0000-00-00 00:00:00'),
+(502, 'http://localhost/themes/probid/Kitchen/Cooking-Appliances/_/N-1z0z35b/pl', '', 'http://localhost/themes/probid/administrator/index.php?option=com_modules&view=module&layout=edit&id=244', '', 1, 0, '2012-09-21 06:05:23', '0000-00-00 00:00:00'),
+(503, 'http://localhost/themes/probid/Appliances/Washers-Dryers/_/N-1z11pml/pc', '', 'http://localhost/themes/probid/administrator/index.php?option=com_modules&view=module&layout=edit&id=244', '', 1, 0, '2012-09-21 06:05:23', '0000-00-00 00:00:00'),
+(504, 'http://localhost/project_new/tors/', '', '', '', 1, 0, '2012-10-20 02:06:58', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -14896,7 +14954,7 @@ INSERT INTO `jos_rsmembership_configuration` (`name`, `value`) VALUES
 ('registration_page', 'home-registered'),
 ('price_format', '${price}'),
 ('price_show_free', '1'),
-('expire_last_run', '1348077084'),
+('expire_last_run', '1350699163'),
 ('expire_emails', '10'),
 ('expire_check_in', '10'),
 ('choose_username', '1'),
@@ -14911,7 +14969,7 @@ INSERT INTO `jos_rsmembership_configuration` (`name`, `value`) VALUES
 ('idev_enable', '0'),
 ('idev_url', ''),
 ('idev_track_renewals', '0'),
-('last_check', '1348077133'),
+('last_check', '1350699652'),
 ('choose_password', '1'),
 ('one_page_checkout', '0');
 
@@ -15258,7 +15316,7 @@ CREATE TABLE IF NOT EXISTS `jos_rsmembership_extras` (
 --
 
 INSERT INTO `jos_rsmembership_extras` (`id`, `name`, `description`, `type`, `published`, `ordering`) VALUES
-(3, 'No. of Jobs', '', 'dropdown', 1, 1);
+(3, 'No. of Jobs', '<p>1111111111111111</p>', 'dropdown', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -15286,7 +15344,7 @@ CREATE TABLE IF NOT EXISTS `jos_rsmembership_extra_values` (
 --
 
 INSERT INTO `jos_rsmembership_extra_values` (`id`, `extra_id`, `name`, `description`, `sku`, `price`, `share_redirect`, `checked`, `published`, `ordering`) VALUES
-(2, 3, 'Blogs', '', 'po_PREM_Monthly', '0.00', '', 0, 1, 1);
+(2, 3, 'Blogs', '<p>11111111111111111</p>', 'po_PREM_Monthly', '99999999.99', '', 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -15329,7 +15387,7 @@ CREATE TABLE IF NOT EXISTS `jos_rsmembership_fields` (
   `published` tinyint(1) NOT NULL,
   `ordering` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `jos_rsmembership_fields`
@@ -15339,7 +15397,8 @@ INSERT INTO `jos_rsmembership_fields` (`id`, `name`, `label`, `type`, `values`, 
 (1, 'address', 'address', 'textbox', '', '', '', '', 1, 0, 1),
 (2, 'city', 'City', 'textbox', '', '', '', '', 1, 0, 2),
 (3, 'state', 'State', 'textbox', '', '', '', '', 1, 0, 3),
-(5, 'country', 'Country', 'select', '//<code>\r\n$db = JFactory::getDBO();\r\n$db->setQuery("SELECT name FROM #__rsmembership_countries");\r\nreturn implode("\\n", $db->loadResultArray());\r\n//</code>', '', '', '', 0, 0, 5);
+(5, 'country', 'Country', 'select', '//<code>\r\n$db = JFactory::getDBO();\r\n$db->setQuery("SELECT name FROM #__rsmembership_countries");\r\nreturn implode("\\n", $db->loadResultArray());\r\n//</code>', '', '', '', 0, 0, 5),
+(7, 'number-of-jobs', 'No. of Jobs listings you can apply to', 'textbox', '', '', '', '', 0, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -15518,6 +15577,9 @@ CREATE TABLE IF NOT EXISTS `jos_rsmembership_membership_extras` (
 -- Dumping data for table `jos_rsmembership_membership_extras`
 --
 
+INSERT INTO `jos_rsmembership_membership_extras` (`membership_id`, `extra_id`) VALUES
+(3, 3),
+(7, 3);
 
 -- --------------------------------------------------------
 
@@ -15621,15 +15683,15 @@ INSERT INTO `jos_rsmembership_membership_users` (`id`, `user_id`, `membership_id
 (22, 83, 1, 1318866257, 0, '0.00', 'USD', 0, '', '', 23, 23, '', '', '', 0, 1),
 (23, 84, 1, 1318866876, 0, '0.00', 'USD', 0, '', '', 24, 24, '', '', '', 0, 1),
 (24, 85, 1, 1318872039, 0, '0.00', 'USD', 0, '', '', 26, 26, '', '', '', 0, 1),
-(25, 86, 2, 1318872278, 1350494678, '19.00', 'USD', 0, '', '', 0, 0, '', '', '', 0, 1),
-(26, 88, 2, 1318874881, 1350497281, '19.00', 'USD', 0, '', '', 30, 99, '', '', '', 0, 1),
+(25, 86, 2, 1318872278, 1350494678, '19.00', 'USD', 2, '', '', 0, 0, '', '', '', 0, 1),
+(26, 88, 2, 1318874881, 1350497281, '19.00', 'USD', 2, '', '', 30, 99, '', '', '', 0, 1),
 (27, 89, 4, 1318974007, 1382132407, '29.00', 'USD', 0, '', '', 0, 0, '', '', '', 0, 1),
-(28, 91, 4, 1319152695, 1350775095, '0.00', 'USD', 0, '', '', 35, 35, '', '', '', 0, 1),
-(29, 90, 2, 1319156637, 1350260637, '0.00', 'USD', 0, '', '', 0, 0, '', '', '', 0, 1),
-(30, 73, 4, 1319164998, 1350787398, '0.00', 'USD', 0, '', '', 37, 37, '', '', '', 0, 1),
-(31, 92, 4, 1319214775, 1350837175, '0.00', 'USD', 0, '', '', 38, 38, '', '', '', 0, 1),
+(28, 91, 4, 1319152695, 1350775095, '0.00', 'USD', 0, '', '', 35, 35, '', '', '', 1, 1),
+(29, 90, 2, 1319156637, 1350260637, '0.00', 'USD', 2, '', '', 0, 0, '', '', '', 0, 1),
+(30, 73, 4, 1319164998, 1350787398, '0.00', 'USD', 0, '', '', 37, 37, '', '', '', 1, 1),
+(31, 92, 4, 1319214775, 1350837175, '0.00', 'USD', 0, '', '', 38, 38, '', '', '', 1, 1),
 (32, 93, 4, 1319216397, 1382374797, '0.00', 'USD', 0, '', '', 39, 40, '', '', '', 0, 1),
-(33, 94, 4, 1319217074, 1350839474, '0.00', 'USD', 0, '', '', 41, 42, '', '', '', 0, 1),
+(33, 94, 4, 1319217074, 1350839474, '0.00', 'USD', 0, '', '', 41, 42, '', '', '', 1, 1),
 (34, 102, 1, 1319810707, 0, '0.00', 'USD', 0, '', '', 44, 44, '', '', '', 0, 1),
 (35, 103, 1, 1320879808, 0, '0.00', 'USD', 0, '', '', 45, 45, '', '', '', 0, 1),
 (36, 104, 4, 1321245149, 1352867549, '0.00', 'USD', 0, '', '', 46, 46, '', '', '', 0, 1),
@@ -15966,6 +16028,7 @@ CREATE TABLE IF NOT EXISTS `jos_rsmembership_users` (
   `f2` varchar(255) NOT NULL,
   `f3` varchar(255) NOT NULL,
   `f5` varchar(255) NOT NULL,
+  `f7` varchar(255) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -15973,155 +16036,155 @@ CREATE TABLE IF NOT EXISTS `jos_rsmembership_users` (
 -- Dumping data for table `jos_rsmembership_users`
 --
 
-INSERT INTO `jos_rsmembership_users` (`user_id`, `f1`, `f2`, `f3`, `f5`) VALUES
-(67, '', '', '', ''),
-(68, '', '', '', ''),
-(69, '', '', '', ''),
-(70, '', '', '', ''),
-(71, '', '', '', ''),
-(72, '', '', '', ''),
-(73, '', '', '', ''),
-(75, '', '', '', ''),
-(76, '', '', '', ''),
-(77, '', '', '', ''),
-(80, '', '', '', ''),
-(81, '', '', '', ''),
-(82, '', '', '', ''),
-(83, '', '', '', ''),
-(84, '', '', '', ''),
-(85, '', '', '', ''),
-(86, '', '', '', ''),
-(87, '', '', '', ''),
-(88, '', '', '', ''),
-(89, '', '', '', ''),
-(90, '', '', '', ''),
-(91, '', '', '', ''),
-(92, '', '', '', ''),
-(93, '', '', '', ''),
-(94, '', '', '', ''),
-(95, '', '', '', ''),
-(96, '', '', '', ''),
-(97, '', '', '', ''),
-(98, '', '', '', ''),
-(99, '', '', '', ''),
-(100, '', '', '', ''),
-(102, '', '', '', ''),
-(103, '', '', '', ''),
-(104, '', '', '', ''),
-(105, '', '', '', ''),
-(106, '', '', '', ''),
-(107, '', '', '', ''),
-(108, '', '', '', ''),
-(109, '', '', '', ''),
-(110, '', '', '', ''),
-(111, '', '', '', ''),
-(112, '', '', '', ''),
-(113, '', '', '', ''),
-(114, '', '', '', ''),
-(115, '', '', '', ''),
-(116, '', '', '', ''),
-(117, '', '', '', ''),
-(118, '', '', '', ''),
-(119, '', '', '', ''),
-(120, '', '', '', ''),
-(121, '', '', '', ''),
-(122, '', '', '', ''),
-(123, '', '', '', ''),
-(124, '', '', '', ''),
-(125, '', '', '', ''),
-(126, '', '', '', ''),
-(128, '', '', '', ''),
-(129, '', '', '', ''),
-(127, '', '', '', ''),
-(130, '', '', '', ''),
-(131, '', '', '', ''),
-(132, '', '', '', ''),
-(133, '', '', '', ''),
-(134, '', '', '', ''),
-(135, '', '', '', ''),
-(136, '', '', '', ''),
-(137, '', '', '', ''),
-(138, '', '', '', ''),
-(139, '', '', '', ''),
-(140, '', '', '', ''),
-(141, '', '', '', ''),
-(142, '', '', '', ''),
-(143, '', '', '', ''),
-(144, '', '', '', ''),
-(145, '', '', '', ''),
-(146, '', '', '', ''),
-(147, '', '', '', ''),
-(148, '', '', '', ''),
-(149, '', '', '', ''),
-(150, '', '', '', ''),
-(151, '', '', '', ''),
-(152, '', '', '', ''),
-(153, '', '', '', ''),
-(154, '', '', '', ''),
-(155, '', '', '', ''),
-(156, '', '', '', ''),
-(157, '', '', '', ''),
-(158, '', '', '', ''),
-(159, '', '', '', ''),
-(160, '', '', '', ''),
-(161, '', '', '', ''),
-(162, '', '', '', ''),
-(163, '', '', '', ''),
-(164, '', '', '', ''),
-(165, '', '', '', ''),
-(166, '', '', '', ''),
-(168, '', '', '', ''),
-(169, '', '', '', ''),
-(170, '', '', '', ''),
-(171, '', '', '', ''),
-(172, '', '', '', ''),
-(174, '', '', '', ''),
-(175, '', '', '', ''),
-(176, '', '', '', ''),
-(177, '', '', '', ''),
-(178, '', '', '', ''),
-(179, '', '', '', ''),
-(180, '', '', '', ''),
-(181, '', '', '', ''),
-(182, '', '', '', ''),
-(183, '', '', '', ''),
-(184, '', '', '', ''),
-(185, '', '', '', ''),
-(186, '', '', '', ''),
-(187, '', '', '', ''),
-(188, '', '', '', ''),
-(189, '', '', '', ''),
-(190, '', '', '', ''),
-(191, '', '', '', ''),
-(192, '', '', '', ''),
-(193, '', '', '', ''),
-(194, '', '', '', ''),
-(196, '', '', '', ''),
-(197, '', '', '', ''),
-(199, '', '', '', ''),
-(200, '', '', '', ''),
-(201, '', '', '', ''),
-(202, '', '', '', ''),
-(203, '', '', '', ''),
-(204, '', '', '', ''),
-(205, '', '', '', ''),
-(206, '', '', '', ''),
-(207, '', '', '', ''),
-(211, '', '', '', ''),
-(212, '', '', '', ''),
-(213, '', '', '', ''),
-(214, '', '', '', ''),
-(215, '', '', '', ''),
-(216, '', '', '', ''),
-(217, '', '', '', ''),
-(218, '', '', '', ''),
-(219, '', '', '', ''),
-(220, '', '', '', ''),
-(221, '', '', '', ''),
-(223, '', '', '', ''),
-(224, '', '', '', ''),
-(225, '', '', '', ''),
-(226, '', '', '', '');
+INSERT INTO `jos_rsmembership_users` (`user_id`, `f1`, `f2`, `f3`, `f5`, `f7`) VALUES
+(67, '', '', '', '', ''),
+(68, '', '', '', '', ''),
+(69, '', '', '', '', ''),
+(70, '', '', '', '', ''),
+(71, '', '', '', '', ''),
+(72, '', '', '', '', ''),
+(73, '', '', '', '', ''),
+(75, '', '', '', '', ''),
+(76, '', '', '', '', ''),
+(77, '', '', '', '', ''),
+(80, '', '', '', '', ''),
+(81, '', '', '', '', ''),
+(82, '', '', '', '', ''),
+(83, '', '', '', '', ''),
+(84, '', '', '', '', ''),
+(85, '', '', '', '', ''),
+(86, '', '', '', '', ''),
+(87, '', '', '', '', ''),
+(88, '', '', '', '', ''),
+(89, '', '', '', '', ''),
+(90, '', '', '', '', ''),
+(91, '', '', '', '', ''),
+(92, '', '', '', '', ''),
+(93, '', '', '', '', ''),
+(94, '', '', '', '', ''),
+(95, '', '', '', '', ''),
+(96, '', '', '', '', ''),
+(97, '', '', '', '', ''),
+(98, '', '', '', '', ''),
+(99, '', '', '', '', ''),
+(100, '', '', '', '', ''),
+(102, '', '', '', '', ''),
+(103, '', '', '', '', ''),
+(104, '', '', '', '', ''),
+(105, '', '', '', '', ''),
+(106, '', '', '', '', ''),
+(107, '', '', '', '', ''),
+(108, '', '', '', '', ''),
+(109, '', '', '', '', ''),
+(110, '', '', '', '', ''),
+(111, '', '', '', '', ''),
+(112, '', '', '', '', ''),
+(113, '', '', '', '', ''),
+(114, '', '', '', '', ''),
+(115, '', '', '', '', ''),
+(116, '', '', '', '', ''),
+(117, '', '', '', '', ''),
+(118, '', '', '', '', ''),
+(119, '', '', '', '', ''),
+(120, '', '', '', '', ''),
+(121, '', '', '', '', ''),
+(122, '', '', '', '', ''),
+(123, '', '', '', '', ''),
+(124, '', '', '', '', ''),
+(125, '', '', '', '', ''),
+(126, '', '', '', '', ''),
+(128, '', '', '', '', ''),
+(129, '', '', '', '', ''),
+(127, '', '', '', '', ''),
+(130, '', '', '', '', ''),
+(131, '', '', '', '', ''),
+(132, '', '', '', '', ''),
+(133, '', '', '', '', ''),
+(134, '', '', '', '', ''),
+(135, '', '', '', '', ''),
+(136, '', '', '', '', ''),
+(137, '', '', '', '', ''),
+(138, '', '', '', '', ''),
+(139, '', '', '', '', ''),
+(140, '', '', '', '', ''),
+(141, '', '', '', '', ''),
+(142, '', '', '', '', ''),
+(143, '', '', '', '', ''),
+(144, '', '', '', '', ''),
+(145, '', '', '', '', ''),
+(146, '', '', '', '', ''),
+(147, '', '', '', '', ''),
+(148, '', '', '', '', ''),
+(149, '', '', '', '', ''),
+(150, '', '', '', '', ''),
+(151, '', '', '', '', ''),
+(152, '', '', '', '', ''),
+(153, '', '', '', '', ''),
+(154, '', '', '', '', ''),
+(155, '', '', '', '', ''),
+(156, '', '', '', '', ''),
+(157, '', '', '', '', ''),
+(158, '', '', '', '', ''),
+(159, '', '', '', '', ''),
+(160, '', '', '', '', ''),
+(161, '', '', '', '', ''),
+(162, '', '', '', '', ''),
+(163, '', '', '', '', ''),
+(164, '', '', '', '', ''),
+(165, '', '', '', '', ''),
+(166, '', '', '', '', ''),
+(168, '', '', '', '', ''),
+(169, '', '', '', '', ''),
+(170, '', '', '', '', ''),
+(171, '', '', '', '', ''),
+(172, '', '', '', '', ''),
+(174, '', '', '', '', ''),
+(175, '', '', '', '', ''),
+(176, '', '', '', '', ''),
+(177, '', '', '', '', ''),
+(178, '', '', '', '', ''),
+(179, '', '', '', '', ''),
+(180, '', '', '', '', ''),
+(181, '', '', '', '', ''),
+(182, '', '', '', '', ''),
+(183, '', '', '', '', ''),
+(184, '', '', '', '', ''),
+(185, '', '', '', '', ''),
+(186, '', '', '', '', ''),
+(187, '', '', '', '', ''),
+(188, '', '', '', '', ''),
+(189, '', '', '', '', ''),
+(190, '', '', '', '', ''),
+(191, '', '', '', '', ''),
+(192, '', '', '', '', ''),
+(193, '', '', '', '', ''),
+(194, '', '', '', '', ''),
+(196, '', '', '', '', ''),
+(197, '', '', '', '', ''),
+(199, '', '', '', '', ''),
+(200, '', '', '', '', ''),
+(201, '', '', '', '', ''),
+(202, '', '', '', '', ''),
+(203, '', '', '', '', ''),
+(204, '', '', '', '', ''),
+(205, '', '', '', '', ''),
+(206, '', '', '', '', ''),
+(207, '', '', '', '', ''),
+(211, '', '', '', '', ''),
+(212, '', '', '', '', ''),
+(213, '', '', '', '', ''),
+(214, '', '', '', '', ''),
+(215, '', '', '', '', ''),
+(216, '', '', '', '', ''),
+(217, '', '', '', '', ''),
+(218, '', '', '', '', ''),
+(219, '', '', '', '', ''),
+(220, '', '', '', '', ''),
+(221, '', '', '', '', ''),
+(223, '', '', '', '', ''),
+(224, '', '', '', '', ''),
+(225, '', '', '', '', ''),
+(226, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -16169,7 +16232,7 @@ INSERT INTO `jos_rsticketspro_configuration` (`name`, `value`) VALUES
 ('email_address_fullname', 'PROBIDdirect.com Customer Support'),
 ('reply_above', 'Please reply above this line'),
 ('autoclose_enabled', '1'),
-('autoclose_cron_lastcheck', '1348077084'),
+('autoclose_cron_lastcheck', '1350699163'),
 ('autoclose_cron_interval', '10'),
 ('autoclose_email_interval', '1'),
 ('autoclose_interval', '1'),
@@ -16763,9 +16826,9 @@ CREATE TABLE IF NOT EXISTS `jos_session` (
 --
 
 INSERT INTO `jos_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('hgurk5i9ebgqr0mvpv0jskpj30', 1, 0, '1348076748', '__default|a:12:{s:15:"session.counter";i:57;s:19:"session.timer.start";i:1348064432;s:18:"session.timer.last";i:1348076746;s:17:"session.timer.now";i:1348076746;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.1; rv:15.0) Gecko/20100101 Firefox/15.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":3:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":8:{s:18:"client_id_previous";i:0;s:6:"search";s:15:"Member Feedback";s:6:"access";i:0;s:5:"state";s:0:"";s:8:"position";s:0:"";s:6:"module";s:0:"";s:9:"client_id";i:0;s:8:"language";s:0:"";}s:10:"limitstart";i:0;s:8:"ordercol";s:8:"position";s:9:"orderdirn";s:3:"asc";}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:155;}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:0;}}}}s:4:"user";O:5:"JUser":26:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:3:"222";s:4:"name";s:14:"Alwin Sanchita";s:8:"username";s:6:"alwins";s:5:"email";s:21:"sanchita.al@gmail.com";s:8:"password";s:65:"94955f155274fa2e50f49f667e49a258:ZAfb1P0MEnNeZVcOfUWYzzAbtk1GGeZO";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"0";s:12:"registerDate";s:19:"2012-07-04 00:56:51";s:13:"lastvisitDate";s:19:"2012-09-17 15:26:49";s:10:"activation";s:0:"";s:6:"params";s:92:"{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:8:{i:7;s:1:"7";i:8;s:1:"8";i:13;s:2:"13";i:14;s:2:"14";i:15;s:2:"15";i:19;s:2:"19";i:20;s:2:"20";i:21;s:2:"21";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:11:{i:0;i:1;i:1;i:6;i:2;i:7;i:4;i:8;i:6;i:2;i:7;i:13;i:10;i:14;i:13;i:15;i:17;i:19;i:21;i:20;i:25;i:21;}s:14:"\0*\0_authLevels";a:12:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:5;i:5;i:6;i:6;i:9;i:7;i:8;i:8;i:10;i:9;i:11;i:10;i:12;i:11;i:13;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:3:"gid";i:1000;}s:13:"session.token";s:32:"c560f2a4fabb3e55144dc11f76a67cbe";s:21:"rsticketspro.is_staff";b:1;s:24:"rsticketspro.permissions";O:8:"stdClass":25:{s:4:"name";s:0:"";s:10:"add_ticket";i:1;s:20:"add_ticket_customers";i:1;s:16:"add_ticket_staff";i:1;s:13:"update_ticket";i:1;s:27:"update_ticket_custom_fields";i:1;s:13:"delete_ticket";i:1;s:13:"answer_ticket";i:1;s:21:"update_ticket_replies";i:1;s:31:"update_ticket_replies_customers";i:1;s:27:"update_ticket_replies_staff";i:1;s:31:"delete_ticket_replies_customers";i:1;s:27:"delete_ticket_replies_staff";i:1;s:21:"delete_ticket_replies";i:1;s:14:"assign_tickets";i:1;s:20:"change_ticket_status";i:1;s:22:"see_unassigned_tickets";i:1;s:17:"see_other_tickets";i:1;s:11:"move_ticket";i:1;s:10:"view_notes";i:1;s:8:"add_note";i:1;s:11:"update_note";i:1;s:17:"update_note_staff";i:1;s:11:"delete_note";i:1;s:17:"delete_note_staff";i:1;}s:24:"rsticketspro.departments";a:3:{i:0;s:1:"1";i:1;s:1:"3";i:2;s:1:"4";}s:31:"com_roksprocket.redirected.from";s:11:"com_modules";}', 222, 'alwins', ''),
-('dff3v51u7sk5okk1iva9ad0qc0', 0, 0, '1348077134', '__default|a:9:{s:15:"session.counter";i:8;s:19:"session.timer.start";i:1348076947;s:18:"session.timer.last";i:1348077086;s:17:"session.timer.now";i:1348077133;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.1; rv:15.0) Gecko/20100101 Firefox/15.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":1:{s:5:"users";O:8:"stdClass":1:{s:5:"login";O:8:"stdClass":1:{s:4:"form";O:8:"stdClass":2:{s:6:"return";s:20:"index.php?Itemid=766";s:4:"data";a:0:{}}}}}}s:4:"user";O:5:"JUser":26:{s:9:"\0*\0isRoot";b:0;s:2:"id";s:2:"86";s:4:"name";s:14:"Alan Alexander";s:8:"username";s:4:"alan";s:5:"email";s:21:"alan@probiddirect.com";s:8:"password";s:65:"eebcf2290ddcdb819621a1ae8dfa57f5:7HfMkcsHcRvHt87g1c68ccuQusdIxCzk";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"0";s:12:"registerDate";s:19:"2011-10-17 17:24:37";s:13:"lastvisitDate";s:19:"2012-09-19 17:12:26";s:10:"activation";s:0:"";s:6:"params";s:92:"{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:20;s:2:"20";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:4:{i:0;i:1;i:1;i:2;i:2;i:14;i:3;i:20;}s:14:"\0*\0_authLevels";a:6:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;i:5;i:8;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:9:"group_ids";s:2:"20";}s:13:"session.token";s:32:"7c3d9a52e232c6590e1e3ecae68bdb14";s:21:"rsticketspro.is_staff";b:0;}', 86, 'alan', ''),
-('gcu1g8pnrsd1t6eot5dvga8ck1', 0, 1, '1348076947', '__default|a:9:{s:15:"session.counter";i:443;s:19:"session.timer.start";i:1348074746;s:18:"session.timer.last";i:1348076943;s:17:"session.timer.now";i:1348076946;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.1; rv:15.0) Gecko/20100101 Firefox/15.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":1:{s:5:"users";O:8:"stdClass":1:{s:5:"login";O:8:"stdClass":1:{s:4:"form";O:8:"stdClass":2:{s:4:"data";a:0:{}s:6:"return";s:26:"/project_new/my-membership";}}}}}s:4:"user";O:5:"JUser":27:{s:9:"\0*\0isRoot";b:0;s:2:"id";s:2:"89";s:4:"name";s:11:"Bob Builder";s:8:"username";s:3:"bob";s:5:"email";s:20:"bob@probiddirect.com";s:8:"password";s:65:"c76f4cd2bbfea14d7d1fbc205bcfea42:v1ILF2oq97WWe7HRiTj7Gt3nDKPndbBi";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"0";s:12:"registerDate";s:19:"2011-10-18 21:40:07";s:13:"lastvisitDate";s:19:"2012-09-19 17:12:05";s:10:"activation";s:0:"";s:6:"params";s:92:"{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:20;s:2:"20";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:4:{i:0;i:1;i:1;i:2;i:2;i:14;i:3;i:20;}s:14:"\0*\0_authLevels";a:6:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;i:5;i:8;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:9:"group_ids";s:2:"20";s:16:"duplicate_review";b:0;}s:13:"session.token";s:32:"fe63d57f81eadedb53d4ada31018e825";s:21:"rsticketspro.is_staff";b:0;}', 0, '', '');
+('33d92c933c2cb36217088b752ad3c1c3', 0, 0, '1350699654', '__default|a:9:{s:15:"session.counter";i:638;s:19:"session.timer.start";i:1350696699;s:18:"session.timer.last";i:1350699560;s:17:"session.timer.now";i:1350699652;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.1; rv:15.0) Gecko/20100101 Firefox/15.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":1:{s:5:"users";O:8:"stdClass":1:{s:5:"login";O:8:"stdClass":1:{s:4:"form";O:8:"stdClass":2:{s:6:"return";s:20:"index.php?Itemid=766";s:4:"data";a:0:{}}}}}}s:4:"user";O:5:"JUser":26:{s:9:"\0*\0isRoot";b:0;s:2:"id";s:2:"89";s:4:"name";s:11:"Bob Builder";s:8:"username";s:3:"bob";s:5:"email";s:20:"bob@probiddirect.com";s:8:"password";s:65:"c76f4cd2bbfea14d7d1fbc205bcfea42:v1ILF2oq97WWe7HRiTj7Gt3nDKPndbBi";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"0";s:12:"registerDate";s:19:"2011-10-18 21:40:07";s:13:"lastvisitDate";s:19:"2012-10-19 17:40:24";s:10:"activation";s:0:"";s:6:"params";s:92:"{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:20;s:2:"20";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:4:{i:0;i:1;i:1;i:2;i:2;i:14;i:3;i:20;}s:14:"\0*\0_authLevels";a:6:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;i:5;i:8;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:9:"group_ids";s:2:"20";}s:13:"session.token";s:32:"c38ccf715cdf4f11fd11cdd46b634e16";s:21:"rsticketspro.is_staff";b:0;}com_rokgallery|a:1:{s:4:"data";O:8:"stdClass":0:{}}', 89, 'bob', ''),
+('30761534c355e627882359cee8e78be9', 0, 0, '1350699506', '__default|a:11:{s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.1; rv:15.0) Gecko/20100101 Firefox/15.0";s:15:"session.counter";i:54;s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":2:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:15:"com_ptslideshow";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:9:"slideshow";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:2:{i:0;i:3;i:1;i:8;}}}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:3:"222";s:4:"name";s:14:"Alwin Sanchita";s:8:"username";s:6:"alwins";s:5:"email";s:21:"sanchita.al@gmail.com";s:8:"password";s:65:"94955f155274fa2e50f49f667e49a258:ZAfb1P0MEnNeZVcOfUWYzzAbtk1GGeZO";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"0";s:12:"registerDate";s:19:"2012-07-04 00:56:51";s:13:"lastvisitDate";s:19:"2012-10-19 16:38:50";s:10:"activation";s:0:"";s:6:"params";s:92:"{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:8:{i:7;s:1:"7";i:8;s:1:"8";i:13;s:2:"13";i:14;s:2:"14";i:15;s:2:"15";i:19;s:2:"19";i:20;s:2:"20";i:21;s:2:"21";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:11:{i:0;i:1;i:1;i:6;i:2;i:7;i:4;i:8;i:6;i:2;i:7;i:13;i:10;i:14;i:13;i:15;i:17;i:19;i:21;i:20;i:25;i:21;}s:14:"\0*\0_authLevels";a:12:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:5;i:5;i:6;i:6;i:9;i:7;i:8;i:8;i:10;i:9;i:11;i:10;i:12;i:11;i:13;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"7e582d6d3e8a1307c53affc54477461a";s:19:"session.timer.start";i:1350696699;s:18:"session.timer.last";i:1350699384;s:17:"session.timer.now";i:1350699506;s:21:"rsticketspro.is_staff";b:1;s:24:"rsticketspro.permissions";O:8:"stdClass":25:{s:4:"name";s:0:"";s:10:"add_ticket";i:1;s:20:"add_ticket_customers";i:1;s:16:"add_ticket_staff";i:1;s:13:"update_ticket";i:1;s:27:"update_ticket_custom_fields";i:1;s:13:"delete_ticket";i:1;s:13:"answer_ticket";i:1;s:21:"update_ticket_replies";i:1;s:31:"update_ticket_replies_customers";i:1;s:27:"update_ticket_replies_staff";i:1;s:31:"delete_ticket_replies_customers";i:1;s:27:"delete_ticket_replies_staff";i:1;s:21:"delete_ticket_replies";i:1;s:14:"assign_tickets";i:1;s:20:"change_ticket_status";i:1;s:22:"see_unassigned_tickets";i:1;s:17:"see_other_tickets";i:1;s:11:"move_ticket";i:1;s:10:"view_notes";i:1;s:8:"add_note";i:1;s:11:"update_note";i:1;s:17:"update_note_staff";i:1;s:11:"delete_note";i:1;s:17:"delete_note_staff";i:1;}s:24:"rsticketspro.departments";a:3:{i:0;s:1:"1";i:1;s:1:"3";i:2;s:1:"4";}}', 222, 'alwins', ''),
+('jnlqg011308f7ac0b6h9f1r2t7', 0, 1, '1350699651', '__default|a:8:{s:15:"session.counter";i:4;s:19:"session.timer.start";i:1350699373;s:18:"session.timer.last";i:1350699561;s:17:"session.timer.now";i:1350699650;s:22:"session.client.browser";s:99:"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:16;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:3;i:3;i:7;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:9:"group_ids";s:0:"";}s:13:"session.token";s:32:"f53fa8b76e2042ece9776f552af224de";}com_rokgallery|a:1:{s:4:"data";O:8:"stdClass":0:{}}', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -17133,11 +17196,11 @@ INSERT INTO `jos_users` (`id`, `name`, `username`, `email`, `password`, `usertyp
 (169, 'Mary Jo Malrose', 'mjmalrose', 'ephesians320mm@aol.com', '988c8e03ee6602efa7630420d2c7b182', '', 0, 0, '2012-03-05 20:37:20', '2012-03-05 21:02:16', '', '{}', '0000-00-00 00:00:00', 0),
 (104, 'Scott Armstrong', 'Armstrongcabinets', 'armstrongcabinets@gmail.com', '4ae60cb04d9dedfb096aa406e92ae6ff', '', 0, 0, '2011-11-14 04:32:28', '2012-05-14 19:55:35', '', '{}', '0000-00-00 00:00:00', 0),
 (105, 'Scott Armstrong', 'Scottarmstrong', 'scottarmstrong@pacbell.net', '552bdc33adeda6d6024907aeddbbd24b', '', 0, 0, '2011-11-14 04:44:45', '2011-11-14 05:35:42', '', '{}', '0000-00-00 00:00:00', 0),
-(86, 'Alan Alexander', 'alan', 'alan@probiddirect.com', 'eebcf2290ddcdb819621a1ae8dfa57f5:7HfMkcsHcRvHt87g1c68ccuQusdIxCzk', '', 0, 0, '2011-10-17 17:24:37', '2012-09-19 17:49:17', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
+(86, 'Alan Alexander', 'alan', 'alan@probiddirect.com', 'eebcf2290ddcdb819621a1ae8dfa57f5:7HfMkcsHcRvHt87g1c68ccuQusdIxCzk', '', 1, 0, '2011-10-17 17:24:37', '2012-09-19 17:49:17', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
 (151, 'Robert Builder', 'BobbyBuilder', 'kenn.malrose@gmail.com', '00fbd07aa063a0ba7eb11cb42145a302', '', 0, 0, '2012-02-21 18:26:19', '2012-07-06 22:00:22', '', '{}', '0000-00-00 00:00:00', 0),
 (78, 'Joey Gartin', 'joey', 'joey@joeygartin.com', '90ca0a5c0135515ac90dbf81cd1a86b1:tkxGjjMKD1PN4QpXSBx9A4pYi2mIPV3P', '', 0, 1, '2011-09-29 22:40:46', '2012-08-08 22:12:26', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
 (164, 'Hank Homeowner', 'hank', 'hank@probiddirect.com', '0595bae96a17902dd00004fd2caef573:QqTZX0tXsIt6DmMyQ3TPuFXzNuCaMwos', '', 0, 0, '2012-02-24 16:03:38', '2012-07-19 19:21:06', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
-(89, 'Bob Builder', 'bob', 'bob@probiddirect.com', 'c76f4cd2bbfea14d7d1fbc205bcfea42:v1ILF2oq97WWe7HRiTj7Gt3nDKPndbBi', '', 0, 0, '2011-10-18 21:40:07', '2012-09-19 17:49:07', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
+(89, 'Bob Builder', 'bob', 'bob@probiddirect.com', 'c76f4cd2bbfea14d7d1fbc205bcfea42:v1ILF2oq97WWe7HRiTj7Gt3nDKPndbBi', '', 0, 0, '2011-10-18 21:40:07', '2012-10-20 02:07:19', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
 (168, 'Tom Trakhome', 'tom', 'tom@probiddirect.com', '4f292b148da7bf380a8bb927ca37c06b', '', 0, 0, '2012-03-01 23:26:05', '2012-07-05 21:21:34', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
 (142, 'Allen Malrose', 'Malrose', 'mjmalrose@aol.com', '988c8e03ee6602efa7630420d2c7b182', '', 0, 0, '2012-01-23 21:50:36', '2012-01-24 16:46:13', '', '{}', '0000-00-00 00:00:00', 0),
 (134, 'Dan Doorman', 'dan', 'dan@probiddirect.com', 'c8c8c5c18a1a0ca67bdbcb645e19fe70:oIbJlqAmgiH7sySaBA87NwrbuE8lbAmX', '', 0, 0, '2011-12-21 19:50:09', '2012-05-22 22:53:29', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
@@ -17166,9 +17229,9 @@ INSERT INTO `jos_users` (`id`, `name`, `username`, `email`, `password`, `usertyp
 (194, 'Eric Erector', 'eric', 'eric@probiddirect.com', '4f292b148da7bf380a8bb927ca37c06b', '', 0, 0, '2012-05-30 16:50:39', '2012-06-12 00:51:41', '', '{}', '0000-00-00 00:00:00', 0),
 (195, 'Amit', 'amit', 'am.design.develope@gmail.com', '9aea4a18f814600198ad72fb234fdda1:hEEGSrkSvfpLK19xE1JM9XAheI1NJNVT', '', 0, 0, '2012-06-05 20:50:09', '2012-06-28 23:24:46', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
 (209, 'public', 'public', 'public@probiddirect.com', '5ea67455341ef17172807a60e5fa9c4b:Ga9yR38ZMXpRCtV86ea1JkIzJFxbkb9T', '', 0, 0, '2012-06-26 23:06:10', '2012-07-13 22:02:11', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
-(222, 'Alwin Sanchita', 'alwins', 'sanchita.al@gmail.com', '94955f155274fa2e50f49f667e49a258:ZAfb1P0MEnNeZVcOfUWYzzAbtk1GGeZO', '', 0, 0, '2012-07-04 00:56:51', '2012-09-19 14:20:42', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
+(222, 'Alwin Sanchita', 'alwins', 'sanchita.al@gmail.com', '94955f155274fa2e50f49f667e49a258:ZAfb1P0MEnNeZVcOfUWYzzAbtk1GGeZO', '', 0, 0, '2012-07-04 00:56:51', '2012-10-20 01:48:07', '', '{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
 (225, 'Frank Foreman', 'frank', 'frank@probiddirect.com', '4f292b148da7bf380a8bb927ca37c06b', '', 0, 0, '2012-07-26 22:05:34', '2012-07-26 22:42:24', '', '{}', '0000-00-00 00:00:00', 0),
-(226, 'my asus', 'my_asus', 'my_asus@yahoo.com.vn', 'eac83e5b0da5885b553a174f00441826', '', 0, 0, '2012-09-16 00:31:56', '2012-09-16 01:10:24', '', '{}', '0000-00-00 00:00:00', 0);
+(226, 'my asus', 'my_asus', 'my_asus@yahoo.com.vn', 'eac83e5b0da5885b553a174f00441826', '', 0, 0, '2012-09-16 00:31:56', '2012-09-25 13:51:36', '', '{}', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -17397,7 +17460,7 @@ INSERT INTO `jos_user_usergroup_map` (`user_id`, `group_id`) VALUES
 (62, 8),
 (78, 7),
 (78, 8),
-(86, 20),
+(86, 13),
 (89, 20),
 (104, 20),
 (105, 20),
