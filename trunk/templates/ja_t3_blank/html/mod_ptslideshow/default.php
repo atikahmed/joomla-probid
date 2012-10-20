@@ -85,26 +85,28 @@
 	});
 </script>
 	
-	<div class="gallery gallery22">
-		<div class="holder">
-			<ul>
-			<?php
-				foreach($slideshow as $item):
-			?>
-				<li>
-					<?php echo $item->description_; ?>				
-				</li>
-			<?php
-				endforeach;
-			?>
-			</ul>
+	<div class="gallery_ slide0">
+		<div class="gallery gallery22">
+			<div class="holder">
+				<ul>
+				<?php
+					foreach($slideshow as $item):
+				?>
+					<li>
+						<?php echo $item->description_; ?>				
+					</li>
+				<?php
+					endforeach;
+				?>
+				</ul>
+			</div>
+			<div class="control">
+				<a href="#" class="prev">prev</a>
+				<a href="#" class="next">next</a>
+				<span class="info"></span>
+			</div>
+			<div class="pagingSlide"></div>
 		</div>
-		<div class="control">
-			<a href="#" class="prev">prev</a>
-			<a href="#" class="next">next</a>
-			<span class="info"></span>
-		</div>
-		<div class="pagingSlide"></div>
 	</div>
 
 </div>
@@ -116,6 +118,8 @@
 		$('.pagingSlide ul li a').click(function() {
 			var index = $(this).html() - 1;
 			$('.c-panel .thumbnails ul li').get(index).click();
+			
+			$('.gallery_').removeClass().addClass('gallery_ slide' + index);
 		});
 		
 	});
