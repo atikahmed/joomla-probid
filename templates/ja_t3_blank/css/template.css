@@ -528,11 +528,20 @@ div.ja-moduletable h3, div.moduletable h3 ,
 body.bd #pt_content  .main { width:100%}
 
 .pt_slideshow  { color:#fff}
-	.pt_slideshow .pt_header { font:40px 'avantgarde_dn'; line-height:100%; padding-bottom:15px; letter-spacing:-2px}
-	.pt_main { line-height:14px}
-	.pt_link{  margin-top:22px;  box-shadow: 0 2px 1px #2A6199;-moz-border-radius: 6px;-webkit-border-radius: 6px; border-radius:6px!important;padding: 12px 0 10px 10px;}
-	.pt_link a{ text-decoration:none; font:22px 'avantgarde_dm'; text-shadow:-2px 2px 0px #A1171C; color:#fff;background: url(../images/probid/arrow_button.png) no-repeat right center ; padding-right:19px}
+	.pt_slideshow .pt_header { font:40px 'avantgarde_dn'; line-height:100%; padding-bottom:15px; letter-spacing:-2px; text-align:left}
+	.pt_main { font-size: 14px;line-height: 17px; text-align:left}
+	.pt_slideshow p {font:18px cursive;margin: -12px 0 5px;text-transform: uppercase; text-align:left}
+	.pt_link{  margin-top:22px;  box-shadow: 0 2px 1px #2A6199;-moz-border-radius: 6px;-webkit-border-radius: 6px; border-radius:6px!important;padding: 12px 10px 10px 10px}
+	.pt_link a{ text-decoration:none; font:19px 'avantgarde_dm'; text-shadow:-2px 2px 0px #A1171C; color:#fff;background: url(../images/probid/arrow_button.png) no-repeat right center ; padding-right:17px}
 	.pt_link a:hover {text-transform:-1px 1px 1px #96151a; color:#fff }
+	.pt_slideshow  p.pt_link{ margin:10px 0 0 0}
+	.pt_slideshow  .slide0 .gallery22{ background-color:#2c3789}
+	.pt_slideshow  .slide1 .gallery22{ background-color:#3477bd}
+	.pt_slideshow  .slide2 .gallery22{ background-color:#0aae00}
+	.pt_slideshow  .slide3 .gallery22{ background-color:#fdbd15}
+	.pt_slideshow .slide3  .pt_header , .pt_slideshow .slide3  .pt_main { color:#000}
+	.pt_slideshow  .slide2  .pt_link , .pt_slideshow  .slide3 .pt_link { box-shadow:none}
+	.pt_slideshow .gallery22 .holder ul li { text-align:center}
 
 #ja-utility { padding:4px 9px 0}
 	.cc_home_page #ja-utility div.ja-moduletable h3, .cc_home_page #ja-utility  div.moduletable h3{ background-color:#e7e7e7;padding:6px 15px 6px 23px; margin-bottom:8px;font:bold 18px Arial, sans-serif; border:none}
